@@ -16,28 +16,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/sw-framework-keras/readme/</guid>
-      <description>Concept Keras是一款建立在Theano或Tensorflow上的高層神經網路API。
-相較於TensorFlow與pytorch等套件，keras更適合想快速體驗機器學習的初學者
-因為keras是高層的神經網路API，較不適合做一些底層的更動，也較難深度的去學習神經網路背後的原理，
-若是已有深度學習的基礎，又或者是時間較為充裕者，可以前往Tensorflow又或者是pytorch的教學
-以Keras作為Tensorflow的接口，可以說是大大的降低了神經網路的入門門檻，
-對於初學者來說可以大大的降低疊出一個神經網路的時間，使用上極為方便
-Install 安裝keras
-sudo pip3 install keras
-安裝存儲model的套件
-sudo pip3 install h5py
-=&amp;gt; 所以Keras的model檔案
-Keras models Keras有两种类型的模型，序贯模型（Sequential）和函数式模型（Model），函数式模型应用更为广泛，
-=&amp;gt; 序贯模型是函数式模型的一种特殊情况
-序贯模型
-=&amp;gt; 序贯模型是多个网络层的线性堆叠，也就是“一条路走到黑”。
-可以通过向Sequential模型传递一个layer的list来构造该模型
-也可以通过.add()方法一个个的将layer加入模型中：
-model= Sequential()
-model.add(Dense(32, input_shape=(784,)))
-model.add(Activation(&amp;lsquo;relu&amp;rsquo;))
-Keras layer building block Dense就是fully connected
-然後在建構model,的確會比tensorflow簡單一些</description>
+      <description>Concept Keras is a high-level neural network API built on Theano or Tensorflow.
+Compared with TensorFlow and pytorch and other packages, keras is more suitable for beginners who want to quickly experience machine learning
+Because keras is a high-level neural network API, it is less suitable for some low-level changes, and it is more difficult to learn the principles behind neural networks in depth.
+If you have the foundation of deep learning, or if you have more time, you can go to Tensorflow or pytorch for teaching</description>
     </item>
     
   </channel>

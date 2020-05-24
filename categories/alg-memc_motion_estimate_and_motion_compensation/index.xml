@@ -16,14 +16,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/alg-memc_motion_estimate_and_motion_compensation/readme/</guid>
-      <description>Concept 深度學習的視頻幀內插技術
-利用時域運動關係的視圖擴展，俗稱為視頻內插或者視頻幀率轉換
-（frame rate up conversion，FRUC） Super_SloMo : NVIDIA 2018 CVPR
-MEMC-Net : 2018 CVPR
-IM-NET : 2019
-DAIN : 2019 CVPR
-Usage  &amp;ldquo;视频插值&amp;quot;主要一般会用于一下几个方面：  (1) 慢动作视频生成（slow-motion） (2) 视角合成（view synthesis） (3) 视频码率提升（frame rate up-conversion）    Chanllege  近年来的深度学习网络在应对视频插值任务时所遇到的主要问题和瓶颈，主要有两点:  (1) 无法处理大规模运动场景（large motions） (2) 只有隐式的（implicitly）或干脆没有处理遮挡区域填充问题（occlusions）    Training HOWTO 就是test frame會包裝成3個實際的frame (image triplets) 1 and 3 當作 t and t+1
-2 當作中間插禎的 ground truth(用來確認演算法和ground truth的差異) The training datasets for learning-based methods typically</description>
+      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 02 MINUTES 32 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 02 MINUTES 32 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 02 MINUTES 31 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
     </item>
     
   </channel>

@@ -2,42 +2,45 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-167528382-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
     <title>Memo</title>
     
     
     <meta content="Memo" name="keywords">
     
-    <meta content="Memo - Concept Delta-Sigma（ΔΣ）調變（或稱Sigma-Delta（ΣΔ）調變、SDM，中文譯作積分-微分調變）
-是一種數位類比互相轉換的實做方法， 它是把高位元解析度低頻率信号用,脉冲密度调制编码为, 低位元解析度高頻率信号的一种方法（PCM轉PWM），
-可以將量化失真移往更高頻率、減少濾除時對目標頻率的影響，
-推導自delta調變原理的類比至數位或是數位至類比轉換技術。ADC或是DAC可藉由低成本的CMOS製程實現此一技術，
-也就是像數位IC一樣的製程。基於上述理由，即便本技術早在1960年代已經提出， 但是要到近年來由於半導體技術精進才得以普遍的使用。幾乎所有的類比IC製造商都有提供Sigma-Delta轉換器產品
-ADC可被认为是一个压控震荡器，控制电压为被测量的电压，线性和比例性由负迴授决定。
-振荡器输出为一个脉冲串，每个脉冲为已知，常量，幅度=V且持续时间为dt，
-因此有一个已知的积分=Vdt但是变化的分离间隔。脉冲的间隔由迴授電路决定，
-所以一个低输入电压产出一个脉冲间的长间隔；而一个高输入电压产生一个短间隔。
-实际上，忽略开关错误，脉冲间的间隔与该间隔内输入电压的平均成反比，
-因此在该间隔ts内，是一个平均输入电压的样本，与v/ts成正比。
-最终的输出数是输入电压（该电压由脉冲计数决定）的数字化在一个固定加总间隔=Ndt产出一个计数，
-Σ。脉冲串的积分为ΣVdt其在时间间隔Ndt内被生成，
-因此输入电压在加总周期内的平均为VΣ/N，而且是平均的平均所以只遭受很小的变化。
-达成的精度取决于已知V的精度和一个计数内N的精度及分辨率。
-上面描述的脉冲可被认为是迪拉克方程的形式化分析，计数可被认为Σ。
-在ADC的转化中，正是这些脉冲串被delta-sigma调制所传递。 ΔΣ架構主要是在對訊號的大小做一個粗略的估計，然後量測其誤差，
-將其積分並補償之，最後輸出的平均值會等於輸入訊號的平均值（若誤差的積分為有限值）。
-積分器的數量決定了ΔΣ調變電路的階數（Order），圖2中所示為二階ΔΣ電路；
-階數越高時，noise shaping效果越好，但相對付出代價是穩定度必須妥善考量。
-ΔΣ調變電路也可以用量化器的輸出位元數來分類，當使用N階的比較器時，輸出為log2N-bit；
-基於線性度的考量，常見的ΔΣ電路為1-bit組態，也就是輸出僅有兩個位準：0或1。
-Noise Shaping 由微分器、積分器構成的ΔΣ調變電路，會因其微分特性而對量化雜訊（Quantization noise）產生一種高通濾波的效果 一般線性PCM中產生的量化雜訊平均分布在各頻率上，基於前述特性，可以將量化雜訊推往高頻，而產生noise shaping功效 將取樣頻率設高，則人耳可聽到的頻段相對低頻，此時將已經被推往高頻的量化雜訊以低通濾波器濾除，則可以得到量化雜訊較少的原訊號。
-當ΔΣ調變階數越多時，noise shaping效果也會越顯著，如圖所示為1~3階ΔΣ的noise shaping效果。" name="description">
+    <meta content="Memo - MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 46 MINUTES 23 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 46 MINUTES 22 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 46 MINUTES 21 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY." name="description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     
 
     
 
+    
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167528382-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+          gtag('config', 'UA-167528382-1');
+        </script>
     
 
     
@@ -107,6 +110,8 @@ layui.use('element', function(){
 });
 </script>
         <div id="content" style="min-height:80%">
+<h5 id="wc" style="font-size: 1rem;text-align: center;">800 Words|Read in about 4 Min|total read<span id="busuanzi_value_page_pv"></span>次</h5>
+
 <div class="layui-container" style="margin-bottom: 10px">
     
 
@@ -137,40 +142,40 @@ layui.use('element', function(){
 </h3>
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <h1 id="concept">Concept</h1>
-<p>Delta-Sigma（ΔΣ）調變（或稱Sigma-Delta（ΣΔ）調變、SDM，中文譯作積分-微分調變）<br>
-是一種<strong>數位類比互相轉換</strong>的實做方法， <br>
-它是把高位元解析度低頻率信号用,脉冲密度调制编码为, 低位元解析度高頻率信号的一种方法（PCM轉PWM），<br>
-可以將量化失真移往更高頻率、減少濾除時對目標頻率的影響，<br>
-推導自delta調變原理的類比至數位或是數位至類比轉換技術。ADC或是DAC可藉由低成本的CMOS製程實現此一技術，<br>
-也就是像數位IC一樣的製程。基於上述理由，即便本技術早在1960年代已經提出， <br>
-但是要到近年來由於半導體技術精進才得以普遍的使用。幾乎所有的類比IC製造商都有提供Sigma-Delta轉換器產品<br>
-<img src="Selection_479.png" alt="image"></p>
-<p>ADC可被认为是一个压控震荡器，控制电压为被测量的电压，线性和比例性由负迴授决定。<br>
-振荡器输出为一个脉冲串，每个脉冲为已知，常量，幅度=V且持续时间为dt，<br>
-因此有一个已知的积分=Vdt但是变化的分离间隔。脉冲的间隔由迴授電路决定，<br>
-所以一个低输入电压产出一个脉冲间的长间隔；而一个高输入电压产生一个短间隔。<br>
-实际上，忽略开关错误，脉冲间的间隔与该间隔内输入电压的平均成反比，<br>
-因此在该间隔ts内，是一个平均输入电压的样本，与v/ts成正比。</p>
-<p>最终的输出数是输入电压（该电压由脉冲计数决定）的数字化在一个固定加总间隔=Ndt产出一个计数，<br>
-Σ。脉冲串的积分为ΣVdt其在时间间隔Ndt内被生成，<br>
-因此输入电压在加总周期内的平均为VΣ/N，而且是平均的平均所以只遭受很小的变化。</p>
-<p>达成的精度取决于已知V的精度和一个计数内N的精度及分辨率。<br>
-上面描述的脉冲可被认为是迪拉克方程的形式化分析，计数可被认为Σ。<br>
-在ADC的转化中，正是这些脉冲串被delta-sigma调制所传递。 <br>
-ΔΣ架構主要是在對訊號的大小做一個粗略的估計，然後量測其誤差，<br>
-將其積分並補償之，最後輸出的平均值會等於輸入訊號的平均值（若誤差的積分為有限值）。</p>
-<p>積分器的數量決定了ΔΣ調變電路的階數（Order），圖2中所示為二階ΔΣ電路；<br>
-階數越高時，noise shaping效果越好，但相對付出代價是穩定度必須妥善考量。<br>
-ΔΣ調變電路也可以用量化器的輸出位元數來分類，當使用N階的比較器時，輸出為log2N-bit；<br>
-基於線性度的考量，常見的ΔΣ電路為1-bit組態，也就是輸出僅有兩個位準：0或1。<br>
-<img src="Selection_481.png" alt="image"></p>
-<h1 id="noise-shaping">Noise Shaping</h1>
-<p>由微分器、積分器構成的ΔΣ調變電路，<strong>會因其微分特性而對量化雜訊（Quantization noise）產生一種高通濾波的效果</strong>   <br>
-一般線性PCM中產生的量化雜訊平均分布在各頻率上，基於前述特性，<strong>可以將量化雜訊推往高頻，而產生noise shaping功效</strong> <br>
-將取樣頻率設高，則人耳可聽到的頻段相對低頻，此時將已經被推往高頻的量化雜訊以低通濾波器濾除，則可以得到量化雜訊較少的原訊號。<br>
-當ΔΣ調變階數越多時，noise shaping效果也會越顯著，如圖所示為1~3階ΔΣ的noise shaping效果。<br>
-<img src="Selection_480.png" alt="image"></p>
+                    <p>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 23 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 22 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 21 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 21 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 20 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 20 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 19 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 19 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 18 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE</p>
+<p>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 17 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 17 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 16 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 16 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 15 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 14 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE</p>
+<p>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 14 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 13 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 13 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE</p>
+<p>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 12 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 11 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 11 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 10 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 10 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE</p>
+<p>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 09 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 08 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 08 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 07 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 07 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE</p>
+<p>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 06 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 06 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 05 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 04 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 04 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 46 MINUTES 03 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE</p>
 </div>
             </div>
         </div>
@@ -182,6 +187,14 @@ layui.use('element', function(){
 
         </div><footer>
     
+
+    <span id="busuanzi_container_site_pv">
+        total vistor：<span id="busuanzi_value_site_pv"></span>次
+    </span>
+    &nbsp;
+    <span id="busuanzi_container_site_uv">
+        you are <span id="busuanzi_value_site_uv"></span> th visitor
+    </span>
 
     <div class="layui-container">
         <div class="layui-row">
@@ -207,5 +220,6 @@ layui.use('element', function(){
         <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
     </div>
 </footer>
+
 </body>
 </html>

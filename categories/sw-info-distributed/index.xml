@@ -16,20 +16,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/sw-info-distributed/readme/</guid>
-      <description>Basic - Session 通過多 GPU 並行的方式可以有很好的加速效果，然而一臺機器上所支持的 GPU 是有限的
-分佈式 TensorFlow 允許我們在多臺機器上運行一個模型，所以訓練速度或加速效果能顯著地提升
-每次調用 tf.Session() 都會創建一個單獨的「執行引擎」，然後將會話句柄連接到執行引擎。執行引擎是實際存儲變量值並運行操作的東西。
-且 Python 天生是面向對象的編程，它裏面的元素都是類或對象，因此更正式地說，tf.Seesio() 是 TensorFlow 中的一個方法，它會打開一個會話並運行計算圖
-同進程中的執行引擎是不相關的。在一個會話中更改變量（在一個執行引擎上）不會影響其他會話中的變量。
-print(&amp;ldquo;Initial value of var in session 1:&amp;quot;, sess1.run(var))
-print(&amp;ldquo;Initial value of var in session 2:&amp;quot;, sess2.run(var))
-sess1.run(var.assign_add(1.0)) // 這邊更改sess1的變數,對sess2不會有影響
-print(&amp;ldquo;Incremented var in session 1&amp;rdquo;)
-print(&amp;ldquo;Value of var in session 1:&amp;quot;, sess1.run(var))
-print(&amp;ldquo;Value of var in session 2:&amp;quot;, sess2.run(var))
-Server tf.train.Server.create_local_server 在本地創建一個只有一臺機器的 TensorFlow 集羣。然後在集羣上生成一個會話，通過該對話，我們可以將創建的計算圖運行在 TensorFlow 集羣上。
-雖然這只是一個單機集羣，但它基本上反映了 TensorFlow 集羣的工作流程
-task/job TensorFlow 集羣會通過一系列任務（task）來執行計算圖中的運算，一般來說不同的任務會在不同的機器上運行。</description>
+      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 37 MINUTES 13 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 37 MINUTES 13 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 37 MINUTES 12 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
     </item>
     
   </channel>

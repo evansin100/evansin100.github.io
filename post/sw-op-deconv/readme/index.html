@@ -2,20 +2,45 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-167528382-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
     <title>Memo</title>
     
     
     <meta content="Memo" name="keywords">
     
-    <meta content="Memo - Concept  deconvolution并不是个好名字，因为它存在歧义： before (感覺有從模糊變回清楚的感覺)  deconvolution最初被定义为“inverse of convolution”或者“inverse filter”或者“解卷积”，是指消除先前滤波作用的方法。 比如，我们认为原始图像是清晰的，但是通过透镜观测到的图像却变得模糊，如果假设透镜的作用相当于以某个kernel作用在原始图像上， 由此导致图像变得模糊，那么根据模糊的图像估计这个kernel或者根据模糊图像恢复原始清晰图像的过程就叫deconvolution   after (correct naming), 只是說反像操作  又重新定义了deconvolution，实际上与transposed convolution、sub-pixel or fractional convolution指代相同。 transposed convolution是一个更好的名字，sub-pixel or fractional convolution可以看成是transposed convolution的一个特例。 对一个常规的卷积层而言，前向传播时是convolution，将input feature map映射为output feature map， 反向传播时则是transposed convolution，根据output feature map的梯度计算出input feature map的梯度，梯度图的尺寸与feature map的尺寸相同。    Comparison  tensorflow =&gt; input padding caffe =&gt; GEMM &#43; col2im 傳統deconv and ncnn =&gt; 有人說是 direct conv
-=&gt; 看起來不同的實作算出來的答案會不同 e.g.,padding or direct conv  " name="description">
+    <meta content="Memo - MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 16 MINUTES 25 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 16 MINUTES 24 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 16 MINUTES 24 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY." name="description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     
 
     
 
+    
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167528382-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+          gtag('config', 'UA-167528382-1');
+        </script>
     
 
     
@@ -85,6 +110,8 @@ layui.use('element', function(){
 });
 </script>
         <div id="content" style="min-height:80%">
+<h5 id="wc" style="font-size: 1rem;text-align: center;">400 Words|Read in about 2 Min|total read<span id="busuanzi_value_page_pv"></span>次</h5>
+
 <div class="layui-container" style="margin-bottom: 10px">
     
 
@@ -115,32 +142,22 @@ layui.use('element', function(){
 </h3>
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <h1 id="concept">Concept</h1>
-<ul>
-<li>deconvolution并不是个好名字，因为它存在歧义：</li>
-<li>before (感覺有從模糊變回清楚的感覺)
-<ul>
-<li>deconvolution最初被定义为“inverse of convolution”或者“inverse filter”或者“解卷积”，是指消除先前滤波作用的方法。</li>
-<li>比如，我们认为原始图像是清晰的，但是通过透镜观测到的图像却变得模糊，如果假设透镜的作用相当于以某个kernel作用在原始图像上，</li>
-<li>由此导致图像变得模糊，那么根据模糊的图像估计这个kernel或者根据模糊图像恢复原始清晰图像的过程就叫deconvolution</li>
-</ul>
-</li>
-<li>after (correct naming), 只是說反像操作
-<ul>
-<li>又重新定义了deconvolution，实际上与transposed convolution、sub-pixel or fractional convolution指代相同。</li>
-<li>transposed convolution是一个更好的名字，sub-pixel or fractional convolution可以看成是transposed convolution的一个特例。</li>
-<li>对一个常规的卷积层而言，前向传播时是convolution，将input feature map映射为output feature map，</li>
-<li>反向传播时则是transposed convolution，根据output feature map的梯度计算出input feature map的梯度，梯度图的尺寸与feature map的尺寸相同。</li>
-</ul>
-</li>
-</ul>
-<h1 id="comparison">Comparison</h1>
-<ul>
-<li>tensorflow =&gt; input padding</li>
-<li>caffe =&gt; GEMM + col2im</li>
-<li>傳統deconv and ncnn =&gt; 有人說是 direct conv<br>
-=&gt; 看起來不同的實作算出來的答案會不同 e.g.,padding or direct conv</li>
-</ul>
+                    <p>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 16 MINUTES 25 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 16 MINUTES 24 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 16 MINUTES 24 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 16 MINUTES 23 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 16 MINUTES 22 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 16 MINUTES 22 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 16 MINUTES 21 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 16 MINUTES 21 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 16 MINUTES 20 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 16 MINUTES 20 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 16 MINUTES 19 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE</p>
+<p>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 16 MINUTES 18 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 16 MINUTES 18 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 16 MINUTES 17 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 16 MINUTES 17 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 16 MINUTES 16 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE</p>
 </div>
             </div>
         </div>
@@ -152,6 +169,14 @@ layui.use('element', function(){
 
         </div><footer>
     
+
+    <span id="busuanzi_container_site_pv">
+        total vistor：<span id="busuanzi_value_site_pv"></span>次
+    </span>
+    &nbsp;
+    <span id="busuanzi_container_site_uv">
+        you are <span id="busuanzi_value_site_uv"></span> th visitor
+    </span>
 
     <div class="layui-container">
         <div class="layui-row">
@@ -177,5 +202,6 @@ layui.use('element', function(){
         <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
     </div>
 </footer>
+
 </body>
 </html>

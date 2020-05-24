@@ -16,15 +16,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/sw-framework-openvino/readme/</guid>
-      <description>Overview ====================================
-NN part特點 (1) 有支援Caffe/Kaldi/MXNet/ONNX/TF(尤其是Kaldi)
-(2) 還有一個demo folder,來做安裝好的驗證,script會自己下載caffe model然後做convert
-(3) Model optimizer只有支援 a. Cutting off parts of the model, 例如將只有訓練用的部份砍掉 e.g. dropout b. OP fusion (4) OpenVINO IE inference engine主要針對HW有做OP優化(e.g. CPU/GPU/VPU-Movidius) (5) 可以在inference API指定batch
-(6) inference的時後有支援 async call (API:StartAsync),評估建議是throughput - FPS
-(7) inference的時後有支援 sync call (API:Infer),評估建議是throughput - latency
-CV part特點 (1) 此外OpenVINO OpenCV部份也有針對一些CV function做硬體加速
-integration特點 (1) OpenCV 3.3以上本來就支援DNN 至少有支援Caffe and Tensorflow model,API的用法如下圖
-cv::dnn::readNetFromTensorflow(weights, prototxt); (2) 但OpenVINO OpenCV NN部份有連結到 IE(inference engine),所以有做優化,這樣就可以用同一套串CV and NN了</description>
+      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 44 MINUTES 06 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 44 MINUTES 05 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 44 MINUTES 05 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
     </item>
     
   </channel>

@@ -16,16 +16,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/sw-framework-android-aosp/readme/</guid>
-      <description>針對android 原本的AOSP的android code要怎麼download
-https://source.android.com/setup/build/downloading
-preparation Installing Repo Make sure you have a bin/ directory in your home directory and that it is included in your path:
-mkdir ~/bin
-PATH=~/bin:$PATH Download the Repo tool and ensure that it is executable:
-curl https://storage.googleapis.com/git-repo-downloads/repo &amp;gt; ~/bin/repo
-chmod a+x ~/bin/repo
-Initializing a Repo client After installing Repo, set up your client to access the Android source repository:會需要填寫好user資訊 mkdir Android-AOSP
-cd Android-AOSP
-git config &amp;ndash;global user.</description>
+      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 07 HOURS 51 MINUTES 13 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 07 HOURS 51 MINUTES 13 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 07 HOURS 51 MINUTES 12 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
     </item>
     
   </channel>

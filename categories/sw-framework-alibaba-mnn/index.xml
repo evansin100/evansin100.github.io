@@ -16,25 +16,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/sw-framework-alibaba-mnn/readme/</guid>
-      <description>Flow Concept (for inference) 摘要：MNN已经用于阿里手机淘宝、手机天猫、优酷等20多个应用之中， 覆盖直播、短视频、搜索推荐、商品图像搜索、互动营销、权益发放、安全风控等场景。 开源自家轻量级的深度神经网络推理引擎MNN（Mobile Neural Network） 用于在智能手机、IoT设备等端侧加载深度神经网络模型，进行推理预测
-Android方面以小米6为例，MobileNet V2上耗费时间约为27毫秒， SqueezeNet V1.1上耗费约为25毫秒，领先业界至少30%；
-Functionality MNN的两大功能与四大特点
-(1) 模型转换部分帮助开发者兼容不同的训练框架
-当前，MNN已经支持Tensorflow(Lite)、Caffe和ONNX，
-PyTorch/MXNet的模型可先转为ONNX模型再转到MNN。
-而且，也能通过算子融合、算子替代、布局调整等方式优化图
-可以看到MNN有自己定義他的model format(.mnn)
-(2) 计算推理部分致力于高效完成推理计算
-为了更好地完成对模型的加载、计算图的调度，以及各计算设备下的内存分配、Op实现等任务。
-他们在MNN中应用了多种优化方案，包括在卷积和反卷积中应用Winograd算法、
-在矩阵乘法中应用Strassen算法、低精度计算、多线程优化、内存复用、异构计算等
-=&amp;gt; 有vulkan ?
-=&amp;gt; 有apple metal ?
-=&amp;gt; 從下圖可以看到他的frontend可以接TF/Caffe/ONNX
-然後再convert to MNN format
-Features (1) 轻量性：针对端侧设备特点深度定制和裁剪，无任何依赖，可以方便地部署到移动设备和各种嵌入式设备中。
-Android platform: core so size is about 400KB, OpenCL so is about 400KB, Vulkan so is about 400KB
-(2) 通用性：支持Tensorflow、Caffe、ONNX等主流模型文件格式，支持CNN、RNN、GAN等常用网络。 Supports 86 Tensorflow ops, 34 Caffe ops; MNN ops: 71 for CPU, 55 for Metal, 29 for OpenCL, and 31 for Vulkan.</description>
+      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 36 MINUTES 33 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 36 MINUTES 32 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 36 MINUTES 32 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
     </item>
     
   </channel>

@@ -2,40 +2,45 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-167528382-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
     <title>Memo</title>
     
     
     <meta content="Memo" name="keywords">
     
-    <meta content="Memo - Concept Keras是一款建立在Theano或Tensorflow上的高層神經網路API。
-相較於TensorFlow與pytorch等套件，keras更適合想快速體驗機器學習的初學者
-因為keras是高層的神經網路API，較不適合做一些底層的更動，也較難深度的去學習神經網路背後的原理，
-若是已有深度學習的基礎，又或者是時間較為充裕者，可以前往Tensorflow又或者是pytorch的教學
-以Keras作為Tensorflow的接口，可以說是大大的降低了神經網路的入門門檻，
-對於初學者來說可以大大的降低疊出一個神經網路的時間，使用上極為方便
-Install 安裝keras
-sudo pip3 install keras
-安裝存儲model的套件
-sudo pip3 install h5py
-=&gt; 所以Keras的model檔案
-Keras models Keras有两种类型的模型，序贯模型（Sequential）和函数式模型（Model），函数式模型应用更为广泛，
-=&gt; 序贯模型是函数式模型的一种特殊情况
-序贯模型
-=&gt; 序贯模型是多个网络层的线性堆叠，也就是“一条路走到黑”。
-可以通过向Sequential模型传递一个layer的list来构造该模型
-也可以通过.add()方法一个个的将layer加入模型中：
-model= Sequential()
-model.add(Dense(32, input_shape=(784,)))
-model.add(Activation(&lsquo;relu&rsquo;))
-Keras layer building block Dense就是fully connected
-然後在建構model,的確會比tensorflow簡單一些" name="description">
+    <meta content="Memo - Concept Keras is a high-level neural network API built on Theano or Tensorflow.
+Compared with TensorFlow and pytorch and other packages, keras is more suitable for beginners who want to quickly experience machine learning
+Because keras is a high-level neural network API, it is less suitable for some low-level changes, and it is more difficult to learn the principles behind neural networks in depth.
+If you have the foundation of deep learning, or if you have more time, you can go to Tensorflow or pytorch for teaching" name="description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     
 
     
 
+    
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167528382-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+          gtag('config', 'UA-167528382-1');
+        </script>
     
 
     
@@ -105,6 +110,8 @@ layui.use('element', function(){
 });
 </script>
         <div id="content" style="min-height:80%">
+<h5 id="wc" style="font-size: 1rem;text-align: center;">300 Words|Read in about 2 Min|total read<span id="busuanzi_value_page_pv"></span>次</h5>
+
 <div class="layui-container" style="margin-bottom: 10px">
     
 
@@ -136,33 +143,33 @@ layui.use('element', function(){
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
                     <h1 id="concept">Concept</h1>
-<p>Keras是一款建立在Theano或Tensorflow上的高層神經網路API。<br>
-相較於TensorFlow與pytorch等套件，keras更適合想快速體驗機器學習的初學者</p>
-<p>因為keras是高層的神經網路API，較不適合做一些底層的更動，也較難深度的去學習神經網路背後的原理，<br>
-若是已有深度學習的基礎，又或者是時間較為充裕者，可以前往Tensorflow又或者是pytorch的教學</p>
-<p>以Keras作為Tensorflow的接口，可以說是大大的降低了神經網路的入門門檻，<br>
-對於初學者來說可以大大的降低疊出一個神經網路的時間，使用上極為方便</p>
-<h1 id="install">Install</h1>
-<p>安裝keras<br>
+<p>Keras is a high-level neural network API built on Theano or Tensorflow.<br>
+Compared with TensorFlow and pytorch and other packages, keras is more suitable for beginners who want to quickly experience machine learning</p>
+<p>Because keras is a high-level neural network API, it is less suitable for some low-level changes, and it is more difficult to learn the principles behind neural networks in depth.<br>
+If you have the foundation of deep learning, or if you have more time, you can go to Tensorflow or pytorch for teaching</p>
+<p>Using Keras as the interface of Tensorflow can be said to greatly reduce the entry threshold of neural networks<br>
+For beginners, it can greatly reduce the time to build a neural network, which is extremely convenient to use</p>
+<p>Install<br>
+Install keras<br>
 sudo pip3 install keras<br>
-安裝存儲model的套件<br>
+Install the model storage kit<br>
 sudo pip3 install h5py<br>
-=&gt; 所以Keras的model檔案</p>
+=&gt; So Keras' model file</p>
 <h1 id="keras-models">Keras models</h1>
-<p>Keras有两种类型的模型，序贯模型（Sequential）和函数式模型（Model），函数式模型应用更为广泛，<br>
-=&gt; 序贯模型是函数式模型的一种特殊情况<br>
-序贯模型<br>
-=&gt; 序贯模型是多个网络层的线性堆叠，也就是“一条路走到黑”。<br>
-可以通过向Sequential模型传递一个layer的list来构造该模型<br>
-也可以通过.add()方法一个个的将layer加入模型中：<br>
-model= Sequential()<br>
-model.add(Dense(32, input_shape=(784,)))<br>
-model.add(Activation(&lsquo;relu&rsquo;))</p>
+<p>Keras has two types of models, sequential models and functional models. Functional models are more widely used.<br>
+=&gt; Sequential model is a special case of functional model<br>
+Sequential model<br>
+=&gt; Sequential model is a linear stack of multiple network layers, that is, &quot;one road goes to black&quot;.<br>
+The model can be constructed by passing a layer list to the Sequential model<br>
+You can also add layers to the model one by one using the .add () method:<br>
+model = Sequential ()<br>
+model.add (Dense (32, input_shape = (784,)))<br>
+model.add (Activation ('relu'))</p>
 <h1 id="keras-layer-building-block">Keras layer building block</h1>
-<p>Dense就是fully connected<br>
-然後在建構model,的確會比tensorflow簡單一些<br>
-<img src="https://github.com/evansin100/Keras/blob/master/Selection_056.png" alt="image"><br>
-<img src="https://github.com/evansin100/Keras/blob/master/Selection_057.png" alt="image"></p>
+<p>Dense is fully connected<br>
+Then in constructing the model, it will indeed be simpler than tensorflow<br>
+! [image] (<a href="https://github.com/evansin100/Keras/blob/master/Selection_056.png">https://github.com/evansin100/Keras/blob/master/Selection_056.png</a>)<br>
+! [image] (<a href="https://github.com/evansin100/Keras/blob/master/Selection_057.png">https://github.com/evansin100/Keras/blob/master/Selection_057.png</a>)</p>
 </div>
             </div>
         </div>
@@ -174,6 +181,14 @@ model.add(Activation(&lsquo;relu&rsquo;))</p>
 
         </div><footer>
     
+
+    <span id="busuanzi_container_site_pv">
+        total vistor：<span id="busuanzi_value_site_pv"></span>次
+    </span>
+    &nbsp;
+    <span id="busuanzi_container_site_uv">
+        you are <span id="busuanzi_value_site_uv"></span> th visitor
+    </span>
 
     <div class="layui-container">
         <div class="layui-row">
@@ -199,5 +214,6 @@ model.add(Activation(&lsquo;relu&rsquo;))</p>
         <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
     </div>
 </footer>
+
 </body>
 </html>

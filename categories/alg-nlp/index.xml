@@ -16,13 +16,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/alg-nlp/readme/</guid>
-      <description>NLP coverage 自然語言處理』(Natural Language Processing, 包含speech
-它包括文字/語音的辨識、解析與生成，實際應用範疇很廣泛 所以transformer也算是其中一個技術
-Example - ChatBot 當人對機器說了一句話，機器要先把那句話轉成文字，稱之為『語音識別』(Speech To Text or Speech recognition)。
-機器對那段文字做解析，了解那段文字代表甚麼意義，或者該回甚麼話，稱之為『Text Understanding』。
-機器回覆有兩種方式：
-以文字回覆：必須自詞庫找出要回覆的一段文字，稱之為『Text Generation』。
-以語言回覆：將文字轉為語音合成，稱之為『Text To Speech』</description>
+      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 10 MINUTES 47 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 10 MINUTES 47 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 10 MINUTES 46 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
     </item>
     
   </channel>

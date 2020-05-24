@@ -16,7 +16,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/alg-segmentation/readme/</guid>
-      <description>Category  語意的部份就是全部的氣球,都是同一種 &amp;lt;/td&amp;gt;   =&amp;gt; 找到7個objects &amp;lt;/td&amp;gt;   =&amp;gt; instance segmentation,和object detection差異是 除了找到7個objects, 還有找到這些objects對應的pixels(MaskRCNN就是屬於這一種) &amp;lt;/td&amp;gt;  Comparison  Encoder交替采用 (1)conv + (2)pooling， Decoder交替采用 (1)deconv+ (2)upsampling，用 (3)Softmax做像素分类。 在Encoder-Decoder过程中， 采用Pooling Indices（pooling时的位置信息）转移 Decoder &amp;lt;/td&amp;gt;   U-Net没有利用池化位置索引信息， 而是将编码阶段的整个特征图传输到相应的解码器 （以牺牲更多内存为代价） =&amp;gt; short-cut &amp;lt;/td&amp;gt;   然後再透過CFF(feature fusion)將特徵合為一起,然後再做upsample, 即可變回原圖大小 with semantic segmentation 比SegNet 大大地提高了准确率，足以与Deeplab v2媲美 &amp;lt;/td&amp;gt;   encode端： deeplabv3用&amp;quot;原圖&amp;quot;搭配不同的dilation conv來擷取特徵 =&amp;gt; 所以圖不會變小 encode端： U-Net透過不同的conv,不斷做down sample, 得到最後的encode結果,但decode的時候,會用之前的資料 &amp;lt;/td&amp;gt;   deeplabv3 是直接upsample回目標大小 (DeepLabv3直接用encode到最後的值 (不同dilation conv)直接upsample deeplabv3+ =&amp;gt; 現在則是分兩段upsample，第一段upsample完之後， =&amp;gt; 與encoder中feature map大小一樣的low level feature組合起來 (所以會做個merge)， =&amp;gt; 再upsample到目標大小 (v3+ decode則是會和1x1 conv組合&amp;quot;和feature map一樣大小&amp;quot;) =&amp;gt; 所以v3+是加強了decode的部份 &amp;lt;/td&amp;gt;   在实现目标检测的同时，把目标像素分割出来 =&amp;gt;所以可以比SSD這種類型,再多做一點 和Faster - RCNN 差異 1）将 Roi Pooling 层替换成了 RoiAlign； 2）添加并列的 FCN 层（mask 层）；=&amp;gt;所以叫作&amp;quot;Mask&amp;quot;RCNN FPN 在 MaskRCNN.</description>
+      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 21 MINUTES 19 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 21 MINUTES 18 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 21 MINUTES 17 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
     </item>
     
   </channel>

@@ -16,20 +16,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/sw-op-depthwise-conv/readme/</guid>
-      <description>Traditional CONV 舉個例子
-input = [224,224,3,1] RGB的圖
-output = [224,224,10,1] 變成有10個channel
-這樣的話kernel 可以是[5,5,3,10]
-如下圖(1), input channel 一定要等於 kernel channel
-如下圖(2), kernel個數 一定要等於 output channel
-如下圖(3), output每個點的計算等於 input channel 和對應的 filter channel做計算再加起來
-以範例來看就是
-input channel 1 &amp;lt;=&amp;gt; kernel 1 + input channel 2 &amp;lt;=&amp;gt; kernel 2 + input channel 3 &amp;lt;=&amp;gt; kernel 3
-W_in = 224
-H_in = 224 Nch = 3
-k = 5
-Nk = 10
-可以這樣想,output = [224,224,10,1]</description>
+      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 30 MINUTES 15 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 30 MINUTES 14 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 30 MINUTES 14 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
     </item>
     
   </channel>

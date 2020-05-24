@@ -2,28 +2,48 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-167528382-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
     <title>Memo</title>
     
     
     <meta content="Memo" name="keywords">
     
-    <meta content="Memo - Concept Tensorflow 2.0 : Eager &#43; Keras API
-用法和Tensorflow1.x完全不同 等於重頭再來
-Tensorflow1.0 使用 tensorflow 會覺得 coding 好像是給計算機而不是給人看的。
-要先 init session and global variables; input variable 要使用 placeholder 先佔位。 要 session run 才能執行程式。用 operators/operands 建造一個深度學習網絡非常複雜。
-主因是 tensorflow 需要先建構 (靜態) computation graph. 即使是執行一些簡單的運算也要歷經這種麻煩的過程。
-完全不像 python programming 的清晰明白，也就是 Pythonic way!
-一般人(e.g. me) 可能會偏愛用更高階的 keras 或是 pytorch 開發深度學習專案，
-而避免直接使用 tensorflow 開發。除非是非常重視效能的 edge device 應用才必須用 TF or TFLite 開發。
-[4] summarize tensorflow 1.x 的幾個問題：
- TensorFlow 的代码比较像是給計算機看的 TensorFlow 不容易 debug Computation graph 模式很难描述  Tensorflow1." name="description">
+    <meta content="Memo - Concept Tensorflow 2.0: Eager &#43; Keras API
+Usage is completely different from Tensorflow1.x is equal to re-start
+Tensorflow1.0 When using tensorflow, the coding seems to be for the computer and not for people.
+First init session and global variables;
+The input variable should use the placeholder first.
+To run the program, you need session run. Building a deep learning network with operators / operands is very complicated.
+The main reason is that tensorflow needs to construct a (static) computation graph first." name="description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     
 
     
 
+    
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167528382-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+          gtag('config', 'UA-167528382-1');
+        </script>
     
 
     
@@ -93,6 +113,8 @@ layui.use('element', function(){
 });
 </script>
         <div id="content" style="min-height:80%">
+<h5 id="wc" style="font-size: 1rem;text-align: center;">500 Words|Read in about 3 Min|total read<span id="busuanzi_value_page_pv"></span>次</h5>
+
 <div class="layui-container" style="margin-bottom: 10px">
     
 
@@ -124,44 +146,44 @@ layui.use('element', function(){
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
                     <h1 id="concept">Concept</h1>
-<p>Tensorflow 2.0 : Eager + Keras API<br>
-用法和Tensorflow1.x完全不同 等於重頭再來</p>
+<p>Tensorflow 2.0: Eager + Keras API<br>
+Usage is completely different from Tensorflow1.x is equal to re-start</p>
 <h1 id="tensorflow10">Tensorflow1.0</h1>
-<p>使用 tensorflow 會覺得 coding 好像是給計算機而不是給人看的。<br>
-要先 init session and global variables; <br>
-input variable 要使用 placeholder 先佔位。 <br>
-要 session run 才能執行程式。用 operators/operands 建造一個深度學習網絡非常複雜。</p>
-<p>主因是 tensorflow 需要先建構 (靜態) computation graph.  <br>
-即使是執行一些簡單的運算也要歷經這種麻煩的過程。<br>
-完全不像 python programming 的清晰明白，也就是 Pythonic way!</p>
-<p>一般人(e.g. me) 可能會偏愛用更高階的 keras 或是 pytorch 開發深度學習專案，<br>
-而避免直接使用 tensorflow 開發。除非是非常重視效能的 edge device 應用才必須用 TF or TFLite 開發。<br>
-[4] summarize tensorflow 1.x 的幾個問題：</p>
+<p>When using tensorflow, the coding seems to be for the computer and not for people.<br>
+First init session and global variables;<br>
+The input variable should use the placeholder first.<br>
+To run the program, you need session run. Building a deep learning network with operators / operands is very complicated.</p>
+<p>The main reason is that tensorflow needs to construct a (static) computation graph first.<br>
+Even performing some simple operations has to go through this troublesome process.<br>
+It is not like the clear understanding of python programming, that is, the Pythonic way!</p>
+<p>Ordinary people (eg me) may prefer to develop deep learning projects with higher-level keras or pytorch,<br>
+And avoid directly using tensorflow development. Unless it is an edge device application that attaches great importance to performance, it must be developed with TF or TFLite.<br>
+[4] Several issues of summarize tensorflow 1.x:</p>
 <ol>
-<li>TensorFlow 的代码比较像是給計算機看的</li>
-<li>TensorFlow 不容易 debug</li>
-<li>Computation graph 模式很难描述</li>
+<li>The TensorFlow code is more like a computer</li>
+<li>TensorFlow is not easy to debug</li>
+<li>Computation graph mode is difficult to describe</li>
 </ol>
 <h1 id="tensorflow10-issue-example">Tensorflow1.0 Issue Example</h1>
-<p>Tensorflow1.x 標準方式是先 create tf.Session() 建造 computation graph,<br>
-再用 sess.run() 執行如下。 這種方式對於一般使用者不直覺。<br>
-也不容易 debug! 因為變數的值要到 sess.run() 才賦予</p>
+<p>The standard way of Tensorflow1.x is to first create tf.Session () to build a computation graph,<br>
+Then use sess.run () to execute as follows. This approach is not intuitive to the average user.<br>
+It is not easy to debug! Because the value of the variable is only given to sess.run ()</p>
 <h1 id="tensorflow20">Tensorflow2.0</h1>
-<p>Tensorflow 2.0 彌補了這些缺點。 <br>
-TF2 主要結合 eager execution (default) + keras high level API.  <br>
-=&gt; 放棄 session 而用 function, 更接近使用者習慣。</p>
-<p>注意 eager execution 和 keras 在 TF1.x 就存在。TF2 進一步變為預設和內建。<br>
-Eager Execution 成为預設核心功能<br>
-(tensorflow 2.0, 預設執行模式就是 enable_eager_execution!!)  <br>
-代码风格以 Keras 为主<br>
-删除弃用的 API，减少重复<br>
-支持更多的平台和语言<br>
-很多函数如 optimizer，loss，metrics 会统合到 Keras 中，例如：<br>
-tf.layers → tf.keras.layers<br>
-tf.train → tf.keras.optimizers<br>
-tf.losses → tf.keras.losses  <br>
-簡言之，TF2 愈來愈 pythonic, object-oriented, 愈來愈像 PyTorch<br>
-<img src="Selection_057.png" alt="image"></p>
+<p>Tensorflow 2.0 makes up for these shortcomings.<br>
+TF2 mainly combines eager execution (default) + keras high level API.<br>
+=&gt; Give up the session and use the function, which is closer to the user's habits.</p>
+<p>Note that eager execution and keras exist in TF1.x. TF2 has further become preset and built-in.<br>
+Eager Execution becomes the default core function<br>
+(tensorflow 2.0, the default execution mode is enable_eager_execution !!)<br>
+Code style is dominated by Keras<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 55 MINUTES 05 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 55 MINUTES 05 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 55 MINUTES 04 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 55 MINUTES 03 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 55 MINUTES 03 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 55 MINUTES 02 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 55 MINUTES 02 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE<br>
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  08 HOURS 55 MINUTES 01 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE</p>
 </div>
             </div>
         </div>
@@ -173,6 +195,14 @@ tf.losses → tf.keras.losses  <br>
 
         </div><footer>
     
+
+    <span id="busuanzi_container_site_pv">
+        total vistor：<span id="busuanzi_value_site_pv"></span>次
+    </span>
+    &nbsp;
+    <span id="busuanzi_container_site_uv">
+        you are <span id="busuanzi_value_site_uv"></span> th visitor
+    </span>
 
     <div class="layui-container">
         <div class="layui-row">
@@ -198,5 +228,6 @@ tf.losses → tf.keras.losses  <br>
         <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
     </div>
 </footer>
+
 </body>
 </html>

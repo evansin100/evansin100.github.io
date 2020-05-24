@@ -16,24 +16,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/alg-monte-carlo/readme/</guid>
-      <description>Concept 蒙特卡羅方法又稱統計模擬法、隨機抽樣技術， 是一種隨機模擬方法，以概率和統計理論方法為基礎的一種計算方法，
-是使用隨機數（或更常見的偽隨機數）來解決很多計算問題的方法。 將所求解的問題同一定的概率模型相聯繫，用電子電腦實現統計模擬或抽樣，以獲得問題的近似解
-Suitable for 蒙地卡羅方法最適合解決哪些問題？ 舉凡在所有目前具有隨機效應的過程，均可能以蒙地卡羅方法大量模擬單一事件， 藉統計上平均值獲得某設定條件下實際最可能測量值
-蒙地卡羅模擬法，是基於大數法則的實證方法，當實驗的次數越多，其平均值也就會越趨近於理論值。
-其法則亦可以估算投資組合的各種風險因子，特別是一些難以估算的非線性投資組合。
-另外也可處理具時間變異的變異數、不對稱等非常態分配和極端狀況等特殊情形，甚至也可用來計算信用風險。
-雖然蒙地卡羅模擬法具有以上優點，但因需要繁雜的電腦技術和大量重複的抽樣，
-所須計算成本高且耗時的缺點。最後，若是僅處理非線性及非常態分配的投資組合，
-則可以選擇此模擬法，以加速其運算的速度和準確性
-Example:Pi 假設披薩的半徑為 r，則盒子邊長為 2r。
-那麼，盒子面積為 2r × 2r = 4r^2，
-則這一整塊披薩的面積就是 πr^2。
-=&amp;gt; 披薩面積與盒子的面積之比就是 πr^2 : 4r^2 = π : 4
-「如果我在披薩盒上空均勻地撒芝麻，芝麻就會隨機地落在披薩上和盒子的其他地方，
-如果芝麻撒得足夠多，鋪滿整個披薩和包裝盒，
-那麼落在披薩上的芝麻數量和處於整個方盒內的芝麻數量就近似地表示披薩的面積和盒子的面積！ =&amp;gt; random灑芝麻
-=&amp;gt; 所以有幾個要素 (1) random量要夠大 (2) 要有個判斷的依據求解
-import time import random hits=0 pi=0 DARTS=10000*10000 start=time.perf_counter() for i in range(DARTS): =&amp;gt; 灑點 x,y=random.random(),random.random() dist=pow(x ** 2+y**2,0.5) =&amp;gt; 開根號(x^2+y^2), 所以就是變成算和原點的距離 if dist &amp;lt;= 1.</description>
+      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 02 MINUTES 14 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 02 MINUTES 14 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 02 MINUTES 13 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
     </item>
     
   </channel>

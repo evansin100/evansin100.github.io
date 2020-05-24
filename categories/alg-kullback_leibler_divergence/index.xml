@@ -16,28 +16,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/alg-kullback_leibler_divergence/readme/</guid>
-      <description>Preliminary 建議先看一下entropy的定義
-因為relative entropy(KLD)是建構在information entropy的基礎上的
-此外還有一個information entropy的變形是cross-entropy
-https://github.com/evansin100/ALG-Entropy
-Concept 相對熵（relative entropy）又稱為KL散度（Kullback–Leibler divergence，簡稱KLD），
-資訊散度（information divergence），資訊增益（information gain）。
-KL散度是兩個概率分佈P和Q差別的非對稱性的度量。
-KL散度是用來度量使用基於Q的編碼來編碼來自P的樣本平均所需的額外的比特個數。
-典型情況下，P表示資料的真實分佈，Q表示資料的理論分佈，模型分佈，或P的近似分佈。
-KL-divergence，俗稱KL距離，常用來衡量兩個&amp;quot;概率&amp;quot;分佈的距離
-我们知道，现实世界里的任何观察都可以看成表示成信息和数据，
-一般来说，我们无法获取数据的总体，我们只能拿到数据的部分样本，根据数据的部分样本，
-我们会对数据的整体做一个近似的估计，而数据整体本身有一个真实的分布（我们可能永远无法知道），
-那么近似估计的概率分布和数据整体真实的概率分布的相似度，或者说差异程度，可以用 KL 散度来表示
-Usage 相對熵可以衡量兩個隨機分佈之間的距離，
- 當兩個隨機分佈相同時，它們的相對熵為零 當兩個隨機分佈的差別增大時，它們的相對熵也會增大
-=&amp;gt; 所以相對熵（KL散度）可以用於比較文字的相似度，先統計出詞的頻率，然後計算  Equation KL 散度，最早是从信息论里演化而来的，所以在介绍 KL 散度之前，我们要先介绍一下信息熵。信息熵的定义如下：
-Example 舉一個實際的例子吧：比如有四個類別，一個方法A得到四個類別的概率分別是0.1,0.2,0.3,0.4。
-另一種方法B（或者說是事實情況）是得到四個類別的概率分別是0.4,0.3,0.2,0.1,
-那麼這兩個分佈的KL-Distance(A,B)= 0.1log(0.1/0.4) + 0.2log(0.2/0.3) + 0.3log(0.3/0.2) + 0.4log(0.4/0.1)
-這個裡面有正的，有負的，可以證明KL-Distance()&amp;gt;=0.
-從上面可以看出， KL散度是不對稱的。即KL-Distance(A,B)!=KL-Distance(B,A)</description>
+      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 50 MINUTES 07 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 50 MINUTES 06 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 50 MINUTES 05 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
     </item>
     
   </channel>

@@ -16,23 +16,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/tool-ndk/readme/</guid>
-      <description>Android NDK 工具链的使用方法（Standalone Toolchain） gcc 的sysroot 选项 sysroot 选项设定 gcc 在编译源码的时候，寻找头文件和库文件的根目录。
-可以这样调用 gcc &amp;ndash;sysroot=/tmp/gcc-arm (及其他选项)。
-NDK 根目录下的 platforms 目录中的各个子目录的路径都可以直接传给 gcc &amp;ndash;sysroot=。
-为了简化操作，可以在linux系统的命令终端执行以下命令，设置SYSROOT环境变量，$NDK是ndk的根目录。
-$ SYSROOT=$NDK/platforms/android-8/arch-arm
-=&amp;gt; 所以sysroot就是要來找header file 還有library的路徑
-调用 NDK gcc（第1种方法） 设置 SYSROOT之后，要把它传给 gcc 的 &amp;ndash;sysroot 选项。
-由于unix/linux自带的gcc并非交叉编译工具，而我们需要使用的是ndk中提供的交叉编译工具（也是gcc），
-所以需要想办法让编译脚本找到ndk中的gcc，而不要去寻找系统中的gcc。
-而 unix/linux 系统的编译脚本常常会用 CC 环境变量来引用编译器，
-所以通过把 CC 设置为ndk中的gcc的路径，就能帮助编译脚本找到正确的gcc（我们还能顺便加上&amp;ndash;sysroot选项）
-=&amp;gt; 所以就是要用NDK內的gcc就對了
-将CC 按如下设置
-$ export CC=&amp;quot;$NDK/toolchains//prebuilt//bin/gcc &amp;ndash;sysroot=$SYSROOT&amp;rdquo;
-$ $CC -o foo.o -c foo.c (不必执行这一行，这条命令是调用gcc编译程序）
-调用NDK编译器（第2种方法，更简单） android ndk 提供脚本，允许自己定制一套工具链。例如：
-$NDK/build/tools/make-standalone-toolchain.sh &amp;ndash;platform=android-5 &amp;ndash;install-dir=/tmp/my-android-toolchain [ &amp;ndash;arch=x86 ]</description>
+      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 06 MINUTES 13 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 06 MINUTES 13 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 06 MINUTES 12 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
     </item>
     
   </channel>

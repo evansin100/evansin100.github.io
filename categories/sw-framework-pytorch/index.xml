@@ -16,21 +16,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/sw-framework-pytorch/readme/</guid>
-      <description>Concept 但 2017 年初由 Facebook 開源的另一套建立在 Torch 之上的深度學習框架 PyTorch 因其語法簡潔優雅、概念直觀和易上手的特性
-且標榜 Python First ，為量身替 Python 語言所打造，
-使用起來就跟寫一般 Python 專案沒兩樣，也能和其他 Python 套件無痛整合 PyTorch 的優勢在於其概念相當直觀且語法簡潔優雅，
-因此視為新手入門的一個好選項；再來其輕量架構讓模型得以快速訓練且有效運用資源
-Practice 這邊有使用Pytorch的範例
-https://github.com/evansin100/SW-FRAMEWORK-MMSR
-basic element：Tensor 一個 Tensor（張量）類似一個高維度向量，也是深度學習裡進行運算的基本元素。
-這裡比數學上的意義還要廣義，所以可以把它當成任意維度的資料向量。 既然此文假設讀者已有基本神經網絡知識，那為什麼 Tensor 會是基本元素應該不難理解吧。
-Computational Graph Computational graph 讓你定義 data 要怎麼銜接組合才能取得 output、
-其中有哪些 parameter、有哪些 activation function 等等，
-總之你的 model 要運算導數（derivative）及梯度（gradient）需要的資訊都在裡頭
-Functions 神經網絡需要用到很多 function，例如 activation function、loss function 等等
-torch.nn 提供了很多 neural network 需要的功能和元件，
-而 torch.nn.functional 也提供了很多常用 function。兩者差別在於， torch.nn.functional 提供的是純函數，
-而 torch.</description>
+      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 19 MINUTES 57 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 19 MINUTES 57 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 19 MINUTES 56 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
     </item>
     
   </channel>

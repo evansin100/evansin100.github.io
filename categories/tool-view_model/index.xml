@@ -16,7 +16,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/tool-view_model/readme/</guid>
-      <description>Summary  (1) tensorflow/tensorflow/python/tools/inspect_checkpoint.py (2) 檔案列印輸出模型中所有張量(tensor)和操作(op)的名稱   (1) pywrap_tensorflow.NewCheckpointReader(&amp;quot;example.ckpt&amp;quot;) (2) 範例https://github.com/evansin100/Tensorflow/tree/ master/Training/Re-training-from-ckpt   (0) https://github.com/evansin100/Tensorflow/tree/master/summarize_graph (1) 可以找到input tensor (2) 可以找到可能的output tensor (3) 可以印出有多少參數(weight)-const parameter,以及是否有control edge (4) 使用到那些OPs   (0) https://github.com/evansin100/Tensorflow/tree/master/ Example/regression_tensorboard/view_frozen_graph (1) 需要event(可以透過script由frozen model轉出來) (2) 可以看到很細的內容   (0) https://github.com/evansin100/TFLite/tree/master/Benchmark-Tool (1) 可以用來測試model(gen input) (2) --enable_op_profiling=true 可以印出OP的執行速度 and op summary (3) 因為是tflite,所以有Android version and desktop version   (0) https://github.com/evansin100/TFLite/tree/master/view_frozen_graph(tflite) (1) sudo bazel run tensorflow/lite/tools:visualize (2) 因為tflite不能使用tensorboard,所以只能用這個才能達到類似功能 (3) 可以看每個中間buffer的大小 (4) 這個網頁是互動式的,只要點了input他還會和你說input的名稱 (5) 也可以印出是那個版本的TOCO  </description>
+      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 01 MINUTES 21 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 01 MINUTES 20 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 01 MINUTES 19 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
     </item>
     
   </channel>

@@ -16,21 +16,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/sw-framework-opencv/readme/</guid>
-      <description>OpenCV 如果是在VM環境想用Camera, 會需要開啟VM前先設定, attach host端的webcam如下 C:\Program Files\Oracle\VirtualBox&amp;gt;VBoxManage.exe controlvm &amp;ldquo;Ubuntu&amp;rdquo; webcam attach .1
-issue : undefined reference to `cv::String::allocate(unsigned long)&amp;rsquo; C++也有OpenCV
-但是簡單的範例 確compile不過
-#include &amp;lt;opencv2/core/core.hpp&amp;gt;
-#include &amp;lt;opencv2/highgui/highgui.hpp&amp;gt;
-#include using namespace cv;
-using namespace std;
-int main( int argc, char** argv )
-{ Mat image;
-image = imread(argv[1], CV_LOAD_IMAGE_COLOR);
-透過這個方式可以安裝OpenCV for C++ and python
-sudo apt-get install libopencv-dev python-opencv
-若用 C++ 開發 OpenCV 的程式，官方是建議搭配 CMake 來編譯，而 CMake 的 CMakeLists.txt 設定檔內容如下：
-要把cpp改成你的名子
-cmake_minimum_required(VERSION 2.</description>
+      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 07 MINUTES 51 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 07 MINUTES 50 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 07 MINUTES 50 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
     </item>
     
   </channel>

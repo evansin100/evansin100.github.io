@@ -16,9 +16,14 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/alg-ocr/readme/</guid>
-      <description>Optical Character Recognition Our pipeline to automatically recognize handwritten text includes: page segmentation (先分一個大塊的)[1] and line segmentation（再拆成line) [2], followed by handwriting recognition(接著再做辨識) is illustrated in Figure The pipeline of this component is presented in Figure 2. The input is an image containing a line of text and
-the output of the module is a string of the text. 另外一個例子是辨識圖中的某塊文字 method 1 : LSTM/RNN (1) Handwriting detection (CNN-biLSTM)
-The handwriting detection takes the input image containing a line of text and returns a matrix containing probability of each character appearing.</description>
+      <description>Optical Character Recognition
+Our pipeline to automatically recognize handwritten text includes:
+page segmentation (first divided into a large block) [1] and line segmentation (then split into lines) [2],
+followed by handwriting recognition is illustrated in Figure
+! [image] (Selection_109.png)
+The pipeline of this component is presented in Figure 2.
+The input is an image containing a line of text and
+the output of the module is a string of the text.</description>
     </item>
     
   </channel>

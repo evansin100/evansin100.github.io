@@ -16,17 +16,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/tool-github_page/readme/</guid>
-      <description>Hugo+Github Pages Hugo在Github Pages上建置Blog，比起Hexo簡單不少，而且效能也好， 跟Hexo一樣是使用Markdown來撰寫文章，非常適合程式設計師使用
-Hugo本身是使用Go語言編寫，可以讓使用者快速建置一個靜態網站
-安裝 Hugo sudo apt install linuxbrew-wrapper
-sudo apt-get install build-essential
-brew install hugo
-export PATH=/home/linuxbrew/.linuxbrew/bin/:$PATH
-初始化 Blog (private repo) 先create一個private repo &amp;ldquo;evansin100.github.io.blog&amp;rdquo;
-hugo new site 目標資料夾路徑
-=&amp;gt; hugo new site /home/evan/evansin-github/evansin.github.io.blog/
-成功的話就會在底下出現一堆訊息，該資料夾可以視為根目錄
-安裝主題  Hugo有許多主題可以選擇，選擇一個自己看得順眼的主題  https://themes.gohugo.io/   step 1: 先在cmd移動到themes資料夾(資料夾folder中)  =&amp;gt; ~/evansin-github/evansin.github.io.blog/themes git clone https://github.com/ertuil/ertuil.git   step 2: 所以可以下載很多的theme,然後透過指定的方式,隨意切換theme step 3: Hugo 在生成 SSG 時會使用到 config.toml 檔案的設定內容。  我們可以將之前 Mainroad theme 中的 config.</description>
+      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 44 MINUTES 58 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 44 MINUTES 57 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 44 MINUTES 57 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
     </item>
     
   </channel>

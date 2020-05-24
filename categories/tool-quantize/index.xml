@@ -16,8 +16,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/tool-quantize/readme/</guid>
-      <description>Summary  重點還是fakequant 但有分(1) by script -&amp;gt; 可以進行run inference,更新activation min/max 或者是(2) by tool -&amp;gt; by default range直接轉成fakequant_pb https://github.com/evansin100/Quantize/blob/master/ direct%20quant/README.md &amp;lt;/td&amp;gt;   (0) 依然是透過fake quant機制 (1) fakequant會在re-train過程中,更新min/max ..etc (2) 然後weight也可以做對應的調整來提高accuracy =&amp;gt; range auto update https://github.com/evansin100/Quantize/blob/master/ fake_quantization/default_ranges_min,max/README.md =&amp;gt; fake quant細節 https://github.com/evansin100/Quantize/tree/master/fake_quantization &amp;lt;/td&amp;gt;  Key Example 建議必看這個link
- (1) 來了解training產生checkpoint (2) 然後自己建構eval graph(避免有多餘的training node)  quant model除了原本的model圖之外 還要再透過tf.contrib.quantize.create_eval_graph()把min/max加進去   (3) 在freeze pb file (4) 最後再優化產生 tflite https://github.com/evansin100/SW-FRAMEWORK-Tensorflow/tree/master/Training/Training-with-Slim/Example/mobilenetv2_quant  Quantization Concept TensorFlow的量化是通過將&amp;quot;預測的操作轉換成等價的8位版本&amp;quot;的操作來實現</description>
+      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 40 MINUTES 55 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 40 MINUTES 54 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 40 MINUTES 54 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
     </item>
     
   </channel>

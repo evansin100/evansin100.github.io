@@ -16,21 +16,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/sw-op-fully-connected/readme/</guid>
-      <description>Concept 全連結層：全連結層（fully connected layer）用於將一層裡的各神經元連接到另一層裡的所有神經元。
-=&amp;gt; fully connected layer就是没有weights share的!和一般的3x3 conv不同 =&amp;gt; fully-connected and 1x1 and 3x3,conv ..是兩種類型的應用(因為沒有shared weight,1x1有) =&amp;gt; case 1:input 10x10x1, 1x1 conv, 這樣kernel大小只有1x1
-=&amp;gt; case 2:input 10x10x1, 1x1 conv, 這樣kernel大小暴增為10x10
-所以可以看出fully connected,每個input都會有一個kernel參數(所以就是全連接層)
-=&amp;gt; 應用: 1x1 conv,通常用來調整維度
-e.g.,10x10x3,我想把他調整為10x10x5,那就需要[1x1x3]=&amp;gt;可以產出ouput channel(1),有5個那就需要 [1x1x3]x5 =&amp;gt; 應用: fully connected,通常用來針對每個input做訓練for next softmax e.g.,10x10x3,我想把他調整為10x10x5,那就需要[10x10x3]=&amp;gt;可以產出ouput channel(1),有5個那就需要 [10x10x3]x5 e.g.,1x1x300,我想把他調整為1x1x10,那就需要[1x1x300]=&amp;gt;可以產出ouput channel(1),有10個那就需要 [1x1x300]x10
-==
-透過fully-connected,可以做到平坦化, 基本上全連接層的部分就是將之前的結果平坦化之後接到最基本的神經網絡了 全连接层（fully connected layers，FC）在整个卷积神经网络中起到“分类器”的作用。
-如果说卷积层、池化层和激活函数层等操作是将原始数据映射到隐层特征空间的话，
-全连接层则起到将学到的“分布式特征表示”映射到样本标记空间的作用。
-在实际使用中，全连接层可由卷积操作实现：对前层是全连接的全连接层可以转化为卷积核为1x1的卷积；
-而前层是卷积层的全连接层可以转化为卷积核为hxw的全局卷积，h和w分别为前层卷积结果的高和宽
-Full example conv+pooling+fully connected
-最后的两列小圆球就是两个全连接层，在最后一层卷积结束后，进行了最后一次池化，
-输出了20个12 x 12的图像，然后通过了一个全连接层变成了1 x 100的向量。</description>
+      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 40 MINUTES 13 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 40 MINUTES 12 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 40 MINUTES 12 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
     </item>
     
   </channel>

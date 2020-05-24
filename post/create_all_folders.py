@@ -1,18 +1,25 @@
 import os
 from shutil import copyfile
+from translate import Translator   
 
 GITHUB_PATH = "/home/evan/evansin-github"
 exception_list = [".git", ".idea", "MANAGE", "RESEARCH-", "Personal", "Memo", "PROJECT-", "COMPANY-",]
 dirs = os.listdir(GITHUB_PATH)
 clone_folder = []
 
-def WriteHeader(src, dst, category):
-    src_file = open(src, 'r')
-    lines = [line for line in src_file]
+def WriteHeader(src, dst, category):    
+    lines = []
+    translator = Translator(from_lang="chinese", to_lang="english")
+    with open(src, "r") as src_file:
+        for line in src_file:
+            #print("original line:" + line)
+            eng_line = translator.translate(line)
+            #print("eng_line:" + eng_line)
+            lines.append(eng_line + "   \n")
     src_file.close()
 
     dst_file = open(dst, 'w')
-    header = "---\ndraft: true\ncategories: [\"" + category + "\"]\n---\n"
+    header = "---\ndraft: false\ncategories: [\"" + category + "\"]\n---\n"
     print("header\n" + header)
     dst_file.write(header)
     dst_file.write(''.join([line for line in lines]))

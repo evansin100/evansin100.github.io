@@ -16,13 +16,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/sw-framework-darknet/readme/</guid>
-      <description>Introducion darknet深度学习框架源码分析：详细中文注释，涵盖框架原理与实现语法分析
-https://github.com/hgpvision/darknet https://pjreddie.com/darknet/
-darknet是一个较为轻型的完全基于C与CUDA的开源深度学习框架， 其主要特点就是容易安装，没有任何依赖项（OpenCV都可以不用）， 移植性非常好，支持CPU与GPU两种计算方式 Feature NVIDIA would like you to buy their new DIGITS Devbox, but priced at $15,000 with a 8-10 week lag time I&amp;rsquo;m not sure why anyone would want it. For about $6,000 after tax you can build your own 4 GPU box that ships in just a few days from Newegg.Comparison w/ Tensorflow 相比于TensorFlow来说，darknet并没有那么强大，但这也成了darknet的优势：
-darknet完全由C语言实现，没有任何依赖项， 当然可以使用OpenCV，但只是用其来显示图片、为了更好的可视化； darknet支持CPU（所以没有GPU也不用紧的）与GPU（CUDA/cuDNN，使用GPU当然更块更好了）；
-正是因为其较为轻型，没有像TensorFlow那般强大的API，所以给我的感觉就是有另一种味道的灵活性， 适合用来研究底层，可以更为方便的从底层对其进行改进与扩展；
-darknet的实现与caffe的实现存在相似的地方，熟悉了darknet，相信对上手caffe有帮助
-可以看到裡面有很多OP實作,都是用C or cuda寫的 Details darknet 中最重要的三个struct定义是 network_state, network, layer； 新版本network_state 已经并入到 network 里去了。</description>
+      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 07 HOURS 55 MINUTES 31 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 07 HOURS 55 MINUTES 31 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 07 HOURS 55 MINUTES 30 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
     </item>
     
   </channel>

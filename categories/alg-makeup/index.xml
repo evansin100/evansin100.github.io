@@ -16,15 +16,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/alg-makeup/readme/</guid>
-      <description>Concept 主要写下后面涉及的美颜子项目及美颜的效果。
- (1) 美白&amp;mdash;肤色变白，饱和度，色调等 (2) 磨皮&amp;mdash;美肤，皮肤光滑 (3) 滤镜&amp;mdash;徕卡滤镜，ins滤镜 (4) 特效&amp;mdash;抖动，灵魂出窍，马赛克特效 (5) 美形&amp;mdash;瘦脸，大眼，瘦鼻，改眉形 (6) 美妆&amp;mdash;美瞳，眼线，上妆 (7) 贴纸&amp;mdash;脸萌 (8) 3d面具&amp;mdash;套头，3d虚拟形象 (9) 人脸驱动&amp;mdash;表情映射到另外一个人脸上 (10) 换脸&amp;mdash;可以换喜欢的人脸 (11) 换发&amp;mdash;发色可选择 (12) 人脸关键点识别&amp;mdash;68，106，240人脸关键点级联识别，深度学习识别 1-3涉及图像处理，
-4-9涉及图形学、渲染等，
-10-12涉及机器学习、深度学习。
-其中不是独立的，各个模块直接的知识相互交叉。
-=&amp;gt; 所以和super resolution感覺不同
-=&amp;gt; makeup (Perceptual Image Enhancement) 目標不是儘量還原原圖,而是做出不同的效果(fake),但不被發現  Papers 2016&amp;mdash; Beauty eMakeup: a Deep Makeup Transfer System
-2016&amp;mdash; A New Digital Face Makeup Method 2017&amp;mdash; Smart Mirror: Intelligent Makeup Recommendation and Synthesis
-2017&amp;mdash; Examples-Rules Guided Deep Neural Network for Makeup Recommendation</description>
+      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 17 MINUTES 44 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 17 MINUTES 44 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 17 MINUTES 43 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
+MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
     </item>
     
   </channel>
