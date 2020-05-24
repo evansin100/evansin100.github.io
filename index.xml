@@ -1,22 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo Techdoc Theme</title>
-    <link>https://evansin100.github.io/</link>
-    <description>Recent content on Hugo Techdoc Theme</description>
+    <title>Example Site</title>
+    <link>https://example.com/</link>
+    <description>Recent content on Example Site</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <lastBuildDate>Sat, 23 May 2020 22:59:03 +0800</lastBuildDate>
     
-	<atom:link href="https://evansin100.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>First_post</title>
+      <link>https://example.com/post/first_post/</link>
+      <pubDate>Sun, 24 May 2020 11:36:47 +0800</pubDate>
+      
+      <guid>https://example.com/post/first_post/</guid>
+      <description>TEST</description>
+    </item>
+    
+    <item>
       <title>About Shu-Hsin</title>
-      <link>https://evansin100.github.io/about/</link>
+      <link>https://example.com/about/</link>
       <pubDate>Sat, 23 May 2020 22:59:03 +0800</pubDate>
       
-      <guid>https://evansin100.github.io/about/</guid>
+      <guid>https://example.com/about/</guid>
       <description></description>
     </item>
     
