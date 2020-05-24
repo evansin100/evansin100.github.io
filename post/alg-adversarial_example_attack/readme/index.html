@@ -8,10 +8,7 @@
     
     <meta content="Memo" name="keywords">
     
-    <meta content="Memo - Concept An attack method that uses an adversarial example to cause a deep learning model to make judgment errors
-The so-called confrontation example is a deliberately created input data that allows the machine learning model to judge errors.
-The earliest was Szegedy et al (2013) [2] found that for image recognition models trained with ImageNet, AlexNet and other data sets,
-only small changes in the input end are often required , and the output results can be greatly changed ." name="description">
+    <meta content="Memo - Concept An attack method that uses an adversarial example to cause a deep learning model to make judgment errors. The so-called confrontation example is a deliberately created input data that allows the machine learning model to judge errors. The earliest was Szegedy et al (2013) [2] found that for image recognition models trained with ImageNet, AlexNet and other data sets, only small changes in the input end are often required , and the output results can be greatly changed." name="description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     
@@ -118,31 +115,13 @@ layui.use('element', function(){
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
                     <h1 id="concept">Concept</h1>
-<p>An attack method that uses an adversarial example to cause a deep learning model to make judgment errors<br>
-The so-called confrontation example is a deliberately created input data that allows the machine learning model to judge errors.<br>
-The earliest was Szegedy et al (2013) [2] found that for image recognition models trained with ImageNet, AlexNet and other data sets,<br>
-only small changes in the input end are often required , and the output results can be greatly changed .<br>
-For example, taking a photo of a truck can be correctly recognized by the model, but as long as a few pixels <br>
-in the image are changed, the model can be recognized incorrectly,   <br>
-and the image has been changed very little before and after, and there is no difference to the naked eye   <br>
-=&gt; Can also greatly improve accuracy</p>
-<p>In addition to showing that the deep learning model may result in &ldquo;unstable&rdquo; ,<br>
-such examples may be maliciously used and have security concerns,<br>
-so it has become a hot research topic in machine learning in recent years.<br>
-The research results published in this area in 2017<br>
-mainly include strengthening the defense and generating confrontation cases more quickly and simply.</p>
+<p>An attack method that uses an adversarial example to cause a deep learning model to make judgment errors. The so-called confrontation example is a deliberately created input data that allows the machine learning model to judge errors. The earliest was Szegedy et al (2013) [2] found that for image recognition models trained with ImageNet, AlexNet and other data sets, only small changes in the input end are often required , and the output results can be greatly changed. For example, taking a photo of a truck can be correctly recognized by the model, but as long as a few pixels  in the image are changed, the model can be recognized incorrectly, and the image has been changed very little before and after, and there is no difference to the naked eye =&gt; Can also greatly improve accuracy</p>
+<p>In addition to showing that the deep learning model may result in &ldquo;unstable&rdquo;, such examples may be maliciously used and have security concerns, so it has become a hot research topic in machine learning in recent years. The research results published in this area in 2017. mainly include strengthening the defense and generating confrontation cases more quickly and simply.</p>
 <h1 id="definition">Definition</h1>
-<p>Adversarial examples are inputs to a neural network that result in an incorrect output from the network.<br>
-This is because neural networks are extremely susceptible to something called adversarial examples.</p>
+<p>Adversarial examples are inputs to a neural network that result in an incorrect output from the network. This is because neural networks are extremely susceptible to something called adversarial examples.</p>
 <h1 id="example-1">Example 1</h1>
-<p>It’s probably best to show an example.<br>
-You can start with an image of a panda on the left which some network thinks with 57.7% confidence is a “panda.” <br>
-The panda category is also the category with the highest confidence out of all the categories,<br>
-so the network concludes that the object in the image is a panda. <br>
-But then by adding a very small amount of carefully constructed noise <br>
-you can get an image that looks exactly the same to a human,<br>
-but that the network thinks with 99.3% confidence is a “gibbon &ldquo;長臂猿&rdquo;.” Pretty crazy stuff!  <br>
-=&gt; So as long as you add some noise, the recognition result is completely different image<br>
+<p>It’s probably best to show an example.</p>
+<p>You can start with an image of a panda on the left which some network thinks with 57.7% confidence is a “panda.”  The panda category is also the category with the highest confidence out of all the categories, so the network concludes that the object in the image is a panda. But then by adding a very small amount of carefully constructed noise you can get an image that looks exactly the same to a human, but that the network thinks with 99.3% confidence is a “gibbon &ldquo;長臂猿&rdquo;.” Pretty crazy stuff! =&gt; So as long as you add some noise, the recognition result is completely different image<br>
 <img src="Selection_279.png" alt="image"></p>
 <h1 id="example-2">Example 2</h1>
 <p>Here are two examples is mnist, do adversarial example to make digital judgment completely wrong<br>
