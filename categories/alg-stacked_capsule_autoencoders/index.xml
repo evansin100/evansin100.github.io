@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ALG-Stacked_Capsule_Autoencoders on Memo</title>
+    <link>https://evansin100.github.io/categories/alg-stacked_capsule_autoencoders/</link>
+    <description>Recent content in ALG-Stacked_Capsule_Autoencoders on Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://evansin100.github.io/categories/alg-stacked_capsule_autoencoders/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://evansin100.github.io/post/alg-stacked_capsule_autoencoders/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evansin100.github.io/post/alg-stacked_capsule_autoencoders/readme/</guid>
+      <description>Motivation 从2017年开始， Hinton等人研究的Capsule Network得到了深度学习社区的大量关注。
+可以说Capsule Network在反思CNN的一些固有偏见，
+比如CNN的学习过分强调不变性（invariant ）特征的学习
+* 池化可以帮助输入近似不变（invariant），当输入发生少量偏移，输出的结果并不会改变
+* =&amp;gt; 因為max pool假設說kernel size夠大,依然可以選到區域中比較大的值, 這樣就可以達到輸出不變 数据增强也服务于这一目的。而这样做，实际上，忽略了一个真实世界中的事实
+ (1) 物体-部件 关系（Object-Part-relationship)  是视角不变的（viewpoint invariant）   (2) 物体-观察者（Object-Viewer-relationship）  是视角同变性（viewpoint equivariant）的
+并且Capsule强调物体的存在是因为当部件以合理的关系组合才得以存在，所以进一步引出了routing的机制，来发掘part-whole关系。    这里想说的是: 如果有人问，当前深度学习的核心理念是什么，
+我个人觉得，一个比较好的回答就是，学习目标形式化进而转换为参数的梯度学习
+然而这样的同质研究越来越多，又越来越难以深入其内部，DL社区就开始自我反思。
+而Capsule的理念里面，就尝试去摆脱D中L对梯度回传的过分依赖，对卷积结构的过分依赖
+所以Capsule Network本身将一些自编码器、重构、混合高斯、注意力等机制引入其中。
+其实读这篇论文会感觉作者用到的技术太多了，很容易忽略它背后的动机。我个人对它背后动机的理解为: 将图像中的实例的部件及属性从像素二维空间中以像素重建的方式抽取出出来；
+再用重构的方式解释部件与整体的关系。这也是SACE的两个主要构成环
+Concept 该胶囊网络全名 Stacked Capsule Autoencoder (SCAE)，具体可分为两个阶段：
+该胶囊网络可以无监督地学习图像中的特征
+ (1) Part Capsule Autoencoder (PCAE）  PCAE 负责将&amp;quot;图像分割成组件&amp;rdquo;，借此推断其姿势，并将图像像素重构为转换后的部件模板像素的混合产物
+   (2) Object Capsule Autoencoder (OCAE)  OCAE 则试图将发现的部件及其姿势组成更小的一组对象，再结合针对每个部件的混合预测方案来解释部件的姿势。 每个物体胶囊通过将姿势-对象-视图-关系（OV）乘以相关的物体-部件-关系 (OP) 来为这些混合物提供组件。SCAE</description>
+    </item>
+    
+  </channel>
+</rss>

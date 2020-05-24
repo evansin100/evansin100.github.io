@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HW-INFO-systolic-array on Memo</title>
+    <link>https://evansin100.github.io/categories/hw-info-systolic-array/</link>
+    <description>Recent content in HW-INFO-systolic-array on Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://evansin100.github.io/categories/hw-info-systolic-array/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://evansin100.github.io/post/hw-info-systolic-array/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evansin100.github.io/post/hw-info-systolic-array/readme/</guid>
+      <description>Concept   Google TPU让“脉动阵列”（systolic&amp;quot;心臟收縮的&amp;rdquo; array）这项“古老”的技术又回到大家的视野当中
+  (1) Simple and regular design
+ 简单和规则是脉动阵列的一个重要原则。而这样的设计主要是从“成本”的角度来考虑问题的 由于一个专用系统往往是功能有限的，因此它的成本必须足够低才能克服这一劣势。 而设计一个合理的架构（appropriate architectures）是降低设计成本的一个重要方法。 通过采用脉动阵列这个简单而规则的硬件架构，Google在很短的时间内完成了芯片的设计和实现。 从另一个角度来说，硬件设计相对简单，尽量发挥软件的能力，也是非常适合Google的一种策略    (2) Concurrency and communication
+ 这一点主要强调并行性和通信的重要    (3) Balancing computation with I/O
+ 平衡运算和I/O，应该说是脉动阵列最重要的设计目标 Issue  一个处理单元（PE）从存储器（memory）读取数据，进行处理，然后再写回到存储器。 这个系统的最大问题是：数据存取的速度往往大大低于数据处理的速度。 因此，整个系统的处理能力（MOPS，每秒完成的操作）很大程度受限于访存的能力。 这个问题也是多年来计算机体系结构研究的重要课题之一，可以说是推动处理器和存储器设计的一大动力。   Solution  而脉动架构用了一个很简单的方法：让数据尽量在处理单元中多流动一会儿   Example  正如图的下半部分所描述的， 第一个数据首先进入第一个PE，经过处理以后被传递到下一个PE，同时第二个数据进入第一个PE。以此类推， 当第一个数据到达最后一个PE，它已经被处理了多次。 所以，脉动架构实际上是多次重用了输入数据。 因此，它可以在消耗较小的memory带宽的情况下实现较高的运算吞吐率。 当然，脉动架构还有其它一些好处，比如模块化的设计容易扩展，简单和规则的数据和控制流程，
+      Application 到这里不难看出，脉动架构是一种很特殊的设计，结构简单，实现成本低。
+但它灵活性较差，只适合特定运算。而作者认为，卷积运算是展示脉动架构特点的理想应用，
+Summary 总结起来，脉动架构有几个特征</description>
+    </item>
+    
+  </channel>
+</rss>

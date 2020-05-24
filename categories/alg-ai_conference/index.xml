@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ALG-AI_conference on Memo</title>
+    <link>https://evansin100.github.io/categories/alg-ai_conference/</link>
+    <description>Recent content in ALG-AI_conference on Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://evansin100.github.io/categories/alg-ai_conference/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://evansin100.github.io/post/alg-ai_conference/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evansin100.github.io/post/alg-ai_conference/readme/</guid>
+      <description>Ranking   (1) 人工智能方法论相关
+ 第一档：NIPS,ICML, ICLR 可以看到三大顶会也是在谷歌学术2019年人工智能类出版物中影响力排名前三！ 第二档：AAAI，IJCAI, COLT
+    (2) 应用相关
+ 计算机视觉 CVPR, ECCV,ICCV（计算机视觉与模式识别领域排名前3
+    (3) 自然语言处理
+ ACL,EMNLP,NAACL（同样也是3巨头
+    The First Class  International Joint Conferences on Artificial Intelligence 1969年開始,每兩年開一次,奇數年開.因為AI實在太大, 所以雖然每屆基本上能錄100多篇（現在已經到200多篇了）， 但分到每個領域就沒幾篇了， 象machine learning、computer vision這麼大的領域每次大概也就10篇左右,   Association for the Advancement of Artificial Intelligence 是一個很好的會議, 但其檔次不穩定, 可以給到1 , 也可以給到1-或者2 , 總的來說我給它”1″. 這是因為它的開法完全受IJCAI制約: 每年開, 但如果這一年的IJCAI在北美舉行, 那麼就停開. 所以, 偶數年裡因為沒有IJCAI, 它就是最好的AI綜合性會議,   Association for Computational Learning ACM主辦, 每年舉行.</description>
+    </item>
+    
+  </channel>
+</rss>

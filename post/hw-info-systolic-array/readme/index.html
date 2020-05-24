@@ -1,0 +1,233 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Memo</title>
+    
+    
+    <meta content="Memo" name="keywords">
+    
+    <meta content="Memo - Concept   Google TPU让“脉动阵列”（systolic&quot;心臟收縮的&rdquo; array）这项“古老”的技术又回到大家的视野当中
+  (1) Simple and regular design
+ 简单和规则是脉动阵列的一个重要原则。而这样的设计主要是从“成本”的角度来考虑问题的 由于一个专用系统往往是功能有限的，因此它的成本必须足够低才能克服这一劣势。 而设计一个合理的架构（appropriate architectures）是降低设计成本的一个重要方法。 通过采用脉动阵列这个简单而规则的硬件架构，Google在很短的时间内完成了芯片的设计和实现。 从另一个角度来说，硬件设计相对简单，尽量发挥软件的能力，也是非常适合Google的一种策略    (2) Concurrency and communication
+ 这一点主要强调并行性和通信的重要    (3) Balancing computation with I/O
+ 平衡运算和I/O，应该说是脉动阵列最重要的设计目标 Issue  一个处理单元（PE）从存储器（memory）读取数据，进行处理，然后再写回到存储器。 这个系统的最大问题是：数据存取的速度往往大大低于数据处理的速度。 因此，整个系统的处理能力（MOPS，每秒完成的操作）很大程度受限于访存的能力。 这个问题也是多年来计算机体系结构研究的重要课题之一，可以说是推动处理器和存储器设计的一大动力。   Solution  而脉动架构用了一个很简单的方法：让数据尽量在处理单元中多流动一会儿   Example  正如图的下半部分所描述的， 第一个数据首先进入第一个PE，经过处理以后被传递到下一个PE，同时第二个数据进入第一个PE。以此类推， 当第一个数据到达最后一个PE，它已经被处理了多次。 所以，脉动架构实际上是多次重用了输入数据。 因此，它可以在消耗较小的memory带宽的情况下实现较高的运算吞吐率。 当然，脉动架构还有其它一些好处，比如模块化的设计容易扩展，简单和规则的数据和控制流程，
+      Application 到这里不难看出，脉动架构是一种很特殊的设计，结构简单，实现成本低。
+但它灵活性较差，只适合特定运算。而作者认为，卷积运算是展示脉动架构特点的理想应用，
+Summary 总结起来，脉动架构有几个特征" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+    
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/self/css/default.css">
+    <script async src="/layui/layui.js"></script>
+
+    <link rel="stylesheet" async href="/self/css/markdown.min.css">
+    <link rel="stylesheet" async href="/self/css/gallery.css">
+    
+    
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <script async src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="/">
+        Memo
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
+        
+
+        
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/about/">About</a></li>
+            
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="/post/">Posts</a></dd>
+                
+
+                
+                    
+                        <dd><a href="/about/">About</a></dd>
+                    
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="self-elem-quote self-elem-quote-bg-red markdown-body single-title" >
+                    <h1></h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>0001-01-01</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/hw-info-systolic-array/">
+            <span class="layui-badge layui-bg-orange" style="vertical-align: 2px;">HW-INFO-systolic-array</span>
+        </a>
+    
+
+    
+    
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <h1 id="concept">Concept</h1>
+<ul>
+<li>
+<p>Google TPU让“脉动阵列”（systolic&quot;心臟收縮的&rdquo; array）这项“古老”的技术又回到大家的视野当中</p>
+</li>
+<li>
+<p>(1) Simple and regular design</p>
+<ul>
+<li>简单和规则是脉动阵列的一个重要原则。而这样的设计主要是从“成本”的角度来考虑问题的</li>
+<li>由于一个专用系统往往是功能有限的，因此它的成本必须足够低才能克服这一劣势。</li>
+<li>而设计一个合理的架构（appropriate architectures）是降低设计成本的一个重要方法。</li>
+<li>通过采用脉动阵列这个简单而规则的硬件架构，Google在很短的时间内完成了芯片的设计和实现。</li>
+<li>从另一个角度来说，硬件设计相对简单，尽量发挥软件的能力，也是非常适合Google的一种策略</li>
+</ul>
+</li>
+<li>
+<p>(2) Concurrency and communication</p>
+<ul>
+<li>这一点主要强调并行性和通信的重要</li>
+</ul>
+</li>
+<li>
+<p>(3) Balancing computation with I/O</p>
+<ul>
+<li>平衡运算和I/O，应该说是脉动阵列最重要的设计目标</li>
+<li>Issue
+<ul>
+<li>一个处理单元（PE）从存储器（memory）读取数据，进行处理，然后再写回到存储器。</li>
+<li>这个系统的最大问题是：数据存取的速度往往大大低于数据处理的速度。</li>
+<li>因此，整个系统的处理能力（MOPS，每秒完成的操作）很大程度受限于访存的能力。</li>
+<li>这个问题也是多年来计算机体系结构研究的重要课题之一，可以说是推动处理器和存储器设计的一大动力。</li>
+</ul>
+</li>
+<li>Solution
+<ul>
+<li>而脉动架构用了一个很简单的方法：让数据尽量在处理单元中多流动一会儿</li>
+</ul>
+</li>
+<li>Example
+<ul>
+<li>正如图的下半部分所描述的，</li>
+<li>第一个数据首先进入第一个PE，经过处理以后被传递到下一个PE，同时第二个数据进入第一个PE。以此类推，</li>
+<li>当第一个数据到达最后一个PE，它已经被处理了多次。</li>
+<li>所以，脉动架构实际上是多次重用了输入数据。</li>
+<li>因此，它可以在消耗较小的memory带宽的情况下实现较高的运算吞吐率。</li>
+<li>当然，脉动架构还有其它一些好处，比如模块化的设计容易扩展，简单和规则的数据和控制流程，<br>
+<img src="Selection_098.png" alt="image"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="application">Application</h1>
+<p>到这里不难看出，脉动架构是一种很特殊的设计，结构简单，实现成本低。<br>
+但它灵活性较差，只适合特定运算。而作者认为，卷积运算是展示脉动架构特点的理想应用，</p>
+<h1 id="summary">Summary</h1>
+<p>总结起来，脉动架构有几个特征</p>
+<!-- raw HTML omitted -->
+<pre><code>    由多个同构的PE构成，可以是一维或二维，串行、阵列或树的结构
+    （现在我们看到的更多的是阵列形式）
+</code></pre>
+<!-- raw HTML omitted -->
+<pre><code>    PE功能相对简单，系统通过实现大量PE并行来提高运算的效率    
+    例如Google TPU是256x256
+    一般來說8x8就是DSP的規模了 
+    =&gt; 一次可以做64個MAC 
+</code></pre>
+<!-- raw HTML omitted -->
+<pre><code>    PE只能向其他PE发送数据（在一些二维结构中，也可能有对角线方向的数据通道）。   
+    =&gt; 可以有跨PE或者是其他方向 這個就看PE還有繞線怎麼規劃   
+</code></pre>
+<!-- raw HTML omitted -->
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/"><p class="footer-url">home</p></a>
+            </div>
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/about/"><p class="footer-url">About</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

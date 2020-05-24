@@ -1,0 +1,186 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Memo</title>
+    
+    
+    <meta content="Memo" name="keywords">
+    
+    <meta content="Memo - Concept MMSR is an open source image and video super-resolution toolbox based on PyTorch. It is a part of the open-mmlab project developed by Multimedia Laboratory, CUHK. MMSR is based on our previous projects:
+ (1) BasicSR, (2) ESRGAN (PIRM18) (3) EDVR (NTIRE19)  Dependencies and Installation deformable conv是使用某一個的implementaiton
+Python 3 (Recommend to use Anaconda)
+PyTorch &gt;= 1.1
+For now, we mainly support pytorch 1.1-1.4. We will support Pytorch 1.5 in the future ASAP" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+    
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/self/css/default.css">
+    <script async src="/layui/layui.js"></script>
+
+    <link rel="stylesheet" async href="/self/css/markdown.min.css">
+    <link rel="stylesheet" async href="/self/css/gallery.css">
+    
+    
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <script async src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="/">
+        Memo
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
+        
+
+        
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/about/">About</a></li>
+            
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="/post/">Posts</a></dd>
+                
+
+                
+                    
+                        <dd><a href="/about/">About</a></dd>
+                    
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="self-elem-quote self-elem-quote-bg-red markdown-body single-title" >
+                    <h1></h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>0001-01-01</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/sw-framework-mmsr/">
+            <span class="layui-badge layui-bg-orange" style="vertical-align: 2px;">SW-FRAMEWORK-MMSR</span>
+        </a>
+    
+
+    
+    
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <h1 id="concept">Concept</h1>
+<p>MMSR is an open source image and video super-resolution toolbox based on PyTorch. <br>
+It is a part of the open-mmlab project developed by Multimedia Laboratory, <br>
+CUHK. MMSR is based on our previous projects:</p>
+<ul>
+<li>(1) BasicSR,</li>
+<li>(2) ESRGAN (PIRM18)</li>
+<li>(3) EDVR (NTIRE19)</li>
+</ul>
+<h1 id="dependencies-and-installation">Dependencies and Installation</h1>
+<p>deformable conv是使用某一個的implementaiton<br>
+Python 3 (Recommend to use Anaconda)<br>
+PyTorch &gt;= 1.1<br>
+<strong>For now, we mainly support pytorch 1.1-1.4. We will support Pytorch 1.5 in the future ASAP</strong><br>
+=&gt; Pytorch不能用1.5.不然compile會有問題(MMSR官網講的)       <br>
+=&gt; conda install pytorch==1.4.0 torchvision cudatoolkit=10.1 -c pytorch-nightly</p>
+<p>NVIDIA GPU + CUDA<br>
+Deformable Convolution. We use mmdetection&rsquo;s dcn implementation. Please first compile it.<br>
+=&gt; 在run MMSR之前,要先compile dcn module才行,會變成一個python套件<br>
+cd ./codes/models/archs/dcn<br>
+先參考這邊來安裝pytorch+CUDA<br>
+<a href="https://github.com/evansin100/HW-INFO-CUDA/tree/master/install-howto">https://github.com/evansin100/HW-INFO-CUDA/tree/master/install-howto</a></p>
+<p>注意要先把build好的檔案先砍掉<br>
+這樣才不會有問題<br>
+rm -rf deform_conv_cuda.cpython-37m-x86_64-linux-gnu.so<br>
+rm -rf build/<br>
+python setup.py develop<br>
+<img src="Selection_079.png" alt="image"></p>
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/"><p class="footer-url">home</p></a>
+            </div>
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/about/"><p class="footer-url">About</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

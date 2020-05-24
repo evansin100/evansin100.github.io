@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ALG-Pynet_to_replace_ISP on Memo</title>
+    <link>https://evansin100.github.io/categories/alg-pynet_to_replace_isp/</link>
+    <description>Recent content in ALG-Pynet_to_replace_ISP on Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://evansin100.github.io/categories/alg-pynet_to_replace_isp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://evansin100.github.io/post/alg-pynet_to_replace_isp/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evansin100.github.io/post/alg-pynet_to_replace_isp/readme/</guid>
+      <description>Motivation 拍照已经是手机最大的卖点，各大厂商在DxO上刷分刷得不亦乐乎，一亿像素、超级夜景、光学变焦……花样越来越多。
+ 然而不同手机拍出来的质感却不一样，  (1) 一方面是镜头模组不同， (2) 另一方面是对图像处理器（ISP）的软件调教也不同。    最近，苏黎世联邦理工学院（ETHZ）2020 提出一个新的算法PyNet，
+Replacing Mobile Camera ISP with a Single Deep Learning Model
+PyNET, a novel pyramidal CNN architecture
+只需单个端到端深度学习模型，就能替代手机的ISP
+=&amp;gt; Benifit 1: 所以就是不用ISP硬體了,camera進直接用AI做處理
+可以看到效果很好,和ISP出來的圖幾乎差不多
+它调教出的相机算法可以从一个手机移植到另一个手机上，
+而不必使用手机的ISP。即使两款手机芯片来自两家厂商，也完全没问题。
+用华为P20和佳能单反相机5D Mark IV调教的算法，
+移植到黑莓手机KeyOne上，照片质量与原始ISP输出相比，有了很大的改善。
+=&amp;gt; Benifit 2: 訓練的model不會綁定特定型號手機
+Paper contribution  (1) An end-to-end deep learning solution  for RAW-toRGB image mapping problem that is incorporating all image signal processing steps by design.</description>
+    </item>
+    
+  </channel>
+</rss>

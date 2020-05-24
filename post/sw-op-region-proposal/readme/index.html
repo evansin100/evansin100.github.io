@@ -1,0 +1,199 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Memo</title>
+    
+    
+    <meta content="Memo" name="keywords">
+    
+    <meta content="Memo - Region Finding Comparison  作法是將 Segment 的結果先各自畫出 bounding box，然後以一個迴圈， =&gt; 每次合併相似度最高的兩個 box，直到整張圖合併成單一個 box 為止， 在這過程中的所有 box 便是 selective search 出來的 region proposals   (1) 和R-CNN差異是只做一次 CNN。 (2) 输入特征图尺寸不固定，但是输出特征图尺寸固定, 所以將box用max pooling map到固定大小後再做判斷 e.g., 其中一個30x30(box) to 7x7 e.g., 其中一個20x20(box) to 7x7   RPN (Region Proposal Network) 也是一個 Convolution Network (a) &quot;Input 是之前 CNN 輸出的 feature map&quot; (b) 輸出是多個 &quot;bounding box&quot; 以及該 bounding box 包含一個&quot;物體的機率&quot;(這個像是SSD multi-box) (c) 就和SSD mutlti-box一樣,沒有用到softmax(主力是conv) 但是RPN也有缺点，最大的问题就是对小物体检测效果很差， 假设输入为512*512，经过网络后得到的feature map是32*32， 那么feature map上的一个点就要负责周围至少是16*16的一个区域的特征表达， 那对于在原图上很小的物体它的特征就难以得到充分的表示， 因此检测效果比较差。 去年年底的工作SSD: Single Shot MultiBox Detector很好的解决了这个问题 SSD可以理解为multi-scale版本的RPN 而SSD允许从CNN各个level的feature map预测检测结果， 这样就能很好地适应不同scale的物体，对于小物体可以由更底层的feature map做预测   =&gt; 所以 7(現在的特徵圖)x32(conv縮小的比例)x2." name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+    
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/self/css/default.css">
+    <script async src="/layui/layui.js"></script>
+
+    <link rel="stylesheet" async href="/self/css/markdown.min.css">
+    <link rel="stylesheet" async href="/self/css/gallery.css">
+    
+    
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <script async src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="/">
+        Memo
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
+        
+
+        
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/about/">About</a></li>
+            
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="/post/">Posts</a></dd>
+                
+
+                
+                    
+                        <dd><a href="/about/">About</a></dd>
+                    
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="self-elem-quote self-elem-quote-bg-red markdown-body single-title" >
+                    <h1></h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>0001-01-01</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/sw-op-region-proposal/">
+            <span class="layui-badge layui-bg-orange" style="vertical-align: 2px;">SW-OP-Region-Proposal</span>
+        </a>
+    
+
+    
+    
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <h1 id="region-finding-comparison">Region Finding Comparison</h1>
+<!-- raw HTML omitted -->
+<pre><code>      作法是將 Segment 的結果先各自畫出 bounding box，然後以一個迴圈，
+      =&gt; 每次合併相似度最高的兩個 box，直到整張圖合併成單一個 box 為止， 
+      在這過程中的所有 box 便是 selective search 出來的 region proposals
+</code></pre>
+<!-- raw HTML omitted -->
+<pre><code>      (1) 和R-CNN差異是只做一次 CNN。  
+      (2) 输入特征图尺寸不固定，但是输出特征图尺寸固定,
+      所以將box用max pooling map到固定大小後再做判斷  
+      e.g., 其中一個30x30(box) to 7x7 
+      e.g., 其中一個20x20(box) to 7x7 
+</code></pre>
+<!-- raw HTML omitted -->
+<pre><code>      RPN (Region Proposal Network) 也是一個 Convolution Network
+      (a) &quot;Input 是之前 CNN 輸出的 feature map&quot;  
+      (b) 輸出是多個 &quot;bounding box&quot; 以及該 bounding box 
+          包含一個&quot;物體的機率&quot;(這個像是SSD multi-box)    
+      (c) 就和SSD mutlti-box一樣,沒有用到softmax(主力是conv)   
+  
+      但是RPN也有缺点，最大的问题就是对小物体检测效果很差，
+      假设输入为512*512，经过网络后得到的feature map是32*32，
+      那么feature map上的一个点就要负责周围至少是16*16的一个区域的特征表达，
+      那对于在原图上很小的物体它的特征就难以得到充分的表示，
+      因此检测效果比较差。
+          
+      去年年底的工作SSD: Single Shot MultiBox Detector很好的解决了这个问题
+          
+      SSD可以理解为multi-scale版本的RPN   
+      而SSD允许从CNN各个level的feature map预测检测结果，
+      这样就能很好地适应不同scale的物体，对于小物体可以由更底层的feature map做预测   
+</code></pre>
+<!-- raw HTML omitted -->
+<pre><code>      =&gt; 所以 7(現在的特徵圖)x32(conv縮小的比例)x2.97= 
+         就等於原本圖(or某個conv的map)大小的665x665    
+      =&gt; 因此這邊就是說現在特徵圖上(7x7)的一格,等於原圖的 2.97x2.97    
+      =&gt; 所以ROI align都要mapping回原圖 (or某個conv的map)   
+      =&gt; 例如maskrcnn2go, 就不是對應到原圖，而是經過trunk的feature map   
+</code></pre>
+<!-- raw HTML omitted -->
+<h1 id="training">Training</h1>
+<p>说一下test阶段，给一张image，需要得到物体位置和置信概率。<br>
+因此需要在train阶段有个画框的model。<br>
+anchor box是用来产生一系列矩形框，然后和ground truth比较Iou&gt;0.5是正例，&lt;0.5是负例，<br>
+用这些数据训练模型。如果只用ground truth训练，数据毕竟很少，训练VGG16会严重过拟合。</p>
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/"><p class="footer-url">home</p></a>
+            </div>
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/about/"><p class="footer-url">About</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SW-OP-octave on Memo</title>
+    <link>https://evansin100.github.io/categories/sw-op-octave/</link>
+    <description>Recent content in SW-OP-octave on Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://evansin100.github.io/categories/sw-op-octave/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://evansin100.github.io/post/sw-op-octave/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evansin100.github.io/post/sw-op-octave/readme/</guid>
+      <description>Paper https://blog.csdn.net/weixin_37993251/article/details/89333099
+Facebook和新加坡国立大学联手提出了新一代替代品：OctConv（Octave Convolution），
+效果惊艳，用起来还非常方便。
+OctConv就如同卷积神经网络（CNN）的“压缩器”。 用它替代传统卷积，能在提升效果的同时，节约计算资源的消耗
+OctConv即插即用 (所以可以直接替換conv)，无需修改原来的网络架构，也不用调整超参数，方便到家。 就是这个新一代的卷积，让GAN的主要创造者、AI大牛Ian Goodfellow迫不及待，
+不仅转发力荐，还表示要持续关注进展，开源时再发推告诉大家
+Abstract 在自然图像中，信息以不同的频率传递，其中较高的频率通常用精细的细节编码，较低的频率通常用全局结构编码。
+同样，卷积层的输出特征图也可以看作是不同频率下信息的混合。
+在这项工作中，我们提出将混合特征图按其频率分解，
+并设计一种新的Octave Convolution(OctConv)操作来存储和处理空间分辨率较低且空间变化较慢的特征图，
+从而降低了内存和计算成本。与现有的多尺度方法不同，OctConv被表示为一个单一的、通用的、即插即用的卷积单元，
+可以直接替换(普通的)卷积，而无需对网络架构进行任何调整。
+它也正交和互补的方法，建议更好的拓扑或减少像组或深度卷积信道冗余。
+实验表明，通过简单地用OctConv替换卷积，我们可以不断提高图像和视频识别任务的准确性，
+同时降低内存和计算成本。
+一个装备了八重卷积网络(octconvo)的ResNet-152仅用22.2 GFLOPs就能在ImageNet上实现82.9%的top-1分类精度。
+Introduction 如图1(a)所示，自然图像可以分解为描述平稳变化结构的低空间频率分量和描述快速变化精细细节的高空间频率分量[1,12]。
+同样，我们认为卷积层的输出特征映射也可以分解为不同空间频率的特征，
+并提出了一种新的多频特征表示方法，将高频和低频特征映射存储到不同的组中
+因此，通过相邻位置间的信息共享，可以安全降低低频组的空间分辨率，减少空间冗余，如图1(c)所示。适应新的特征表示，我们推广了vanilla convolution，并提出Octave Convolution(OctConv)将张量特征图包含两个频率和一个octave部分，频率和提取信息直接从低频地图不需要解码的高频如图1所示(d)。作为普通卷积的替代品，OctConv消耗的内存和计算资源大大减少。此外，OctConv对低频信息进行相应的(低频)卷积处理，有效地扩大了原始像素空间的接收域，从而提高了识别性能。
+我们以一种通用的方式设计了OctConv，使它成为即插即用的卷积的替代品。
+OctConv以来主要集中在加工特征图谱在多个空间频率和减少空间冗余、正交和补充现有的方法， 专注于构建更好的CNN拓扑[24, 38, 36, 34, 30]，
+减少channel-wise冗余卷积特征图谱[45, 10, 35, 33, 23]
+和减少冗余在浓密的模型参数[40, 16, 32]。我们还将进一步讨论OctConv在群、深度和三维卷积情况下的积分。
+此外，与利用多尺度信息的方法[4, 41, 14]不同的是，
+OctConv可以很容易地作为即插即用单元部署来替代卷积，而不需要改变网络架构或进行超参数调优
+我们的实验证明，
+只需用OctConv代替vanilla卷积， 我们始终可以提高受欢迎的2D CNN backbones的性能 包括ResNet [18, 19]， ResNeXt [45], DenseNet [24], MobileNet[20, 35]和SE-Net[21] 在2D图像识别ImageNet[13]，以及3D CNN backbones C2D[42]和I3D[42]视频行动识别动力学[26, 3, 2]。 配备OctConv的Oct-ResNet-152能够以更低的内存和计算成本匹配或超过最先进的手工设计网络[33, 21]。 我们的贡献可以总结如下：</description>
+    </item>
+    
+  </channel>
+</rss>

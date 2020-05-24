@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SW-FRAMEWORK-ARM_Compute_Library on Memo</title>
+    <link>https://evansin100.github.io/categories/sw-framework-arm_compute_library/</link>
+    <description>Recent content in SW-FRAMEWORK-ARM_Compute_Library on Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://evansin100.github.io/categories/sw-framework-arm_compute_library/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://evansin100.github.io/post/sw-framework-arm_compute_library/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evansin100.github.io/post/sw-framework-arm_compute_library/readme/</guid>
+      <description>Concept ARM compute library有支援三種不同的實作 (1) NEON
+(2) OpenCL
+(3) GLES_COMPUTE
+實作都會被封裝再主要兩個library
+(1) libarm_compute-static.a
+(2) libarm_compute.so
+Graph Graph是后期添加的模块，上面的文档没有进行介绍。其命名空间为arm_compute::Graph。
+其中包含了许多与arm_compute同名的类，需要注意区分。 Graph重载了operator&amp;laquo; ，可以用于添加Tensor和Node。
+库调用的整体结构为：
+Graph &amp;ndash;&amp;gt; Node
+Node &amp;ndash;&amp;gt; Function
+Function &amp;ndash;&amp;gt; Kernel
+Scheduler 程序编译时在SConstruct会根据选项设置宏定义。schedule默认使用的是CPPSchedule。
+ndk r16b中clang应该是支持openmp的，可以尝试一下。
+=&amp;gt; 所以這個是指CPU的部份,要怎麼用multiple core
+CPPScheduler::set_num_threads()可以设置调度程序用来运行内核的线程数。
+/** C++11 implementation of a pool of threads to automatically split a kernel&amp;rsquo;s execution among several threads. */
+class CPPScheduler : public IScheduler
+如果参数num_threads设置为0，则将使用C++ 11支持的最大线程数，否则将使用指定的线程数。
+scheduler::get根据Type返回不同类实例。
+scheduler::get &amp;ndash;&amp;gt; SingleThreadScheduler::get
+scheduler::get &amp;ndash;&amp;gt; CPPScheduler::get</description>
+    </item>
+    
+  </channel>
+</rss>

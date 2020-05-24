@@ -1,0 +1,215 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Memo</title>
+    
+    
+    <meta content="Memo" name="keywords">
+    
+    <meta content="Memo - Concept 首先必須談到「反鋸齒」（Anti-aliasing）在電腦繪圖領域的意義。反鋸齒顧名思義，
+是減少電腦輸出畫面中，圖像邊緣出現凹凸鋸齒的技術，
+而鋸齒的出現是由於 3D 圖形坐標定位時，發生不可避免的圖形混疊所導致的 反鋸齒技術從過去到現在，原理並沒有太大的改變，簡而言之就是用「模糊」換取「精確」，
+如果要用修圖的概念來比喻，就有點類似「柔邊」的效果。既然要「柔邊」，
+那一定會經歷的過程，就是對影像進行「採樣」（Sampling）
+使其模糊化的時候，與原本的鋸齒邊緣看起來相似
+  SSAA（Super-Sampling Anti-aliasing）
+ SSAA 技術非常消耗運算資源，因為其原理是將原解析度的遊戲畫面放大， 例如 4 倍的 SSAA 就是把原先 1920 X 1080 的畫面 運算出一個 3840 X 2160 的暫存影像，經過取樣後再套用回原畫面中
+    MSAA (MultiSampling Anti-Aliasing)
+ 為了改善 SSAA 過度消耗電腦資源的問題，其變體「多重採樣反鋸齒」 但因為 MSAA 會先判斷畫面的邊緣，再針對該處進行放大後才採樣，所以大幅減輕了電腦運算的負擔。    FXAA (Fast Approximate Anti-Aliasing)
+ 在 MSAA 成為玩家與遊戲開發商，實現反鋸齒方案的寵兒後， NVIDIA 在 2012 年推出了「快速近似反鋸齒」（Fast Approximate Anti-Aliasing）解決方案， 即 FXAA，在消耗更少硬體資源的前提下，達到與 MSAA 同等級的反鋸齒效果。     DLSS（Deep Learning Super-Sampling）" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+    
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/self/css/default.css">
+    <script async src="/layui/layui.js"></script>
+
+    <link rel="stylesheet" async href="/self/css/markdown.min.css">
+    <link rel="stylesheet" async href="/self/css/gallery.css">
+    
+    
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <script async src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="/">
+        Memo
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
+        
+
+        
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/about/">About</a></li>
+            
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="/post/">Posts</a></dd>
+                
+
+                
+                    
+                        <dd><a href="/about/">About</a></dd>
+                    
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="self-elem-quote self-elem-quote-bg-red markdown-body single-title" >
+                    <h1></h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>0001-01-01</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/alg-anti_aliasing/">
+            <span class="layui-badge layui-bg-orange" style="vertical-align: 2px;">ALG-Anti_aliasing</span>
+        </a>
+    
+
+    
+    
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <h1 id="concept">Concept</h1>
+<p>首先必須談到「反鋸齒」（Anti-aliasing）在電腦繪圖領域的意義。反鋸齒顧名思義，<br>
+是減少電腦輸出畫面中，圖像邊緣出現凹凸鋸齒的技術，<br>
+而鋸齒的出現是由於 3D 圖形坐標定位時，發生不可避免的圖形混疊所導致的 <br>
+反鋸齒技術從過去到現在，原理並沒有太大的改變，簡而言之就是用「模糊」換取「精確」，<br>
+如果要用修圖的概念來比喻，就有點類似「柔邊」的效果。既然要「柔邊」，<br>
+那一定會經歷的過程，就是對<strong>影像進行「採樣」（Sampling）</strong><br>
+使其模糊化的時候，與原本的鋸齒邊緣看起來相似</p>
+<p><img src="Selection_493.png" alt="image"></p>
+<ul>
+<li>
+<p>SSAA（Super-Sampling Anti-aliasing）</p>
+<ul>
+<li>SSAA 技術非常消耗運算資源，因為其原理是將原解析度的遊戲畫面放大，</li>
+<li>例如 4 倍的 SSAA 就是把原先 1920 X 1080 的畫面</li>
+<li>運算出一個 3840 X 2160 的暫存影像，經過取樣後再套用回原畫面中<br>
+<img src="Selection_494.png" alt="image"></li>
+</ul>
+</li>
+<li>
+<p>MSAA (MultiSampling Anti-Aliasing)</p>
+<ul>
+<li>為了改善 SSAA 過度消耗電腦資源的問題，其變體「多重採樣反鋸齒」</li>
+<li>但因為 MSAA 會先判斷畫面的邊緣，再針對該處進行放大後才採樣，所以大幅減輕了電腦運算的負擔。</li>
+</ul>
+</li>
+<li>
+<p>FXAA (Fast Approximate Anti-Aliasing)</p>
+<ul>
+<li>在 MSAA 成為玩家與遊戲開發商，實現反鋸齒方案的寵兒後，</li>
+<li>NVIDIA 在 2012 年推出了「快速近似反鋸齒」（Fast Approximate Anti-Aliasing）解決方案，</li>
+<li>即 FXAA，在消耗更少硬體資源的前提下，達到與 MSAA 同等級的反鋸齒效果。
+<img src="Selection_495.png" alt="image"></li>
+</ul>
+</li>
+<li>
+<p>DLSS（Deep Learning Super-Sampling）</p>
+<ul>
+<li>GeForce RTX 平台的重點技術，「深度學習超高取樣」（Deep Learning Super-Sampling）</li>
+<li>為什麼 DLSS 這個「反鋸齒技術」，並不以「AA」（Anti-Aliasing）結尾，而是強調「取樣」（Sampling）</li>
+<li>DLSS 確實並不能算是真正的反鋸齒技術，而只是讓遊戲畫面，看起來像是開啟了反鋸齒技術後的效果</li>
+<li>NVIDIA 的 NeuralGraphics Framework 超級電腦，會先蒐集眾多遊戲中，</li>
+<li>(1) 一組數千張 64 倍超高取樣的完美圖像，</li>
+<li>(2) 以及另一組未開啟反鋸齒的圖像，</li>
+<li>一併交給神經網路進行訓練，看看 AI 如何用較低的效能，模擬出 64 倍取樣的畫面品質，最後就會形成一個通用模型</li>
+<li>很有可能會造成畫面品質不升反降，其原因就在於 AI 訓練的出來模組不夠精確，</li>
+<li>會把不該模糊化的部分刻意套用反鋸齒，模糊打過頭的結果就是在銳利度和精細度上有所犧牲
+<img src="Selection_496.png" alt="image"></li>
+</ul>
+</li>
+</ul>
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/"><p class="footer-url">home</p></a>
+            </div>
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/about/"><p class="footer-url">About</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

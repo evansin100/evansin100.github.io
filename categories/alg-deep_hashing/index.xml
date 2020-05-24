@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ALG-Deep_hashing on Memo</title>
+    <link>https://evansin100.github.io/categories/alg-deep_hashing/</link>
+    <description>Recent content in ALG-Deep_hashing on Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://evansin100.github.io/categories/alg-deep_hashing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://evansin100.github.io/post/alg-deep_hashing/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evansin100.github.io/post/alg-deep_hashing/readme/</guid>
+      <description>Hash Background Hash，就是把任意长度的输入通过散列算法变换成固定长度的输出，该输出就是散列值。
+这种转换是一种压缩映射，也就是，散列值的空间通常远小于输入的空间，不同的输入可能会散列成相同的输出，
+所以不可能从散列值来确定唯一的输入值。简单的说就是一种将任意长度的消息压缩到某一固定长度的消息摘要的函数。
+Deep Hash Concept 最早是從2016提出
+Deep Supervised Hashing for Fast Image Retrieval[C]. computer vision and pattern recognition, 2016:
+新的Hashing方法用于学习图像紧密的二值编码。在图像检索领域，尽管图像的形貌变化带来非常大的挑战，
+但是利用CNN学习一个鲁棒性的图像表达为解决这个挑战带来了曙光。
+这边文章就是利用CNN来学习高相似紧凑的二值编码形式，也就是原文作者提到的深度监督Hashing。
+特别的，作者设计了CNN结构，利用一对图像输入，输出判别分类
+作者方法中的网络框架。这个网络包含3个卷积-池化层 和 两个全连接层</description>
+    </item>
+    
+  </channel>
+</rss>

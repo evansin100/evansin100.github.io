@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SW-FRAMEWORK-Tensorflow2.0 on Memo</title>
+    <link>https://evansin100.github.io/categories/sw-framework-tensorflow2.0/</link>
+    <description>Recent content in SW-FRAMEWORK-Tensorflow2.0 on Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://evansin100.github.io/categories/sw-framework-tensorflow2.0/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://evansin100.github.io/post/sw-framework-tensorflow2.0/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evansin100.github.io/post/sw-framework-tensorflow2.0/readme/</guid>
+      <description>Concept Tensorflow 2.0 : Eager + Keras API
+用法和Tensorflow1.x完全不同 等於重頭再來
+Tensorflow1.0 使用 tensorflow 會覺得 coding 好像是給計算機而不是給人看的。
+要先 init session and global variables; input variable 要使用 placeholder 先佔位。 要 session run 才能執行程式。用 operators/operands 建造一個深度學習網絡非常複雜。
+主因是 tensorflow 需要先建構 (靜態) computation graph. 即使是執行一些簡單的運算也要歷經這種麻煩的過程。
+完全不像 python programming 的清晰明白，也就是 Pythonic way!
+一般人(e.g. me) 可能會偏愛用更高階的 keras 或是 pytorch 開發深度學習專案，
+而避免直接使用 tensorflow 開發。除非是非常重視效能的 edge device 應用才必須用 TF or TFLite 開發。
+[4] summarize tensorflow 1.x 的幾個問題：
+ TensorFlow 的代码比较像是給計算機看的 TensorFlow 不容易 debug Computation graph 模式很难描述  Tensorflow1.</description>
+    </item>
+    
+  </channel>
+</rss>

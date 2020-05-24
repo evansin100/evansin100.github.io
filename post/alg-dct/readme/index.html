@@ -1,0 +1,202 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Memo</title>
+    
+    
+    <meta content="Memo" name="keywords">
+    
+    <meta content="Memo - Concept DCT變換和FFT變換都屬於變換壓縮方法(TransformCompression)，
+=&gt; 變換壓縮的一個特點是將(a)從前密度均勻的資訊分佈變換為(b)密度不同的資訊分佈。
+在影象中，低頻部分的資訊量要大於高頻部分的資訊量，
+儘管低頻部分的資料量比高頻部分的資料量要小的多
+例如刪除掉佔50%儲存空間的高頻部分，資訊量的損失可能還不到5%。
+變換編碼有很多種。K–L變換的壓縮效率很高，但演算法實現困難； FFT變換演算法實現簡單，但壓縮效率不是很理想。
+經過多方面的比較，最終勝出的演算法是DCT，一種源自FFT的變換編碼。
+與FFT變換同時使用正弦和餘弦函式來表達訊號不同，
+DCT只使用餘弦函式來表達訊號。DCT變換有多個版本，
+有一種常用的DCT實現過程是這樣的：對一個長度為129（0到128）的訊號進行DCT變換。
+首先，複製點127到點1，使整個訊號變為：
+More DCT DCT变换，也就是离散余弦变换（Discrete Cosine Transform)是图像频域变换的一种，
+实际上可以看成是一种空域的低通滤波器，DCT也可以看做是傅里叶变换的一种特殊情况。
+在傅里叶级数中，如果被展开的函数是实偶函数，那么在傅里叶级数中则只包含余弦项，再将其离散化，由此便可导出离散余弦变化。
+目前，离散余弦变换以及它的改进算法已经成为广泛应用于信号处理和图像处理，
+特别是用于图像压缩和语音压缩编解码的重要工具和技术。这是由于DCT具有很强的“能量集中”的特性，
+大多数的自然信号（包括声音和图像）的能量都集中在离散余弦变换后的低频部分， DCT的作用是吧图像中点和点间的规律呈现出来，虽然DCT本身并没有压缩作用，
+但是却为以后压缩时的“取舍”奠定了必不可少的基础。
+=&gt; 所以壓縮可以針對高頻部份進行壓縮
+Suggest 建議可以看一下範例
+有講說DCT做完候 實際的圖長的怎樣
+還有高低頻的結果分別放在那裡" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+    
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/self/css/default.css">
+    <script async src="/layui/layui.js"></script>
+
+    <link rel="stylesheet" async href="/self/css/markdown.min.css">
+    <link rel="stylesheet" async href="/self/css/gallery.css">
+    
+    
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <script async src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="/">
+        Memo
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
+        
+
+        
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/about/">About</a></li>
+            
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="/post/">Posts</a></dd>
+                
+
+                
+                    
+                        <dd><a href="/about/">About</a></dd>
+                    
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="self-elem-quote self-elem-quote-bg-red markdown-body single-title" >
+                    <h1></h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>0001-01-01</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/alg-dct/">
+            <span class="layui-badge layui-bg-orange" style="vertical-align: 2px;">ALG-DCT</span>
+        </a>
+    
+
+    
+    
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <h1 id="concept">Concept</h1>
+<p>DCT變換和FFT變換都屬於<strong>變換壓縮方法(TransformCompression)</strong>，<br>
+=&gt; 變換壓縮的一個特點是將(a)從前密度均勻的資訊分佈變換為(b)密度不同的資訊分佈。<br>
+在影象中，<strong>低頻部分的資訊量要大於高頻部分的資訊量</strong>，<br>
+<strong>儘管低頻部分的資料量比高頻部分的資料量要小的多</strong><br>
+<strong>例如刪除掉佔50%儲存空間的高頻部分，資訊量的損失可能還不到5%。</strong></p>
+<p>變換編碼有很多種。K–L變換的壓縮效率很高，但演算法實現困難； <br>
+FFT變換演算法實現簡單，但壓縮效率不是很理想。<br>
+經過多方面的比較，最終勝出的演算法是DCT，一種源自FFT的變換編碼。</p>
+<p>與FFT變換同時使用正弦和餘弦函式來表達訊號不同，<br>
+DCT只使用餘弦函式來表達訊號。DCT變換有多個版本，<br>
+有一種常用的DCT實現過程是這樣的：對一個長度為129（0到128）的訊號進行DCT變換。<br>
+首先，複製點127到點1，使整個訊號變為：</p>
+<h1 id="more-dct">More DCT</h1>
+<p>DCT变换，也就是离散余弦变换（Discrete Cosine Transform)是图像频域变换的一种，<br>
+实际上可以看成是一种空域的低通滤波器，DCT也可以看做是傅里叶变换的一种特殊情况。<br>
+在傅里叶级数中，如果被展开的函数是实偶函数，那么在傅里叶级数中则只包含余弦项，再将其离散化，由此便可导出离散余弦变化。</p>
+<p>目前，离散余弦变换以及它的改进算法已经成为广泛应用于信号处理和图像处理，<br>
+特别是用于图像压缩和语音压缩编解码的重要工具和技术。这是由于<strong>DCT具有很强的“能量集中”的特性</strong>，<br>
+<strong>大多数的自然信号（包括声音和图像）的能量都集中在离散余弦变换后的低频部分</strong>，  <br>
+DCT的作用是吧图像中点和点间的规律呈现出来，虽然DCT本身并没有压缩作用，<br>
+但是却为以后压缩时的“取舍”奠定了必不可少的基础。<br>
+=&gt; 所以壓縮可以針對高頻部份進行壓縮</p>
+<h1 id="suggest">Suggest</h1>
+<p>建議可以看一下範例<br>
+有講說DCT做完候 實際的圖長的怎樣<br>
+還有高低頻的結果分別放在那裡</p>
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/"><p class="footer-url">home</p></a>
+            </div>
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/about/"><p class="footer-url">About</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TOOL-Pruning on Memo</title>
+    <link>https://evansin100.github.io/categories/tool-pruning/</link>
+    <description>Recent content in TOOL-Pruning on Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://evansin100.github.io/categories/tool-pruning/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://evansin100.github.io/post/tool-pruning/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evansin100.github.io/post/tool-pruning/readme/</guid>
+      <description>Table Concept 模型剪枝（Model Pruning）是一种模型压缩方法，
+对深度神经网络的稠密连接引入稀疏性，
+通过将“不重要”的权值直接置零 =&amp;gt; 来减少非零权值数量
+最近比较流行基于幅度的权值剪枝方法【4】，该方法将权值取绝对值，
+与设定的 threshhold 值进行比较，低于门限的权值被置零。
+基于幅度的权值剪枝算法计算高效，可以应用到大部分模型和数据集。
+TensorFlow 也使用了基于幅度的权值剪枝算法
+模型训练时剪枝，只需选定需要剪枝的层，对于选中做剪枝的层增加一个二进制掩模（mask）变量，
+形状和该层的权值张量形状完全相同。该掩模决定了哪些权值参与前向计算。
+掩模更新算法则需要为 TensorFlow 训练计算图注入特殊运算符，对当前层权值按绝对值大小排序，
+对幅度小于一定门限的权值将其对应掩模值设为 0。
+反向传播梯度也经过掩模，被屏蔽的权值（mask 为 0）在反向传播步骤中无法获得更新量
+因為有些weight變成0了,所以會再用一個稀疏矩陣index來存對應的位置 TensorFlow 代码目录 tensorflow/contrib/model_pruning/ 提供了对 TensorFlow 框架的扩展，
+=&amp;gt;可在模型训练时实现剪枝。
+Concept 2 剪枝就是利用某一个准则对某一组或某一个权值置0
+从而达到将网络神经元置0以达到稀疏化网络连接从
+而加快整个推理过程及缩小模型大小的迭代过程，这个准则有暴力穷尽组合排忧、
+使用对角 Hessian 逼近计算每个权值的重要性、基于一阶泰勒展开的模型代价函数来对权值排序、
+基于L1绝对值的权值参数大小进行排序、基于在小验证集上的影响进行分值分配排序等方法，
+而某一组或某一个网络权值则可以是整个卷积核、全连接层、卷积核或全连接层上的某个权重参数，
+剪枝的目的是将冗余的神经元参数置0减小模型大小(需要特殊的模型存储方式)
+减少计算参数（需要某种特殊的硬件计算方式）
+稀疏化网络连接加快推理速度，剪枝前后的网络连接对比图如下
+Implementation 对每个被选中做剪枝的层增加一个二进制掩模（mask）变量，
+形状和该层的权值张量形状完全相同。该掩模决定了哪些权值参与前向计算。
+掩模更新算法则需要为 TensorFlow 训练计算图注入特殊运算符，
+对当前层权值按绝对值大小排序，对幅度小于一定门限的权值将其对应掩模值设为 0。
+反向传播梯度也经过掩模，被屏蔽的权值（mask 为 0）在反向传播步骤中无法获得更新量。
+研究发现稀疏度不宜从一开始就设置最大，这样容易将重要的权值剪掉造成无法挽回的准确率损失，
+更好的方法是渐进稀疏度，从初始稀疏度 （一般为 0 ）开始，逐步增大到最终稀疏度 ，
+这期间二进制掩模变量 mask 经历了 n 次更新，每次更新时的门限由当时的稀疏度决定，稀疏度由如下公式计算得到
+初始时刻，稀疏度提升较快，而越到后面，稀疏度提升速度会逐渐放缓，
+这个比较符合直觉，因为初始时有大量冗余的权值，而越到后面保留的权值数量越少，</description>
+    </item>
+    
+  </channel>
+</rss>

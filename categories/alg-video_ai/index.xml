@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ALG-Video_AI on Memo</title>
+    <link>https://evansin100.github.io/categories/alg-video_ai/</link>
+    <description>Recent content in ALG-Video_AI on Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://evansin100.github.io/categories/alg-video_ai/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://evansin100.github.io/post/alg-video_ai/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evansin100.github.io/post/alg-video_ai/readme/</guid>
+      <description>Concept Medical images like MRIs, CTs (3D images) are very similar to videos -
+both of them encode 2D spatial information over a 3rd dimension.
+Much like diagnosing abnormalities from 3D images, action recognition from videos would require capturing context
+from entire video rather than just capturing information from each frame
+Challenges Action recognition task involves the identification of different actions
+from video clips (a sequence of 2D frames) where the action may or may not be</description>
+    </item>
+    
+  </channel>
+</rss>

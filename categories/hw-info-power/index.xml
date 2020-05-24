@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HW-INFO-Power on Memo</title>
+    <link>https://evansin100.github.io/categories/hw-info-power/</link>
+    <description>Recent content in HW-INFO-Power on Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://evansin100.github.io/categories/hw-info-power/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://evansin100.github.io/post/hw-info-power/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evansin100.github.io/post/hw-info-power/readme/</guid>
+      <description>Summary  電壓 (V)：單位帶電粒子所擁有的電能量。  標準單位是 V (伏)，1 J / 1 C = 1 V。   電功率 (P)：單位時間內提供或消耗的電能量,  標準單位是 W (瓦)，1 J / 1 s = 1 W。 所以可以再用來x時間,就可以算出最後的電能量   電能量：就&amp;hellip;電能量。  標準單位是 J (焦耳)。     Formula 瓦特-秒 = 焦耳 = V x I x t V 電壓, I 電流(ampere), t 時間 設某個烤箱功率1000瓦特，電壓100伏特(V)那麼它通過的電流為10安培(A) 反過來說100伏特的電壓通過10安培的電流，可以產生1000瓦特的功率。 若電壓為200伏特，功率不變(1000瓦)，則只需要5安培的電流
+若電壓為200伏特，電流不變(10安培)則可以產生2000瓦特的功率。
+電學公式, 直流或交流單相
+P功率單位瓦特=V電壓 * I電流
+歐姆定律=&amp;raquo;I電流=V電壓 / R電阻 ( 此公式帶入功率的公式)</description>
+    </item>
+    
+  </channel>
+</rss>

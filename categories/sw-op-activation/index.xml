@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SW-OP-Activation on Memo</title>
+    <link>https://evansin100.github.io/categories/sw-op-activation/</link>
+    <description>Recent content in SW-OP-Activation on Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://evansin100.github.io/categories/sw-op-activation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://evansin100.github.io/post/sw-op-activation/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evansin100.github.io/post/sw-op-activation/readme/</guid>
+      <description>Purpose 使用&amp;quot;激勵函數&amp;quot;的目的
+懶人包：激勵函數主要作用是引入非線性
+在類神經網路中如果不使用激勵函數，那麼在類神經網路中皆是以上層輸入的線性組合作為這一層的輸出
+（也就是矩陣相乘），輸出和輸入依然脫離不了線性關係，做深度類神經網路便失去意義 =&amp;gt; 所以就是要讓數值比較亂一點就是了
+Requirement (1)非線性(not y=ax linear function),(2)可微分 (因為要可以訓練)
+只要滿足這兩個就算activation function
+Comparison  sigmoid函数也叫Logistic函数 然而Sigmoid存在著三大缺點: A. 容易出現梯度消失gradient vanishing (上面有介紹) B. 函數輸出並不是zero-centered : =&amp;gt; 因為產生的值 當x=0(input)的時候,output不是0,而是約等於0.4多 C. 指數運算較為耗時 &amp;lt;/td&amp;gt;   這也是個常用於分類問題的activation function，輸出範圍介於[-1, 1] ，輸出範圍會有正有負，也是個嚴格遞增函數，他的微分是f&#39;(x) = 1 - f^2(x)。 實際應用上跟sigmoid function差不多，tanh收斂到1跟-1的速度比較快， 所以容易學的比較慢一些，相對sigmoid function的學習表現也不是非常好 &amp;lt;/td&amp;gt;   1. 梯度消失問題 (vanishing gradient problem) 對使用反向傳播訓練的類神經網絡來說，梯度的問題是最重要的， 使用 sigmoid 和 tanh 函數容易發生梯度消失問題，是類神經網絡加深時主要的訓練障礙。 具體的原因是這兩者函數在接近飽和區 (如sigmoid函數在 [-4, +4] 之外)， 求導後趨近於0，也就是所謂梯度消失， 造成更新的訊息無法藉由反向傳播傳遞 2. 類神經網路的稀疏性（奧卡姆剃刀原則） Relu會使部分神經元的輸出為0，可以讓神經網路變得稀疏，緩解過度擬合的問題 3.</description>
+    </item>
+    
+  </channel>
+</rss>

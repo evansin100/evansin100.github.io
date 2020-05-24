@@ -1,0 +1,224 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Memo</title>
+    
+    
+    <meta content="Memo" name="keywords">
+    
+    <meta content="Memo - Summary  重點還是fakequant 但有分(1) by script -&gt; 可以進行run inference,更新activation min/max 或者是(2) by tool -&gt; by default range直接轉成fakequant_pb https://github.com/evansin100/Quantize/blob/master/ direct%20quant/README.md &lt;/td&gt;   (0) 依然是透過fake quant機制 (1) fakequant會在re-train過程中,更新min/max ..etc (2) 然後weight也可以做對應的調整來提高accuracy =&gt; range auto update https://github.com/evansin100/Quantize/blob/master/ fake_quantization/default_ranges_min,max/README.md =&gt; fake quant細節 https://github.com/evansin100/Quantize/tree/master/fake_quantization &lt;/td&gt;  Key Example 建議必看這個link
+ (1) 來了解training產生checkpoint (2) 然後自己建構eval graph(避免有多餘的training node)  quant model除了原本的model圖之外 還要再透過tf.contrib.quantize.create_eval_graph()把min/max加進去   (3) 在freeze pb file (4) 最後再優化產生 tflite https://github.com/evansin100/SW-FRAMEWORK-Tensorflow/tree/master/Training/Training-with-Slim/Example/mobilenetv2_quant  Quantization Concept TensorFlow的量化是通過將&quot;預測的操作轉換成等價的8位版本&quot;的操作來實現" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+    
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/self/css/default.css">
+    <script async src="/layui/layui.js"></script>
+
+    <link rel="stylesheet" async href="/self/css/markdown.min.css">
+    <link rel="stylesheet" async href="/self/css/gallery.css">
+    
+    
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <script async src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="/">
+        Memo
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
+        
+
+        
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/about/">About</a></li>
+            
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="/post/">Posts</a></dd>
+                
+
+                
+                    
+                        <dd><a href="/about/">About</a></dd>
+                    
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="self-elem-quote self-elem-quote-bg-red markdown-body single-title" >
+                    <h1></h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>0001-01-01</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/tool-quantize/">
+            <span class="layui-badge layui-bg-orange" style="vertical-align: 2px;">TOOL-Quantize</span>
+        </a>
+    
+
+    
+    
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <h1 id="summary">Summary</h1>
+<!-- raw HTML omitted -->
+<pre><code>      重點還是fakequant   
+      但有分(1) by script -&gt; 可以進行run inference,更新activation min/max
+      或者是(2) by tool -&gt; by default range直接轉成fakequant_pb   
+      https://github.com/evansin100/Quantize/blob/master/
+      direct%20quant/README.md  
+&lt;/td&gt;        
+</code></pre>
+<!-- raw HTML omitted -->
+<pre><code>      (0) 依然是透過fake quant機制  
+      (1) fakequant會在re-train過程中,更新min/max ..etc   
+      (2) 然後weight也可以做對應的調整來提高accuracy  
+      =&gt; range auto update 
+      https://github.com/evansin100/Quantize/blob/master/
+      fake_quantization/default_ranges_min,max/README.md  
+      =&gt; fake quant細節   
+      https://github.com/evansin100/Quantize/tree/master/fake_quantization   
+&lt;/td&gt;    
+</code></pre>
+<!-- raw HTML omitted -->
+<h1 id="key-example">Key Example</h1>
+<p>建議必看這個link</p>
+<ul>
+<li>(1) 來了解training產生checkpoint</li>
+<li>(2) 然後自己建構eval graph(避免有多餘的training node)
+<ul>
+<li>quant model除了原本的model圖之外</li>
+<li>還要再透過tf.contrib.quantize.create_eval_graph()把min/max加進去</li>
+</ul>
+</li>
+<li>(3) 在freeze pb file</li>
+<li>(4) 最後再優化產生 tflite
+<a href="https://github.com/evansin100/SW-FRAMEWORK-Tensorflow/tree/master/Training/Training-with-Slim/Example/mobilenetv2_quant">https://github.com/evansin100/SW-FRAMEWORK-Tensorflow/tree/master/Training/Training-with-Slim/Example/mobilenetv2_quant</a></li>
+</ul>
+<h1 id="quantization-concept">Quantization Concept</h1>
+<p>TensorFlow的量化是通過將&quot;預測的操作轉換成等價的8位版本&quot;的操作來實現<br>
+<strong>所以可以看到input and output其實都不變,只是內部計算改了</strong><br>
+(1) 左側是原始的Relu操作，輸入和輸出均是浮點數。<br>
+(2) 右側是量化後的Relu操作，先根據輸入的浮點數計算最大值和最小值，<br>
+然後進入量化（Quantize）操作將&quot;輸入資料轉換成8位&rdquo;。<br>
+一般來講，在進入量化的Relu（QuantizedRelu）處理後，<br>
+為了保證輸出層的輸入資料的準確性，還需要進行反量化（Dequantize）的操作，將權重再轉回32位精度，<br>
+來保證預測的準確性。也就是整個模型的前向傳播採用8位段數執行，<br>
+在最後一層之前加上一個反量化層，把8位轉回32位作為輸出層的輸入  <br>
+Note:在一般quantize model,這個input轉換(float32-&gt;uint8) <br>
+是要user自己做的,不能預期會有OP幫你做這個事情<br>
+詳情可以看https://github.com/evansin100/Quantize/tree/master/Example   <br>
+<img src="Selection_189.png" alt="image"></p>
+<h1 id="quantization-retrain-flow">Quantization Retrain Flow</h1>
+<p>因為Retrain比較複雜, 用這個當作例子來解釋大概怎麼做quantization的細節<br>
+(1) 這邊分兩個 先看floating model訓練的結果後<br>
+然後加上fakequant在進行re-train quant會有什麼變化  <br>
+(主要就是修改表示式而已,然後因為conv等等OP得到計算時候的bit還是不同,W一定會再微調) <br>
+<img src="Selection_278.png" alt="image"></p>
+<p>(2) 然後再最後freeze to TFlite model <br>
+fakequant資訊又要怎麼處理<br>
+然後freeze後,訓練好 得到的數值的scale and zero point要合併進去OP (e.g., conv),  <br>
+這樣才可以做quantized計算 e.g., quantize multiply<br>
+<a href="https://github.com/evansin100/Quantize/tree/master/Basics/Quantize-Asymmc-Mul">https://github.com/evansin100/Quantize/tree/master/Basics/Quantize-Asymmc-Mul</a> <br>
+<img src="Selection_279.png" alt="image"></p>
+<h1 id="8bit-training-">8bit Training ?</h1>
+<p>已经有一些使用低精度数值表示的实验了，但那些结果似乎表明，你需要高于八位的精度来处理后向传播和梯度 <br>
+=&gt; 所以一開始的model一定是要用高於8bit產生<br>
+这让训练的实施更复杂，所以仅在推断时使用低精度比较合理。目前已经有了许多大家熟悉的基于浮点数的模型，<br>
+所以如果能直接针对它们进行变换的话会很方便<br>
+=&gt; 因为你训练是需要反向传播和梯度下降的，int8就非常不好做了，<br>
+=&gt; 举个例子就是我们的<strong>学习率一般都是零点几零点几的，你一个int8怎么玩？</strong><br>
+=&gt; 所以訓練還是要靠float才行</p>
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/"><p class="footer-url">home</p></a>
+            </div>
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/about/"><p class="footer-url">About</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

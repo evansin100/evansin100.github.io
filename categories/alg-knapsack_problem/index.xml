@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ALG-knapsack_problem on Memo</title>
+    <link>https://evansin100.github.io/categories/alg-knapsack_problem/</link>
+    <description>Recent content in ALG-knapsack_problem on Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://evansin100.github.io/categories/alg-knapsack_problem/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://evansin100.github.io/post/alg-knapsack_problem/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evansin100.github.io/post/alg-knapsack_problem/readme/</guid>
+      <description>Concept 將一群物品儘量塞進背包裡面，
+ (1) 令背包裡面的物品總價值最高。 (2) 背包沒有容量限制，無論物品是什麼形狀大小，都能塞進背包； (3) 但是背包有重量限制，如果物品太重，就會撐破背包。
+以數學術語來說，背包問題就是選擇一個最理想的物品子集合， 在符合重量限制的前提下、求得最大的利益！ 背包問題是經典的 NP-complete 問題，無法快速求得精確解，只能折衷求得近似解  Solution 1: Greedy 窮舉法是最基本的方法。針對全部物品，窮舉所有子集合，找出物品總重量符合限制、物品總價值最大的子集合。
+所有的子集合總共 O(2ᴺ) 個，驗證一個子集合需時 O(N) ，所以時間複雜度為 O(2ᴺ N) 。其中 N 是物品的數量。
+Solution 2: Dynamic programing 當數值範圍不大時，得以用動態規劃快速求得精確解
+動態規劃是比較有效率的方法。分割問題的方式很簡單：
+對某一件物品來說，我們可以選擇放或不放；然後移去這件物品，縮小問題範疇 =&amp;gt; 動態規劃, 先看一個問題,算目前最佳解,在看另一個問題(併based on之前結果),不斷去縮小問題的範圍
+Example
+假設有一個背包的負重最多可達8公斤，而希望在背包中裝入負重範圍內可得之總價物品，
+假設是水果好了，水果的編號、單價與重量如下所示：
+從空集合開始，每增加一個元素就先求出該階段的最佳解，
+直到所有的元素加入至集合中，最後得到的就是最佳解
+以背包問題為例，我們使用兩個陣列value與item，
+ (1) value表示目前的最佳解所得之總價， (2) item表示最後一個放至背包的水果，  假設有負重量 1～8的背包8個， 並對每個背包求其最佳解。
+逐步將水果放入背包中，並求該階段的最佳解：
+    </description>
+    </item>
+    
+  </channel>
+</rss>

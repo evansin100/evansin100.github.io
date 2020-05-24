@@ -1,0 +1,215 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Memo</title>
+    
+    
+    <meta content="Memo" name="keywords">
+    
+    <meta content="Memo - Overview  它有60000个训练样本集和10000个测试样本集， 每个样本图像的宽高为28*28。此数据集是以二进制存储的，不能直接以图像格式查看， 不过很容易找到将其转换成图像格式的工具 &lt;/td&gt;   COCO : segmentation COCO的 全称是Common Objects in COntext， COCO数据集是微软团队获取的一个可以用来 图像recognition&#43;segmentation&#43;captioning 数据集， 该数据集主要有的特点如下： （1）Object segmentation （2）Recognition in Context （3）Multiple objects per image （4）More than 300,000 images （5）More than 2 Million instances （6）80 object categories （7）5 captions per image （8）Keypoints on 100,000 people 从这篇文章中，我们了解了这个数据集以scene understanding为目标， 主要从复杂的日常场景中截取，图像中的目标通过精确的segmentation进行位置的标定。 图像包括91类目标，328,000影像和2,500,000个label。 该数据集主要解决3个问题：目标检测，目标之间的上下文关系， 目标的2维上的精确定位。数据集的对比示意图： &lt;/td&gt;   Cifar 10 : classification Cifar 是加拿大政府牵头投资的一个先进科学项目研究所。 Cifar-10 由60000张32*32的 RGB 彩色图片构成， 共10个分类。50000张训练，10000张测试（交叉验证）。 这个数据集最大的特点在于将识别迁移到了普适物体， 而且应用于多分类（姊妹数据集Cifar-100达到100类，ILSVRC比赛则是1000类） &lt;/td&gt;   VOC : classification, detection, segementation PASCAL VOC挑战赛 （The PASCAL Visual Object Classes ） 是一个世界级的计算机视觉挑战赛, PASCAL全称：Pattern Analysis, Statical Modeling and Computational Learning，是一个由欧盟资助的网络组织。 很多优秀的计算机视觉模型比如分类，定位，检测，分割，动作识别等模型 都是基于PASCAL VOC挑战赛及其数据集上推出的， 尤其是一些目标检测模型（比如大名鼎鼎的R CNN系列，以及后面的YOLO，SSD等）。 PASCAL VOC从2005年开始举办挑战赛，每年的内容都有所不同， *从最开始的分类，到后面逐渐增加检测，分割，人体布局，动作识别** （Object Classification 、Object Detection、 Object Segmentation、Human Layout、Action Classification）等内容， 数据集的容量以及种类也在不断的增加和改善。 该项挑战赛催生出了一大批优秀的计算机视觉模型（尤其是以深度学习技术为主的） &lt;/td&gt;  " name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+    
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/self/css/default.css">
+    <script async src="/layui/layui.js"></script>
+
+    <link rel="stylesheet" async href="/self/css/markdown.min.css">
+    <link rel="stylesheet" async href="/self/css/gallery.css">
+    
+    
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <script async src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="/">
+        Memo
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
+        
+
+        
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/about/">About</a></li>
+            
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="/post/">Posts</a></dd>
+                
+
+                
+                    
+                        <dd><a href="/about/">About</a></dd>
+                    
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="self-elem-quote self-elem-quote-bg-red markdown-body single-title" >
+                    <h1></h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>0001-01-01</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/alg-dataset/">
+            <span class="layui-badge layui-bg-orange" style="vertical-align: 2px;">ALG-DATASET</span>
+        </a>
+    
+
+    
+    
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <h1 id="overview">Overview</h1>
+<!-- raw HTML omitted -->
+<pre><code>    它有60000个训练样本集和10000个测试样本集，  
+    每个样本图像的宽高为28*28。此数据集是以二进制存储的，不能直接以图像格式查看，
+    不过很容易找到将其转换成图像格式的工具
+&lt;/td&gt;    
+</code></pre>
+<!-- raw HTML omitted -->
+<pre><code>    COCO : segmentation  
+  
+      COCO的 全称是Common Objects in COntext，   
+      COCO数据集是微软团队获取的一个可以用来 
+      图像recognition+segmentation+captioning 数据集，
+      该数据集主要有的特点如下：   
+      （1）Object segmentation   
+      （2）Recognition in Context   
+      （3）Multiple objects per image   
+      （4）More than 300,000 images   
+      （5）More than 2 Million instances   
+      （6）80 object categories   
+      （7）5 captions per image    
+      （8）Keypoints on 100,000 people   
+
+      从这篇文章中，我们了解了这个数据集以scene understanding为目标，   
+      主要从复杂的日常场景中截取，图像中的目标通过精确的segmentation进行位置的标定。   
+      图像包括91类目标，328,000影像和2,500,000个label。  
+      该数据集主要解决3个问题：目标检测，目标之间的上下文关系，
+      目标的2维上的精确定位。数据集的对比示意图：   
+&lt;/td&gt;    
+</code></pre>
+<!-- raw HTML omitted -->
+<pre><code>     Cifar 10 : classification   
+     
+      Cifar 是加拿大政府牵头投资的一个先进科学项目研究所。  
+      Cifar-10 由60000张32*32的 RGB 彩色图片构成，
+      共10个分类。50000张训练，10000张测试（交叉验证）。   
+      这个数据集最大的特点在于将识别迁移到了普适物体，
+      而且应用于多分类（姊妹数据集Cifar-100达到100类，ILSVRC比赛则是1000类）   
+&lt;/td&gt;    
+</code></pre>
+<!-- raw HTML omitted -->
+<pre><code>    VOC : classification, detection, segementation  
+
+      PASCAL VOC挑战赛 （The PASCAL Visual Object Classes ）
+      是一个世界级的计算机视觉挑战赛,    
+      
+      PASCAL全称：Pattern Analysis, 
+      Statical Modeling and Computational Learning，是一个由欧盟资助的网络组织。  
+      很多优秀的计算机视觉模型比如分类，定位，检测，分割，动作识别等模型
+      都是基于PASCAL VOC挑战赛及其数据集上推出的，   
+      尤其是一些目标检测模型（比如大名鼎鼎的R CNN系列，以及后面的YOLO，SSD等）。   
+
+      PASCAL VOC从2005年开始举办挑战赛，每年的内容都有所不同，  
+      *从最开始的分类，到后面逐渐增加检测，分割，人体布局，动作识别**     
+      （Object Classification 、Object Detection、
+      Object Segmentation、Human Layout、Action Classification）等内容，   
+      数据集的容量以及种类也在不断的增加和改善。
+      该项挑战赛催生出了一大批优秀的计算机视觉模型（尤其是以深度学习技术为主的）      
+&lt;/td&gt;    
+</code></pre>
+<!-- raw HTML omitted -->
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/"><p class="footer-url">home</p></a>
+            </div>
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/about/"><p class="footer-url">About</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

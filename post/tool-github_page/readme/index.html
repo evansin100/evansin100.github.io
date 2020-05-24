@@ -1,0 +1,247 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Memo</title>
+    
+    
+    <meta content="Memo" name="keywords">
+    
+    <meta content="Memo - Hugo&#43;Github Pages Hugo在Github Pages上建置Blog，比起Hexo簡單不少，而且效能也好， 跟Hexo一樣是使用Markdown來撰寫文章，非常適合程式設計師使用
+Hugo本身是使用Go語言編寫，可以讓使用者快速建置一個靜態網站
+安裝 Hugo sudo apt install linuxbrew-wrapper
+sudo apt-get install build-essential
+brew install hugo
+export PATH=/home/linuxbrew/.linuxbrew/bin/:$PATH
+初始化 Blog (private repo) 先create一個private repo &ldquo;evansin100.github.io.blog&rdquo;
+hugo new site 目標資料夾路徑
+=&gt; hugo new site /home/evan/evansin-github/evansin.github.io.blog/
+成功的話就會在底下出現一堆訊息，該資料夾可以視為根目錄
+安裝主題  Hugo有許多主題可以選擇，選擇一個自己看得順眼的主題  https://themes.gohugo.io/   step 1: 先在cmd移動到themes資料夾(資料夾folder中)  =&gt; ~/evansin-github/evansin.github.io.blog/themes git clone https://github.com/ertuil/ertuil.git   step 2: 所以可以下載很多的theme,然後透過指定的方式,隨意切換theme step 3: Hugo 在生成 SSG 時會使用到 config.toml 檔案的設定內容。  我們可以將之前 Mainroad theme 中的 config." name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+    
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/self/css/default.css">
+    <script async src="/layui/layui.js"></script>
+
+    <link rel="stylesheet" async href="/self/css/markdown.min.css">
+    <link rel="stylesheet" async href="/self/css/gallery.css">
+    
+    
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <script async src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="/">
+        Memo
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
+        
+
+        
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/about/">About</a></li>
+            
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="/post/">Posts</a></dd>
+                
+
+                
+                    
+                        <dd><a href="/about/">About</a></dd>
+                    
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="self-elem-quote self-elem-quote-bg-red markdown-body single-title" >
+                    <h1></h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>0001-01-01</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/tool-github_page/">
+            <span class="layui-badge layui-bg-orange" style="vertical-align: 2px;">TOOL-github_page</span>
+        </a>
+    
+
+    
+    
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <h1 id="hugogithub-pages">Hugo+Github Pages</h1>
+<p>Hugo在Github Pages上建置Blog，比起Hexo簡單不少，而且效能也好， <br>
+跟Hexo一樣是使用Markdown來撰寫文章，非常適合程式設計師使用<br>
+Hugo本身是使用Go語言編寫，可以讓使用者快速建置一個靜態網站</p>
+<h1 id="安裝-hugo">安裝 Hugo</h1>
+<p>sudo apt install linuxbrew-wrapper<br>
+sudo apt-get install build-essential<br>
+brew install hugo<br>
+export PATH=/home/linuxbrew/.linuxbrew/bin/:$PATH</p>
+<h1 id="初始化-blog-private-repo">初始化 Blog (private repo)</h1>
+<p>先create一個private repo &ldquo;evansin100.github.io.blog&rdquo;<br>
+hugo new site 目標資料夾路徑<br>
+=&gt; hugo new site /home/evan/evansin-github/evansin.github.io.blog/<br>
+成功的話就會在底下出現一堆訊息，該資料夾可以視為根目錄</p>
+<h1 id="安裝主題">安裝主題</h1>
+<ul>
+<li>Hugo有許多主題可以選擇，選擇一個自己看得順眼的主題
+<ul>
+<li><a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a></li>
+</ul>
+</li>
+<li>step 1: 先在cmd移動到themes資料夾(資料夾folder中)
+<ul>
+<li>=&gt; ~/evansin-github/evansin.github.io.blog/themes</li>
+<li>git clone <a href="https://github.com/ertuil/ertuil.git">https://github.com/ertuil/ertuil.git</a></li>
+</ul>
+</li>
+<li>step 2: 所以可以下載很多的theme,然後透過指定的方式,隨意切換theme</li>
+<li>step 3: Hugo 在生成 SSG 時會使用到 config.toml 檔案的設定內容。
+<ul>
+<li>我們可以將之前 Mainroad theme 中的 config.toml 修改後加以使用</li>
+<li>將 mainroid 的 config.toml 覆蓋原先的預設值</li>
+<li>cp themes/ertuil/exampleSite/config.toml .</li>
+<li>然後再來修改 使用文字編輯器打開 config.toml</li>
+<li>baseURL = &ldquo;<a href="https://evansin100.github.io/%22">https://evansin100.github.io/&quot;</a></li>
+</ul>
+</li>
+<li>step 4: 將 /themes/casper 中的 static 和 layouts 資料夾複製，取代根目錄中的 static 和 layouts 資料夾
+<ul>
+<li>cp -rf themes/ertuil/static/* static/</li>
+<li>cp -rf themes/ertuil/layouts/* layouts/</li>
+</ul>
+</li>
+</ul>
+<h1 id="創建頁面">創建頁面</h1>
+<p>關於頁面：在根目錄下指令<br>
+/evansin-github/evansin.github.io.blog$ hugo new about.md<br>
+/evansin-github/evansin.github.io.blog$ gedit content/about.md<br>
+<strong>一般頁面：建議使用同一個資料夾集中管理，例如在根目錄下指令</strong>    <br>
+hugo new post/welcome.md <br>
+=&gt; 所以內容都放在post中</p>
+<h1 id="預覽generate-webpages">預覽/generate webpages</h1>
+<p>產生靜態頁面：在根目錄下指令
+hugo
+會產生Blog的靜態頁面，預設放在public資料夾底下
+預覽：在根目錄下指令<br>
+hugo server</p>
+<h1 id="部署到github-pages">部署到Github Pages</h1>
+<ul>
+<li>(1) 和 jekyll 比較不一樣的是，由於 github 不支援直接建置 hugo 的專案，</li>
+<li>(2) 因此要發布的話，要把建置出來的 public 目錄 push 到原本在 yourname.github.io 的專案，而不像 jekyll 只需要 push 建置前的就好。
+<ul>
+<li>cd /evansin-github/evansin100.github.io</li>
+<li>cp -rf ../evansin100.github.io.blog/public/* .</li>
+<li>git push</li>
+<li>(通常要等個幾分鐘,才可以在網站可以看到效果 =&gt; 不會即時有效果)</li>
+</ul>
+</li>
+<li>(3) 所以最後會有兩個 git project，
+<ul>
+<li>(a) 其中一個是包含整個 hugo 專案的原始碼 =&gt; evansin100.github.io.blog</li>
+<li>(b) 另一個是要建置好的網站程式碼 =&gt; evansin100.github.io</li>
+<li>hugo 專案原始碼可以放在 private 的 github 專案，或是你想放在其他代碼託管網站都可以，</li>
+<li>而建置好的網站程式碼則是推到 yourname.github.io 的專案裡面。</li>
+</ul>
+</li>
+<li>(4) <a href="http://evansin100.github.io">http://evansin100.github.io</a>
+<ul>
+<li>看到的內容 和你直接點開index.html是一樣的</li>
+<li>也和hugo server中看到的畫面相同</li>
+</ul>
+</li>
+</ul>
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/"><p class="footer-url">home</p></a>
+            </div>
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/about/"><p class="footer-url">About</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

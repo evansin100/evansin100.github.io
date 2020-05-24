@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SW-LANG-Octave on Memo</title>
+    <link>https://evansin100.github.io/categories/sw-lang-octave/</link>
+    <description>Recent content in SW-LANG-Octave on Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://evansin100.github.io/categories/sw-lang-octave/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://evansin100.github.io/post/sw-lang-octave/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evansin100.github.io/post/sw-lang-octave/readme/</guid>
+      <description>Concept Octave 可以看作是商业语言 MATLAB 的 GNU 版本，它是一种脚本矩阵语言（scripting matrix language），
+其语法有大约 95% 可与 MATLAB 兼容。Octave 由工程师设计，
+因此预装了工程师常用的程序，其中很多时间序列分析程序、统计程序、文件命令和绘图命令与 MATLAB 语言相同。
+=&amp;gt; 所以不用錢
+ 优点  (1) 首先，目前没有可用的鲁棒性 Octave 编译器，且没有必要有，因为该软件可以免费安装。 (2) Octave 和 Matlab 的语言元素相同，除了一些个例，如嵌套函数。  Octave 仍然处于积极开发的状态，每一个偏离 Matlab 语法之处都被视为 bug 或者至少是待解决问题。   (3) Octave 有很多可用工具箱，只要程序不要求图输出，那么在不进行大量更改的前提下，使用 Octave 运行和使用 Matlab 运行差不多。 (4) 图方面的能力是 Matlab 的优势。Matlab 最新版本包括 GUI 设计器，包含大量很棒的可视化特征。 (5) Octave 使用 GNU Plot 或 JHandles 作为图程序包，JHandles 与 Matlab 中的图程序包更接近一些。  但是，Octave 不具备类似 GUI 设计器的组件，其可视化机制很受限且不与 Matlab 兼容。   (6) 集成开发环境也是类似的情况：Octave 有一个 QTOctave 项目，但仍处于早期阶段。 (7) Octave 社区的合作很可能帮助该软件很快提供更好、更兼容的图以及 GUI 能力。   缺点：  它只是 MATLAB 的免费开源版本，无法带给用户新的东西    Install sudo add-apt-repository &amp;ndash;yes https://adoptopenjdk.</description>
+    </item>
+    
+  </channel>
+</rss>

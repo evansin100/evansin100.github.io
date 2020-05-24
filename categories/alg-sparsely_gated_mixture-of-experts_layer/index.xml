@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ALG-sparsely_gated_Mixture-of-Experts_layer on Memo</title>
+    <link>https://evansin100.github.io/categories/alg-sparsely_gated_mixture-of-experts_layer/</link>
+    <description>Recent content in ALG-sparsely_gated_Mixture-of-Experts_layer on Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://evansin100.github.io/categories/alg-sparsely_gated_mixture-of-experts_layer/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://evansin100.github.io/post/alg-sparsely_gated_mixture-of-experts_layer/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evansin100.github.io/post/alg-sparsely_gated_mixture-of-experts_layer/readme/</guid>
+      <description>Concept &amp;ldquo;1370億個參數&amp;rdquo; 谷歌大脑的这项最新研究作者包括 Geoffrey Hinton 和 Jeff Dean，
+论文提出了一个超大规模的神经网络——稀疏门控混合专家层（Sparsely-Gated Mixture-of-Experts layer，MoE）。
+MoE 包含上万个子网络，每个网络的参数更是高达 1370 亿个之多
+=&amp;gt; 超大型網路
+通过灵活控制部分网络，新的技术在大规模语言建模和机器翻译基准测试中，
+花费很小的计算力实现了性能的显著提升。这项工作是深度网络条件计算在产业实践中的首次成功，
+有助于推广神经网络以及新应用的产生
+conditional computation 神经网络吸收信息的能力受其参数数量的限制。有人在理论上提出了条件计算（conditional computation）的概念，
+作为大幅提升模型容量而不会大幅增加计算力需求的一种方法。
+在条件计算中，部分网络的活动以样本数量为基础（active on a per-example basis）。
+然而在实践中，要实现条件计算，在算法和性能方面还存在很大的挑战。
+在本次研究中，我们针对这些问题并最终在实践中发挥出条件计算的潜力，
+在模型容量上得到超过 1000 倍的提升，同时让现代 GPU 集群的计算效率仅发生了微小的损失。
+我们提出了一个稀疏门控混合专家层（Sparsely-Gated Mixture-of-Experts layer，MoE），
+ (1) 由多达数千个前馈子网络组成 =&amp;gt; 很多網路 (2) 可训练的门控网络会决定这些专家层（expert）的稀疏组合，并将其用于每个样本 =&amp;gt; 一些控制邏輯(可訓練)被當作專家
+我们将 MoE 应用于语言建模和机器翻译任务，在这些任务中模型性能（model capacity）对于吸收训练语料库中可用的大量知识至关重要。
+我们提出的模型架构中，高达 1370 亿个参数被卷积地应用于堆叠的 LSTM 层当中。
+在大型语言建模和机器翻译基准测试中，这些模型以更低的计算成本获了得比现有最好技术更好的结果。  利用训练数据和模型大小的规模是深度学习成功的关键。
+当数据集足够大时，增加神经网络的容量（参数数量）可以得到更高的预测精度
+这已在一系列研究领域的工作中得到证实，包括文本，图像，音频等领域。
+对典型的深度学习模型，其中整个模型被激活用于每个示例，由于模型大小和训练样本的数量增加，
+导致训练成本几乎二次方级地增加。但是计算力和分布式计算的进步不能满足这种需求。
+为了提升模型能力，同时不会成比例地增加计算成本，
+已经有前人研究提出了各种形式的条件计算（conditional computation）。
+在这些设计中，网络的大部分在每个示例的基点上（on a per-example basis）可以是活动的（active）或者非活动的（inactive）。</description>
+    </item>
+    
+  </channel>
+</rss>

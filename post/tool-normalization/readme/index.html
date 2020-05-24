@@ -1,0 +1,275 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Memo</title>
+    
+    
+    <meta content="Memo" name="keywords">
+    
+    <meta content="Memo - Normalization Category  (1) 針對數值正規化 (either input(batch/只在同一個layer or weight or 算式) 來解決Internal Covariate Shift (ICS), (2) ICS的問題在於前面的layer的W會影響到後面的layer的input 因為後面layer input = 前面的data x W  Normalization vs Regularization normalization和standardization是差不多的， 都是把数据进行前处理，从而使数值都落入到统一的数值范围
+normalization一般是把数据限定在需要的范围，比如一般都是【0，1】 standardization 一般是指将数据正态化，使平均值1方差为0
+=&gt; 因此normalization和standardization 是针对数据而言的
+消除一些数值差异带来的特种重要性偏见。经过归一化的数据，能加快训练速度，促进算法的收敛
+regularization是在cost function里面加惩罚项，增加建模的模糊性 从而把捕捉到的趋势从局部细微趋势，调整到整体大概趋势
+虽然一定程度上的放宽了建模要求，但是能有效防止over-fitting的问题，增加模型准确性。 =&gt; regularization是针对模型而言
+=&gt; 所以regularization不是normalization的方式一種
+Normalization vs Standardization 首先归一化是为了后面数据处理的方便， 其次是保正程序运行时收敛加快。一般指将数据限制在[0 1]之间。 (1)把数变为（0,1）之间的数，主要是为了数据处理方便提出来的， 把数据映射到0-1之间处理，更便携快速； (2)把有量纲表达式变为无量纲表达式，成为纯量； (3) 一般采用最大-最小规范化对原始数据进行线性变换：X*=（X-Xmin）/(Xmax-Xmin) &lt;/td&gt;   标准化：对原始数据进行缩放处理，限制在一定的范围内。一般指正态化， 即均值为0，方差为1。即使数据不符合正态分布， 也可以采用这种方式方法，标准化后的数据有正有负。 由于信用指标体系的各个指标度量单位是不同的， 为了能够将指标参与评价计算，需要对指标进行规范化处理， 通过函数变换将其数值映射到某个数值区间 =&gt; 所以不會將數值限縮在某個區間(不一定在0-1) （1）数据同趋化处理：解决不同性质数据问题， 对不同性质指标直接加总不能正确反映不同作用力的综合结果， 须先考虑改变逆指标数据性质，使所有指标对测评方案的作用力同趋化， 再加总才能得出正确结果； （2）无量纲化处理：要解决数据的可比性； （3）一般采用Z-score规范化：即均值为0，方差为1的正态分布； &lt;/td&gt;  Why normalization (1) 独立同分布与白化" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+    
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/self/css/default.css">
+    <script async src="/layui/layui.js"></script>
+
+    <link rel="stylesheet" async href="/self/css/markdown.min.css">
+    <link rel="stylesheet" async href="/self/css/gallery.css">
+    
+    
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <script async src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="/">
+        Memo
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
+        
+
+        
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/about/">About</a></li>
+            
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="/post/">Posts</a></dd>
+                
+
+                
+                    
+                        <dd><a href="/about/">About</a></dd>
+                    
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="self-elem-quote self-elem-quote-bg-red markdown-body single-title" >
+                    <h1></h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>0001-01-01</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/tool-normalization/">
+            <span class="layui-badge layui-bg-orange" style="vertical-align: 2px;">TOOL-Normalization</span>
+        </a>
+    
+
+    
+    
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <h1 id="normalization-category">Normalization Category</h1>
+<!-- raw HTML omitted -->
+<pre><code>    (1) 針對數值正規化
+        (either input(batch/只在同一個layer or weight or 算式) 
+        來解決Internal Covariate Shift (ICS), 
+    
+    (2) ICS的問題在於前面的layer的W會影響到後面的layer的input 
+        因為後面layer input = 前面的data x W  
+</code></pre>
+<!-- raw HTML omitted -->
+<p><img src="Selection_032.png" alt="image"></p>
+<h1 id="normalization-vs-regularization">Normalization vs Regularization</h1>
+<p>normalization和standardization是差不多的，  <br>
+都是把数据进行前处理，从而使数值都落入到统一的数值范围<br>
+normalization一般是把数据限定在需要的范围，比如一般都是【0，1】 <br>
+standardization 一般是指将数据正态化，使平均值1方差为0<br>
+=&gt; 因此normalization和standardization 是针对数据而言的<br>
+消除一些数值差异带来的特种重要性偏见。经过归一化的数据，能加快训练速度，促进算法的收敛</p>
+<p>regularization是在cost function里面加惩罚项，增加建模的模糊性 <br>
+从而把捕捉到的趋势从局部细微趋势，调整到整体大概趋势<br>
+虽然一定程度上的放宽了建模要求，但是能有效防止over-fitting的问题，增加模型准确性。  <br>
+=&gt; regularization是针对模型而言<br>
+=&gt; 所以regularization不是normalization的方式一種</p>
+<h1 id="normalization-vs-standardization">Normalization vs Standardization</h1>
+<!-- raw HTML omitted -->
+<pre><code>首先归一化是为了后面数据处理的方便，
+其次是保正程序运行时收敛加快。一般指将数据限制在[0 1]之间。
+(1)把数变为（0,1）之间的数，主要是为了数据处理方便提出来的，
+   把数据映射到0-1之间处理，更便携快速；
+(2)把有量纲表达式变为无量纲表达式，成为纯量；
+(3) 一般采用最大-最小规范化对原始数据进行线性变换：X*=（X-Xmin）/(Xmax-Xmin)
+&lt;/td&gt;    
+</code></pre>
+<!-- raw HTML omitted -->
+<pre><code>  标准化：对原始数据进行缩放处理，限制在一定的范围内。一般指正态化，
+  即均值为0，方差为1。即使数据不符合正态分布，
+  也可以采用这种方式方法，标准化后的数据有正有负。
+  由于信用指标体系的各个指标度量单位是不同的，  
+  为了能够将指标参与评价计算，需要对指标进行规范化处理， 
+  通过函数变换将其数值映射到某个数值区间
+  
+  =&gt; 所以不會將數值限縮在某個區間(不一定在0-1)   
+  
+  （1）数据同趋化处理：解决不同性质数据问题，
+      对不同性质指标直接加总不能正确反映不同作用力的综合结果，
+      须先考虑改变逆指标数据性质，使所有指标对测评方案的作用力同趋化，
+      再加总才能得出正确结果；
+  （2）无量纲化处理：要解决数据的可比性；
+  （3）一般采用Z-score规范化：即均值为0，方差为1的正态分布；  
+&lt;/td&gt;    
+</code></pre>
+<!-- raw HTML omitted -->
+<h1 id="why-normalization">Why normalization</h1>
+<p>(1) 独立同分布与白化<br>
+机器学习界的炼丹师们最喜欢的数据有什么特点？   <br>
+窃以为，莫过于“独立同分布”了，即independent and identically distributed，简称为 i.i.d. <br>
+独立同分布并非所有机器学习模型的必然要求（比如 Naive Bayes 模型就建立在特征彼此独立的基础之上，<br>
+而Logistic Regression 和 神经网络 则在非独立的特征数据上依然可以训练出很好的模型），<br>
+但独立同分布的数据可以简化常规机器学习模型的训练、提升机器学习模型的预测能力，已经是一个共识。</p>
+<p>因此，在把数据喂给机器学习模型之前，“白化（whitening）”是一个重要的数据预处理步骤。白化一般包含两个目的： <br>
+（1）去除特征之间的相关性 —&gt; 独立；  <br>
+（2）使得所有特征具有相同的均值和方差 —&gt; 同分布。  <br>
+白化最典型的方法就是PCA，可以参考阅读 PCA Whitening。</p>
+<p>(2) 深度学习中的 Internal Covariate Shift (ICS) <br>
+深度神经网络模型的训练为什么会很困难？<br>
+其中一个重要的原因是，深度神经网络涉及到很多层的叠加，<br>
+<strong>而每一层的参数更新会导致上层的输入数据分布发生变化 (所以就是中間的w更新,會影響到後面層的input)</strong>      <br>
+通过层层叠加，高层的输入分布变化会非常剧烈，这就使得高层需要不断去重新适应底层的参数更新。<br>
+为了训好模型，我们需要非常谨慎地去设定学习率、初始化权重、以及尽可能细致的参数更新策略。</p>
+<p>ICS 会导致什么问题？<br>
+简而言之，每个神经元的输入数据不再是“独立同分布”。<br>
+其一，上层参数需要不断适应新的输入数据分布，降低学习速度。<br>
+其二，下层输入的变化可能趋向于变大或者变小，导致上层落入饱和区，使得学习过早停止。<br>
+其三，每层的更新都会影响到其它层，因此每层的参数更新策略需要尽可能的谨慎。</p>
+<h1 id="normalization-concept">Normalization concept</h1>
+<p>我们以神经网络中的一个普通神经元为例。神经元接收一组输入向量 <br>
+<img src="Selection_022.png" alt="image"></p>
+<p>由于 ICS 问题的存在， {x} 的分布可能相差很大。<br>
+要解决独立同分布的问题，“理论正确”的方法就是对每一层的数据都进行白化操作。<br>
+然而标准的白化操作代价高昂，特别是我们还希望白化操作是可微的，<br>
+保证白化操作可以通过反向传播来更新梯度。</p>
+<p>因此，以 BN 为代表的 Normalization 方法退而求其次，进行了简化的白化操作。<br>
+<strong>基本思想是：在将  {x} 送给神经元之前，先对其做平移和伸缩变换</strong>   <br>
+将 {x} 的分布规范化成在固定区间范围的标准分布。<br>
+<img src="Selection_023.png" alt="image"></p>
+<p><strong>说好的处理 ICS，第一步都已经得到了标准分布，第二步怎么又给变走了？</strong>  <br>
+<strong>答案是——为了保证模型的表达能力不因为规范化而下降</strong>  <br>
+我们可以看到，第一步的变换将输入数据限制到了一个全局统一的确定范围（均值为 0、方差为 1）。<br>
+下层神经元可能很努力地在学习，但不论其如何变化，<br>
+其输出的结果在交给上层神经元进行处理之前，将被粗暴地重新调整到这一固定范围。<br>
+<strong>所以BN會有兩套參數,先將值先shift/scale,然後再推回來</strong>      <br>
+<strong>因為BN參數是可以學習的,所以不會做白工(做shift/scale再回來不會得到一樣的直),可以適應後面的學習結果</strong></p>
+<p>所以，为了尊重底层神经网络的学习结果，我们将规范化后的数据进行再平移和再缩放，<br>
+使得每个神经元对应的输入范围是针对该神经元量身定制的一个确定范围。<br>
+rescale 和 reshift 的参数都是可学习的，<br>
+这就使得 Normalization 层可以学习如何去尊重底层的学习结果。</p>
+<p>除了充分利用底层学习的能力，另一方面的重要意义在于保证获得非线性的表达能力。<br>
+Sigmoid 等激活函数在神经网络中有着重要作用，<br>
+通过区分饱和区和非饱和区，使得神经网络的数据变换具有了非线性计算能力。<br>
+而第一步的规范化会将几乎所有数据映射到激活函数的非饱和区（线性区），<br>
+仅利用到了线性变化能力，从而降低了神经网络的表达能力。<br>
+而进行再变换，则可以将数据从线性区变换到非线性区，恢复模型的表达能力。</p>
+<p>那么问题又来了——
+<strong>经过这么的变回来再变过去，会不会跟没变一样？</strong><br>
+<strong>不会。因为，再变换引入的两个新参数 g 和 b</strong>   <br>
+可以表示旧参数作为输入的同一族函数，但是新参数有不同的学习动态。<br>
+在旧参数中， x 的均值取决于下层神经网络的复杂关联；<br>
+但在新参数中，去除了与下层计算的密切耦合。新参数很容易通过梯度下降来学习，简化了神经网络的训练。</p>
+<p>那么还有一个问题——<br>
+这样的 Normalization 离标准的白化还有多远？ <br>
+标准白化操作的目的是“独立同分布”。<br>
+独立就不说了，暂不考虑。只是映射到了一个确定的区间范围而已。（所以，这个坑还有得研究呢！）</p>
+<h1 id="normalization-general-formula">Normalization General Formula</h1>
+<p><img src="Selection_024.png" alt="image"></p>
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/"><p class="footer-url">home</p></a>
+            </div>
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/about/"><p class="footer-url">About</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Memo</title>
+    
+    
+    <meta content="Memo" name="keywords">
+    
+    <meta content="Memo - Concept 深度學習的視頻幀內插技術
+利用時域運動關係的視圖擴展，俗稱為視頻內插或者視頻幀率轉換
+（frame rate up conversion，FRUC） Super_SloMo : NVIDIA 2018 CVPR
+MEMC-Net : 2018 CVPR
+IM-NET : 2019
+DAIN : 2019 CVPR
+Usage  &ldquo;视频插值&quot;主要一般会用于一下几个方面：  (1) 慢动作视频生成（slow-motion） (2) 视角合成（view synthesis） (3) 视频码率提升（frame rate up-conversion）    Chanllege  近年来的深度学习网络在应对视频插值任务时所遇到的主要问题和瓶颈，主要有两点:  (1) 无法处理大规模运动场景（large motions） (2) 只有隐式的（implicitly）或干脆没有处理遮挡区域填充问题（occlusions）    Training HOWTO 就是test frame會包裝成3個實際的frame (image triplets) 1 and 3 當作 t and t&#43;1
+2 當作中間插禎的 ground truth(用來確認演算法和ground truth的差異) The training datasets for learning-based methods typically" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+    
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/self/css/default.css">
+    <script async src="/layui/layui.js"></script>
+
+    <link rel="stylesheet" async href="/self/css/markdown.min.css">
+    <link rel="stylesheet" async href="/self/css/gallery.css">
+    
+    
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <script async src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="/">
+        Memo
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
+        
+
+        
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/about/">About</a></li>
+            
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="/post/">Posts</a></dd>
+                
+
+                
+                    
+                        <dd><a href="/about/">About</a></dd>
+                    
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="self-elem-quote self-elem-quote-bg-red markdown-body single-title" >
+                    <h1></h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>0001-01-01</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/alg-memc_motion_estimate_and_motion_compensation/">
+            <span class="layui-badge layui-bg-orange" style="vertical-align: 2px;">ALG-MEMC_Motion_Estimate_and_Motion_Compensation</span>
+        </a>
+    
+
+    
+    
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <h1 id="concept">Concept</h1>
+<p>深度學習的視頻幀內插技術<br>
+利用時域運動關係的視圖擴展，俗稱為視頻內插或者視頻幀率轉換<br>
+（frame rate up conversion，FRUC）  <br>
+Super_SloMo : NVIDIA 2018 CVPR<br>
+MEMC-Net : 2018 CVPR<br>
+IM-NET : 2019<br>
+DAIN : 2019 CVPR</p>
+<h1 id="usage">Usage</h1>
+<ul>
+<li>&ldquo;视频插值&quot;主要一般会用于一下几个方面：
+<ul>
+<li>(1) 慢动作视频生成（slow-motion）</li>
+<li>(2) 视角合成（view synthesis）</li>
+<li>(3) 视频码率提升（frame rate up-conversion）</li>
+</ul>
+</li>
+</ul>
+<h1 id="chanllege">Chanllege</h1>
+<ul>
+<li>近年来的深度学习网络在应对视频插值任务时所遇到的主要问题和瓶颈，主要有两点:
+<ul>
+<li>(1) 无法处理大规模运动场景（large motions）</li>
+<li>(2) 只有隐式的（implicitly）或干脆没有处理遮挡区域填充问题（occlusions）</li>
+</ul>
+</li>
+</ul>
+<h1 id="training-howto">Training HOWTO</h1>
+<p>就是test frame會包裝成3個實際的frame (<strong>image triplets</strong>) <br>
+1 and 3 當作 t and t+1<br>
+2 當作中間插禎的 ground truth(用來確認演算法和ground truth的差異)   <br>
+The training datasets for learning-based methods typically<br>
+contain image triplets from raw video sequences, with the<br>
+first and third frame feeding into the network as inputs and<br>
+the intermediate second frame acting as ground truth [7],<br>
+[8], [9] for output</p>
+<p>By imposing loss functions such as Lpnorm on the difference between the network output and <br>
+ground truth frame pixels, the model parameters can be<br>
+iteratively updated via a gradient descent scheme</p>
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/"><p class="footer-url">home</p></a>
+            </div>
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/about/"><p class="footer-url">About</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

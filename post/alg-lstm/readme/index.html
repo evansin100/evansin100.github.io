@@ -1,0 +1,247 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Memo</title>
+    
+    
+    <meta content="Memo" name="keywords">
+    
+    <meta content="Memo - RNN Problem 在RNN訓練期間，信息不斷地循環往復，神經網絡模型權重的更新非常大。
+因為在更新過程中累積了錯誤梯度，會導致網絡不穩定。極端情況下，
+權重的值可能變得大到溢出並導致NaN值。爆炸通過擁有大於1的值的網絡層反覆累積梯度導致指數增長產生，
+如果值小於1就會出現消失
+請注意RNN、LST及其變體主要是隨著時間的推移使用順序處理。請參閱下圖中的水平箭頭 這個箭頭意味著長距離信息必須在到達當前處理單元之前順序穿過所有單元。
+這表示它可以很容易地被小於0的數相乘很多次而損壞。這就是梯度消失的原因。
+因為有多個cell,每個cell也會有output,但可以只拿最後的cell output如下圖 然後input可以依據時間關係,不斷輸入 LSTM Concept RNN的上述缺點促使科學家開發了一種新的RNN模型變體，
+名為長短期記憶網絡（Long Short Term Memory）。 由於LSTM使用門來控制記憶過程，它可以解決這個問題 (它可以繞過單元節點從而記住更長的時間步驟。因此，LSTM可以消除一部分的梯度消失問題)
+=&gt; 因為有個快速道路bypass
+一個LSTM單位
+這裡使用的符號具有以下含義：
+a）X：縮放的信息 b）&#43;：添加的信息 c）σ：Sigmoid層
+d）tanh：tanh層
+e）h（t-1）：上一個LSTM單元的輸出
+f）c（t-1）：上一個LSTM單元的記憶
+g）X（t）：輸入
+h）c（t）：最新的記憶
+i）h（t）：輸出
+圖中我們可以看出有兩個記憶的state 向量，分別是c和h, 有三個操作閘，分別是forget gate （遺忘閘）、input gate （輸入閘）和output gate （輸出閘）， 有一個輸入向量 x，有三個輸出分別是c和h和y，
+如果當前時階沒有取出輸出則沒有y輸出。圖中FC 代表Fully-connected，全連接
+因為裡面有fully-connected layer, 所以需要大量的內存(weight) 且由於輸入資料在內部反覆遞歸，參數的數目指數級爆炸(所以有多個cell,weight多的狀況更嚴重) Why tanh 為了克服梯度消失問題，我們需要一個二階導數在趨近零點之前能維持很長距離的函數。
+tanh是具有這種屬性的合適的函數
+Why sigmoid =&gt; 由於Sigmoid函數可以輸出0或1，它可以用來決定忘記或記住信息。
+=&gt; 注意LSTM沒有sofmax
+信息通過很多這樣的LSTM單元。圖中標記的LSTM單元有三個主要部分：
+LSTM有一個特殊的架構，它可以讓它忘記不必要的信息。
+Sigmoid層取得輸入X（t）和h（t-1），
+並決定從舊輸出中刪除哪些部分（通過輸出0實現）。
+在我們的例子中，當輸入是「他有一個女性朋友瑪麗亞」時，「大衛」的性別可以被遺忘，
+因為主題已經變成了瑪麗亞。這個門被稱為遺忘門f（t）。這個門的輸出是f（t）* c（t-1）。
+下一步是決定並存儲記憶單元新輸入X（t）的信息。
+Sigmoid層決定應該更新或忽略哪些新信息。" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+    
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/self/css/default.css">
+    <script async src="/layui/layui.js"></script>
+
+    <link rel="stylesheet" async href="/self/css/markdown.min.css">
+    <link rel="stylesheet" async href="/self/css/gallery.css">
+    
+    
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <script async src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="/">
+        Memo
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
+        
+
+        
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/about/">About</a></li>
+            
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="/post/">Posts</a></dd>
+                
+
+                
+                    
+                        <dd><a href="/about/">About</a></dd>
+                    
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="self-elem-quote self-elem-quote-bg-red markdown-body single-title" >
+                    <h1></h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>0001-01-01</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/alg-lstm/">
+            <span class="layui-badge layui-bg-orange" style="vertical-align: 2px;">ALG-LSTM</span>
+        </a>
+    
+
+    
+    
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <h1 id="rnn-problem">RNN Problem</h1>
+<p>在RNN訓練期間，信息不斷地循環往復，神經網絡模型權重的更新非常大。<br>
+因為在更新過程中累積了錯誤梯度，會導致網絡不穩定。極端情況下，<br>
+權重的值可能變得大到溢出並導致NaN值。爆炸通過擁有大於1的值的網絡層反覆累積梯度導致指數增長產生，<br>
+如果值小於1就會出現消失</p>
+<p>請注意RNN、LST及其變體主要是隨著時間的推移使用順序處理。請參閱下圖中的水平箭頭 <br>
+這個箭頭意味著長距離信息必須在到達當前處理單元之前順序穿過所有單元。<br>
+這表示它可以很容易地被小於0的數相乘很多次而損壞。這就是梯度消失的原因。</p>
+<p><img src="https://github.com/evansin100/LSTM/blob/master/Selection_015.png" alt="image"></p>
+<p>因為有多個cell,每個cell也會有output,但可以只拿最後的cell output如下圖 <br>
+然後input可以依據時間關係,不斷輸入 <br>
+<img src="https://github.com/evansin100/LSTM/blob/master/Selection_017.png" alt="image"></p>
+<h1 id="lstm-concept">LSTM Concept</h1>
+<p>RNN的上述缺點促使科學家開發了一種新的RNN模型變體，<br>
+名為長短期記憶網絡（Long Short Term Memory）。 <br>
+由於LSTM使用門來控制記憶過程，它可以解決這個問題  <br>
+(它可以繞過單元節點從而記住更長的時間步驟。因此，LSTM可以消除一部分的梯度消失問題)<br>
+=&gt; 因為有個快速道路bypass</p>
+<p>一個LSTM單位<br>
+這裡使用的符號具有以下含義：<br>
+a）X：縮放的信息   <br>
+b）+：添加的信息 <br>
+c）σ：Sigmoid層<br>
+d）tanh：tanh層<br>
+e）h（t-1）：上一個LSTM單元的輸出<br>
+f）c（t-1）：上一個LSTM單元的記憶<br>
+g）X（t）：輸入<br>
+h）c（t）：最新的記憶<br>
+i）h（t）：輸出</p>
+<p><img src="https://github.com/evansin100/LSTM/blob/master/Selection_014.png" alt="image"></p>
+<p>圖中我們可以看出有兩個記憶的state 向量，分別是c和h, <br>
+有三個操作閘，分別是forget gate （遺忘閘）、input gate （輸入閘）和output gate （輸出閘）， <br>
+有一個輸入向量 x，有三個輸出分別是c和h和y，<br>
+如果當前時階沒有取出輸出則沒有y輸出。圖中FC 代表Fully-connected，全連接</p>
+<p>因為裡面有fully-connected layer, 所以需要大量的內存(weight)   <br>
+且由於輸入資料在內部反覆遞歸，參數的數目指數級爆炸(所以有多個cell,weight多的狀況更嚴重)     <br>
+<img src="https://github.com/evansin100/LSTM/blob/master/Selection_016.png" alt="image"></p>
+<h1 id="why-tanh">Why tanh</h1>
+<p>為了克服梯度消失問題，我們需要一個二階導數在趨近零點之前能維持很長距離的函數。<br>
+tanh是具有這種屬性的合適的函數</p>
+<h1 id="why-sigmoid">Why sigmoid</h1>
+<p>=&gt; 由於Sigmoid函數可以輸出0或1，它可以用來決定忘記或記住信息。<br>
+=&gt; 注意LSTM沒有sofmax</p>
+<p>信息通過很多這樣的LSTM單元。圖中標記的LSTM單元有三個主要部分：</p>
+<p>LSTM有一個特殊的架構，它可以讓它忘記不必要的信息。<br>
+Sigmoid層取得輸入X（t）和h（t-1），<br>
+並決定從舊輸出中刪除哪些部分（通過輸出0實現）。<br>
+在我們的例子中，當輸入是「他有一個女性朋友瑪麗亞」時，「大衛」的性別可以被遺忘，<br>
+因為主題已經變成了瑪麗亞。這個門被稱為遺忘門f（t）。這個門的輸出是f（t）* c（t-1）。</p>
+<p>下一步是決定並存儲記憶單元新輸入X（t）的信息。<br>
+Sigmoid層決定應該更新或忽略哪些新信息。<br>
+tanh層根據新的輸入創建所有可能的值的向量。<br>
+將它們相乘以更新這個新的記憶單元。然後將這個新的記憶添加到舊記憶c（t-1）中，以給出c（t）。<br>
+在我們的例子中，對於新的輸入，他有一個女性朋友瑪麗亞，瑪麗亞的性別將被更新。<br>
+當輸入的信息是，「瑪麗亞在紐約一家著名的餐館當廚師，<br>
+最近他們在學校的校友會上碰面。」時，像「著名」、「校友會」這樣的詞可以忽略，<br>
+像「廚師」、「餐廳」和「紐約」這樣的詞將被更新。</p>
+<p>最後，我們需要決定我們要輸出的內容。Sigmoid層決定我們要輸出的記憶單元的哪些部分。<br>
+然後，我們把記憶單元通過tanh生成所有可能的值乘以Sigmoid門的輸出，<br>
+以便我們只輸出我們決定的部分。在我們的例子中，我們想要預測空白的單詞，<br>
+我們的模型知道它是一個與它記憶中的「廚師」相關的名詞，<br>
+它可以很容易的回答為「烹飪」。我們的模型沒有從直接依賴中學習這個答案，而是從長期依賴中學習它</p>
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/"><p class="footer-url">home</p></a>
+            </div>
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/about/"><p class="footer-url">About</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

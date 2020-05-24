@@ -1,0 +1,193 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Memo</title>
+    
+    
+    <meta content="Memo" name="keywords">
+    
+    <meta content="Memo - 熵 - Entropy 词源 - 最初来源于热力学
+Entropy来源于希腊语，原意：内向，
+即：一个系统不受外部干扰时往内部稳定状态发展的特性。
+定义的其实是一个热力学的系统变化的趋势 1923年，德国科学家普朗克来中国讲学用到entropy这个词， 胡刚复教授看到这个公式，创造了“熵”字，因为“火”和热量有关，定义式又是热量比温度，相当自洽
+是接受的每条消息中包含的信息的平均值。又被称为信息熵、信源熵、平均自信息量。
+可以被理解为不确定性的度量，熵越大，信源的分布越随机
+广义的定义
+熵是描述一个系统的无序程度的变量；
+同样的表述还有，熵是系统混乱度的度量，
+一切自发的不可逆过程都是从有序到无序的变化过程，向熵增的方向进行
+Summary  (1) 信息熵(information entropy) 是衡量随机变量分布的混乱程度，  是随机分布各事件发生的信息量的期望值，随机变量的取值个数越多，状态数也就越多，信息熵就越大，混乱程度就越大。 当随机分布为均匀分布时，熵最大；信息熵推广到多维领域，则可得到联合信息熵；条件熵表示的是在 X 给定条件下，Y 的条件概率分布的熵对 X的期望。   (2) 相对熵(relative entropy - KLD) 可以用来衡量两个概率分布之间的差异。 (3) 交叉熵(cross entropy)  可以来衡量在给定的&quot;真实分布&rdquo;(NN的golden)下，使用非真实分布所指定的策略消除系统的不确定性所需要付出的努力的大小。    " name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+    
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/self/css/default.css">
+    <script async src="/layui/layui.js"></script>
+
+    <link rel="stylesheet" async href="/self/css/markdown.min.css">
+    <link rel="stylesheet" async href="/self/css/gallery.css">
+    
+    
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <script async src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="/">
+        Memo
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
+        
+
+        
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/about/">About</a></li>
+            
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="/post/">Posts</a></dd>
+                
+
+                
+                    
+                        <dd><a href="/about/">About</a></dd>
+                    
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="self-elem-quote self-elem-quote-bg-red markdown-body single-title" >
+                    <h1></h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>0001-01-01</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/alg-entropy/">
+            <span class="layui-badge layui-bg-orange" style="vertical-align: 2px;">ALG-Entropy</span>
+        </a>
+    
+
+    
+    
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <h1 id="熵---entropy">熵 - Entropy</h1>
+<p>词源 - 最初来源于热力学<br>
+Entropy来源于希腊语，原意：内向，<br>
+即：一个系统不受外部干扰时往内部稳定状态发展的特性。<br>
+定义的其实是一个<strong>热力学的系统变化的趋势</strong> <br>
+<img src="Selection_316.png" alt="image"></p>
+<p>1923年，德国科学家普朗克来中国讲学用到entropy这个词，  <br>
+胡刚复教授看到这个公式，创造了“熵”字，因为“火”和热量有关，定义式又是热量比温度，相当自洽<br>
+是接受的每条消息中包含的信息的平均值。又被称为信息熵、信源熵、平均自信息量。<br>
+可以被理解为不确定性的度量，<strong>熵越大，信源的分布越随机</strong></p>
+<p>广义的定义<br>
+熵是描述一个系统的无序程度的变量；<br>
+同样的表述还有，熵是系统混乱度的度量，<br>
+一切自发的不可逆过程都是从有序到无序的变化过程，向熵增的方向进行</p>
+<h1 id="summary">Summary</h1>
+<ul>
+<li>(1) 信息熵(information entropy) 是衡量随机变量分布的混乱程度，
+<ul>
+<li>是随机分布各事件发生的信息量的期望值，随机变量的取值个数越多，状态数也就越多，信息熵就越大，混乱程度就越大。</li>
+<li>当随机分布为均匀分布时，熵最大；信息熵推广到多维领域，则可得到联合信息熵；条件熵表示的是在 X 给定条件下，Y 的条件概率分布的熵对 X的期望。</li>
+</ul>
+</li>
+<li>(2) 相对熵(relative entropy - KLD) 可以用来衡量两个概率分布之间的差异。</li>
+<li>(3) 交叉熵(cross entropy)
+<ul>
+<li>可以来衡量在给定的&quot;真实分布&rdquo;(NN的golden)下，使用非真实分布所指定的策略消除系统的不确定性所需要付出的努力的大小。</li>
+</ul>
+</li>
+</ul>
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/"><p class="footer-url">home</p></a>
+            </div>
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/about/"><p class="footer-url">About</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

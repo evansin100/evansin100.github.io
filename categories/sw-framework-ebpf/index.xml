@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SW-FRAMEWORK-eBPF on Memo</title>
+    <link>https://evansin100.github.io/categories/sw-framework-ebpf/</link>
+    <description>Recent content in SW-FRAMEWORK-eBPF on Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://evansin100.github.io/categories/sw-framework-ebpf/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://evansin100.github.io/post/sw-framework-ebpf/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evansin100.github.io/post/sw-framework-ebpf/readme/</guid>
+      <description>Motivation 大部分情況，其實我們已經可以通過top，pidstat等命令定位到具體是哪一個服務出的問題。
+當然重啟服務可以解決60%以上的服務異常問題，但是重啟後會丟失現場。
+重啟一時爽，一直重啟就不爽了。還是需要定位到具體的問題。我還是希望知道底病根在哪， 最好直接告訴我哪個具體函數，哪條語句導致的問題或者bug。最差也得知道是大致什麼節點的什麼類型故障
+很多人可能會想到GDB。雖然這些工具很偉大，但是這應該不適合我們sre在已經服務已經發病的情況下使用，
+因為線上的服務不能被中止。GDB在調試過程中設置斷點會發出SIGSTOP信號， 這會讓被調試進程進入T (TASK_STOPPED or TASK_TRACED)暫停狀態或跟蹤狀態。 同時 GDB 所基於的 ptrace 這種很古老的系統調用，其中的坑和問題也非常多。
+比如 ptrace 需要改變目標調試進程的父親，還不允許多個調試者同時分析同一個進程， 而且不太熟悉GDB的人可能會把程序調試掛了，這種交互式的追蹤過程通常不考慮生產安全性， 也不在乎性能損耗。另外提一下，strace也是基於ptrace的，所以strace也是對性能不友好的
+那麼就要提到動態追蹤技術了，動態追蹤技術通常通過探針這樣的機制發起查詢。 動態追蹤一般來說是不需要應用目標來配合的，隨時隨地，按需採集
+而且它非常大的優勢為性能消耗極小（通常5%或者更低的水平)
+dynamic tracing 動態追蹤技術（dynamic tracing）是現代軟體的進階除錯和追蹤機制
+在動態追蹤的實作中，一般是通過探針 (probe) 這樣的機制來發起查詢。
+我們會在軟體系統的某個層次，或者某幾個層次上面，安置一些探針，然後我們會自己定義這些探針所關聯的處理程式
+動態追蹤機制如果內建於作業系統，那麼使用者層級的程式即可隨時採集資訊，
+構建出一幅完整的軟體樣貌，從而有效地指導我們做一些很複雜的分析。這裡非常關鍵的一點是，它是非侵入式的
+動態追蹤的工具很多，
+ (1) systemtap (2) perf (3) ftrace (4) sysdig (5) dtrace (6) eBPF =&amp;gt; 但eBPF裡面也有support static tracing  eBPF introduction Berkeley Packet Filter (BPF) 最初的動機的確是封包過濾機制，
+ 但擴充為 eBPF (Extended BPF) 後，就變成 Linux 核心內建的內部行為分析工具包含以下:   (1) 動態追蹤 (dynamic tracing);</description>
+    </item>
+    
+  </channel>
+</rss>

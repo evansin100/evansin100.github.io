@@ -1,0 +1,206 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Memo</title>
+    
+    
+    <meta content="Memo" name="keywords">
+    
+    <meta content="Memo - Concept (for training and inference) PaddlePaddle Keys (1) 同时支持动态图和静态图，兼顾灵活性和高性能
+桨同时为用户提供动态图和静态图两种计算图。动态图组网更加灵活、
+调试网络便捷，实现AI 想法更快速；静态图部署方便、运行速度快，应用落地更高效 (2) 源于实际业务淬炼，提供应用效果领先的官方模型
+飞桨提供的80&#43;官方模型，全部经过真实应用场景的有效验证。
+不仅包含“更懂中文”的NLP 模型，同时开源多个视觉领域国际竞赛冠军算法
+(3) 源于产业实践，输出业界领先的超大规模并行深度学习平台能力 (4) 追求极致速度体验，推理引擎一体化设计实现训练到多端推理的无缝对接
+飞桨完整支持多框架、多硬件和多操作系统，为用户提供高兼容性、高性能的多端部署能力。
+依托业界领先的底层加速库，利用 Paddle Lite和 Paddle Serving 分别实现端侧和服务器上的部署
+飞桨提供高效的自动化模型压缩库 PaddleSlim，实现高精度的模型体积优化，
+并提供业界领先的轻量级模型结构自动搜索Light-NAS，
+对比MobileNet v2在ImageNet 1000类分类任务上精度无损情况下FLOPS 减少17%
+PaddlePaddle Repo (1) Paddle
+飞桨』核心框架，高性能单机、分布式训练和跨平台部署
+https://github.com/PaddlePaddle/Paddle
+(2) Paddle-Lite
+https://github.com/PaddlePaddle/Paddle-Lite Paddle Lite为Paddle-Mobile的升级版， 定位支持包括手机移动端在内更多场景的轻量化高效预测，
+支持更广泛的硬件和平台，是一个高性能、轻量级的深度学习预测引擎 (3) Paddle model
+https://github.com/PaddlePaddle/models
+官方模型库，包含多种学术前沿和工业场景验证的深度学习模型 (4) PaddleHub
+PaddleHub是基于PaddlePaddle生态下的预训练模型管理和迁移学习工具" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+    
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/self/css/default.css">
+    <script async src="/layui/layui.js"></script>
+
+    <link rel="stylesheet" async href="/self/css/markdown.min.css">
+    <link rel="stylesheet" async href="/self/css/gallery.css">
+    
+    
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <script async src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="/">
+        Memo
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
+        
+
+        
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/about/">About</a></li>
+            
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="/post/">Posts</a></dd>
+                
+
+                
+                    
+                        <dd><a href="/about/">About</a></dd>
+                    
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="self-elem-quote self-elem-quote-bg-red markdown-body single-title" >
+                    <h1></h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>0001-01-01</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/sw-framework-paddlepaddle/">
+            <span class="layui-badge layui-bg-orange" style="vertical-align: 2px;">SW-FRAMEWORK-PaddlePaddle</span>
+        </a>
+    
+
+    
+    
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <h1 id="concept-for-training-and-inference">Concept (for training and inference)</h1>
+<h1 id="paddlepaddle-keys">PaddlePaddle Keys</h1>
+<p>(1) 同时支持动态图和静态图，兼顾灵活性和高性能<br>
+桨同时为用户提供动态图和静态图两种计算图。动态图组网更加灵活、<br>
+调试网络便捷，实现AI 想法更快速；静态图部署方便、运行速度快，应用落地更高效 <br>
+<img src="Selection_116.png" alt="image"></p>
+<p>(2) 源于实际业务淬炼，提供应用效果领先的官方模型<br>
+飞桨提供的80+官方模型，全部经过真实应用场景的有效验证。<br>
+不仅包含“更懂中文”的NLP 模型，同时开源多个视觉领域国际竞赛冠军算法<br>
+<img src="Selection_117.png" alt="image"></p>
+<p>(3) 源于产业实践，输出业界领先的超大规模并行深度学习平台能力 <br>
+<img src="Selection_118.png" alt="image"></p>
+<p>(4) 追求极致速度体验，推理引擎一体化设计实现训练到多端推理的无缝对接<br>
+飞桨完整支持多框架、多硬件和多操作系统，为用户提供高兼容性、高性能的多端部署能力。<br>
+依托业界领先的底层加速库，利用 Paddle Lite和 Paddle Serving 分别实现端侧和服务器上的部署<br>
+飞桨提供高效的自动化模型压缩库 PaddleSlim，实现高精度的模型体积优化，<br>
+并提供业界领先的轻量级模型结构自动搜索Light-NAS，<br>
+对比MobileNet v2在ImageNet 1000类分类任务上精度无损情况下FLOPS 减少17%<br>
+<img src="Selection_119.png" alt="image"></p>
+<h1 id="paddlepaddle-repo">PaddlePaddle Repo</h1>
+<p>(1) Paddle<br>
+飞桨』核心框架，高性能单机、分布式训练和跨平台部署<br>
+<a href="https://github.com/PaddlePaddle/Paddle">https://github.com/PaddlePaddle/Paddle</a><br>
+(2) Paddle-Lite<br>
+<a href="https://github.com/PaddlePaddle/Paddle-Lite">https://github.com/PaddlePaddle/Paddle-Lite</a> <br>
+Paddle Lite为Paddle-Mobile的升级版，  <br>
+定位支持包括手机移动端在内更多场景的轻量化高效预测，<br>
+支持更广泛的硬件和平台，是一个高性能、轻量级的深度学习预测引擎 <br>
+(3) Paddle model<br>
+<a href="https://github.com/PaddlePaddle/models">https://github.com/PaddlePaddle/models</a><br>
+官方模型库，包含多种学术前沿和工业场景验证的深度学习模型 <br>
+(4) PaddleHub<br>
+PaddleHub是基于PaddlePaddle生态下的预训练模型管理和迁移学习工具</p>
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/"><p class="footer-url">home</p></a>
+            </div>
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/about/"><p class="footer-url">About</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

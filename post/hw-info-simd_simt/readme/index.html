@@ -1,0 +1,205 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Memo</title>
+    
+    
+    <meta content="Memo" name="keywords">
+    
+    <meta content="Memo - Summary  (1) CPU就是SIMD(NEON instruction)   (1) 一個execution engine/cluster內的threads可以執行同個OpenCL kernel指令 =&gt; SIMT (3) 每個thread可以發一個FMA依然可以處理多個資料指令 =&gt; SIMD   (1) 通常DSP都是VLIW processor,一個instruction,可以有多筆的operation(slot) =&gt; VLIW (2) 然後處理有個slot可以處理vector指令(SIMD) =&gt; SIMD  SIMT Concept SIMT就是GPU,有multiple &ldquo;thread&rdquo;
+SIMD就是一般的vector運算,還是只有一個thread但可以處理多筆data
+SIMT中文译为单指令多线程，英文全称为Single Instruction Multiple Threads
+GPU中的SIMT体系结构相对于CPU的SIMD中的概念。为了有效地管理和执行多个单线程，多处理器采用了SIMT架构。
+不同于CPU中通过SIMD（单指令多数据）来处理矢量数据；
+GPU则使用SIMT，SIMT的好处是无需开发者费力把数据凑成合适的矢量长度，
+并且SIMT允许每个线程有不同的分支。 纯粹使用SIMD不能并行的执行有条件跳转的函数，
+很显然条件跳转会根据输入数据不同在不同的线程中有不同表现， 这个只有利用SIMT才能做到。
+SIMT/SIMD Comparison 不同於CPU中通過SIMD（單指令多資料）來處理向量資料；GPU則使用SIMT，
+SIMT的好處是無需開發者費力把資料湊成合適的向量長度 =&gt; 這個是優點，並且SIMT允許每個執行緒有不同的分支。 純粹使用SIMD不能並行的執行有條件跳轉的函式，
+很顯然條件跳轉會根據輸入資料不同在不同的執行緒中有不同表現，這個只有利用SIMT才能做到。
+在SIMT程式設計模型中如果需要控制單個執行緒的行為，必須使用分支，這會大大的降低效率。
+例如，如果一個warp中需要進行分支（即warp內的執行緒執行的指令指標指向不同的位置），效能將急劇的下降 =&gt;所以要避免if else, for loop判斷,因為會有sync問題 GPU(SIMT)的缺點
+ (1) 平行不夠高，效能不會好：GPU 的運算單元數量很多，不能高度平行化的工作，所能帶來的效益就不高。 (2) 只適合一路油門踩到底：GPU 通常沒有分支預測等複雜的輔助流程控制單元（就算有，也會很慢  " name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+    
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/self/css/default.css">
+    <script async src="/layui/layui.js"></script>
+
+    <link rel="stylesheet" async href="/self/css/markdown.min.css">
+    <link rel="stylesheet" async href="/self/css/gallery.css">
+    
+    
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <script async src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="/">
+        Memo
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
+        
+
+        
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/about/">About</a></li>
+            
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="/post/">Posts</a></dd>
+                
+
+                
+                    
+                        <dd><a href="/about/">About</a></dd>
+                    
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="self-elem-quote self-elem-quote-bg-red markdown-body single-title" >
+                    <h1></h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>0001-01-01</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/hw-info-simd_simt/">
+            <span class="layui-badge layui-bg-orange" style="vertical-align: 2px;">HW-INFO-SIMD_SIMT</span>
+        </a>
+    
+
+    
+    
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <h1 id="summary">Summary</h1>
+<!-- raw HTML omitted -->
+<pre><code>        (1) CPU就是SIMD(NEON instruction)  
+</code></pre>
+<!-- raw HTML omitted -->
+<pre><code>        (1) 一個execution engine/cluster內的threads可以執行同個OpenCL kernel指令 =&gt; SIMT      
+        (3) 每個thread可以發一個FMA依然可以處理多個資料指令 =&gt; SIMD    
+</code></pre>
+<!-- raw HTML omitted -->
+<pre><code>        (1) 通常DSP都是VLIW processor,一個instruction,可以有多筆的operation(slot) =&gt; VLIW    
+        (2) 然後處理有個slot可以處理vector指令(SIMD) =&gt; SIMD  
+</code></pre>
+<!-- raw HTML omitted -->
+<h1 id="simt-concept">SIMT Concept</h1>
+<p>SIMT就是GPU,有multiple &ldquo;thread&rdquo;<br>
+SIMD就是一般的vector運算,還是只有一個thread但可以處理多筆data</p>
+<p>SIMT中文译为单指令多线程，英文全称为Single Instruction Multiple Threads<br>
+GPU中的SIMT体系结构相对于CPU的SIMD中的概念。为了有效地管理和执行多个单线程，多处理器采用了SIMT架构。<br>
+不同于CPU中通过SIMD（单指令多数据）来处理矢量数据；<br>
+GPU则使用SIMT，SIMT的好处是无需开发者费力把数据凑成合适的矢量长度，<br>
+并且SIMT允许每个线程有不同的分支。 纯粹使用SIMD不能并行的执行有条件跳转的函数，<br>
+很显然条件跳转会根据输入数据不同在不同的线程中有不同表现， <br>
+这个只有利用SIMT才能做到。</p>
+<h1 id="simtsimd-comparison">SIMT/SIMD Comparison</h1>
+<p>不同於CPU中通過SIMD（單指令多資料）來處理向量資料；GPU則使用SIMT，<br>
+SIMT的好處是無需開發者費力把資料湊成合適的向量長度 <br>
+=&gt; 這個是優點，並且SIMT允許每個執行緒有不同的分支。 <br>
+純粹使用SIMD不能並行的執行有條件跳轉的函式，<br>
+很顯然條件跳轉會根據輸入資料不同在不同的執行緒中有不同表現，這個只有利用SIMT才能做到。</p>
+<p>在SIMT程式設計模型中如果需要控制單個執行緒的行為，必須使用分支，這會大大的降低效率。<br>
+例如，如果一個warp中需要進行分支（即warp內的執行緒執行的指令指標指向不同的位置），效能將急劇的下降 <br>
+=&gt;所以要避免if else, for loop判斷,因為會有sync問題       <br>
+<img src="Selection_071.png" alt="image"></p>
+<p>GPU(SIMT)的缺點</p>
+<ul>
+<li>(1) 平行不夠高，效能不會好：GPU 的運算單元數量很多，不能高度平行化的工作，所能帶來的效益就不高。</li>
+<li>(2) 只適合一路油門踩到底：GPU 通常沒有分支預測等複雜的輔助流程控制單元（就算有，也會很慢</li>
+</ul>
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/"><p class="footer-url">home</p></a>
+            </div>
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/about/"><p class="footer-url">About</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

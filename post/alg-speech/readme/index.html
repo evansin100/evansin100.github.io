@@ -1,0 +1,219 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Memo</title>
+    
+    
+    <meta content="Memo" name="keywords">
+    
+    <meta content="Memo - Speech- Speech應用也是屬於NLP(自然語言處理)其中一部份
+https://github.com/evansin100/NLP/blob/master/README.md
+Trend Unsuper-vised =&gt; fine-tune for specific task 近年 NLP 界十分流行的兩階段遷移學習會先蒐集大量文本（無需任何標注數據）， 並以無監督的方式訓練一個通用 NLP 模型，
+接著再微調（Fine-tune）該模型以符合特定任務的需求。
+常見的 NLP 任務有文章分類、自然語言推論、問答以及閱讀理解等等。
+這個包含GPT and BERT都是這樣做的
+Comparison  (1) Multilyaer perception (2) 是一種分類的網路架構(和conv不同), (3) 中間可以有很多的hidden layers (4) 可以設計for M input and N output (5) 但不像是RNN有time stamp概念(了解順序),所以比較弱   (1) LSTM and RNN cell只是單純把數值不斷帶下去, (2) shape={batchsize,timestamp} batchsize等於一個cell的input timestamp等於有幾個cell(RNN block) 就是做一個判斷會需要經過多少個RNN block (3) https://github.com/evansin100/Keras/blob/ master/Example/addition_rnn/README.md 這邊有很完整的範例 (4) LSTM 是shared weight(因為是recurrent架構) (5) LSTM 的weight計算(因為是MLP,所以weight很大) a. 假設 num_units 是128 1,2,4 sigmoid and 3 tanh, 他們就分別有128個neuros =&gt; neuron total 個數 = 128 x 4 b." name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+    
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/self/css/default.css">
+    <script async src="/layui/layui.js"></script>
+
+    <link rel="stylesheet" async href="/self/css/markdown.min.css">
+    <link rel="stylesheet" async href="/self/css/gallery.css">
+    
+    
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <script async src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="/">
+        Memo
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
+        
+
+        
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/about/">About</a></li>
+            
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="/post/">Posts</a></dd>
+                
+
+                
+                    
+                        <dd><a href="/about/">About</a></dd>
+                    
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="self-elem-quote self-elem-quote-bg-red markdown-body single-title" >
+                    <h1></h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>0001-01-01</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/alg-speech/">
+            <span class="layui-badge layui-bg-orange" style="vertical-align: 2px;">ALG-Speech</span>
+        </a>
+    
+
+    
+    
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <h1 id="speech-">Speech-</h1>
+<p>Speech應用也是屬於NLP(自然語言處理)其中一部份<br>
+<a href="https://github.com/evansin100/NLP/blob/master/README.md">https://github.com/evansin100/NLP/blob/master/README.md</a></p>
+<h1 id="trend">Trend</h1>
+<p><strong>Unsuper-vised =&gt; fine-tune for specific task</strong>   <br>
+近年 NLP 界十分流行的兩階段遷移學習會先蒐集大量文本（無需任何標注數據），   <br>
+並以無監督的方式訓練一個通用 NLP 模型，<br>
+接著再微調（Fine-tune）該模型以符合特定任務的需求。<br>
+常見的 NLP 任務有文章分類、自然語言推論、問答以及閱讀理解等等。<br>
+<strong>這個包含GPT and BERT都是這樣做的</strong></p>
+<h1 id="comparison">Comparison</h1>
+<!-- raw HTML omitted -->
+<pre><code>    (1) Multilyaer perception   
+    (2) 是一種分類的網路架構(和conv不同),
+    (3) 中間可以有很多的hidden layers   
+    (4) 可以設計for M input and N output  
+    (5) 但不像是RNN有time stamp概念(了解順序),所以比較弱   
+</code></pre>
+<!-- raw HTML omitted -->
+<pre><code>    (1) LSTM and RNN cell只是單純把數值不斷帶下去, 
+    (2) shape={batchsize,timestamp}
+        batchsize等於一個cell的input
+        timestamp等於有幾個cell(RNN block)
+        就是做一個判斷會需要經過多少個RNN block   
+    (3) https://github.com/evansin100/Keras/blob/
+        master/Example/addition_rnn/README.md   
+        這邊有很完整的範例   
+    (4) LSTM 是shared weight(因為是recurrent架構)       
+    (5) LSTM 的weight計算(因為是MLP,所以weight很大)                  
+        a. 假設 num_units 是128   
+           1,2,4 sigmoid and 3 tanh,
+           他們就分別有128個neuros
+           =&gt; neuron total 個數 = 128 x 4
+        b. LSTM cell輸入是28位數
+           因為LSTM t-1 neuron會和 t input結合
+           也就是用cat的方式
+           =&gt; input(data) 個數等於 = 128+28
+        c. 因為LSTM裡面是MLP,每個data和neuron是一對一關係        
+           =&gt; 有點像是LSTM裏面有四層MLP
+           可以得到，四個小黃框的參數一共有 （128+28）*（128 x 4)    
+        note: 下面的link,有解釋為什麼sigmoid,tanh他們是MLP      
+            以及還有包含weight的計算   
+            https://github.com/evansin100/Speech-/
+            blob/master/LSTM/the-number-of-weight/README.md   
+</code></pre>
+<!-- raw HTML omitted -->
+<pre><code>    (1) 一次的輸入timestamp的長度式可以變
+        所以可以避免不必要的padding (有時候只要有幾個字就可以產生下個字)  
+        但batchsize不能改動(因為這個會和RNN block裡面實作有關係)            
+</code></pre>
+<!-- raw HTML omitted -->
+<pre><code>    帶有encode and decode的概念(算是RNN的一個改善)   
+</code></pre>
+<!-- raw HTML omitted -->
+<pre><code>    (1) 也是encode and decode架構,
+    (2) 但input沒有timestamp,
+        而是把全部input embedd成 matrix w/ position(所以都是個定長度)
+</code></pre>
+<!-- raw HTML omitted -->
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/"><p class="footer-url">home</p></a>
+            </div>
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/about/"><p class="footer-url">About</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

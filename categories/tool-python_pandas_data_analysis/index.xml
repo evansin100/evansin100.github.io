@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TOOL-Python_Pandas_data_analysis on Memo</title>
+    <link>https://evansin100.github.io/categories/tool-python_pandas_data_analysis/</link>
+    <description>Recent content in TOOL-Python_Pandas_data_analysis on Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://evansin100.github.io/categories/tool-python_pandas_data_analysis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://evansin100.github.io/post/tool-python_pandas_data_analysis/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evansin100.github.io/post/tool-python_pandas_data_analysis/readme/</guid>
+      <description>Concept Pandas 一樣是 python 的 libary，pandas 很像 excel，
+但沒有 excel 來得直覺，同樣可以將資料呈現像試算表，在資料分析的角色中。
+數據分析大多數時間都在做資料整理，基本上用 Pandas 整理資料，用 Numpy、SkLearn 等…計算分析
+Pandas 重要的兩個概念:
+ Series (像是list、array，只是每欄有名稱) DataFrame (像是Excel的試算表表格)  Step 1: Read File (CSV) 既然要處理資料，必定要有資料來源，Pandas 提供讀入 CSV 的好方法，
+相較於使用 Python 原生的讀入方式更便利許多，隨後會介紹差異。 以下程式可以讀入範例 CSV，由於此範例有 100(行) * 6(欄) 資料，
+相當的多，所以使用 df.head() 僅讀出前 5 個資料內容。
+df = pd.read_csv(&amp;ldquo;weather_2012.csv&amp;rdquo;) print(df.head())
+Step 2: Get Data (part of CSV) CSV中有這些欄位
+ Date/Time Temp (C) Dew Point Temp (C) : 露點溫度是在固定氣壓之下，空氣中所含的氣態水達到飽和而凝結成液態水所需要降至的溫度 Rel Hum (%) Wind Spd (km/h) Visibility (km) Stn Press (kPa) Weather 可以只dump出特定欄位的資料</description>
+    </item>
+    
+  </channel>
+</rss>

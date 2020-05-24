@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ALG-Object-detection on Memo</title>
+    <link>https://evansin100.github.io/categories/alg-object-detection/</link>
+    <description>Recent content in ALG-Object-detection on Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://evansin100.github.io/categories/alg-object-detection/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://evansin100.github.io/post/alg-object-detection/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evansin100.github.io/post/alg-object-detection/readme/</guid>
+      <description>One-stage Object-detection 速度快, 在feature map每個cell產生bounding box candidate的時候(同步做object分類-class) =&amp;gt; step 1: 就同時進行&amp;quot;分類&amp;rdquo; and &amp;ldquo;box回歸&amp;rdquo;,一步完成
+代表作有SSD and Yolo
+将物体探测作为一个简单的回归问题，它将输入图像作为输入图像并学习类概率，边界框坐标 所以就是直接進行回歸,e.g.調整box and 分類
+因為正負樣本不平衡,且同時進行回歸,所以精度比two-stage差
+Two-stage Object-detection 比較準,
+=&amp;gt; Step 1: 先產生bounding box candidate (透過selective search, RPN ..etc) 不做分類 e.g. region proposal network會產生很多bounding box,並且透過ROI align/ROI pooling,得到直,再做softmax算score RPN 在 feature map 上取 sliding window，每個 sliding window 的中心點稱之為 anchor point， 然後將事先準備好的 k 個不同尺寸比例的 box 以同一個 anchor point 去計算可能包含物體的機率(score)，取機率最高的 box。 這 k 個 box 稱之為 anchor box。所以每個 anchor point 會得到 2k 個 score， 以及 4k 個座標位置 (box 的左上座標，以及長寬，所以是 4 個數值)。 在 Faster R-CNN 論文裡，預設是取 3 種不同大小搭配 3 種不同長寬比的 anchor box，所以 k 為 3x3 = 9</description>
+    </item>
+    
+  </channel>
+</rss>

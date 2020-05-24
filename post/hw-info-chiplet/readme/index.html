@@ -1,0 +1,235 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Memo</title>
+    
+    
+    <meta content="Memo" name="keywords">
+    
+    <meta content="Memo - Concept chiplet 是什麼？
+就是小晶片，首先將複雜功能進行分解，然後開發出多種具有單一特定功能，
+英文的字尾（suffix）“let”，好比台語中名詞字尾加一陽平聲的「啊」字，
+都帶有「小」的意思，像booklet是小書，piglet是小豬，而chiplet自然是小晶片
+可相互進行模塊化組裝的「小晶片」（chiplet），
+如實現數據存儲、計算、信號處理、數據流管理等功能， 並最終以此為基礎，建立一個「小晶片」的晶片網絡。
+晶片網絡是什麼？
+未來的電腦系統可能只包含一個CPU晶片(chiplet)和幾個GPU，
+這些GPU都連接到這個chiplet晶片上，形成晶片網絡。 Example
+Motivation 做chiplet的動機很簡單，是要在逐漸趨緩摩爾定律的大環境下，
+持續提升產品的性能和價值。如果為了整合新功能模組入晶片而加大晶片面積，
+於最先進製程上製造大晶片是很不划算的。而且晶片面積大了 由缺陷密度導致的良率損失也跟著增長 Chanllenges 發展Chiplet會遇到哪些挑戰？
+既然實現Chiplets技術還存在比較多的技術難點，那麼下面具體了解下發展Chiplet會遇到以下幾方面的挑戰：
+ (1) 首先當然是集成技術的挑戰。  Chiplet模式的基礎還是先進的封裝技術， 必須能夠做到低成本和高可靠性。此外，集成技術的挑戰還來自集成標準   (2 )互聯標準  首先，設計這樣一個異構集成系統需要統一的標準， 即die-to-die數據互聯標準。而且裸晶片到裸晶片的互連方案很昂貴   (3) 封裝技術  將多個模塊晶片集成在一個SiP中需要高密度的內部互連線。 可能的方案有矽interposers技術、矽橋技術和高密度Fan-Out技術， 不論採取那種技術，互連線（微凸）尺寸都將變得更小， 這要求互連線做到100%的無缺陷。因為互聯缺陷可能導致整個SiP晶片不工作。   (4) 測試技術  作為一個複雜的異構集成系統，保證SiPs晶片功能正常比SoC更困難。 SoC晶片通常需要採購IP，而目前關於IP的重用方法中，IP的測試和驗證已經很成熟，可以保證IP接入系統沒有問題。 採用Chiplet模式的SiPs晶片則不同，它採購或使用的是製造好的die，即模塊晶片。 這對單個die的良率要求非常高，因為在SiPs中一個die的功能影響了整體性能，一旦出了問題損失巨大。 同時在die設計中還需要植入滿足SiPs晶片的測試協議。而對於SiPs晶片， 由於管腳有限，如何單獨測試每個die的性能和整體SiP的性能也是一個難點。   (5) 開發工具  互聯、封裝和測試需要軟體工具的支持，對於EDA工具帶來巨大的需求。 例如在晶片設計中，30%-40%的成本是工具軟體。 DARPA的 CHIPS項目中一個工作重點就是設計工具。 Chiplet技術需要EDA工具從架構探索，到晶片實現，甚至到物理設計提供全面支持。   (6) 晶片網絡的交通死鎖與流量堵塞  儘管每個chiplet的晶片上routing system都可以很好地工作， 但是當它們全部連接在內插器的網絡上時，就出現了交通死鎖與流量堵塞問題。    " name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+    
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/self/css/default.css">
+    <script async src="/layui/layui.js"></script>
+
+    <link rel="stylesheet" async href="/self/css/markdown.min.css">
+    <link rel="stylesheet" async href="/self/css/gallery.css">
+    
+    
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <script async src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="/">
+        Memo
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
+        
+
+        
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/about/">About</a></li>
+            
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="/post/">Posts</a></dd>
+                
+
+                
+                    
+                        <dd><a href="/about/">About</a></dd>
+                    
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="self-elem-quote self-elem-quote-bg-red markdown-body single-title" >
+                    <h1></h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>0001-01-01</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/hw-info-chiplet/">
+            <span class="layui-badge layui-bg-orange" style="vertical-align: 2px;">HW-INFO-Chiplet</span>
+        </a>
+    
+
+    
+    
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <h1 id="concept">Concept</h1>
+<p>chiplet 是什麼？<br>
+就是小晶片，首先將複雜功能進行分解，然後開發出多種具有單一特定功能，<br>
+英文的字尾（suffix）“let”，好比台語中名詞字尾加一陽平聲的「啊」字，<br>
+都帶有「小」的意思，像booklet是小書，piglet是小豬，而chiplet自然是小晶片</p>
+<p>可相互進行模塊化組裝的「小晶片」（chiplet），<br>
+如實現數據存儲、計算、信號處理、數據流管理等功能， <br>
+並最終以此為基礎，建立一個「小晶片」的晶片網絡。</p>
+<p>晶片網絡是什麼？<br>
+未來的電腦系統可能只包含一個CPU晶片(chiplet)和幾個GPU，<br>
+這些GPU都連接到這個chiplet晶片上，形成晶片網絡。  <br>
+Example<br>
+<img src="Selection_460.png" alt="image"></p>
+<h1 id="motivation">Motivation</h1>
+<p>做chiplet的動機很簡單，是要在逐漸趨緩摩爾定律的大環境下，<br>
+持續提升產品的性能和價值。如果為了整合新功能模組入晶片而加大晶片面積，<br>
+<strong>於最先進製程上製造大晶片是很不划算的。而且晶片面積大了</strong>  <br>
+<strong>由缺陷密度導致的良率損失也跟著增長</strong>  <br>
+<img src="Selection_459.png" alt="image"></p>
+<h1 id="chanllenges">Chanllenges</h1>
+<p>發展Chiplet會遇到哪些挑戰？<br>
+既然實現Chiplets技術還存在比較多的技術難點，那麼下面具體了解下發展Chiplet會遇到以下幾方面的挑戰：</p>
+<ul>
+<li>(1) 首先當然是集成技術的挑戰。
+<ul>
+<li>Chiplet模式的基礎還是先進的封裝技術，</li>
+<li>必須能夠做到低成本和高可靠性。此外，集成技術的挑戰還來自集成標準</li>
+</ul>
+</li>
+<li>(2 )互聯標準
+<ul>
+<li>首先，設計這樣一個異構集成系統需要統一的標準，</li>
+<li>即die-to-die數據互聯標準。而且裸晶片到裸晶片的互連方案很昂貴</li>
+</ul>
+</li>
+<li>(3) 封裝技術
+<ul>
+<li>將多個模塊晶片集成在一個SiP中需要高密度的內部互連線。</li>
+<li>可能的方案有矽interposers技術、矽橋技術和高密度Fan-Out技術，</li>
+<li>不論採取那種技術，互連線（微凸）尺寸都將變得更小，</li>
+<li>這要求互連線做到100%的無缺陷。因為互聯缺陷可能導致整個SiP晶片不工作。</li>
+</ul>
+</li>
+<li>(4) 測試技術
+<ul>
+<li>作為一個複雜的異構集成系統，保證SiPs晶片功能正常比SoC更困難。</li>
+<li>SoC晶片通常需要採購IP，而目前關於IP的重用方法中，IP的測試和驗證已經很成熟，可以保證IP接入系統沒有問題。</li>
+<li>採用Chiplet模式的SiPs晶片則不同，它採購或使用的是製造好的die，即模塊晶片。</li>
+<li>這對單個die的良率要求非常高，因為在SiPs中一個die的功能影響了整體性能，一旦出了問題損失巨大。</li>
+<li>同時在die設計中還需要植入滿足SiPs晶片的測試協議。而對於SiPs晶片，</li>
+<li>由於管腳有限，如何單獨測試每個die的性能和整體SiP的性能也是一個難點。</li>
+</ul>
+</li>
+<li>(5) 開發工具
+<ul>
+<li>互聯、封裝和測試需要軟體工具的支持，對於EDA工具帶來巨大的需求。</li>
+<li>例如在晶片設計中，30%-40%的成本是工具軟體。</li>
+<li>DARPA的 CHIPS項目中一個工作重點就是設計工具。</li>
+<li>Chiplet技術需要EDA工具從架構探索，到晶片實現，甚至到物理設計提供全面支持。</li>
+</ul>
+</li>
+<li>(6) 晶片網絡的交通死鎖與流量堵塞
+<ul>
+<li>儘管每個chiplet的晶片上routing system都可以很好地工作，</li>
+<li>但是當它們全部連接在內插器的網絡上時，就出現了交通死鎖與流量堵塞問題。</li>
+</ul>
+</li>
+</ul>
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/"><p class="footer-url">home</p></a>
+            </div>
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/about/"><p class="footer-url">About</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

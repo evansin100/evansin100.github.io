@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TOOL-AI-Playground on Memo</title>
+    <link>https://evansin100.github.io/categories/tool-ai-playground/</link>
+    <description>Recent content in TOOL-AI-Playground on Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://evansin100.github.io/categories/tool-ai-playground/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://evansin100.github.io/post/tool-ai-playground/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evansin100.github.io/post/tool-ai-playground/readme/</guid>
+      <description>Concept https://leemeng.tw/deep-learning-resources.html#courses
+這邊有紀錄各種的tool可以方便大家了解AI並且透過一些demo app了解AI的功能
+列舉了一些透過瀏覽器就能馬上開始遊玩 / 體驗深度學習的應用。 作為這些應用的使用者，你可以先高層次、 直觀地了解深度學習能做些什麼。之後有興趣再進一步了解背後原理。
+這小節最適合：
+想要快速體會深度學習如何被應用在真實世界的好奇寶寶
+想要直觀理解類神經網路（Artifical Neural Network）運作方式的人
+想從別人的深度學習應用取得一些靈感的開發者
+ (1) https://playground.tensorflow.org/ (2) 由 Tensorflow 團隊推出，模擬訓練一個類神經網路的過程並了解其運作原理 (3) 可以搭配這篇 Introduction to Neural Networks: Playground Exercises 學習   (1) https://magenta.tensorflow.org/ (2) 一個利用機器學習來協助人們進行音樂以及藝術創作的開源專案 (3) 可以在網站上的 Demo 頁面嘗試各種由深度學習驅動的音樂 / 繪畫應用（如彈奏鋼琴、擊鼓）   (1) https://experiments.withgoogle.com/collection/ai (2) 這邊展示了接近 40 個利用圖片、 語言以及音樂來與使用者產生互動的機器學習 Apps，值得慢慢探索 (3) 知名例子有 Quick Draw 以及 Teachable Machine，將在下方介紹）   (1) https://quickdraw.withgoogle.com/ (2) 由 Google 推出的知名手寫塗鴉辨識， 使用的神經網路架構有常見的卷積神經網路 CNN 以及循環神經網路 RNN (3) 該深度學習模型會不斷將最新的筆觸當作輸入來預測使用者想畫的物件。 你會驚嘆於她精準且即時的判斷   (1) https://teachablemachine.</description>
+    </item>
+    
+  </channel>
+</rss>

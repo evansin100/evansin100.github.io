@@ -1,0 +1,228 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Memo</title>
+    
+    
+    <meta content="Memo" name="keywords">
+    
+    <meta content="Memo - Concept 古往今來，大家都知道：只要圖像一平移，CNN就認不出來了。
+=原因就在降採樣身上。不管是最大池化，跨步卷積，還是平均池化，都對平移太敏感
+比如，0、0、1、1、0、0、1、1……這樣的周期，最大池化是這樣：
+CNN存在采样缺陷。现代CNN中普遍包含二次采样（subsampling）操作，它是我们常说的降采样层，也就是池化层、stride。
+它的本意是为了提高图像的平移不变性，同时减少参数，但它在平移性上的表现真的很一般
+Solution : More data? 为什么CNN不能从数据中学习平移不变性？ 虽然上一节论证了CNN在架构上就无法保证平移不变性，
+但为什么它就不能从大量数据里学到不变性呢？
+事实上，它确实能从数据中学到部分不变性，那么问题还出在哪儿？
+论文的观点是数据集里的图像自带“摄影师偏差”，
+很可惜论文作者做出的解释很糟糕，一会儿讲分布，一会儿讲数据增强，非常没有说服力。
+但是这个观点确实值得关注，心理学领域曾有过关于“摄影师偏差”对人类视角影响的研究，
+虽然缺乏数据集论证，但很多人相信，同样的影响也发生在计算机视觉中。
+Solution : Add filter in down-sample 現在，來自Adobe的Richard Zhang (簡稱「理查」) ，讓抗鋸齒和各種降採樣和平共處了。
+在保留平移不變性的情況下，還能提升ImageNet上的分類準確率。VGG、ResNet、DenseNet……各種架構都適用。 不止如此， 面對其他干擾更穩定了，如旋轉如縮放；面對輸入圖像的損壞，還更魯棒了
+想知道怎樣幫助CNN保留平移不變形，就要了解平移不變性是怎樣打破的。
+理查觀察了VGG的第一個卷積層，發現它對平移毫無波瀾，並不是在這裡打破的。
+但再觀察第一個池化層，對平移有了反應：平移偶數個像素，表征還不改變，
+平移奇數個像素，表征就完全變了。 向網絡深處走，經過的池化層越多，問題就越嚴重。
+想解決這個問題，就要把抗鋸齒和降採樣友好地結合到一起。
+於是，理查又仔細查看了降採樣過程，把它 (按順序) 分成了兩個部分
+第一步沒有問題，完全不會出現鋸齒。
+第二步就要改了。理查給中間特徵圖，加了個模糊濾波器 (Blur Filter) 來抗鋸齒，然後再做子採樣：
+那麼，「抗鋸齒版最大池化」效果怎麼樣？
+平移不變性與準確率兼得
+e.g., 要做max pool downsample 的時候
+先做(1) dense max (2) blur filter(將資訊模糊) (3) down sample
+如果降採樣方法不是最大池化，又怎麼樣呢？
+所以，理查還測試了ResNet和MobileNetv2，它們用的是跨步卷積；以及DenseNet，它用的是平均池化：
+這些架構也獲得了類似的提升。全面成功。
+上面只講了分類這一項任務。而進化後的降採樣，在圖到圖翻譯任務上也同樣有效。
+不懼各種變換，以及圖像損壞
+不只是平移，像旋轉、縮放這樣的干擾，都可以應對自如；另外，面對輸入圖像損壞 (Image Corruption) ，也變得更加魯棒了。 數據顯示，各種濾波器都能有效增強，應對干擾的穩定性，和應對圖像損壞的魯棒性。其中，最強的過濾器Bin-5表現最佳。" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+    
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/self/css/default.css">
+    <script async src="/layui/layui.js"></script>
+
+    <link rel="stylesheet" async href="/self/css/markdown.min.css">
+    <link rel="stylesheet" async href="/self/css/gallery.css">
+    
+    
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <script async src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="/">
+        Memo
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
+        
+
+        
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/about/">About</a></li>
+            
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="/post/">Posts</a></dd>
+                
+
+                
+                    
+                        <dd><a href="/about/">About</a></dd>
+                    
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="self-elem-quote self-elem-quote-bg-red markdown-body single-title" >
+                    <h1></h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>0001-01-01</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/alg-cnn_image_transformation/">
+            <span class="layui-badge layui-bg-orange" style="vertical-align: 2px;">ALG-CNN_image_transformation</span>
+        </a>
+    
+
+    
+    
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <h1 id="concept">Concept</h1>
+<p>古往今來，大家都知道：只要圖像一平移，CNN就認不出來了。<br>
+=原因就在<strong>降採樣</strong>身上。<strong>不管是最大池化，跨步卷積，還是平均池化，都對平移太敏感</strong><br>
+比如，0、0、1、1、0、0、1、1……這樣的周期，最大池化是這樣：<br>
+<img src="Selection_478.png" alt="image"><br>
+<img src="Selection_477.png" alt="image"></p>
+<p>CNN存在采样缺陷。现代CNN中普遍包含二次采样（subsampling）操作，它是我们常说的降采样层，也就是池化层、stride。<br>
+它的本意是为了提高图像的平移不变性，同时减少参数，但它在平移性上的表现真的很一般</p>
+<h1 id="solution--more-data">Solution : More data?</h1>
+<p>为什么CNN不能从数据中学习平移不变性？
+虽然上一节论证了CNN在架构上就无法保证平移不变性，<br>
+<strong>但为什么它就不能从大量数据里学到不变性呢？</strong><br>
+事实上，它确实能从数据中学到部分不变性，那么问题还出在哪儿？</p>
+<p>论文的观点是数据集里的图像自带“摄影师偏差”，<br>
+很可惜论文作者做出的解释很糟糕，一会儿讲分布，一会儿讲数据增强，非常没有说服力。<br>
+但是这个观点确实值得关注，心理学领域曾有过关于“摄影师偏差”对人类视角影响的研究，<br>
+虽然缺乏数据集论证，但很多人相信，同样的影响也发生在计算机视觉中。</p>
+<h1 id="solution--add-filter-in-down-sample">Solution : Add filter in down-sample</h1>
+<p>現在，來自Adobe的Richard Zhang (簡稱「理查」) ，讓抗鋸齒和各種降採樣和平共處了。<br>
+在保留平移不變性的情況下，還能提升ImageNet上的分類準確率。VGG、ResNet、DenseNet……各種架構都適用。  <br>
+不止如此， 面對其他干擾更穩定了，如旋轉如縮放；面對輸入圖像的損壞，還更魯棒了</p>
+<p>想知道怎樣幫助CNN保留平移不變形，就要了解平移不變性是怎樣打破的。<br>
+理查觀察了VGG的第一個卷積層，發現它對平移毫無波瀾，並不是在這裡打破的。</p>
+<p>但再觀察<strong>第一個池化層，對平移有了反應</strong>：平移偶數個像素，表征還不改變，<br>
+平移奇數個像素，表征就完全變了。  <br>
+向網絡深處走，經過的池化層越多，問題就越嚴重。</p>
+<p>想解決這個問題，就要把抗鋸齒和降採樣友好地結合到一起。<br>
+於是，理查又仔細查看了降採樣過程，把它 (按順序) 分成了兩個部分</p>
+<p>第一步沒有問題，完全不會出現鋸齒。<br>
+第二步就要改了。理查給中間特徵圖，<strong>加了個模糊濾波器 (Blur Filter) 來抗鋸齒</strong>，然後再做子採樣：<br>
+那麼，「抗鋸齒版最大池化」效果怎麼樣？<br>
+平移不變性與準確率兼得</p>
+<p>e.g., 要做max pool downsample 的時候<br>
+先做(1) dense max (2) blur filter(將資訊模糊) (3) down sample<br>
+<img src="Selection_479.png" alt="image"></p>
+<p>如果降採樣方法不是最大池化，又怎麼樣呢？<br>
+所以，理查還測試了ResNet和MobileNetv2，它們用的是跨步卷積；以及DenseNet，它用的是平均池化：<br>
+這些架構也獲得了類似的提升。全面成功。<br>
+<img src="Selection_480.png" alt="image"></p>
+<p>上面只講了分類這一項任務。而進化後的降採樣，在圖到圖翻譯任務上也同樣有效。<br>
+不懼各種變換，以及圖像損壞<br>
+不只是平移，像旋轉、縮放這樣的干擾，都可以應對自如；另外，面對輸入圖像損壞 (Image Corruption) ，也變得更加魯棒了。 <br>
+數據顯示，各種濾波器都能有效增強，應對干擾的穩定性，和應對圖像損壞的魯棒性。其中，最強的過濾器Bin-5表現最佳。</p>
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/"><p class="footer-url">home</p></a>
+            </div>
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/about/"><p class="footer-url">About</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

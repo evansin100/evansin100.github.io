@@ -1,0 +1,203 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Memo</title>
+    
+    
+    <meta content="Memo" name="keywords">
+    
+    <meta content="Memo - Concept Keras是一款建立在Theano或Tensorflow上的高層神經網路API。
+相較於TensorFlow與pytorch等套件，keras更適合想快速體驗機器學習的初學者
+因為keras是高層的神經網路API，較不適合做一些底層的更動，也較難深度的去學習神經網路背後的原理，
+若是已有深度學習的基礎，又或者是時間較為充裕者，可以前往Tensorflow又或者是pytorch的教學
+以Keras作為Tensorflow的接口，可以說是大大的降低了神經網路的入門門檻，
+對於初學者來說可以大大的降低疊出一個神經網路的時間，使用上極為方便
+Install 安裝keras
+sudo pip3 install keras
+安裝存儲model的套件
+sudo pip3 install h5py
+=&gt; 所以Keras的model檔案
+Keras models Keras有两种类型的模型，序贯模型（Sequential）和函数式模型（Model），函数式模型应用更为广泛，
+=&gt; 序贯模型是函数式模型的一种特殊情况
+序贯模型
+=&gt; 序贯模型是多个网络层的线性堆叠，也就是“一条路走到黑”。
+可以通过向Sequential模型传递一个layer的list来构造该模型
+也可以通过.add()方法一个个的将layer加入模型中：
+model= Sequential()
+model.add(Dense(32, input_shape=(784,)))
+model.add(Activation(&lsquo;relu&rsquo;))
+Keras layer building block Dense就是fully connected
+然後在建構model,的確會比tensorflow簡單一些" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+    
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/self/css/default.css">
+    <script async src="/layui/layui.js"></script>
+
+    <link rel="stylesheet" async href="/self/css/markdown.min.css">
+    <link rel="stylesheet" async href="/self/css/gallery.css">
+    
+    
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <script async src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="/">
+        Memo
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
+        
+
+        
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/about/">About</a></li>
+            
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="/post/">Posts</a></dd>
+                
+
+                
+                    
+                        <dd><a href="/about/">About</a></dd>
+                    
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="self-elem-quote self-elem-quote-bg-red markdown-body single-title" >
+                    <h1></h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>0001-01-01</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/sw-framework-keras/">
+            <span class="layui-badge layui-bg-orange" style="vertical-align: 2px;">SW-FRAMEWORK-Keras</span>
+        </a>
+    
+
+    
+    
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <h1 id="concept">Concept</h1>
+<p>Keras是一款建立在Theano或Tensorflow上的高層神經網路API。<br>
+相較於TensorFlow與pytorch等套件，keras更適合想快速體驗機器學習的初學者</p>
+<p>因為keras是高層的神經網路API，較不適合做一些底層的更動，也較難深度的去學習神經網路背後的原理，<br>
+若是已有深度學習的基礎，又或者是時間較為充裕者，可以前往Tensorflow又或者是pytorch的教學</p>
+<p>以Keras作為Tensorflow的接口，可以說是大大的降低了神經網路的入門門檻，<br>
+對於初學者來說可以大大的降低疊出一個神經網路的時間，使用上極為方便</p>
+<h1 id="install">Install</h1>
+<p>安裝keras<br>
+sudo pip3 install keras<br>
+安裝存儲model的套件<br>
+sudo pip3 install h5py<br>
+=&gt; 所以Keras的model檔案</p>
+<h1 id="keras-models">Keras models</h1>
+<p>Keras有两种类型的模型，序贯模型（Sequential）和函数式模型（Model），函数式模型应用更为广泛，<br>
+=&gt; 序贯模型是函数式模型的一种特殊情况<br>
+序贯模型<br>
+=&gt; 序贯模型是多个网络层的线性堆叠，也就是“一条路走到黑”。<br>
+可以通过向Sequential模型传递一个layer的list来构造该模型<br>
+也可以通过.add()方法一个个的将layer加入模型中：<br>
+model= Sequential()<br>
+model.add(Dense(32, input_shape=(784,)))<br>
+model.add(Activation(&lsquo;relu&rsquo;))</p>
+<h1 id="keras-layer-building-block">Keras layer building block</h1>
+<p>Dense就是fully connected<br>
+然後在建構model,的確會比tensorflow簡單一些<br>
+<img src="https://github.com/evansin100/Keras/blob/master/Selection_056.png" alt="image"><br>
+<img src="https://github.com/evansin100/Keras/blob/master/Selection_057.png" alt="image"></p>
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/"><p class="footer-url">home</p></a>
+            </div>
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/about/"><p class="footer-url">About</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

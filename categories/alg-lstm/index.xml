@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ALG-LSTM on Memo</title>
+    <link>https://evansin100.github.io/categories/alg-lstm/</link>
+    <description>Recent content in ALG-LSTM on Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://evansin100.github.io/categories/alg-lstm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://evansin100.github.io/post/alg-lstm/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evansin100.github.io/post/alg-lstm/readme/</guid>
+      <description>RNN Problem 在RNN訓練期間，信息不斷地循環往復，神經網絡模型權重的更新非常大。
+因為在更新過程中累積了錯誤梯度，會導致網絡不穩定。極端情況下，
+權重的值可能變得大到溢出並導致NaN值。爆炸通過擁有大於1的值的網絡層反覆累積梯度導致指數增長產生，
+如果值小於1就會出現消失
+請注意RNN、LST及其變體主要是隨著時間的推移使用順序處理。請參閱下圖中的水平箭頭 這個箭頭意味著長距離信息必須在到達當前處理單元之前順序穿過所有單元。
+這表示它可以很容易地被小於0的數相乘很多次而損壞。這就是梯度消失的原因。
+因為有多個cell,每個cell也會有output,但可以只拿最後的cell output如下圖 然後input可以依據時間關係,不斷輸入 LSTM Concept RNN的上述缺點促使科學家開發了一種新的RNN模型變體，
+名為長短期記憶網絡（Long Short Term Memory）。 由於LSTM使用門來控制記憶過程，它可以解決這個問題 (它可以繞過單元節點從而記住更長的時間步驟。因此，LSTM可以消除一部分的梯度消失問題)
+=&amp;gt; 因為有個快速道路bypass
+一個LSTM單位
+這裡使用的符號具有以下含義：
+a）X：縮放的信息 b）+：添加的信息 c）σ：Sigmoid層
+d）tanh：tanh層
+e）h（t-1）：上一個LSTM單元的輸出
+f）c（t-1）：上一個LSTM單元的記憶
+g）X（t）：輸入
+h）c（t）：最新的記憶
+i）h（t）：輸出
+圖中我們可以看出有兩個記憶的state 向量，分別是c和h, 有三個操作閘，分別是forget gate （遺忘閘）、input gate （輸入閘）和output gate （輸出閘）， 有一個輸入向量 x，有三個輸出分別是c和h和y，
+如果當前時階沒有取出輸出則沒有y輸出。圖中FC 代表Fully-connected，全連接
+因為裡面有fully-connected layer, 所以需要大量的內存(weight) 且由於輸入資料在內部反覆遞歸，參數的數目指數級爆炸(所以有多個cell,weight多的狀況更嚴重) Why tanh 為了克服梯度消失問題，我們需要一個二階導數在趨近零點之前能維持很長距離的函數。
+tanh是具有這種屬性的合適的函數
+Why sigmoid =&amp;gt; 由於Sigmoid函數可以輸出0或1，它可以用來決定忘記或記住信息。
+=&amp;gt; 注意LSTM沒有sofmax
+信息通過很多這樣的LSTM單元。圖中標記的LSTM單元有三個主要部分：
+LSTM有一個特殊的架構，它可以讓它忘記不必要的信息。
+Sigmoid層取得輸入X（t）和h（t-1），
+並決定從舊輸出中刪除哪些部分（通過輸出0實現）。
+在我們的例子中，當輸入是「他有一個女性朋友瑪麗亞」時，「大衛」的性別可以被遺忘，
+因為主題已經變成了瑪麗亞。這個門被稱為遺忘門f（t）。這個門的輸出是f（t）* c（t-1）。
+下一步是決定並存儲記憶單元新輸入X（t）的信息。
+Sigmoid層決定應該更新或忽略哪些新信息。</description>
+    </item>
+    
+  </channel>
+</rss>

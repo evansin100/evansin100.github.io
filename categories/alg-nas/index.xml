@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ALG-NAS on Memo</title>
+    <link>https://evansin100.github.io/categories/alg-nas/</link>
+    <description>Recent content in ALG-NAS on Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://evansin100.github.io/categories/alg-nas/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://evansin100.github.io/post/alg-nas/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evansin100.github.io/post/alg-nas/readme/</guid>
+      <description>concept NAS 也就是 Neural Architecture Search，目标是从一堆神经网络组件中，搜索到一个好的神经网络模型。
+我们知道神经网络模型是一种可任意堆砌的模型结构， 基础的组件包括 FC（全连接层）、Convolution（卷积层）、Polling（池化层）、Activation（激活函数）等， 后一个组件可以以前一个组件作为输入，不同的组件连接方式和超参配置方式在不同应用场景有不同的效果，
+例如下面就是在图像分类场景非常有效的 Inception 模型结构
+图内结构比较复杂不理解也没关系，我们只需要知道这个神经网络结构是由图像领域专家花费大量精力设计出来的，
+并且经过了巨量的实验和测试才能（在不能解释深度学习原理的情况下）确定这个网络结构。
+那么计算机是否可以自己去学习和生成这个复杂的网络结构呢？
+目前是不行的，包括各种 NAS 算法的变形还有 ENAS 算法暂时也无法生成这样的网络结构，
+这里抛出本文第三个观点，绝大部分机器学习都不是人工智能，计算机不会无缘无故获得既定目标以外的能力。
+因此，计算机并不是自己学会编程或者建模，我们还没有设计出自动建模的数据集和算法，
+所谓的“AI 设计神经网络模型”，其实只是在给定的搜索空间中查找效果最优的模型结构。(所以還是有限制的solution space) example 例如我们假设模型必须是一个三层的全连接神经网络（一个输入层、一个隐层、一个输出层），
+(1) 隐层可以有不同的激活函数和节点个数，
+(2) 假设激活函数必须是 relu 或 sigmoid 中的一种，
+而隐节点数必须是 10、20、30 中的一个，那么我们称这个网络结构的搜索空间就是{relu, sigmoid} * {10, 20 ,30}。
+在搜索空间中可以组合出 6 种可能的模型结构，在可枚举的搜索空间内我们可以分别实现这 6 种可能的模型结构，
+最终目标是产出效果最优的模型，那么我们可以分别训练这 6 个模型并以 AUC、正确率等指标来评价模型，
+然后返回或者叫生成一个最优的神经网络模型结构
+因此，NAS 算法是一种给定模型结构搜索空间的搜索算法，
+当然这个搜索空间不可能只有几个参数组合，
+在 ENAS 的示例搜索空间大概就有 1.6*10^29 种可选结构，
+而搜索算法也不可能通过枚举模型结构分别训练来解决，
+而需要一种更有效的启发式的搜索算法，这种算法就是后面会提到的贝叶斯优化、增强学习、进化算法等 search what ? hyper parameters (solution space) 使用超参自动调优前面提到 NAS 是一种搜索算法，是从超大规模的搜索空间找到一个模型效果很好的模型结构，</description>
+    </item>
+    
+  </channel>
+</rss>

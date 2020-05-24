@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>COMPILER-FRAMEWORK-LLVM on Memo</title>
+    <link>https://evansin100.github.io/categories/compiler-framework-llvm/</link>
+    <description>Recent content in COMPILER-FRAMEWORK-LLVM on Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://evansin100.github.io/categories/compiler-framework-llvm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://evansin100.github.io/post/compiler-framework-llvm/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evansin100.github.io/post/compiler-framework-llvm/readme/</guid>
+      <description>LLVM introduction (1) LLVM提供了完整編譯系統的中間層，
+它會將中間語言（Intermediate Representation，IR）從編譯器取出與最佳化， 最佳化後的IR接著被轉換及鏈結到目標平台的汇编语言。
+LLVM可以接受來自GCC工具鏈所編譯的IR，包含它底下現存的編譯器。 =&amp;gt; 所以代表LLVM可以當作是gcc的backend
+(2) LLVM也可以在編譯時期、鏈結時期，甚至是執行時期產生可重新定位的程式碼（Relocatable Code）。 (3) LLVM支援與語言無關的指令集架構及類型系統[7]。
+每個在静态单赋值形式（SSA）的指令集代表著 每個變數（被稱為具有型別的暫存器）僅被賦值一次，這簡化了變數間相依性的分析
+(4) LLVM允許程式碼被靜態的編譯，
+包含在傳統的GCC系統底下，或是類似JAVA等後期編譯才將IF編譯成機器碼所使用的即時編譯（JIT）技術。
+它的型別系統包含基本型別（整數或是浮点数）及五個複合型別（指標、数组、向量、結構及函數），
+在LLVM具體語言的型別建制可以以結合基本型別來表示，
+舉例來說，C++所使用的class可以被表示為結構、函式及函数指针的陣列所組成。
+(5) LLVM JIT編譯器可以最佳化在執行時期時程式所不需要的靜態分支，
+這在一些部份求值（Partial Evaluation）的案例中相當有效，即當程式有許多選項，
+而在特定環境下其中多數可被判斷為是不需要。這個特色被使用在Mac OS X Leopard（v10.5）底下OpenGL的管線，
+當硬體不支援某個功能時依然可以被成功地運作[8]。OpenGL堆栈下的繪圖程式被編譯為IR，
+接著在機器上執行時被編譯，當系統擁有高階GPU時，
+這段程式會進行極少的修改並將傳遞指令給GPU，當系統擁有低階的GPU時，LLVM將會編譯更多的程序，
+使這段GPU無法執行的指令在本地端的中央处理器執行。
+LLVM增進了使用Intel GMA晶片等低端機器的效能。一個類似的系統發展於Gallium3D LLVMpipe，
+它已被合併到GNOME，使其可運行在沒有GPU的環境
+LLVM flow briefing 實驗了frontend=&amp;gt;optimizer=&amp;gt;backend的flow
+LLVM 定義了一個通用的程式中介表示法，LLVM IR。LLVM IR 是一種類似機器語言，
+但為了通用性以及給編譯器設計者方便而簡化的版本。在 LLVM 的世界裡，大家都講 LLVM IR：
+Frontend 把原始語言的邏輯翻譯成 LLVM IR、
+Optimizer 把 LLVM IR 整理成效率更好的 LLVM IR、
+Backend 拿到 LLVM IR 來生成機器目標平台的機器語言。</description>
+    </item>
+    
+  </channel>
+</rss>

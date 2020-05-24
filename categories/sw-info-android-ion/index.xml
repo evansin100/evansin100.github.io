@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SW-INFO-Android-ION on Memo</title>
+    <link>https://evansin100.github.io/categories/sw-info-android-ion/</link>
+    <description>Recent content in SW-INFO-Android-ION on Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://evansin100.github.io/categories/sw-info-android-ion/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://evansin100.github.io/post/sw-info-android-ion/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evansin100.github.io/post/sw-info-android-ion/readme/</guid>
+      <description>Motivation 为了避免内存碎片化，或者为一些有着特殊内存需求的硬件，
+比如GPUs、display controller以及camera等，在系统启动的时候，
+会为他们预留一些memory pools，这些memory pools就由ION来管理。
+通过ION就可以在硬件以及user space之间实现zero-copy的内存share
+=&amp;gt; 所以就是想要做kernelspace and user space的data sharing是zero copy =&amp;gt; 然後手法就是先預留memory pool
+ION implmentation ION通过ION heaps来展示presents它对应的memory pools。 不同的Android硬件可能会要求不同的ION heaps实现，
+默认的ION驱动会提供如下三种不同的ION heaps实现 (1) ION_HEAP_TYPE_SYSTEM: memory allocated via vmalloc_user()
+(2) ION_HEAP_TYPE_SYSTEM_CONTIG: memory allocated via kzalloc
+(3) ION_HEAP_TYPE_CARVEOUT: carveout memory is physically contiguous and set aside at boot.
+开发者可以自己实现更多的ION heaps。比如NVIDIA就提交了一种ION_HEAP_TYPE_IOMMU的heap，这种heap带有IOMMU功能。
+不管哪一种ION heaps实现，他们都必须实现如下接口：
+ struct ion_heap_ops { int (*allocate) (struct ion_heap *heap, struct ion_buffer *buffer, unsigned long len, unsigned long align, unsigned long flags); void (*free) (struct ion_buffer *buffer); int (*phys) (struct ion_heap *heap, struct ion_buffer *buffer, ion_phys_addr_t *addr, size_t *len); struct scatterlist *(*map_dma) (struct ion_heap *heap, struct ion_buffer *buffer); void (*unmap_dma) (struct ion_heap *heap, struct ion_buffer *buffer); void * (*map_kernel) (struct ion_heap *heap, struct ion_buffer *buffer); void (*unmap_kernel) (struct ion_heap *heap, struct ion_buffer *buffer); int (*map_user) (struct ion_heap *heap, struct ion_buffer *buffer, struct vm_area_struct *vma); }; 简单来说，接口的各个函数功能如下：</description>
+    </item>
+    
+  </channel>
+</rss>

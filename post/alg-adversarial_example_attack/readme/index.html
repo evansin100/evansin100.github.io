@@ -1,0 +1,237 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Memo</title>
+    
+    
+    <meta content="Memo" name="keywords">
+    
+    <meta content="Memo - Concept 利用對抗例（adversarial example）造成深度學習模型判斷錯誤這種攻擊手法
+所謂對抗例，是一種刻意製造的、讓機器學習模型判斷錯誤的輸入資料。
+最早是 Szegedy et al（2013）[2]發現對於用 ImageNet、AlexNet 等資料集訓練出來的影像辨識模型，
+常常只需要輸入端的微小的變動，就可以讓輸出結果有大幅度的改變。
+例如取一張卡車的照片，可以被模型正確辨識，但只要改變影像中的少數像素，
+就可以讓模型辨識錯誤，而且前後對影像的改變非常少，對肉眼而言根本分不出差異
+=&gt; 也可以讓accuracy大幅度提升
+這樣的例子除了顯現深度學習模型可能結果「不穩定」，而且有可能被惡意利用而有安全疑慮，
+因此近年來已經成為機器學習熱門的研究議題。2017 年這方面發表的研究成果，
+主要有加強防禦，以及更快速簡單地產生對抗例兩個方向。
+Definition Adversarial examples are inputs to a neural network that result in an incorrect output from the network.
+This is because neural networks are extremely susceptible to something called adversarial examples.
+Example 1 It’s probably best to show an example.
+You can start with an image of a panda on the left which some network thinks with 57." name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+    
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/self/css/default.css">
+    <script async src="/layui/layui.js"></script>
+
+    <link rel="stylesheet" async href="/self/css/markdown.min.css">
+    <link rel="stylesheet" async href="/self/css/gallery.css">
+    
+    
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <script async src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="/">
+        Memo
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
+        
+
+        
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/about/">About</a></li>
+            
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="/post/">Posts</a></dd>
+                
+
+                
+                    
+                        <dd><a href="/about/">About</a></dd>
+                    
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="self-elem-quote self-elem-quote-bg-red markdown-body single-title" >
+                    <h1></h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>0001-01-01</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/alg-adversarial_example_attack/">
+            <span class="layui-badge layui-bg-orange" style="vertical-align: 2px;">ALG-adversarial_example_attack</span>
+        </a>
+    
+
+    
+    
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <h1 id="concept">Concept</h1>
+<p>利用對抗例（adversarial example）造成深度學習模型判斷錯誤這種攻擊手法</p>
+<p>所謂對抗例，是一種刻意製造的、讓機器學習模型判斷錯誤的輸入資料。<br>
+最早是 Szegedy et al（2013）[2]發現對於用 ImageNet、AlexNet 等資料集訓練出來的影像辨識模型，<br>
+常常只需要<strong>輸入端的微小的變動，就可以讓輸出結果有大幅度的改變</strong>。<br>
+例如取一張卡車的照片，可以被模型正確辨識，但只要改變影像中的少數像素，<br>
+就可以讓模型辨識錯誤，而且前後對影像的改變非常少，對肉眼而言根本分不出差異<br>
+=&gt; 也可以讓accuracy大幅度提升</p>
+<p>這樣的例子除了顯現<strong>深度學習模型可能結果「不穩定」</strong>，而且有可能被惡意利用而有安全疑慮，<br>
+因此近年來已經成為機器學習熱門的研究議題。2017 年這方面發表的研究成果，<br>
+主要有加強防禦，以及更快速簡單地產生對抗例兩個方向。</p>
+<h1 id="definition">Definition</h1>
+<p>Adversarial examples are inputs to a neural network that result in an incorrect output from the network.<br>
+This is because neural networks are extremely susceptible to something called adversarial examples.</p>
+<h1 id="example-1">Example 1</h1>
+<p>It’s probably best to show an example.<br>
+You can start with an image of a panda on the left which some network thinks with 57.7% confidence is a “panda.” <br>
+The panda category is also the category with the highest confidence out of all the categories,<br>
+so the network concludes that the object in the image is a panda. <br>
+But then by adding a very small amount of carefully constructed noise <br>
+you can get an image that looks exactly the same to a human,<br>
+but that the network thinks with 99.3% confidence is a “gibbon &ldquo;長臂猿&rdquo;.” Pretty crazy stuff!  <br>
+=&gt; 所以只要加些noise進去,辨識的結果就完全不同
+<img src="Selection_279.png" alt="image"></p>
+<h1 id="example-2">Example 2</h1>
+<p>這邊有個範例是用mnist,做些adversarial example來讓數字判斷完全錯誤  <br>
+<a href="https://medium.com/@ml.at.berkeley/tricking-neural-networks-create-your-own-adversarial-examples-a61eb7620fd8">https://medium.com/@ml.at.berkeley/tricking-neural-networks-create-your-own-adversarial-examples-a61eb7620fd8</a> <br>
+原本狀況<br>
+<img src="Selection_280.png" alt="image"></p>
+<p>修改input,by底下的function<br>
+x_target是我們希望model辨識的結果<br>
+x_target is therefore a 784 dimensional vector<br>
+然後也是要跑loss function來做minimize<br>
+<img src="Selection_281.png" alt="image"></p>
+<p>有跑下面的gradient descent<br>
+d = input_derivative(net,x,goal) =&gt;算斜率  <br>
+x -= eta * (d + lam * (x - x_target)) =&gt; update 新的X</p>
+<pre><code>def sneaky_adversarial(net, n, x_target, steps, eta, lam=.05):
+    &quot;&quot;&quot;
+    net : network object
+        neural network instance to use
+    n : integer
+        our goal label (just an int, the function transforms it into a one-hot vector)
+    x_target : numpy vector
+        our goal image for the adversarial example
+    steps : integer
+        number of steps for gradient descent
+    eta : integer
+        step size for gradient descent
+    lam : float
+        lambda, our regularization parameter. Default is .05
+    &quot;&quot;&quot;
+    
+    # Set the goal output
+    goal = np.zeros((10, 1))
+    goal[n] = 1
+    # Create a random image to initialize gradient descent with
+    x = np.random.normal(.5, .3, (784, 1))
+    # Gradient descent on the input
+    for i in range(steps):
+        # Calculate the derivative
+        d = input_derivative(net,x,goal)
+        
+        # The GD update on x, with an added penalty 
+        # to the cost function
+        # ONLY CHANGE IS RIGHT HERE!!!
+        x -= eta * (d + lam * (x - x_target))
+    return x
+</code></pre><p>最後可以看到x變得有些noise,而這些noise影響到最後的結果<br>
+<img src="Selection_282.png" alt="image"></p>
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/"><p class="footer-url">home</p></a>
+            </div>
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/about/"><p class="footer-url">About</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

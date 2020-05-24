@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>COMPILER-FRAMEWORK-MLIR on Memo</title>
+    <link>https://evansin100.github.io/categories/compiler-framework-mlir/</link>
+    <description>Recent content in COMPILER-FRAMEWORK-MLIR on Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://evansin100.github.io/categories/compiler-framework-mlir/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://evansin100.github.io/post/compiler-framework-mlir/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evansin100.github.io/post/compiler-framework-mlir/readme/</guid>
+      <description>problem TensorFlow 生态系统包含许多编译器和优化器，可在多个级别的软硬件堆栈上运行。
+作为 TensorFlow 的日常用户，在使用不同种类的硬件（GPU、TPU、移动设备）时，
+这种多级别堆栈可能会表现出令人费解的编译器和运行时错误
+所以可以從下圖看到,因為接的硬體不同,過程中經過的opt等等也都不同
+如图中所示，TensorFlow 图 [1]能够以多种不同的方式运行。这包括：
+(1) 将其发送至调用手写运算内核的 TensorFlow 执行器
+(2) 将图转化为 XLA 高级优化器 (XLA HLO) 表示，反之，这种表示亦可调用适合 CPU 或 GPU 的 LLVM 编辑器，
+或者继续使用适合 TPU 的 XLA。（或者将二者结合！）
+(3) 将图转化为 TensorRT、nGraph 或另一种适合特定硬件指令集的编译器格式
+(4) 将图转化为 TensorFlow Lite 格式，然后在 TensorFlow Lite 运行时内部执行此图，
+或者通过 Android 神经网络 API (NNAPI) 或相关技术将其进一步转化，以在 GPU 或 DSP 上运行
+虽然这些编译器和表示的大量实现可显著提升性能，但这种异构的环境可能会给最终用户带来问题，
+例如在这些系统间的边界处产生令人困惑的错误消息。
+此外，若需要构建新的软硬件堆栈生成器，则必须为每个新路径重新构建优化与转换传递=&amp;gt;代表opt不能reuse MLIR (Multi-Level Intermediate Representation Overview) MLIR（或称为多级别中介码）。这是一种表示格式和编译器实用工具库，
+介于模型表示和低级编译器/执行器（二者皆可生成硬件特定代码）之间
+MLIR 深受LLVM的影响，并不折不扣地重用其许多优秀理念。MLIR 拥有灵活的类型系统， 可在同一编译单元中表示、分析和转换结合多层抽象的图。
+这些抽象包括 TensorFlow 运算、嵌套的多面循环区域乃至 LLVM 指令和固定的硬件操作及类型</description>
+    </item>
+    
+  </channel>
+</rss>

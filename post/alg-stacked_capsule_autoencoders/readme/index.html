@@ -1,0 +1,219 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Memo</title>
+    
+    
+    <meta content="Memo" name="keywords">
+    
+    <meta content="Memo - Motivation 从2017年开始， Hinton等人研究的Capsule Network得到了深度学习社区的大量关注。
+可以说Capsule Network在反思CNN的一些固有偏见，
+比如CNN的学习过分强调不变性（invariant ）特征的学习
+* 池化可以帮助输入近似不变（invariant），当输入发生少量偏移，输出的结果并不会改变
+* =&gt; 因為max pool假設說kernel size夠大,依然可以選到區域中比較大的值, 這樣就可以達到輸出不變 数据增强也服务于这一目的。而这样做，实际上，忽略了一个真实世界中的事实
+ (1) 物体-部件 关系（Object-Part-relationship)  是视角不变的（viewpoint invariant）   (2) 物体-观察者（Object-Viewer-relationship）  是视角同变性（viewpoint equivariant）的
+并且Capsule强调物体的存在是因为当部件以合理的关系组合才得以存在，所以进一步引出了routing的机制，来发掘part-whole关系。    这里想说的是: 如果有人问，当前深度学习的核心理念是什么，
+我个人觉得，一个比较好的回答就是，学习目标形式化进而转换为参数的梯度学习
+然而这样的同质研究越来越多，又越来越难以深入其内部，DL社区就开始自我反思。
+而Capsule的理念里面，就尝试去摆脱D中L对梯度回传的过分依赖，对卷积结构的过分依赖
+所以Capsule Network本身将一些自编码器、重构、混合高斯、注意力等机制引入其中。
+其实读这篇论文会感觉作者用到的技术太多了，很容易忽略它背后的动机。我个人对它背后动机的理解为: 将图像中的实例的部件及属性从像素二维空间中以像素重建的方式抽取出出来；
+再用重构的方式解释部件与整体的关系。这也是SACE的两个主要构成环
+Concept 该胶囊网络全名 Stacked Capsule Autoencoder (SCAE)，具体可分为两个阶段：
+该胶囊网络可以无监督地学习图像中的特征
+ (1) Part Capsule Autoencoder (PCAE）  PCAE 负责将&quot;图像分割成组件&rdquo;，借此推断其姿势，并将图像像素重构为转换后的部件模板像素的混合产物
+   (2) Object Capsule Autoencoder (OCAE)  OCAE 则试图将发现的部件及其姿势组成更小的一组对象，再结合针对每个部件的混合预测方案来解释部件的姿势。 每个物体胶囊通过将姿势-对象-视图-关系（OV）乘以相关的物体-部件-关系 (OP) 来为这些混合物提供组件。SCAE" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+    
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/self/css/default.css">
+    <script async src="/layui/layui.js"></script>
+
+    <link rel="stylesheet" async href="/self/css/markdown.min.css">
+    <link rel="stylesheet" async href="/self/css/gallery.css">
+    
+    
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <script async src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="/">
+        Memo
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
+        
+
+        
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/about/">About</a></li>
+            
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="/post/">Posts</a></dd>
+                
+
+                
+                    
+                        <dd><a href="/about/">About</a></dd>
+                    
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="self-elem-quote self-elem-quote-bg-red markdown-body single-title" >
+                    <h1></h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>0001-01-01</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/alg-stacked_capsule_autoencoders/">
+            <span class="layui-badge layui-bg-orange" style="vertical-align: 2px;">ALG-Stacked_Capsule_Autoencoders</span>
+        </a>
+    
+
+    
+    
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <h1 id="motivation">Motivation</h1>
+<p>从2017年开始， Hinton等人研究的Capsule Network得到了深度学习社区的大量关注。<br>
+可以说Capsule Network在反思CNN的一些固有偏见，<br>
+<strong>比如CNN的学习过分强调不变性（invariant ）特征的学习</strong><br>
+* 池化可以帮助输入近似不变（invariant），当输入发生少量偏移，输出的结果并不会改变<br>
+* =&gt; 因為max pool假設說kernel size夠大,依然可以選到區域中比較大的值, 這樣就可以達到輸出不變   <br>
+数据增强也服务于这一目的。而这样做，实际上，忽略了一个真实世界中的事实</p>
+<ul>
+<li>(1) 物体-部件 关系（Object-Part-relationship)
+<ul>
+<li>是视角不变的（viewpoint invariant）</li>
+</ul>
+</li>
+<li>(2) 物体-观察者（Object-Viewer-relationship）
+<ul>
+<li>是视角同变性（viewpoint equivariant）的<br>
+并且Capsule强调物体的存在是因为当部件以合理的关系组合才得以存在，所以进一步引出了routing的机制，来发掘part-whole关系。</li>
+</ul>
+</li>
+</ul>
+<p>这里想说的是: 如果有人问，当前深度学习的核心理念是什么，<br>
+我个人觉得，一个比较好的回答就是，<strong>学习目标形式化进而转换为参数的梯度学习</strong><br>
+然而这样的同质研究越来越多，又越来越难以深入其内部，DL社区就开始自我反思。<br>
+<strong>而Capsule的理念里面，就尝试去摆脱D中L对梯度回传的过分依赖，对卷积结构的过分依赖</strong><br>
+所以Capsule Network本身将一些自编码器、重构、混合高斯、注意力等机制引入其中。<br>
+其实读这篇论文会感觉作者用到的技术太多了，很容易忽略它背后的动机。我个人对它背后动机的理解为: <br>
+将图像中的实例的部件及属性从像素二维空间中以像素重建的方式抽取出出来；<br>
+再用重构的方式解释部件与整体的关系。这也是SACE的两个主要构成环</p>
+<h1 id="concept">Concept</h1>
+<p>该胶囊网络全名 Stacked Capsule Autoencoder (SCAE)，具体可分为两个阶段：<br>
+该胶囊网络可以无监督地学习图像中的特征<br>
+<img src="Selection_502.png" alt="image"><br>
+<img src="Selection_503.png" alt="image"></p>
+<ul>
+<li>(1) Part Capsule Autoencoder (PCAE）
+<ul>
+<li>PCAE 负责将&quot;图像分割成组件&rdquo;，借此推断其姿势，并将图像像素重构为转换后的部件模板像素的混合产物<br>
+<img src="Selection_504.png" alt="image"></li>
+</ul>
+</li>
+<li>(2) Object Capsule Autoencoder (OCAE)
+<ul>
+<li>OCAE 则试图将发现的部件及其姿势组成更小的一组对象，再结合针对每个部件的混合预测方案来解释部件的姿势。
+<img src="Selection_505.png" alt="image"><br>
+每个物体胶囊通过将姿势-对象-视图-关系（OV）乘以相关的物体-部件-关系 (OP) 来为这些混合物提供组件。SCAE<br>
+在未经标记的数据上进行训练时借此捕获整个物体及其部件之间的空间关系。</li>
+</ul>
+</li>
+</ul>
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/"><p class="footer-url">home</p></a>
+            </div>
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/about/"><p class="footer-url">About</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

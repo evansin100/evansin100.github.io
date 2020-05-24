@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>COMPILER-IR-NIR on Memo</title>
+    <link>https://evansin100.github.io/categories/compiler-ir-nir/</link>
+    <description>Recent content in COMPILER-IR-NIR on Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://evansin100.github.io/categories/compiler-ir-nir/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://evansin100.github.io/post/compiler-ir-nir/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evansin100.github.io/post/compiler-ir-nir/readme/</guid>
+      <description>Motivation  Software engineering principle
+— break compiler into manageable pieces Simplifies retargeting to new host
+— isolates back end from front end Simplifies support for multiple languages
+— different languages can share IR and back end Enables machine-independent optimization
+— general techniques, multiple passes  </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,179 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Memo</title>
+    
+    
+    <meta content="Memo" name="keywords">
+    
+    <meta content="Memo - unsupervised-learning 明察秋毫、善於分類的女兒：非監督式學習 Unsupervised learning 喜歡將看到的物件依照結構分門別類、劃分成不同群組的它，當你將一箱動物玩具放在它面前時，
+它很快就能夠從中分出不同的小圈子，讓你感到驚訝的是，你事先並沒有告訴它每隻動物是哪種分類，
+它卻可以透過觀察分成有翅膀能夠飛的、能在水中生活的或只能在路上爬的動物，
+有些甚至有它獨特的分類方法是你沒想到的，
+這就是非監督式學習，你不必透過監督，就從玩具中透過觀察解析結構將資訊做好分類。
+=&gt; 所以重點是不用知道種類的意義,但可以透過學習知道怎麼做分類
+非監督式學習可以只需要無標記( unlabeled)資料，便能實作。
+換成現實中的例子，想到的是消費者喜好分析，一般在分類不同消費群組時，我們習慣根據性別、年紀等做分群，
+但假如今天你發現有個會員會在白天購買化妝品、傍晚購買啤酒、晚上買電動，而且這族群數量還不算少，
+若只看性別和年紀應該會滿頭霧水，覺得這個消費者是不是得了精神分裂症。
+而這組會員其實就是家庭，全家爸爸、媽媽、小孩共用同一個帳號網購累積紅利，
+若套用非監督式學習去分析消費者的行為，便有機會篩檢出這麼樣有相同屬性的客群。" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+    
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/self/css/default.css">
+    <script async src="/layui/layui.js"></script>
+
+    <link rel="stylesheet" async href="/self/css/markdown.min.css">
+    <link rel="stylesheet" async href="/self/css/gallery.css">
+    
+    
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <script async src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="/">
+        Memo
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
+        
+
+        
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/about/">About</a></li>
+            
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="/post/">Posts</a></dd>
+                
+
+                
+                    
+                        <dd><a href="/about/">About</a></dd>
+                    
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="self-elem-quote self-elem-quote-bg-red markdown-body single-title" >
+                    <h1></h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>0001-01-01</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/alg-unsupervised-learning/">
+            <span class="layui-badge layui-bg-orange" style="vertical-align: 2px;">ALG-unsupervised-learning</span>
+        </a>
+    
+
+    
+    
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <h1 id="unsupervised-learning">unsupervised-learning</h1>
+<p>明察秋毫、善於分類的女兒：非監督式學習 Unsupervised learning
+喜歡將看到的物件依照結構分門別類、劃分成不同群組的它，當你將一箱動物玩具放在它面前時，<br>
+它很快就能夠從中分出不同的小圈子，讓你感到驚訝的是，你事先並沒有告訴它每隻動物是哪種分類，<br>
+它卻可以透過觀察分成有翅膀能夠飛的、能在水中生活的或只能在路上爬的動物，<br>
+有些甚至有它獨特的分類方法是你沒想到的，<br>
+這就是非監督式學習，你不必透過監督，就從玩具中透過觀察解析結構將資訊做好分類。<br>
+=&gt; 所以重點是不用知道種類的意義,但可以透過學習知道怎麼做分類</p>
+<p>非監督式學習可以只需要無標記( unlabeled)資料，便能實作。<br>
+換成現實中的例子，想到的是消費者喜好分析，一般在分類不同消費群組時，我們習慣根據性別、年紀等做分群，<br>
+但假如今天你發現有個會員會在白天購買化妝品、傍晚購買啤酒、晚上買電動，而且這族群數量還不算少，<br>
+若只看性別和年紀應該會滿頭霧水，覺得這個消費者是不是得了精神分裂症。<br>
+而這組會員其實就是家庭，全家爸爸、媽媽、小孩共用同一個帳號網購累積紅利，<br>
+若套用非監督式學習去分析消費者的行為，便有機會篩檢出這麼樣有相同屬性的客群。</p>
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/"><p class="footer-url">home</p></a>
+            </div>
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/about/"><p class="footer-url">About</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

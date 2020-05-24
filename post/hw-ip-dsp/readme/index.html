@@ -1,0 +1,185 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Memo</title>
+    
+    
+    <meta content="Memo" name="keywords">
+    
+    <meta content="Memo - Concept DSP = VLIW and SIMD
+ (1) SIMD  e.g., SIMD operation可以支援64-way(lane)(8bit), 就代表一次可以處理64筆資料 一般而言DSP都是用大量的vector能力來提高計算能力 例如, 可以一次宣告input 4x [64個signed char], coeff 4x [64個signed char] 然後只用一個指令, 就可以做到input and coeff相乘,並再把結果相加得到 result 4x [64個24bit] 只是要自己準備vector的data排序,是比較煩瑣點,但或許可以透過compiler來做auto vector   (2) VLIW  通常DSP都是VLIW processor (有多個slot) 所以一個instruction,可以有多筆的operation(slot) (一個operation放在一個slot) e.g., 4筆 vector SIMD operation可以同時發 (DSP會有定義每個slot可以發什麼operation) 因此這樣單位時間就可以處理64x4=256MACs, 所以通常DSP都會給MAC的能力(一筆VLIW最多可以算多少)
+    Note VLIW vs issue multiple insturction per cycle 有些DSP會說 不是VLIW processor
+但會說可以在同一個cycle發出多筆instruction
+這樣其實也是達到VLIW的效果" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+    
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/self/css/default.css">
+    <script async src="/layui/layui.js"></script>
+
+    <link rel="stylesheet" async href="/self/css/markdown.min.css">
+    <link rel="stylesheet" async href="/self/css/gallery.css">
+    
+    
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <script async src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="/">
+        Memo
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
+        
+
+        
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/about/">About</a></li>
+            
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="/post/">Posts</a></dd>
+                
+
+                
+                    
+                        <dd><a href="/about/">About</a></dd>
+                    
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="self-elem-quote self-elem-quote-bg-red markdown-body single-title" >
+                    <h1></h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>0001-01-01</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/hw-ip-dsp/">
+            <span class="layui-badge layui-bg-orange" style="vertical-align: 2px;">HW-IP-DSP</span>
+        </a>
+    
+
+    
+    
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <h1 id="concept">Concept</h1>
+<p>DSP = VLIW and SIMD</p>
+<ul>
+<li>(1) SIMD
+<ul>
+<li>e.g., SIMD operation可以支援64-way(lane)(8bit), 就代表一次可以處理64筆資料</li>
+<li>一般而言DSP都是用大量的vector能力來提高計算能力</li>
+<li>例如, 可以一次宣告input 4x [64個signed char], coeff 4x [64個signed char]</li>
+<li>然後只用一個指令, 就可以做到input and coeff相乘,並再把結果相加得到 result 4x [64個24bit]</li>
+<li>只是要自己準備vector的data排序,是比較煩瑣點,但或許可以透過compiler來做auto vector</li>
+</ul>
+</li>
+<li>(2) VLIW
+<ul>
+<li>通常DSP都是VLIW processor (有多個slot)</li>
+<li>所以一個instruction,可以有多筆的operation(slot) (一個operation放在一個slot)</li>
+<li>e.g., 4筆 vector SIMD operation可以同時發 (DSP會有定義每個slot可以發什麼operation)</li>
+<li>因此這樣單位時間就可以處理64x4=256MACs, 所以通常DSP都會給MAC的能力(一筆VLIW最多可以算多少)<br>
+<img src="Selection_033.png" alt="image"></li>
+</ul>
+</li>
+</ul>
+<h1 id="note">Note</h1>
+<p>VLIW vs issue multiple insturction per cycle <br>
+有些DSP會說 不是VLIW processor<br>
+但會說可以在同一個cycle發出多筆instruction<br>
+這樣其實也是達到VLIW的效果</p>
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/"><p class="footer-url">home</p></a>
+            </div>
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/about/"><p class="footer-url">About</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

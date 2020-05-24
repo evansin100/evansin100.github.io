@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ALG-OpenPose on Memo</title>
+    <link>https://evansin100.github.io/categories/alg-openpose/</link>
+    <description>Recent content in ALG-OpenPose on Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://evansin100.github.io/categories/alg-openpose/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://evansin100.github.io/post/alg-openpose/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evansin100.github.io/post/alg-openpose/readme/</guid>
+      <description>Problem for Pose Estimation (1) 一張圖片裡有多少人，而這些人擺什麼姿勢和人的大小？
+(2) 有幾個人是相互疊在一起（overlap）的，他們彼此摭蓋面積？
+(3) 無法即時（realtime）
+另外論文中也提到了一些現有方法存在的瓶頸，現有方法主要是透過 top-down 的方式：
+person detector
+single-person pose estimation 來解決此類問題，而這很依賴效能，如果 person detector 失敗了
+Key point 文章的核心是提出一种利用Part Affinity Fields（PAFs）的自下而上的人体姿态估计算法。
+(1) 研究自下而上算法（得到关键点位置再获得骨架）
+(2) 而不是自上而下算法（先检测人，再回归关键点) 是因为后者运算时间会随着图像中人的个数而显著增加，而自下而上所需计算时间基本不变。 所以時間不會隨著人變多而有影響
+Main Flow (1) 讀進一張圖片大小為 w×h 的圖片 I。
+(2) 送進 model VGG-19 的前 10 層 layer train 出大小一樣為 w×h 的 features F。
+(3) 再送進 paper 中提到的 model，會得到以下兩個：
+(4) 再將 confidence maps S 和 affinity fields L 送到 greedy inference，就能產生所有人的 2D keypoints。</description>
+    </item>
+    
+  </channel>
+</rss>

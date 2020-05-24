@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TOOL-anaconda on Memo</title>
+    <link>https://evansin100.github.io/categories/tool-anaconda/</link>
+    <description>Recent content in TOOL-anaconda on Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://evansin100.github.io/categories/tool-anaconda/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://evansin100.github.io/post/tool-anaconda/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evansin100.github.io/post/tool-anaconda/readme/</guid>
+      <description>Concept Anaconda是目前最受歡迎的Python數據科學(Data Science)平台， 除了有眾多使用者及企業用戶外，目前也超過1000種的Data Science Packages可使用(包括250多種流行的packages)，
+適用於Windows、Linux和MacOS 不同作業系統環境下的conda軟件包(package)和虛擬環境管理器，
+對於在安裝、執行及升級複雜的數據科學(Data Science)及機器學習(Machine Learning)環境上變得簡單快速
+Conda vs Anaconda 而 Anaconda 中有自己的套件管理系統, 叫做 conda 還沒有安裝的套件我們可以用 conda 裝
+=&amp;gt; 所以再安裝Anaconda後,就default有conda來安裝套件了
+(1) Conda是一个包管理器；
+=&amp;gt; 自动化软件安装，更新，卸载的一种工具
+=&amp;gt; 有命令”conda install”, “conda update”, “conda remove”
+(2) Anaconda才是一个python发行版。
+=&amp;gt; 软件发行版是在系统上提前编译和配置好的软件包集合， 装好了后就可以直接用
+虽然conda是用Anaconda打包的， 但是它们两个的目标是完全不同的 conda和Anaconda没有必然关系， 你可以不安装Anaconda的同时， 使用conda安装和管理软件
+Remove Anaconda conda install anaconda-clean
+anaconda-clean
+接著手動刪除anaconda資料夾
+rm -rf anaconda3
+更改$PATH
+sudo vi ~/.bashrc
+把anaconda加的都砍掉
+Install Anaconda curl -O https://repo.anaconda.com/archive/Anaconda3-5.2.0-Linux-x86_64.sh
+sh Anaconda3-5.2.0-Linux-x86_64.sh export PATH=/home/evan/anaconda3/bin:$PATH
+Suggestion  所以都先 update conda 自己。 conda update conda 有一個不一定非做不可, 但你開心想把 Anaconda 整個更新, 可以這樣做: conda update anaconda &amp;lt;/td&amp;gt;   更酷的是, 我們做新的環境, 你可以指定 Python 啦, 某某套件的版本。比方說你一直在想要用 Python 2 還是 Python 3, 現在不用管啦, 就各開一個獨立環境就好。 現在我們假設要開一個叫 py3 的 Python 3 環境。 conda create -n py3 python=3 anaconda &amp;lt;/td&amp;gt;   source activate py3 如果要離開的話,只要打上 deactivate即可 &amp;lt;/td&amp;gt;   conda install xxx 若要安裝特定版本的 直接在後面打上版本號即可 $ conda install python=3.</description>
+    </item>
+    
+  </channel>
+</rss>

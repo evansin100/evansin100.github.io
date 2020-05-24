@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SW-LANG-OpenCL on Memo</title>
+    <link>https://evansin100.github.io/categories/sw-lang-opencl/</link>
+    <description>Recent content in SW-LANG-OpenCL on Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://evansin100.github.io/categories/sw-lang-opencl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://evansin100.github.io/post/sw-lang-opencl/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evansin100.github.io/post/sw-lang-opencl/readme/</guid>
+      <description>Key 建議看底下link了解GPU(OpenCL-&amp;gt;NDrange-&amp;gt;GPU thread的整個處理流程) https://github.com/evansin100/OpenCL/tree/master/Core
+可以看這邊有
+(1) GPU arch. workgroup (kernel-fiber,wave,L2 cache,L1 cache,texture unit) (2) GPU memory 優化還有架構 local memory,global memory
+(3) GPU openCL 優化技巧(一個kernel計算多個output..etc.) https://github.com/evansin100/OpenCL/tree/master/whitepaper/qcom</description>
+    </item>
+    
+  </channel>
+</rss>

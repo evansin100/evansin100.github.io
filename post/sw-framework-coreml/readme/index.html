@@ -1,0 +1,205 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Memo</title>
+    
+    
+    <meta content="Memo" name="keywords">
+    
+    <meta content="Memo - Concept Core ML 3：支援進階神經網路 WWDC 2019 蘋果介紹了 Core ML 3，這是蘋果機器學習模型框架的最新版本。 Core ML 是能在蘋果產品使用的高效能機器學習框架， 幫助開發者快速將多種機器學習模型融合到 App。 2017 年推出，2018 年升級為 Core ML 2，處理速度提升了 30%。
+如今 Core ML 升級為 Core ML 3，Core ML 3 將首次培訓裝置的機器學習。 由於模型可使用裝置用戶資料更新，因此 Core ML 3 能幫助模型不損隱私的情況下與用戶行為保持關聯。 不僅如此，Core ML 3 還支援進階神經網路，支援超過 100 種層類別，在影像、音響辨識有更好表現。 另外，能無縫利用 CPU、GPU 和神經引擎提供最大效能和效率。
+ On-device model personalisation:  models bundled into apps can be updated with user data on-device, helping personalise the models to the user while maintaining privacy." name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+    
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/self/css/default.css">
+    <script async src="/layui/layui.js"></script>
+
+    <link rel="stylesheet" async href="/self/css/markdown.min.css">
+    <link rel="stylesheet" async href="/self/css/gallery.css">
+    
+    
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <script async src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="/">
+        Memo
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
+        
+
+        
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/about/">About</a></li>
+            
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="/post/">Posts</a></dd>
+                
+
+                
+                    
+                        <dd><a href="/about/">About</a></dd>
+                    
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="self-elem-quote self-elem-quote-bg-red markdown-body single-title" >
+                    <h1></h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>0001-01-01</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/sw-framework-coreml/">
+            <span class="layui-badge layui-bg-orange" style="vertical-align: 2px;">SW-FRAMEWORK-CoreML</span>
+        </a>
+    
+
+    
+    
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <h1 id="concept">Concept</h1>
+<p>Core ML 3：支援進階神經網路   <br>
+WWDC 2019 蘋果介紹了 Core ML 3，這是蘋果機器學習模型框架的最新版本。  <br>
+Core ML 是能在蘋果產品使用的高效能機器學習框架，  <br>
+幫助開發者快速將多種機器學習模型融合到 App。  <br>
+2017 年推出，2018 年升級為 Core ML 2，處理速度提升了 30%。<br>
+如今 Core ML 升級為 Core ML 3，Core ML 3 將首次培訓裝置的機器學習。  <br>
+由於模型可使用裝置用戶資料更新，因此 Core ML 3 能幫助模型不損隱私的情況下與用戶行為保持關聯。   <br>
+不僅如此，Core ML 3 還支援進階神經網路，支援超過 100 種層類別，在影像、音響辨識有更好表現。  <br>
+另外，能無縫利用 CPU、GPU 和神經引擎提供最大效能和效率。</p>
+<ul>
+<li>On-device model personalisation:
+<ul>
+<li>models bundled into apps can be updated with user data on-device,</li>
+<li>helping personalise the models to the user while maintaining privacy.</li>
+<li>=&gt; 所以CoreML3 已經支援ondevice training</li>
+<li>=&gt; 並且CoreML3 裡面也有完整的training API可以在device上跑</li>
+</ul>
+</li>
+<li>Significant updates to Vision and NLP frameworks,
+<ul>
+<li>and a new on-device Speech and Sound Framework.</li>
+</ul>
+</li>
+<li>Image saliency (Vision)
+<ul>
+<li>heat map of salient features of an image,</li>
+<li>areas the user may be most likely to focus their attention on.</li>
+</ul>
+</li>
+<li>Text recognition and search in images (Vision).</li>
+<li>Word embedding (NLP)
+<ul>
+<li>understand the context of a word in the text and the relation to other words.</li>
+</ul>
+</li>
+<li>Speech saliency (Speech and Sound)
+<ul>
+<li>pronunciation information, streaming confidence,</li>
+<li>utterance detection, and acoustic features.</li>
+</ul>
+</li>
+<li>Create ML macOS app
+<ul>
+<li>workflows to build, train, test, and deploy machine learning models.</li>
+<li>Real time feedback for model creation and training.</li>
+</ul>
+</li>
+</ul>
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/"><p class="footer-url">home</p></a>
+            </div>
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/about/"><p class="footer-url">About</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

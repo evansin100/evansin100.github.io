@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ALG-CNN_position_encoding on Memo</title>
+    <link>https://evansin100.github.io/categories/alg-cnn_position_encoding/</link>
+    <description>Recent content in ALG-CNN_position_encoding on Memo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://evansin100.github.io/categories/alg-cnn_position_encoding/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://evansin100.github.io/post/alg-cnn_position_encoding/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evansin100.github.io/post/alg-cnn_position_encoding/readme/</guid>
+      <description>Concept 文章是ICML2020的一个工作，探究了CNN到底有没有编码位置信息 这些位置信息在哪些神经元中被编码、这些位置信息又是如何被暴露给神经网络学习的。
+文章通过大量实验表明，CNN不仅可以编码位置信息，而且越深的层所包含的位置信息越多 (而往往越深的层解释性越差，浅层学习到的形状、边缘等比较容易解释)，
+而位置信息是通过zero-padding透露的，显然，图像边缘的zero-padding暗示了图像的边界，
+能利用zero-padding带来的位置信息，编码物体所在图像中的位置，
+而这一点在显著性目标检测和语义分割等任务中是非常有用的。
+上图是三组显显著性区域的heatmap可视化结果，
+在每一组实验中，如果给定左边的图，显著性区域是偏中间的，
+而把图片右边crop掉(每组的右边的图)，
+发现显著性区域有了变换，shift到了对应crop图的中心。
+显著性区域一般都是在图像中间的，所以可以简单得出一个结论， CNN学习到了哪里是输入图像的中间，所以将显著性区域的预测结果向中间shift。
+Zero padding 位置信息是zero-padding透露的。
+足够大的网络（多层或者大kernel）可以把padding透露的边界信息扩散出去，得到粗糙的全局位置信息。
+在没有padding的情况下，输出只会直接响应在输入的内容上，不能预测和内容无关的位置信息：</description>
+    </item>
+    
+  </channel>
+</rss>

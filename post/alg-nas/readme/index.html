@@ -1,0 +1,289 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Memo</title>
+    
+    
+    <meta content="Memo" name="keywords">
+    
+    <meta content="Memo - concept NAS 也就是 Neural Architecture Search，目标是从一堆神经网络组件中，搜索到一个好的神经网络模型。
+我们知道神经网络模型是一种可任意堆砌的模型结构， 基础的组件包括 FC（全连接层）、Convolution（卷积层）、Polling（池化层）、Activation（激活函数）等， 后一个组件可以以前一个组件作为输入，不同的组件连接方式和超参配置方式在不同应用场景有不同的效果，
+例如下面就是在图像分类场景非常有效的 Inception 模型结构
+图内结构比较复杂不理解也没关系，我们只需要知道这个神经网络结构是由图像领域专家花费大量精力设计出来的，
+并且经过了巨量的实验和测试才能（在不能解释深度学习原理的情况下）确定这个网络结构。
+那么计算机是否可以自己去学习和生成这个复杂的网络结构呢？
+目前是不行的，包括各种 NAS 算法的变形还有 ENAS 算法暂时也无法生成这样的网络结构，
+这里抛出本文第三个观点，绝大部分机器学习都不是人工智能，计算机不会无缘无故获得既定目标以外的能力。
+因此，计算机并不是自己学会编程或者建模，我们还没有设计出自动建模的数据集和算法，
+所谓的“AI 设计神经网络模型”，其实只是在给定的搜索空间中查找效果最优的模型结构。(所以還是有限制的solution space) example 例如我们假设模型必须是一个三层的全连接神经网络（一个输入层、一个隐层、一个输出层），
+(1) 隐层可以有不同的激活函数和节点个数，
+(2) 假设激活函数必须是 relu 或 sigmoid 中的一种，
+而隐节点数必须是 10、20、30 中的一个，那么我们称这个网络结构的搜索空间就是{relu, sigmoid} * {10, 20 ,30}。
+在搜索空间中可以组合出 6 种可能的模型结构，在可枚举的搜索空间内我们可以分别实现这 6 种可能的模型结构，
+最终目标是产出效果最优的模型，那么我们可以分别训练这 6 个模型并以 AUC、正确率等指标来评价模型，
+然后返回或者叫生成一个最优的神经网络模型结构
+因此，NAS 算法是一种给定模型结构搜索空间的搜索算法，
+当然这个搜索空间不可能只有几个参数组合，
+在 ENAS 的示例搜索空间大概就有 1.6*10^29 种可选结构，
+而搜索算法也不可能通过枚举模型结构分别训练来解决，
+而需要一种更有效的启发式的搜索算法，这种算法就是后面会提到的贝叶斯优化、增强学习、进化算法等 search what ? hyper parameters (solution space) 使用超参自动调优前面提到 NAS 是一种搜索算法，是从超大规模的搜索空间找到一个模型效果很好的模型结构，" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+    
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/self/css/default.css">
+    <script async src="/layui/layui.js"></script>
+
+    <link rel="stylesheet" async href="/self/css/markdown.min.css">
+    <link rel="stylesheet" async href="/self/css/gallery.css">
+    
+    
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <script async src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="/">
+        Memo
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
+        
+
+        
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/about/">About</a></li>
+            
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="/post/">Posts</a></dd>
+                
+
+                
+                    
+                        <dd><a href="/about/">About</a></dd>
+                    
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="self-elem-quote self-elem-quote-bg-red markdown-body single-title" >
+                    <h1></h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>0001-01-01</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/alg-nas/">
+            <span class="layui-badge layui-bg-orange" style="vertical-align: 2px;">ALG-NAS</span>
+        </a>
+    
+
+    
+    
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <h1 id="concept">concept</h1>
+<p>NAS 也就是 Neural Architecture Search，目标是从一堆神经网络组件中，搜索到一个好的神经网络模型。</p>
+<h4 id="我们知道神经网络模型是一种可任意堆砌的模型结构">我们知道神经网络模型是一种可任意堆砌的模型结构，</h4>
+<h4 id="基础的组件包括-fc全连接层convolution卷积层polling池化层activation激活函数等">基础的组件包括 FC（全连接层）、Convolution（卷积层）、Polling（池化层）、Activation（激活函数）等，</h4>
+<p>后一个组件可以以前一个组件作为输入，不同的组件连接方式和超参配置方式在不同应用场景有不同的效果，<br>
+例如下面就是在图像分类场景非常有效的 Inception 模型结构</p>
+<p>图内结构比较复杂不理解也没关系，我们只需要知道这个神经网络结构是由图像领域专家花费大量精力设计出来的，<br>
+并且经过了巨量的实验和测试才能（在不能解释深度学习原理的情况下）确定这个网络结构。<br>
+那么计算机是否可以自己去学习和生成这个复杂的网络结构呢？<br>
+目前是不行的，包括各种 NAS 算法的变形还有 ENAS 算法暂时也无法生成这样的网络结构，<br>
+这里抛出本文第三个观点，绝大部分机器学习都不是人工智能，计算机不会无缘无故获得既定目标以外的能力。<br>
+因此，计算机并不是自己学会编程或者建模，我们还没有设计出自动建模的数据集和算法，</p>
+<h4 id="所谓的ai-设计神经网络模型其实只是在给定的搜索空间中查找效果最优的模型结构所以還是有限制的solution-space">所谓的“AI 设计神经网络模型”，其实只是在给定的搜索空间中查找效果最优的模型结构。(所以還是有限制的solution space)</h4>
+<h1 id="example">example</h1>
+<p>例如我们假设模型必须是一个三层的全连接神经网络（一个输入层、一个隐层、一个输出层），<br>
+(1) 隐层可以有不同的激活函数和节点个数，<br>
+(2) 假设激活函数必须是 relu 或 sigmoid 中的一种，<br>
+而隐节点数必须是 10、20、30 中的一个，那么我们称这个网络结构的搜索空间就是{relu, sigmoid} * {10, 20 ,30}。<br>
+在搜索空间中可以组合出 6 种可能的模型结构，在可枚举的搜索空间内我们可以分别实现这 6 种可能的模型结构，<br>
+最终目标是产出效果最优的模型，那么我们可以分别训练这 6 个模型并以 AUC、正确率等指标来评价模型，<br>
+然后返回或者叫生成一个最优的神经网络模型结构</p>
+<p>因此，NAS 算法是一种给定模型结构搜索空间的搜索算法，<br>
+当然这个搜索空间不可能只有几个参数组合，<br>
+在 ENAS 的示例搜索空间大概就有 1.6*10^29 种可选结构，<br>
+而搜索算法也不可能通过枚举模型结构分别训练来解决，</p>
+<h4 id="而需要一种更有效的启发式的搜索算法这种算法就是后面会提到的贝叶斯优化增强学习进化算法等">而需要一种更有效的启发式的搜索算法，这种算法就是后面会提到的贝叶斯优化、增强学习、进化算法等</h4>
+<h1 id="search-what--hyper-parameters-solution-space">search what ? hyper parameters (solution space)</h1>
+<p>使用超参自动调优前面提到 NAS 是一种搜索算法，是从超大规模的搜索空间找到一个模型效果很好的模型结构，<br>
+这类问题我们也可以看作一个优化问题，也就是从搜索空间中找到另一个模型效果更优的模型结构。<br>
+而神经网络模型的结构和效果并不是线性关系的，也没有一个函数可以描述这种关系，<br>
+如果存在这样的函数我们就可以通过求导、SGD 等方法用数学的方式找到最优解了，<br>
+因此这可以看作一类黑盒优化（Black-box optimization）问题，<br>
+或者是多臂老虎机（Multi-armed bandit）问题，<br>
+对于黑盒优化问题的解法可以参考专栏另一篇文章《贝叶斯优化: 一种更好的超参数调优方式》<br>
+（https://zhuanlan.zhihu.com/p/29779000） 。</p>
+<p>回到 NAS 的场景，我们需要定义一个搜索空间来让算法选择更优的网络结构，<br>
+而这个搜索空间无外乎就是</p>
+<h4 id="1-网络层个数">(1) 网络层个数、</h4>
+<h4 id="2-网络层的类型">(2) 网络层的类型、</h4>
+<h4 id="3-网络层的激活函数类型">(3) 网络层的激活函数类型、</h4>
+<h4 id="4-网络层是否加-dropout">(4) 网络层是否加 Dropout、</h4>
+<h4 id="5-网络层是否加-batch-normalization">(5) 网络层是否加 Batch normalization，</h4>
+<h4 id="6-还有就是诸如卷积层的-filter-sizestrippadding">(6) 还有就是诸如卷积层的 filter size、strip、padding</h4>
+<h4 id="7-和池化层的-polling-typekernel-size-等等">(7) 和池化层的 polling type、kernel size 等等，</h4>
+<p>这些我们都可以认为是神经网络的超参数。</p>
+<h1 id="put-it-simple">put it simple</h1>
+<p>实际上，NAS 可以是一个普通的超参调优问题，<br>
+也可以是一个针对模型结构场景的调优问题。</p>
+<p>例如 Google 开源的 NASnet 模型和 ENAS 算法就是在通用的超参调优上更进一步，<br>
+当然并不是说后者的方法更优更先进，<br>
+而是有些问题是超参不好描述的，例如用超参来表达每一层的输入是前面的哪一层，<br>
+这里不妨推荐一篇文章介绍基于 Policy gradient 的 NAS 经典实现</p>
+<p><a href="https://lab.wallarm.com/the-first-step-by-step-guide-for-implementing-neural-architecture-search-with-reinforcement-99ade71b3d28">https://lab.wallarm.com/the-first-step-by-step-guide-for-implementing-neural-architecture-search-with-reinforcement-99ade71b3d28</a></p>
+<p>对于可以用超参轻易描述并且实现的模型结构，实现 NAS 并没有那么难，<br>
+我们不需要自己去实现类似 Policy gradient 的启发式调优算法（后面会详细介绍到），<br>
+可以使用一些已有的超参调优库，只要自己实现机器学习模型的训练过程和返回最终的指标结果即可。<br>
+因此我尝试在 Google Vizier 的开源实现 Advisor 上使用 NAS 的功能，<br>
+发现不到一百行代码就可以实现完整的自动生成网络结构功能，<br>
+而且不需要服务端做任何修改，我们用几十行 Keras 代码或者是 TensorFlow 等任意的框架都可以使用，<br>
+只需要提前描述好超参的搜索空间即可，示例代码我也提交到 Github 上了</p>
+<p>Github 链接：https://github.com/tobegit3hub/advisor/tree/master/examples/keras</p>
+<p>NAS 的优化算法前面提到 NAS 算法是一种搜索算法，除了需要定义好搜索空间外，<br>
+还需要有一种启发式的可以收敛的调优算法实现。因为一般生成网络模型的搜索空间都很大，<br>
+如果搜索空间不大就可以暴力枚举了，而且生成一个模型要评估好坏就需要训练，这个成本也是非常大了。</p>
+<h1 id="inside-nas">inside NAS</h1>
+<p>这些算法都可以用于 NAS 内部的模型的优化。<br>
+(1) controllder</p>
+<h4 id="nas-内部也有一个模型一般在论文或者代码中称为-controller-模型">NAS 内部也有一个模型，一般在论文或者代码中称为 controller 模型，</h4>
+<h4 id="又它来控制想要生成的神经网络模型的结构">又它来控制想要生成的神经网络模型的结构</h4>
+<p>(2) child</p>
+<h4 id="而生成的神经网络模型会根据客户的使用场景例如图像分类来返回模型效果对应的指标这个一般称为-child-模型">而生成的神经网络模型会根据客户的使用场景（例如图像分类）来返回模型效果对应的指标，这个一般称为 child 模型。</h4>
+<h1 id="optimization-skill-for-tuning-hyper-parameters">optimization skill for tuning hyper parameters</h1>
+<p>这时我们想到的调优算法就是
+贝叶斯优化（Bayesian optimization）、
+粒子群优化（Particle swarm optimization）、
+Policy gradient、
+DQN 等等，</p>
+<p>前面介绍了基于 Advisor 来实现的 NAS，其实就是使用了 Advisor 内置的调优模型作为 NAS 的 controller 模型，<br>
+默认就是贝叶斯优化，而且只需要修改一个参数就可以通过统一的接口来使用后端已经支持的 Random search、Grid search 等调优算法。<br>
+前面推荐的博客使用的是增强学习中的 Policy gradient 算法，<br>
+包括后面提到的 ENAS 论文也是使用这个算法，<br>
+而在 Google 的其他论文中有介绍使用 Evolution algorithm 和 DQN 的，<br>
+AlphaZero 在超参调优中使用的是贝叶斯优化，<br>
+而 Deepmind 最新的调参论文介绍了类似 PSO 的群体优化算法。<br>
+大家需要理解这些算法从本质上没有区别，都是黑盒优化算法，<br>
+因为假设不知道优化的目标和优化的参数是否有函数关系并且不能从中获取梯度等信息，<br>
+只能从历史的模型训练结果中根据超参组合还有最后模型效果来选择超参的变化值。<br>
+而 这些算法的区别在于运行效率和算法复杂度上，因此也会应用到不同的领域上</p>
+<h4 id="我们经常看到下围棋打游戏的人喜欢用-dqna3c-算法来优化模型">我们经常看到下围棋、打游戏的人喜欢用 DQN、A3C 算法来优化模型，</h4>
+<p>=&gt; 也就是reinforcement learning<br>
+是因为下棋和打游戏都是可以通过软件模拟操作并且可以快速收到 reward 的，<br>
+例如一分钟收集到几十万的 state 和 reward 完全足够训练一个高度复杂的 AlphaZero 模型（基于 ResNet）。</p>
+<p>而 AlphaZero 的超参调优却使用基于高斯过程的贝叶斯优化，<br>
+是因为调整超参需要重新训练模型代价很大，<br>
+大概几小时才能得到一个 state 和 reward，这不足以训练一个比 ResNet 弱很多的神经网络模型，</p>
+<h4 id="但可以通过在数学上假设所有超参之间符合联合高斯分布然后通过高斯过程求-statereward-关联关系的均值和方差">但可以通过在数学上假设所有超参之间符合联合高斯分布然后通过高斯过程求 state、reward 关联关系的均值和方差，</h4>
+<h4 id="然后基于-explorationexploitation-原则选择下一个更优的探索点这也就是贝叶斯优化的实现原理了">然后基于 exploration/exploitation 原则选择下一个更优的探索点，这也就是贝叶斯优化的实现原理了。</h4>
+<p>=&gt; 所以bayssen 就是透過數學的方式來更新,所以比較快　　　</p>
+<h4 id="这其实也解释了为什么-google-以前基于-dqn进化算法的-nas-模型需要几百块-gpu-并发训练多个月">这其实也解释了为什么 Google 以前基于 DQN、进化算法的 NAS 模型需要几百块 GPU 并发训练多个月，</h4>
+<h4 id="因为评估一个模型结构是好是坏真的很耗时这也是为什么-enas-解决评估模型这个问题后这么-efficient">因为评估一个模型结构是好是坏真的很耗时，这也是为什么 ENAS 解决评估模型这个问题后这么 Efficient，</h4>
+<p>后面会有详细的介绍。下面有一个更直观的图介绍为什么贝叶斯优化在数学上会比瞎猜（Random search 算法）更好。<br>
+首先红色的点表示已经探索过超参数，这里只有一个超参数 X 需要调整，Y 轴表示选择这个超参数 X 后模型的效果，<br>
+可以认为 Y 就是模型正确率也就是越大越好，蓝线真实的超参 X 与正确率 Y 的对应关系，<br>
+因为我们不可能遍历所有 X 因此蓝线我们是未知的，而我们的目标是已知几个红点去找到蓝线中的最高点。<br>
+其中上图有一条虚线和浅蓝色区域，那就是贝叶斯优化中高斯过程返回的均值和方差，<br>
+这个均值和方差是在 X 取值范围内都有的，分别代表了这个 X 点期望的正确率是多少和这个 X 点可能浮动的空间</p>
+<p>如果仔细观察可以发现，红点必然会在虚线上，因为这个点是已经探索过的，　　
+也就是用这个 X 去训练模型已经得到了正确率，因此这个点也必然在蓝线上。　　
+而浅蓝色区域代表了这一块可能浮动的空间，因此浅蓝色区域里虚线越大表示这块越值得 exploration，　　
+可能发现新的高点也不一定，而虚线越高表示对这块期望的 Y 值也越大，也是越值得 exploitation。　　
+为了权衡 exploration 和 exploitation 因此有了下面的 Utility function，这也是一种算法。　　　
+我们可以简单认为它就是用均值加上λ倍的方差得到的曲线，然后取最高值作为下一个探索点，　　　
+因为这个探索点代表了这个 X 位置期望的 Y 值还有想要探索更多未知的可能性，　　　
+如果觉得比较难理解建议先参考《贝叶斯优化：一种更好的超参数调优方式　　</p>
+<p><img src="https://github.com/evansin100/NAS/blob/master/Selection_048.png" alt="image"></p>
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/"><p class="footer-url">home</p></a>
+            </div>
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/about/"><p class="footer-url">About</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

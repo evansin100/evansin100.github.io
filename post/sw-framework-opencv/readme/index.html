@@ -1,0 +1,194 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Memo</title>
+    
+    
+    <meta content="Memo" name="keywords">
+    
+    <meta content="Memo - OpenCV 如果是在VM環境想用Camera, 會需要開啟VM前先設定, attach host端的webcam如下 C:\Program Files\Oracle\VirtualBox&gt;VBoxManage.exe controlvm &ldquo;Ubuntu&rdquo; webcam attach .1
+issue : undefined reference to `cv::String::allocate(unsigned long)&rsquo; C&#43;&#43;也有OpenCV
+但是簡單的範例 確compile不過
+#include &lt;opencv2/core/core.hpp&gt;
+#include &lt;opencv2/highgui/highgui.hpp&gt;
+#include using namespace cv;
+using namespace std;
+int main( int argc, char** argv )
+{ Mat image;
+image = imread(argv[1], CV_LOAD_IMAGE_COLOR);
+透過這個方式可以安裝OpenCV for C&#43;&#43; and python
+sudo apt-get install libopencv-dev python-opencv
+若用 C&#43;&#43; 開發 OpenCV 的程式，官方是建議搭配 CMake 來編譯，而 CMake 的 CMakeLists.txt 設定檔內容如下：
+要把cpp改成你的名子
+cmake_minimum_required(VERSION 2." name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+    
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/self/css/default.css">
+    <script async src="/layui/layui.js"></script>
+
+    <link rel="stylesheet" async href="/self/css/markdown.min.css">
+    <link rel="stylesheet" async href="/self/css/gallery.css">
+    
+    
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <script async src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="/">
+        Memo
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
+        
+
+        
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/about/">About</a></li>
+            
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="/post/">Posts</a></dd>
+                
+
+                
+                    
+                        <dd><a href="/about/">About</a></dd>
+                    
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="self-elem-quote self-elem-quote-bg-red markdown-body single-title" >
+                    <h1></h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>0001-01-01</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/sw-framework-opencv/">
+            <span class="layui-badge layui-bg-orange" style="vertical-align: 2px;">SW-FRAMEWORK-OpenCV</span>
+        </a>
+    
+
+    
+    
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <h1 id="opencv">OpenCV</h1>
+<p>如果是在VM環境想用Camera, 會需要開啟VM前先設定, attach host端的webcam如下
+C:\Program Files\Oracle\VirtualBox&gt;VBoxManage.exe controlvm &ldquo;Ubuntu&rdquo; webcam attach .1</p>
+<h1 id="issue--undefined-reference-to-cvstringallocateunsigned-long">issue : undefined reference to `cv::String::allocate(unsigned long)&rsquo;</h1>
+<p>C++也有OpenCV<br>
+但是簡單的範例 確compile不過<br>
+#include &lt;opencv2/core/core.hpp&gt;<br>
+#include &lt;opencv2/highgui/highgui.hpp&gt;<br>
+#include <!-- raw HTML omitted --></p>
+<p>using namespace cv;<br>
+using namespace std;</p>
+<p>int main( int argc, char** argv )<br>
+{
+Mat image;<br>
+image = imread(argv[1], CV_LOAD_IMAGE_COLOR);</p>
+<p>透過這個方式可以安裝OpenCV for C++ and python<br>
+sudo apt-get install libopencv-dev python-opencv<br>
+若用 C++ 開發 OpenCV 的程式，官方是建議搭配 CMake 來編譯，而 CMake 的 CMakeLists.txt 設定檔內容如下：<br>
+要把cpp改成你的名子<br>
+cmake_minimum_required(VERSION 2.8)<br>
+project( load_png )<br>
+find_package( OpenCV REQUIRED )<br>
+add_executable( load_png load_png.cpp )<br>
+target_link_libraries( load_png ${OpenCV_LIBS} )</p>
+<p>然後目錄中打 cmake . and make<br>
+<img src="https://github.com/evansin100/OpenCV/blob/master/Selection_039.png" alt="image"></p>
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/"><p class="footer-url">home</p></a>
+            </div>
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/about/"><p class="footer-url">About</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Memo</title>
+    
+    
+    <meta content="Memo" name="keywords">
+    
+    <meta content="Memo - Motivation 大部分情況，其實我們已經可以通過top，pidstat等命令定位到具體是哪一個服務出的問題。
+當然重啟服務可以解決60%以上的服務異常問題，但是重啟後會丟失現場。
+重啟一時爽，一直重啟就不爽了。還是需要定位到具體的問題。我還是希望知道底病根在哪， 最好直接告訴我哪個具體函數，哪條語句導致的問題或者bug。最差也得知道是大致什麼節點的什麼類型故障
+很多人可能會想到GDB。雖然這些工具很偉大，但是這應該不適合我們sre在已經服務已經發病的情況下使用，
+因為線上的服務不能被中止。GDB在調試過程中設置斷點會發出SIGSTOP信號， 這會讓被調試進程進入T (TASK_STOPPED or TASK_TRACED)暫停狀態或跟蹤狀態。 同時 GDB 所基於的 ptrace 這種很古老的系統調用，其中的坑和問題也非常多。
+比如 ptrace 需要改變目標調試進程的父親，還不允許多個調試者同時分析同一個進程， 而且不太熟悉GDB的人可能會把程序調試掛了，這種交互式的追蹤過程通常不考慮生產安全性， 也不在乎性能損耗。另外提一下，strace也是基於ptrace的，所以strace也是對性能不友好的
+那麼就要提到動態追蹤技術了，動態追蹤技術通常通過探針這樣的機制發起查詢。 動態追蹤一般來說是不需要應用目標來配合的，隨時隨地，按需採集
+而且它非常大的優勢為性能消耗極小（通常5%或者更低的水平)
+dynamic tracing 動態追蹤技術（dynamic tracing）是現代軟體的進階除錯和追蹤機制
+在動態追蹤的實作中，一般是通過探針 (probe) 這樣的機制來發起查詢。
+我們會在軟體系統的某個層次，或者某幾個層次上面，安置一些探針，然後我們會自己定義這些探針所關聯的處理程式
+動態追蹤機制如果內建於作業系統，那麼使用者層級的程式即可隨時採集資訊，
+構建出一幅完整的軟體樣貌，從而有效地指導我們做一些很複雜的分析。這裡非常關鍵的一點是，它是非侵入式的
+動態追蹤的工具很多，
+ (1) systemtap (2) perf (3) ftrace (4) sysdig (5) dtrace (6) eBPF =&gt; 但eBPF裡面也有support static tracing  eBPF introduction Berkeley Packet Filter (BPF) 最初的動機的確是封包過濾機制，
+ 但擴充為 eBPF (Extended BPF) 後，就變成 Linux 核心內建的內部行為分析工具包含以下:   (1) 動態追蹤 (dynamic tracing);" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+    
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/self/css/default.css">
+    <script async src="/layui/layui.js"></script>
+
+    <link rel="stylesheet" async href="/self/css/markdown.min.css">
+    <link rel="stylesheet" async href="/self/css/gallery.css">
+    
+    
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <script async src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="/">
+        Memo
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
+        
+
+        
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/about/">About</a></li>
+            
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="/post/">Posts</a></dd>
+                
+
+                
+                    
+                        <dd><a href="/about/">About</a></dd>
+                    
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="self-elem-quote self-elem-quote-bg-red markdown-body single-title" >
+                    <h1></h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>0001-01-01</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/sw-framework-ebpf/">
+            <span class="layui-badge layui-bg-orange" style="vertical-align: 2px;">SW-FRAMEWORK-eBPF</span>
+        </a>
+    
+
+    
+    
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <h1 id="motivation">Motivation</h1>
+<p>大部分情況，其實我們已經可以通過top，pidstat等命令定位到具體是哪一個服務出的問題。<br>
+當然重啟服務可以解決60%以上的服務異常問題，但是重啟後會丟失現場。<br>
+重啟一時爽，一直重啟就不爽了。還是需要定位到具體的問題。我還是希望知道底病根在哪， <br>
+最好直接告訴我哪個具體函數，哪條語句導致的問題或者bug。最差也得知道是大致什麼節點的什麼類型故障</p>
+<p>很多人可能會想到GDB。雖然這些工具很偉大，但是這應該不適合我們sre在已經服務已經發病的情況下使用，<br>
+因為線上的服務不能被中止。GDB在調試過程中設置斷點會發出SIGSTOP信號， <br>
+這會讓被調試進程進入T (TASK_STOPPED or TASK_TRACED)暫停狀態或跟蹤狀態。 <br>
+同時 GDB 所基於的 ptrace 這種很古老的系統調用，其中的坑和問題也非常多。</p>
+<p>比如 ptrace 需要改變目標調試進程的父親，還不允許多個調試者同時分析同一個進程， <br>
+而且不太熟悉GDB的人可能會把程序調試掛了，這種交互式的追蹤過程通常不考慮生產安全性， <br>
+也不在乎性能損耗。另外提一下，strace也是基於ptrace的，所以strace也是對性能不友好的</p>
+<p>那麼就要提到動態追蹤技術了，動態追蹤技術通常通過探針這樣的機制發起查詢。 <br>
+<strong>動態追蹤一般來說是不需要應用目標來配合的，隨時隨地，按需採集</strong><br>
+<strong>而且它非常大的優勢為性能消耗極小（通常5%或者更低的水平)</strong></p>
+<h1 id="dynamic-tracing">dynamic tracing</h1>
+<p>動態追蹤技術（dynamic tracing）是現代軟體的進階除錯和追蹤機制<br>
+在動態追蹤的實作中，一般是通過探針 (probe) 這樣的機制來發起查詢。<br>
+我們會在軟體系統的某個層次，或者某幾個層次上面，安置一些探針，然後我們會自己定義這些探針所關聯的處理程式<br>
+動態追蹤機制如果內建於作業系統，那麼使用者層級的程式即可隨時採集資訊，<br>
+構建出一幅完整的軟體樣貌，從而有效地指導我們做一些很複雜的分析。這裡非常關鍵的一點是，它是非侵入式的</p>
+<p>動態追蹤的工具很多，</p>
+<ul>
+<li>(1) systemtap</li>
+<li>(2) perf</li>
+<li>(3) ftrace</li>
+<li>(4) sysdig</li>
+<li>(5) dtrace</li>
+<li>(6) eBPF =&gt; 但eBPF裡面也有support static tracing</li>
+</ul>
+<h1 id="ebpf-introduction">eBPF introduction</h1>
+<p>Berkeley Packet Filter (BPF) 最初的動機的確是封包過濾機制，</p>
+<ul>
+<li>但擴充為 eBPF (Extended BPF) 後，就變成 Linux 核心內建的內部行為分析工具包含以下:
+<ul>
+<li>
+<p>(1) 動態追蹤 (dynamic tracing);</p>
+<ul>
+<li>
+<p>事先沒有在代碼中定義，但是可以在運行時動態加載，比如函數返回值等。</p>
+</li>
+<li>
+<p>常見的有uprobes（跟蹤用戶態函數）和kprobes（跟蹤內核態函數）</p>
+</li>
+<li>
+<p>Execution flow: eBPF支持在用户态将C语言编写的一小段“内核代码”注入到内核中运行，</p>
+</li>
+<li>
+<p>注入时要先用llvm编译得到使用BPF指令集的elf文件，</p>
+</li>
+<li>
+<p>然后从elf文件中解析出可以注入内核的部分，最后用bpf_load_program方法完成注入。</p>
+</li>
+<li>
+<p>用户态程序和注入到内核中的程序通过共用一个位于内核中map实现通信。为了防止注入的代码导致内核崩溃，</p>
+</li>
+<li>
+<p>eBPF会对注入的代码进行严格检查，拒绝不合格的代码的注入</p>
+</li>
+<li>
+<p>Simplify: 使用BCC简化eBPF应用开发过程</p>
+</li>
+</ul>
+</li>
+<li>
+<p>(2) 靜態追蹤 (static tracing);</p>
+<ul>
+<li>事先在代碼中定義好的一類，已經編譯進應用程序或內核中的探針。</li>
+<li>常見的有 tracepoints（這是散落在內核源代碼中的一些hook，</li>
+<li>使能後一旦特定的代碼被運行到時就會被觸發）還有USDT探針</li>
+</ul>
+</li>
+<li>
+<p>(3) profiling events;</p>
+<ul>
+<li>一般由PMC產生，比如intel的CPU，一般會內置統計性能的寄存器（Hardware Prefirmance Counter）     <br>
+<img src="Selection_662.png" alt="image"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="ebpf-usage">eBPF usage</h1>
+<p>在安全方面 BPF 的測試碼最終將執行在核心內部沙盒 (sandbox) 隔離環境 (虛擬機器) 內，<br>
+且用軟體的丟棄早期封包機制達到 DDoS mitigation，也就是 eXpress Data Path (也稱作 XDP ，<br>
+如果封包發現錯誤，則在 protocol stack 前就會判斷是否要繼續處理或丟棄)，也提供 intrusion detection 機制</p>
+<p>在使用者層級 (user mode) 準備好 BPF 程式碼，目的是去測量 latency 或 stack traces 等資訊，<br>
+BPF 程式碼最終會被編譯成 BPF bytecode 執行在核心內部的沙盒隔離執行環境，其測試的方式是</p>
+<ul>
+<li>step1: BPF 的 code 在 user mode 被編譯 BPF bytecode
+<ul>
+<li>v5.2 之前，Max 4096 instructions, 512B stack, in-kernel JIT for opcodes</li>
+<li>v5.2 之後，instruction 數量上限放寬到 1 million</li>
+</ul>
+</li>
+<li>step2: 載入核心驗證器: 如果不安全是有權力去拒絕這份 BPF bytecode 的, 但如果被接受，他可以依照以下四種不同的形式去選擇測試
+<ul>
+<li>(1) kprobes: kernel dynamic tracing. =&gt; 可以插code到kernel</li>
+<li>(2) uprobes: user level dynamic tracing. =&gt; 可以插code到user space</li>
+<li>(3) tracepoints: kernel static tracing. =&gt; 可以使用kernel原本的static tracing</li>
+<li>(4) perf_events: timed sampling and PMCs(Preventive maintenance checks and services). =&gt; events<br>
+<img src="Selection_663.png" alt="image"></li>
+</ul>
+</li>
+<li>step3: 被測試完的資料有兩種方式傳回
+<ul>
+<li>(1) per-event details (每個事件的詳細資料) 或</li>
+<li>(2) BPF map (BPF maps 可以做出直方圖，數據統計或相關矩陣…等整體性的結果)</li>
+</ul>
+</li>
+</ul>
+<h1 id="ebpf-enabling">eBPF enabling</h1>
+<p>使用 BPF 的先決條件</p>
+<ul>
+<li>(1) CONFIG_BPF_SYSCALL 編譯選項參數</li>
+<li>(2) 核心版本 4.4 版以上就有提供直方圖，統計和追蹤每個事件的功能</li>
+</ul>
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/"><p class="footer-url">home</p></a>
+            </div>
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/about/"><p class="footer-url">About</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>
