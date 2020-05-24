@@ -3,46 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://evansin100.github.io/series/blog%E5%85%BB%E6%88%90%E8%AE%B0/</loc>
-    <lastmod>2020-05-24T11:36:47+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://evansin100.github.io/categories/</loc>
-    <lastmod>2020-05-24T11:36:47+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://evansin100.github.io/post/first_post/</loc>
-    <lastmod>2020-05-24T11:36:47+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://evansin100.github.io/tags/hugo/</loc>
-    <lastmod>2020-05-24T11:36:47+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://evansin100.github.io/post/</loc>
-    <lastmod>2020-05-24T11:36:47+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://evansin100.github.io/series/</loc>
-    <lastmod>2020-05-24T11:36:47+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://evansin100.github.io/tags/</loc>
-    <lastmod>2020-05-24T11:36:47+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://evansin100.github.io/categories/%E6%9D%82%E6%8A%80%E6%B5%85%E5%B0%9D/</loc>
-    <lastmod>2020-05-24T11:36:47+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://evansin100.github.io/about/</loc>
     <lastmod>2020-05-23T22:59:03+08:00</lastmod>
   </url>
@@ -50,6 +10,18 @@
   <url>
     <loc>https://evansin100.github.io/</loc>
     <lastmod>2020-05-23T22:59:03+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://evansin100.github.io/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://evansin100.github.io/series/</loc>
+  </url>
+  
+  <url>
+    <loc>https://evansin100.github.io/tags/</loc>
   </url>
   
 </urlset>
