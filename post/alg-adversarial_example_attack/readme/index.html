@@ -8,20 +8,10 @@
     
     <meta content="Memo" name="keywords">
     
-    <meta content="Memo - Concept 利用對抗例（adversarial example）造成深度學習模型判斷錯誤這種攻擊手法
-所謂對抗例，是一種刻意製造的、讓機器學習模型判斷錯誤的輸入資料。
-最早是 Szegedy et al（2013）[2]發現對於用 ImageNet、AlexNet 等資料集訓練出來的影像辨識模型，
-常常只需要輸入端的微小的變動，就可以讓輸出結果有大幅度的改變。
-例如取一張卡車的照片，可以被模型正確辨識，但只要改變影像中的少數像素，
-就可以讓模型辨識錯誤，而且前後對影像的改變非常少，對肉眼而言根本分不出差異
-=&gt; 也可以讓accuracy大幅度提升
-這樣的例子除了顯現深度學習模型可能結果「不穩定」，而且有可能被惡意利用而有安全疑慮，
-因此近年來已經成為機器學習熱門的研究議題。2017 年這方面發表的研究成果，
-主要有加強防禦，以及更快速簡單地產生對抗例兩個方向。
-Definition Adversarial examples are inputs to a neural network that result in an incorrect output from the network.
-This is because neural networks are extremely susceptible to something called adversarial examples.
-Example 1 It’s probably best to show an example.
-You can start with an image of a panda on the left which some network thinks with 57." name="description">
+    <meta content="Memo - Concept An attack method that uses an adversarial example to cause a deep learning model to make judgment errors
+The so-called confrontation example is a deliberately created input data that allows the machine learning model to judge errors.
+The earliest was Szegedy et al (2013) [2] found that for image recognition models trained with ImageNet, AlexNet and other data sets,
+only small changes in the input end are often required , and the output results can be greatly changed ." name="description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     
@@ -128,16 +118,19 @@ layui.use('element', function(){
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
                     <h1 id="concept">Concept</h1>
-<p>利用對抗例（adversarial example）造成深度學習模型判斷錯誤這種攻擊手法</p>
-<p>所謂對抗例，是一種刻意製造的、讓機器學習模型判斷錯誤的輸入資料。<br>
-最早是 Szegedy et al（2013）[2]發現對於用 ImageNet、AlexNet 等資料集訓練出來的影像辨識模型，<br>
-常常只需要<strong>輸入端的微小的變動，就可以讓輸出結果有大幅度的改變</strong>。<br>
-例如取一張卡車的照片，可以被模型正確辨識，但只要改變影像中的少數像素，<br>
-就可以讓模型辨識錯誤，而且前後對影像的改變非常少，對肉眼而言根本分不出差異<br>
-=&gt; 也可以讓accuracy大幅度提升</p>
-<p>這樣的例子除了顯現<strong>深度學習模型可能結果「不穩定」</strong>，而且有可能被惡意利用而有安全疑慮，<br>
-因此近年來已經成為機器學習熱門的研究議題。2017 年這方面發表的研究成果，<br>
-主要有加強防禦，以及更快速簡單地產生對抗例兩個方向。</p>
+<p>An attack method that uses an adversarial example to cause a deep learning model to make judgment errors<br>
+The so-called confrontation example is a deliberately created input data that allows the machine learning model to judge errors.<br>
+The earliest was Szegedy et al (2013) [2] found that for image recognition models trained with ImageNet, AlexNet and other data sets,<br>
+only small changes in the input end are often required , and the output results can be greatly changed .<br>
+For example, taking a photo of a truck can be correctly recognized by the model, but as long as a few pixels <br>
+in the image are changed, the model can be recognized incorrectly,   <br>
+and the image has been changed very little before and after, and there is no difference to the naked eye   <br>
+=&gt; Can also greatly improve accuracy</p>
+<p>In addition to showing that the deep learning model may result in &ldquo;unstable&rdquo; ,<br>
+such examples may be maliciously used and have security concerns,<br>
+so it has become a hot research topic in machine learning in recent years.<br>
+The research results published in this area in 2017<br>
+mainly include strengthening the defense and generating confrontation cases more quickly and simply.</p>
 <h1 id="definition">Definition</h1>
 <p>Adversarial examples are inputs to a neural network that result in an incorrect output from the network.<br>
 This is because neural networks are extremely susceptible to something called adversarial examples.</p>
@@ -149,21 +142,21 @@ so the network concludes that the object in the image is a panda. <br>
 But then by adding a very small amount of carefully constructed noise <br>
 you can get an image that looks exactly the same to a human,<br>
 but that the network thinks with 99.3% confidence is a “gibbon &ldquo;長臂猿&rdquo;.” Pretty crazy stuff!  <br>
-=&gt; 所以只要加些noise進去,辨識的結果就完全不同
+=&gt; So as long as you add some noise, the recognition result is completely different image<br>
 <img src="Selection_279.png" alt="image"></p>
 <h1 id="example-2">Example 2</h1>
-<p>這邊有個範例是用mnist,做些adversarial example來讓數字判斷完全錯誤  <br>
-<a href="https://medium.com/@ml.at.berkeley/tricking-neural-networks-create-your-own-adversarial-examples-a61eb7620fd8">https://medium.com/@ml.at.berkeley/tricking-neural-networks-create-your-own-adversarial-examples-a61eb7620fd8</a> <br>
-原本狀況<br>
+<p>Here are two examples is mnist, do adversarial example to make digital judgment completely wrong<br>
+<a href="https://medium.com/@ml.at.berkeley/tricking-neural-networks-create-your-own-adversarial-examples-">https://medium.com/@ml.at.berkeley/tricking-neural-networks-create-your-own-adversarial-examples-</a> a61eb7620fd8<br>
+original condition<br>
 <img src="Selection_280.png" alt="image"></p>
-<p>修改input,by底下的function<br>
-x_target是我們希望model辨識的結果<br>
+<p>Modify the input, the function under the<br>
+x_target is the result we want the model to recognize<br>
 x_target is therefore a 784 dimensional vector<br>
-然後也是要跑loss function來做minimize<br>
+and then also run the loss function to minimize  <br>
 <img src="Selection_281.png" alt="image"></p>
-<p>有跑下面的gradient descent<br>
-d = input_derivative(net,x,goal) =&gt;算斜率  <br>
-x -= eta * (d + lam * (x - x_target)) =&gt; update 新的X</p>
+<p>Have the following gradient descent<br>
+d = input_derivative (net, x, goal) =&gt; calculate slope<br>
+x-= eta * (d + lam * (x-x_target)) =&gt; update new X</p>
 <pre><code>def sneaky_adversarial(net, n, x_target, steps, eta, lam=.05):
     &quot;&quot;&quot;
     net : network object
@@ -195,7 +188,7 @@ x -= eta * (d + lam * (x - x_target)) =&gt; update 新的X</p>
         # ONLY CHANGE IS RIGHT HERE!!!
         x -= eta * (d + lam * (x - x_target))
     return x
-</code></pre><p>最後可以看到x變得有些noise,而這些noise影響到最後的結果<br>
+</code></pre><p>Finally, you can see that x has become a little noise, and these noises affect the final result.    <br>
 <img src="Selection_282.png" alt="image"></p>
 </div>
             </div>

@@ -26,20 +26,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/alg-adversarial_example_attack/readme/</guid>
-      <description>Concept 利用對抗例（adversarial example）造成深度學習模型判斷錯誤這種攻擊手法
-所謂對抗例，是一種刻意製造的、讓機器學習模型判斷錯誤的輸入資料。
-最早是 Szegedy et al（2013）[2]發現對於用 ImageNet、AlexNet 等資料集訓練出來的影像辨識模型，
-常常只需要輸入端的微小的變動，就可以讓輸出結果有大幅度的改變。
-例如取一張卡車的照片，可以被模型正確辨識，但只要改變影像中的少數像素，
-就可以讓模型辨識錯誤，而且前後對影像的改變非常少，對肉眼而言根本分不出差異
-=&amp;gt; 也可以讓accuracy大幅度提升
-這樣的例子除了顯現深度學習模型可能結果「不穩定」，而且有可能被惡意利用而有安全疑慮，
-因此近年來已經成為機器學習熱門的研究議題。2017 年這方面發表的研究成果，
-主要有加強防禦，以及更快速簡單地產生對抗例兩個方向。
-Definition Adversarial examples are inputs to a neural network that result in an incorrect output from the network.
-This is because neural networks are extremely susceptible to something called adversarial examples.
-Example 1 It’s probably best to show an example.
-You can start with an image of a panda on the left which some network thinks with 57.</description>
+      <description>Concept An attack method that uses an adversarial example to cause a deep learning model to make judgment errors
+The so-called confrontation example is a deliberately created input data that allows the machine learning model to judge errors.
+The earliest was Szegedy et al (2013) [2] found that for image recognition models trained with ImageNet, AlexNet and other data sets,
+only small changes in the input end are often required , and the output results can be greatly changed .</description>
     </item>
     
     <item>
@@ -48,13 +38,9 @@ You can start with an image of a panda on the left which some network thinks wit
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/alg-ai_conference/readme/</guid>
-      <description>Ranking   (1) 人工智能方法论相关
- 第一档：NIPS,ICML, ICLR 可以看到三大顶会也是在谷歌学术2019年人工智能类出版物中影响力排名前三！ 第二档：AAAI，IJCAI, COLT
-    (2) 应用相关
- 计算机视觉 CVPR, ECCV,ICCV（计算机视觉与模式识别领域排名前3
-    (3) 自然语言处理
- ACL,EMNLP,NAACL（同样也是3巨头
-    The First Class  International Joint Conferences on Artificial Intelligence 1969年開始,每兩年開一次,奇數年開.因為AI實在太大, 所以雖然每屆基本上能錄100多篇（現在已經到200多篇了）， 但分到每個領域就沒幾篇了， 象machine learning、computer vision這麼大的領域每次大概也就10篇左右,   Association for the Advancement of Artificial Intelligence 是一個很好的會議, 但其檔次不穩定, 可以給到1 , 也可以給到1-或者2 , 總的來說我給它”1″. 這是因為它的開法完全受IJCAI制約: 每年開, 但如果這一年的IJCAI在北美舉行, 那麼就停開. 所以, 偶數年裡因為沒有IJCAI, 它就是最好的AI綜合性會議,   Association for Computational Learning ACM主辦, 每年舉行.</description>
+      <description>Ranking   (1) Related to artificial intelligence methodology
+ First gear: NIPS, ICML, ICLR It can be seen that the three top conferences are also the top three influencers in Google Scholar&amp;rsquo;s 2019 artificial intelligence publications! Second gear: AAAI, IJCAI, COLT     (2) Application related
+ Computer Vision CVPR, ECCV, ICCV (Top 3 in Computer Vision and Pattern Recognition     (3) Natural language processing</description>
     </item>
     
     <item>
