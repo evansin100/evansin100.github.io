@@ -13,13 +13,13 @@ def WriteHeader(src, dst, category):
     with open(src, "r") as src_file:
         for line in src_file:
             #print("original line:" + line)
-            eng_line = translator.translate(line)
+            #eng_line = translator.translate(line)
             #print("eng_line:" + eng_line)
-            lines.append(eng_line + "   \n")
+            lines.append(line + "   \n")
     src_file.close()
 
     dst_file = open(dst, 'w')
-    header = "---\ndraft: false\ncategories: [\"" + category + "\"]\n---\n"
+    header = "---\ndraft: true\ncategories: [\"" + category + "\"]\n---\n"
     print("header\n" + header)
     dst_file.write(header)
     dst_file.write(''.join([line for line in lines]))
