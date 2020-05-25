@@ -33,7 +33,7 @@ def WriteHeader(src, dst, category):
 
     src_file.close()
     dst_file = open(dst, 'w')
-    header = "---\ndraft: false\ncategories: [\"" + category + "\"]\n---\n"
+    header = "---\ndraft: true\ncategories: [\"" + category + "\"]\n---\n"
     print("header\n" + header)
     dst_file.write(header)
     #dst_file.write(''.join([line for line in lines]))
@@ -44,7 +44,7 @@ def WriteHeader(src, dst, category):
 # record all the folders we are going to copy from github repos
 #####################################################################
 GITHUB_PATH = "/home/evan/evansin-github"
-exception_list = [".git", ".idea", "MANAGE", "RESEARCH-", "Personal", "Memo", "PROJECT-", "COMPANY-", "evansin100"]
+exception_list = [".git", ".idea", "MANAGE", "RESEARCH-", "Personal", "Memo", "PROJECT-", "COMPANY-", "evansin100", "HW-IP-GPU-Mali"]
 dirs = os.listdir(GITHUB_PATH)
 clone_folder = []
 for name in dirs:
