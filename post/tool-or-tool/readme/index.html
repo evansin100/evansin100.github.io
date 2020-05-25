@@ -212,7 +212,7 @@ print(&lsquo;y = &lsquo;, y.solution_value())</p>
 <p>if <strong>name</strong> == &lsquo;<strong>main</strong>':<br>
 main()</p>
 <p>所以這個就是一個簡單的方程式求解的工具<br>
-<img src="https://github.com/evansin100/or-tool/blob/master/Selection_160.png" alt="image"></p>
+<img src="../https://github.com/evansin100/or-tool/blob/master/Selection_160.png" alt="image"></p>
 <h2 id="flow">Flow</h2>
 <p>a Constraint Programming code consists of<br>
 - the creation of the Solver,(代表是computation engine)<br>
@@ -222,7 +222,7 @@ main()</p>
 - the launch of the solve method with the above-created decision builder.</p>
 <h1 id="glop-example2">GLOP example2</h1>
 <p>和上面的例子不一樣, 這部份有設定constraint<br>
-<img src="https://github.com/evansin100/or-tool/blob/master/Selection_161.png" alt="image"><br>
+<img src="../https://github.com/evansin100/or-tool/blob/master/Selection_161.png" alt="image"><br>
 簡單來說就是X,Y有設定預域限制<br>
 x + 2y	≤	14<br>
 3x – y	≥	0<br>
@@ -252,8 +252,8 @@ Define the objective function.</p>
 objective.SetCoefficient(x, 3)<br>
 objective.SetCoefficient(y, 4)<br>
 objective.SetMaximization()</p>
-<p><img src="https://github.com/evansin100/or-tool/blob/master/Selection_162.png" alt="image"><br>
-<img src="https://github.com/evansin100/or-tool/blob/master/Selection_163.png" alt="image"></p>
+<p><img src="../https://github.com/evansin100/or-tool/blob/master/Selection_162.png" alt="image"><br>
+<img src="../https://github.com/evansin100/or-tool/blob/master/Selection_163.png" alt="image"></p>
 <h2 id="importerror-cannot-import-name-print_function">ImportError: cannot import name print_function</h2>
 <p>要改為 from __ future__ import print_function</p>
 <h2 id="importerror-no-module-named-ortoolslinear_solver">ImportError: No module named ortools.linear_solver</h2>
@@ -268,7 +268,7 @@ MIP solvers. By default, it uses Coin-or branch and cut (CBC),<br>
 <p>而且也可以看到MIP的solver的也不同<br>
 solver = pywraplp.Solver(&lsquo;SolveIntegerProblem&rsquo;,<br>
 pywraplp.Solver.CBC_MIXED_INTEGER_PROGRAMMING)<br>
-<img src="https://github.com/evansin100/or-tool/blob/master/Selection_164.png" alt="image"></p>
+<img src="../https://github.com/evansin100/or-tool/blob/master/Selection_164.png" alt="image"></p>
 <h1 id="routing-example">Routing example</h1>
 <p>所以google map的街景是arc-routing問題<br>
 但其實這也是方程式求解,只是這個問題比較難model成equation<br>
@@ -298,14 +298,14 @@ routing_enums_pb2.FirstSolutionStrategy.PATH_CHEAPEST_ARC) # pylint: disable=no-
 <h3 id="solve-the-problem">Solve the problem.</h3>
 <p>assignment = routing.SolveWithParameters(search_parameters)</p>
 <p>這樣可以找到,一個routing path來走儘量少的距離<br>
-<img src="https://github.com/evansin100/or-tool/blob/master/Selection_165.png" alt="image"></p>
+<img src="../https://github.com/evansin100/or-tool/blob/master/Selection_165.png" alt="image"></p>
 <h1 id="assignment-example">Assignment example</h1>
 <p>所以簡單來說就是配對問題,看怎麼配對效益最高<br>
 a group of workers has to perform a set of tasks. <br>
 For each worker and task, there is a fixed cost for that worker to perform the task. <br>
 assignment = pywrapgraph.LinearSumAssignment() =&gt;也的確有一個專屬的API可以呼叫<br>
 如果有些配對是不被允許的,就在輸入的cost value設定NA即可<br>
-<img src="https://github.com/evansin100/or-tool/blob/master/Selection_166.png" alt="image"></p>
+<img src="../https://github.com/evansin100/or-tool/blob/master/Selection_166.png" alt="image"></p>
 <h1 id="more-exmple">More exmple</h1>
 <p><a href="https://developers.google.com/optimization/introduction/python">https://developers.google.com/optimization/introduction/python</a></p>
 </div>

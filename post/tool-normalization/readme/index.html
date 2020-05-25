@@ -157,7 +157,7 @@ layui.use('element', function(){
 &lt;/td&gt;
 </code></pre>
 <!-- raw HTML omitted -->
-<p><img src="Selection_032.png" alt="image"></p>
+<p><img src="../Selection_032.png" alt="image"></p>
 <h1 id="normalization-vs-regularization">Normalization vs Regularization</h1>
 <p>normalization和standardization是差不多的，  <br>
 都是把数据进行前处理，从而使数值都落入到统一的数值范围<br>
@@ -223,7 +223,7 @@ standardization 一般是指将数据正态化，使平均值1方差为0<br>
 其三，每层的更新都会影响到其它层，因此每层的参数更新策略需要尽可能的谨慎。</p>
 <h1 id="normalization-concept">Normalization concept</h1>
 <p>我们以神经网络中的一个普通神经元为例。神经元接收一组输入向量 <br>
-<img src="Selection_022.png" alt="image"></p>
+<img src="../Selection_022.png" alt="image"></p>
 <p>由于 ICS 问题的存在， {x} 的分布可能相差很大。<br>
 要解决独立同分布的问题，“理论正确”的方法就是对每一层的数据都进行白化操作。<br>
 然而标准的白化操作代价高昂，特别是我们还希望白化操作是可微的，<br>
@@ -231,7 +231,7 @@ standardization 一般是指将数据正态化，使平均值1方差为0<br>
 <p>因此，以 BN 为代表的 Normalization 方法退而求其次，进行了简化的白化操作。<br>
 <strong>基本思想是：在将  {x} 送给神经元之前，先对其做平移和伸缩变换</strong>   <br>
 将 {x} 的分布规范化成在固定区间范围的标准分布。<br>
-<img src="Selection_023.png" alt="image"></p>
+<img src="../Selection_023.png" alt="image"></p>
 <p><strong>说好的处理 ICS，第一步都已经得到了标准分布，第二步怎么又给变走了？</strong>  <br>
 <strong>答案是——为了保证模型的表达能力不因为规范化而下降</strong>  <br>
 我们可以看到，第一步的变换将输入数据限制到了一个全局统一的确定范围（均值为 0、方差为 1）。<br>
@@ -260,7 +260,7 @@ Sigmoid 等激活函数在神经网络中有着重要作用，<br>
 标准白化操作的目的是“独立同分布”。<br>
 独立就不说了，暂不考虑。只是映射到了一个确定的区间范围而已。（所以，这个坑还有得研究呢！）</p>
 <h1 id="normalization-general-formula">Normalization General Formula</h1>
-<p><img src="Selection_024.png" alt="image"></p>
+<p><img src="../Selection_024.png" alt="image"></p>
 </div>
             </div>
         </div>

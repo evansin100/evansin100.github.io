@@ -168,37 +168,37 @@ layui.use('element', function(){
 於是，我們就沿路找向<strong>下坡度最大的叉路走，直到下到平地為止</strong>』。要找到向下坡度最大， <br>
 在數學上常使用**『偏微分』(Partial Differential)，求取斜率**，<br>
 一步步的逼近，直到沒有顯著改善為止，這時我們就認為是最佳解了，過程可參考下圖說明。<br>
-<img src="Selection_509.png" alt="image"></p>
+<img src="../Selection_509.png" alt="image"></p>
 <p>這邊我們先大概說一下梯度， 要算一個函數J(w) &ldquo;loss function&quot;的梯度有一個前提，就是這個函數要是任意可微分函數，<br>
 這也是深度學習為什麼都要找可微分函數出來當激活函數(activation function)<br>
 =&gt; 因為loss function可以微分才有梯度 <br>
 底下是一個類似NN找weight併讓loss可以最低的範例 <br>
-<img src="Selection_510.png" alt="image"><br>
-<img src="Selection_512.png" alt="image"></p>
+<img src="../Selection_510.png" alt="image"><br>
+<img src="../Selection_512.png" alt="image"></p>
 <h1 id="gradient-descent-example">gradient descent example</h1>
 <p>function 1
-<img src="Selection_513.png" alt="image"><br>
-<img src="Selection_514.png" alt="image"></p>
+<img src="../Selection_513.png" alt="image"><br>
+<img src="../Selection_514.png" alt="image"></p>
 <p>剛有提到我們需要先設定一個初始化的「解」，此例我設定x(0)=20(故意跟最佳值有差距)<br>
 紅色的點是每一次更新找到的解<br>
 紅色線是法線，藍色線是切線，法線和切線這兩條線是垂直的，但因為x軸和y軸scale不一樣，所以看不出來它是垂直的。   <br>
 learning rate = 0.01<br>
 一開始loss下降很快,因為斜率很大,所以w的一點點改動就會影響到loss的值<br>
-<img src="Selection_517.png" alt="image"><br>
-<img src="Selection_516.png" alt="image"><br>
+<img src="../Selection_517.png" alt="image"><br>
+<img src="../Selection_516.png" alt="image"><br>
 一開始loss下降很慢,因為斜率變很小了<br>
-<img src="Selection_515.png" alt="image"></p>
+<img src="../Selection_515.png" alt="image"></p>
 <p>function 2<br>
 如果使這個case, learning rate太小<br>
 就會找到loss的local optmization解,找不到最低點<br>
 因為不會振動到那邊<br>
-<img src="Selection_519.png" alt="image"></p>
+<img src="../Selection_519.png" alt="image"></p>
 <h1 id="forward-propagation-and-backpropagation">Forward Propagation and Backpropagation</h1>
 <p>依據上圖，我們先建構好模型，決定要做幾層的隱藏層，<br>
 接著，Neural Network 就會利用 Forward Propagation 及 Backpropagation 機制，如下圖，<br>
 幫我們求算模型中最重要的參數 &ndash; 『權重』(Weight)，這個過程就稱為『最佳化』(Optimization)， <br>
 最常用的技巧就是『梯度下降』(Gradient Descent)。<br>
-<img src="Selection_523.png" alt="image"></p>
+<img src="../Selection_523.png" alt="image"></p>
 <p>接著，我們就來用圖說故事，這部份主要參考 DataCamp Deep Learning in Python 的投影片，<br>
 先假設一個簡單模型如下圖，只有一層隱藏層，兩個 Input 變數值。<br>
 先任意假設一組權重(W)，如圖中紅圈內數字。<br>
@@ -206,7 +206,7 @@ learning rate = 0.01<br>
 即 y = sum(w * x)，這個過程就是 Forward Propagation。<br>
 舉例來說，隱藏層的第一個節點(Node)就等於 2 * 1 + 3 * 1 = 5, <br>
 第二個節點就等於 2 * -1 + 3 * 1 = 1，output層就等於 5 * 2 + 1 * -1 = 9</p>
-<p><img src="Selection_520.png" alt="image"></p>
+<p><img src="../Selection_520.png" alt="image"></p>
 <p>接著，我們就反推回去(Backpropagation)，<br>
 <strong>用『梯度下降法』，逐步調整權重(W)</strong>，慢慢逼近最佳解，以達到『損失函數最小化』。<br>
 如圖一，我們先求算梯度(Gradient)，再依梯度往下走，損失就會越來越小，<br>
@@ -219,7 +219,7 @@ learning rate = 0.01<br>
 =&gt; <strong>可以看到W的更新公式裏面有X(所以會和input有關係)</strong><br>
 =&gt; <strong>所以可以是(a)看過一筆x就更新W, (b)或者是多個X(batch)就更新W, (c)或者是all的X就更新W</strong><br>
 =&gt; GD要看全部的X, SGD/Adam/Momentum..etc.只要看1筆or多筆(batch)<br>
-<img src="Selection_525.png" alt="image"></p>
+<img src="../Selection_525.png" alt="image"></p>
 <p>底下這個link有用到的optimize方式來使用gradient descent<br>
 例如要不要看歷史資料,還有learning rate可不可以變動 等等<br>
 這些都是optimizer的方式<br>

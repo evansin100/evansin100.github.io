@@ -158,7 +158,7 @@ layui.use('element', function(){
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
                     <h1 id="flow">Flow</h1>
-<p><img src="Selection_062.png" alt="image"></p>
+<p><img src="../Selection_062.png" alt="image"></p>
 <h1 id="concept-for-inference">Concept (for inference)</h1>
 <p>摘要：MNN已经用于阿里手机淘宝、手机天猫、优酷等20多个应用之中， <br>
 覆盖直播、短视频、搜索推荐、商品图像搜索、互动营销、权益发放、安全风控等场景。  <br>
@@ -166,7 +166,7 @@ layui.use('element', function(){
 用于在智能手机、IoT设备等端侧加载深度神经网络模型，进行推理预测</p>
 <p>Android方面以小米6为例，MobileNet V2上耗费时间约为27毫秒，  <br>
 SqueezeNet V1.1上耗费约为25毫秒，领先业界至少30%；</p>
-<p><img src="Selection_706.png" alt="image"></p>
+<p><img src="../Selection_706.png" alt="image"></p>
 <h1 id="functionality">Functionality</h1>
 <p>MNN的两大功能与四大特点<br>
 (1) 模型转换部分帮助开发者兼容不同的训练框架<br>
@@ -174,7 +174,7 @@ SqueezeNet V1.1上耗费约为25毫秒，领先业界至少30%；</p>
 PyTorch/MXNet的模型可先转为ONNX模型再转到MNN。<br>
 而且，也能通过算子融合、算子替代、布局调整等方式优化图<br>
 可以看到MNN有自己定義他的model format(.mnn)<br>
-<img src="https://github.com/evansin100/Alibaba-MNN/blob/master/Selection_006.png" alt="image"></p>
+<img src="../https://github.com/evansin100/Alibaba-MNN/blob/master/Selection_006.png" alt="image"></p>
 <p>(2) 计算推理部分致力于高效完成推理计算<br>
 为了更好地完成对模型的加载、计算图的调度，以及各计算设备下的内存分配、Op实现等任务。<br>
 他们在MNN中应用了多种优化方案，包括在卷积和反卷积中应用Winograd算法、<br>
@@ -183,7 +183,7 @@ PyTorch/MXNet的模型可先转为ONNX模型再转到MNN。<br>
 =&gt; 有apple metal ?<br>
 =&gt; 從下圖可以看到他的frontend可以接TF/Caffe/ONNX<br>
 然後再convert to MNN format</p>
-<p><img src="Selection_707.png" alt="image"></p>
+<p><img src="../Selection_707.png" alt="image"></p>
 <h1 id="features">Features</h1>
 <p>(1) 轻量性：针对端侧设备特点深度定制和裁剪，无任何依赖，可以方便地部署到移动设备和各种嵌入式设备中。<br>
 Android platform: core so size is about 400KB, OpenCL so is about 400KB, Vulkan so is about 400KB</p>
@@ -210,7 +210,7 @@ Additional optimizations for the new architecture ARM v8.2 with half-precision c
 =&gt; 淘宝通过扫年货的方式加入到了阿里“集五福”活动之中。<br>
 具体的使用场景是，<br>
 =&gt; 通过扫一扫商品识别能力，来识别红色年货，并分析&quot;照片中有年货&quot;的概率，根据概率来发放相关权益<br>
-<img src="Selection_710.png" alt="image"></p>
+<img src="../Selection_710.png" alt="image"></p>
 <p>首先，为了扫描年货，淘宝在服务端用百万张年货图片训练出了一个可以鉴别年货的深度神经网络模型。<br>
 接下来，就需要MNN发挥作用了。<br>
 用户通过相机扫描年货时，淘宝会获取相机中的照片数据。然后，对照片做预处理，包括图片的缩放、颜色空间的转换等。<br>

@@ -169,10 +169,10 @@ single-person pose estimation  <br>
 <p>(1) 讀進一張圖片大小為 w×h 的圖片 I。<br>
 (2) 送進 model VGG-19 的前 10 層 layer train 出大小一樣為 w×h 的 features F。<br>
 (3) 再送進 paper 中提到的 model，會得到以下兩個：<br>
-<img src="https://github.com/evansin100/OpenPose/blob/master/Selection_007.png" alt="image"><br>
+<img src="../https://github.com/evansin100/OpenPose/blob/master/Selection_007.png" alt="image"><br>
 (4) 再將 confidence maps S 和 affinity fields L 送到 greedy inference，就能產生所有人的 2D keypoints。</p>
 <h1 id="confidence-map-and-affinity-fields">Confidence map and affinity fields</h1>
-<p><img src="https://github.com/evansin100/OpenPose/blob/master/Selection_008.png" alt="image"><br>
+<p><img src="../https://github.com/evansin100/OpenPose/blob/master/Selection_008.png" alt="image"><br>
 Fig. 3 給出了模型示意圖，圖片輸入進去，然後同時預測出 confidence maps S 和 affinity fields L。<br>
 神經網路分成兩個部分：<br>
 上方淺橘色部分預測 confidence map<br>
@@ -180,8 +180,8 @@ Fig. 3 給出了模型示意圖，圖片輸入進去，然後同時預測出 co
 每個分支都是一個遞迴的預測結構，整個 model 包含了 T 個 stage，<br>
 每個 stage 中都加入中間監督（intermediate supervision），<br>
 這是用來處理 vanishing gradient 的問題。<br>
-<img src="https://github.com/evansin100/OpenPose/blob/master/Selection_009.png" alt="image"><br>
-<img src="https://github.com/evansin100/OpenPose/blob/master/Selection_010.png" alt="image"><br>
+<img src="../https://github.com/evansin100/OpenPose/blob/master/Selection_009.png" alt="image"><br>
+<img src="../https://github.com/evansin100/OpenPose/blob/master/Selection_010.png" alt="image"><br>
 在預測的 predictions 和 groundtruth maps and fileds 使用了 loss function L2，<br>
 論文中特別提到 loss functions 是隨著空間而變的（spatially），因為有些 datasets 不見得會完整地標示所有人</p>
 <h1 id="details--confidence-maps-for-part-detection">Details : Confidence Maps for Part Detection</h1>
@@ -210,7 +210,7 @@ xj,k∈R2 表示圖片中人 k 的 part j 對應的 groundtruth position<br>
 <h5 id="表示來保存身體的支撐區域的位置信息和方向信息">表示來保存身體的支撐區域的位置信息和方向信息，</h5>
 <p>如 Fig. 5(c) 所示。對於每一條軀幹來說，the part affinity 是一個 2D 的向量區域。<br>
 在屬於一個軀幹上的每一像素都對應一個 2D 的向量，這個向量表示軀幹上從一個 keypoint 到另一個 keypoint 的方向。<br>
-<img src="https://github.com/evansin100/OpenPose/blob/master/Selection_011.png" alt="image"></p>
+<img src="../https://github.com/evansin100/OpenPose/blob/master/Selection_011.png" alt="image"></p>
 </div>
             </div>
         </div>

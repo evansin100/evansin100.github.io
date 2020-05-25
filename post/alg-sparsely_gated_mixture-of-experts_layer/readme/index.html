@@ -235,7 +235,7 @@ layui.use('element', function(){
 如图1所示。对文本中的每个位置，MoE 都被调用一次，在每个位置上可能选择不同的专家组合。<br>
 基于句法和语义（见附录E Table 9），不同的专家能够高度专业化。在语言建模和机器翻译基准上，<br>
 我们以很小的计算成本得到了比现有已发表最佳结果更好的表现。<br>
-<img src="Selection_566.png" alt="image"></li>
+<img src="../Selection_566.png" alt="image"></li>
 </ul>
 <h2 id="专家混合moe层的结构">专家混合（MoE）层的结构</h2>
 <p>专家混合（MoE）层由一组 n 个“专家网络” E1，&hellip;，En 和“输出为稀疏 n 维向量”的“门控网络”G组成。<br>
@@ -274,7 +274,7 @@ layui.use('element', function(){
 当训练数据超过1000亿词汇时，测试困惑度显着提高到65536个专家（680亿个参数），比计算匹配的基线降低39％，<br>
 但减少了131072个专家，这可能是由于稀疏性太高。两条线之间的差距扩大表明增加的模型能力对更大的训练集有利。<br>
 即使在65536专家（99.994％层稀疏）上，该模型的计算效率可保持在 0.72 TFLOPS / GPU。<br>
-<img src="Selection_567.png" alt="image"></p>
+<img src="../Selection_567.png" alt="image"></p>
 </div>
             </div>
         </div>

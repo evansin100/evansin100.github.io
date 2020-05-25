@@ -160,7 +160,7 @@ layui.use('element', function(){
 作为 TensorFlow 的日常用户，在使用不同种类的硬件（GPU、TPU、移动设备）时，<br>
 这种多级别堆栈可能会表现出令人费解的编译器和运行时错误</p>
 <p>所以可以從下圖看到,因為接的硬體不同,過程中經過的opt等等也都不同<br>
-<img src="https://github.com/evansin100/MLIR/blob/master/Selection_002.png" alt="image"></p>
+<img src="../https://github.com/evansin100/MLIR/blob/master/Selection_002.png" alt="image"></p>
 <p>如图中所示，TensorFlow 图 [1]能够以多种不同的方式运行。这包括：<br>
 (1) 将其发送至调用手写运算内核的 TensorFlow 执行器<br>
 (2) 将图转化为 XLA 高级优化器 (XLA HLO) 表示，反之，这种表示亦可调用适合 CPU 或 GPU 的 LLVM 编辑器，<br>
@@ -265,10 +265,10 @@ For now, MLIR has been tested on Linux and macOS, with recent versions of clang 
 cd llvm-project/llvm/projects/<br>
 所以這個會和LLVM有關聯,下載完會長這樣<br>
 llvm這個folder是llvm相關code的核心的地方<br>
-<img src="https://github.com/evansin100/MLIR/blob/master/Selection_003.png" alt="image"></p>
+<img src="../https://github.com/evansin100/MLIR/blob/master/Selection_003.png" alt="image"></p>
 <p>git clone <a href="https://github.com/tensorflow/mlir">https://github.com/tensorflow/mlir</a><br>
 MLIR的folder如下<br>
-<img src="https://github.com/evansin100/MLIR/blob/master/Selection_001.png" alt="image"></p>
+<img src="../https://github.com/evansin100/MLIR/blob/master/Selection_001.png" alt="image"></p>
 <p>cd ../..<br>
 mkdir build<br>
 cd build<br>
@@ -276,8 +276,8 @@ cmake -G Ninja ../llvm -DLLVM_BUILD_EXAMPLES=ON -DLLVM_ENABLE_CXX1Y=Y</p>
 <p>CMake was unable to find a build program corresponding to &ldquo;Ninja&rdquo;<br>
 有人是說沒有裝Ninja<br>
 sudo apt-get install ninja-build <br>
-<img src="https://github.com/evansin100/MLIR/blob/master/Selection_024.png" alt="image"><br>
-<img src="https://github.com/evansin100/MLIR/blob/master/Selection_023.png" alt="image"></p>
+<img src="../https://github.com/evansin100/MLIR/blob/master/Selection_024.png" alt="image"><br>
+<img src="../https://github.com/evansin100/MLIR/blob/master/Selection_023.png" alt="image"></p>
 <p>Run Build Command:&quot;/usr/bin/ninja&rdquo; &ldquo;cmTC_95634&rdquo;<br>
 [1/2] Building C object CMakeFiles/cmTC_95634.dir/CheckIncludeFile.c.o<br>
 FAILED: CMakeFiles/cmTC_95634.dir/CheckIncludeFile.c.o <br>

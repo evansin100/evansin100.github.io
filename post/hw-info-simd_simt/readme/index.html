@@ -192,7 +192,7 @@ SIMT的好處是無需開發者費力把資料湊成合適的向量長度 <br>
 <p>在SIMT程式設計模型中如果需要控制單個執行緒的行為，必須使用分支，這會大大的降低效率。<br>
 例如，如果一個warp中需要進行分支（即warp內的執行緒執行的指令指標指向不同的位置），效能將急劇的下降 <br>
 =&gt;所以要避免if else, for loop判斷,因為會有sync問題       <br>
-<img src="Selection_071.png" alt="image"></p>
+<img src="../Selection_071.png" alt="image"></p>
 <p>GPU(SIMT)的缺點</p>
 <ul>
 <li>(1) 平行不夠高，效能不會好：GPU 的運算單元數量很多，不能高度平行化的工作，所能帶來的效益就不高。</li>

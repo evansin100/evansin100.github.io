@@ -178,10 +178,10 @@ layui.use('element', function(){
 <p>請注意RNN、LST及其變體主要是隨著時間的推移使用順序處理。請參閱下圖中的水平箭頭 <br>
 這個箭頭意味著長距離信息必須在到達當前處理單元之前順序穿過所有單元。<br>
 這表示它可以很容易地被小於0的數相乘很多次而損壞。這就是梯度消失的原因。</p>
-<p><img src="https://github.com/evansin100/LSTM/blob/master/Selection_015.png" alt="image"></p>
+<p><img src="../https://github.com/evansin100/LSTM/blob/master/Selection_015.png" alt="image"></p>
 <p>因為有多個cell,每個cell也會有output,但可以只拿最後的cell output如下圖 <br>
 然後input可以依據時間關係,不斷輸入 <br>
-<img src="https://github.com/evansin100/LSTM/blob/master/Selection_017.png" alt="image"></p>
+<img src="../https://github.com/evansin100/LSTM/blob/master/Selection_017.png" alt="image"></p>
 <h1 id="lstm-concept">LSTM Concept</h1>
 <p>RNN的上述缺點促使科學家開發了一種新的RNN模型變體，<br>
 名為長短期記憶網絡（Long Short Term Memory）。 <br>
@@ -199,14 +199,14 @@ f）c（t-1）：上一個LSTM單元的記憶<br>
 g）X（t）：輸入<br>
 h）c（t）：最新的記憶<br>
 i）h（t）：輸出</p>
-<p><img src="https://github.com/evansin100/LSTM/blob/master/Selection_014.png" alt="image"></p>
+<p><img src="../https://github.com/evansin100/LSTM/blob/master/Selection_014.png" alt="image"></p>
 <p>圖中我們可以看出有兩個記憶的state 向量，分別是c和h, <br>
 有三個操作閘，分別是forget gate （遺忘閘）、input gate （輸入閘）和output gate （輸出閘）， <br>
 有一個輸入向量 x，有三個輸出分別是c和h和y，<br>
 如果當前時階沒有取出輸出則沒有y輸出。圖中FC 代表Fully-connected，全連接</p>
 <p>因為裡面有fully-connected layer, 所以需要大量的內存(weight)   <br>
 且由於輸入資料在內部反覆遞歸，參數的數目指數級爆炸(所以有多個cell,weight多的狀況更嚴重)     <br>
-<img src="https://github.com/evansin100/LSTM/blob/master/Selection_016.png" alt="image"></p>
+<img src="../https://github.com/evansin100/LSTM/blob/master/Selection_016.png" alt="image"></p>
 <h1 id="why-tanh">Why tanh</h1>
 <p>為了克服梯度消失問題，我們需要一個二階導數在趨近零點之前能維持很長距離的函數。<br>
 tanh是具有這種屬性的合適的函數</p>

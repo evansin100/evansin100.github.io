@@ -190,7 +190,7 @@ Facebook和新加坡国立大学联手提出了新一代替代品：OctConv（Oc
 <p>如图1(a)所示，自然图像可以分解为描述平稳变化结构的低空间频率分量和描述快速变化精细细节的高空间频率分量[1,12]。<br>
 同样，我们认为卷积层的输出特征映射也可以分解为不同空间频率的特征，<br>
 并提出了一种新的多频特征表示方法，将高频和低频特征映射存储到不同的组中<br>
-<img src="https://github.com/evansin100/octave-convolution/blob/master/Selection_053.png" alt="image"></p>
+<img src="../https://github.com/evansin100/octave-convolution/blob/master/Selection_053.png" alt="image"></p>
 <p>因此，通过相邻位置间的信息共享，可以安全降低低频组的空间分辨率，减少空间冗余，如图1(c)所示。适应新的特征表示，我们推广了vanilla convolution，并提出Octave Convolution(OctConv)将张量特征图包含两个频率和一个octave部分，频率和提取信息直接从低频地图不需要解码的高频如图1所示(d)。作为普通卷积的替代品，OctConv消耗的内存和计算资源大大减少。此外，OctConv对低频信息进行相应的(低频)卷积处理，有效地扩大了原始像素空间的接收域，从而提高了识别性能。</p>
 <p>我们以一种通用的方式设计了OctConv，使它成为即插即用的卷积的替代品。</p>
 <h4 id="octconv以来主要集中在加工特征图谱在多个空间频率和减少空间冗余正交和补充现有的方法">OctConv以来主要集中在加工特征图谱在多个空间频率和减少空间冗余、正交和补充现有的方法，</h4>
@@ -280,7 +280,7 @@ blnet[4]和ELASTICNet[41]经常上下采样整个网络的特征映射，以自�
 具体来说，表示intra-frequency信息更新，而表示inter-frequency沟通。</p>
 <p>为了计算这些项，我们将卷积核W分成两个分量，分别负责与和进行卷积。<br>
 将各分量进一步划分为频率内分量和频率间分量：和，参数张量形状如图2(b)所示。<br>
-<img src="https://github.com/evansin100/octave-convolution/blob/master/Selection_054.png" alt="image"></p>
+<img src="../https://github.com/evansin100/octave-convolution/blob/master/Selection_054.png" alt="image"></p>
 <p>Octave Convolution的一个有趣和有用的性质是低频特征图的更大的接受域。<br>
 将低频部分X^{L}与k x k卷积核进行卷积，与普通卷积相比，有效地将接收域扩大了2倍。<br>
 这进一步帮助每个OctConv层从遥远的位置捕获更多的上下文信息，并可能提高识别性能</p>
@@ -288,7 +288,7 @@ blnet[4]和ELASTICNet[41]经常上下采样整个网络的特征映射，以自�
 <p>OctConv操作符实现的细节如图2所示。它由四条计算路径组成，分别对应于式(4)中的四项:</p>
 <h4 id="两条绿色路径对应于高频和低频特征图的信息更新">两条绿色路径对应于高频和低频特征图的信息更新，</h4>
 <h4 id="两条红色路径便于两个octave之间的信息交换">两条红色路径便于两个octave之间的信息交换</h4>
-<p><img src="https://github.com/evansin100/octave-convolution/blob/master/Selection_055.png" alt="image"></p>
+<p><img src="../https://github.com/evansin100/octave-convolution/blob/master/Selection_055.png" alt="image"></p>
 <p>Group and Depth-wise convolutions Octave Convolution也可以用于其他常见卷积的变体，<br>
 如组[45]或深度方向的[20]卷积。<br>
 对于群卷积的情况，我们简单地将出现在OctConv设计中的所有四个卷积操作都设置为组卷积。<br>

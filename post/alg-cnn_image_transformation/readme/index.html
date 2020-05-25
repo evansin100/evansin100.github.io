@@ -174,8 +174,8 @@ layui.use('element', function(){
 <p>古往今來，大家都知道：只要圖像一平移，CNN就認不出來了。<br>
 =原因就在<strong>降採樣</strong>身上。<strong>不管是最大池化，跨步卷積，還是平均池化，都對平移太敏感</strong><br>
 比如，0、0、1、1、0、0、1、1……這樣的周期，最大池化是這樣：<br>
-<img src="Selection_478.png" alt="image"><br>
-<img src="Selection_477.png" alt="image"></p>
+<img src="../Selection_478.png" alt="image"><br>
+<img src="../Selection_477.png" alt="image"></p>
 <p>CNN存在采样缺陷。现代CNN中普遍包含二次采样（subsampling）操作，它是我们常说的降采样层，也就是池化层、stride。<br>
 它的本意是为了提高图像的平移不变性，同时减少参数，但它在平移性上的表现真的很一般</p>
 <h1 id="solution--more-data">Solution : More data?</h1>
@@ -204,11 +204,11 @@ layui.use('element', function(){
 平移不變性與準確率兼得</p>
 <p>e.g., 要做max pool downsample 的時候<br>
 先做(1) dense max (2) blur filter(將資訊模糊) (3) down sample<br>
-<img src="Selection_479.png" alt="image"></p>
+<img src="../Selection_479.png" alt="image"></p>
 <p>如果降採樣方法不是最大池化，又怎麼樣呢？<br>
 所以，理查還測試了ResNet和MobileNetv2，它們用的是跨步卷積；以及DenseNet，它用的是平均池化：<br>
 這些架構也獲得了類似的提升。全面成功。<br>
-<img src="Selection_480.png" alt="image"></p>
+<img src="../Selection_480.png" alt="image"></p>
 <p>上面只講了分類這一項任務。而進化後的降採樣，在圖到圖翻譯任務上也同樣有效。<br>
 不懼各種變換，以及圖像損壞<br>
 不只是平移，像旋轉、縮放這樣的干擾，都可以應對自如；另外，面對輸入圖像損壞 (Image Corruption) ，也變得更加魯棒了。 <br>

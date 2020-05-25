@@ -188,19 +188,19 @@ layui.use('element', function(){
 Note:在一般quantize model,這個input轉換(float32-&gt;uint8) <br>
 是要user自己做的,不能預期會有OP幫你做這個事情<br>
 詳情可以看https://github.com/evansin100/Quantize/tree/master/Example   <br>
-<img src="Selection_189.png" alt="image"></p>
+<img src="../Selection_189.png" alt="image"></p>
 <h1 id="quantization-retrain-flow">Quantization Retrain Flow</h1>
 <p>因為Retrain比較複雜, 用這個當作例子來解釋大概怎麼做quantization的細節<br>
 (1) 這邊分兩個 先看floating model訓練的結果後<br>
 然後加上fakequant在進行re-train quant會有什麼變化  <br>
 (主要就是修改表示式而已,然後因為conv等等OP得到計算時候的bit還是不同,W一定會再微調) <br>
-<img src="Selection_278.png" alt="image"></p>
+<img src="../Selection_278.png" alt="image"></p>
 <p>(2) 然後再最後freeze to TFlite model <br>
 fakequant資訊又要怎麼處理<br>
 然後freeze後,訓練好 得到的數值的scale and zero point要合併進去OP (e.g., conv),  <br>
 這樣才可以做quantized計算 e.g., quantize multiply<br>
 <a href="https://github.com/evansin100/Quantize/tree/master/Basics/Quantize-Asymmc-Mul">https://github.com/evansin100/Quantize/tree/master/Basics/Quantize-Asymmc-Mul</a> <br>
-<img src="Selection_279.png" alt="image"></p>
+<img src="../Selection_279.png" alt="image"></p>
 <h1 id="8bit-training-">8bit Training ?</h1>
 <p>已经有一些使用低精度数值表示的实验了，但那些结果似乎表明，你需要高于八位的精度来处理后向传播和梯度 <br>
 =&gt; 所以一開始的model一定是要用高於8bit產生<br>

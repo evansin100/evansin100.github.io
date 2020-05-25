@@ -3,11 +3,12 @@ from shutil import copyfile
 from translate import Translator   
 import googletrans  
 from pprint import pprint  
+import imghdr
 
-GITHUB_PATH = "/home/evan/evansin-github"
-exception_list = [".git", ".idea", "MANAGE", "RESEARCH-", "Personal", "Memo", "PROJECT-", "COMPANY-", "evansin100"]
-dirs = os.listdir(GITHUB_PATH)
-clone_folder = []
+def correct_image_path(line):
+    if(line.startswith("![image]")):
+        return line.replace("(","(../")
+    return line
 
 def WriteHeader(src, dst, category):    
     lines = ""  
@@ -16,7 +17,7 @@ def WriteHeader(src, dst, category):
     with open(src, "r") as src_file:
         temp = []
         for line in src_file:
-            temp.append(line)
+            temp.append(correct_image_path(line))
 
         # method 1
         #print("original line:" + line)
@@ -42,6 +43,10 @@ def WriteHeader(src, dst, category):
 #####################################################################
 # record all the folders we are going to copy from github repos
 #####################################################################
+GITHUB_PATH = "/home/evan/evansin-github"
+exception_list = [".git", ".idea", "MANAGE", "RESEARCH-", "Personal", "Memo", "PROJECT-", "COMPANY-", "evansin100"]
+dirs = os.listdir(GITHUB_PATH)
+clone_folder = []
 for name in dirs:
     skip = 0
     if(os.path.isdir(GITHUB_PATH + "/" + name)):
@@ -59,7 +64,7 @@ for name in dirs:
 #####################################################################
 for name in clone_folder:
     if not os.path.isdir(name):
-        os.mkdir("post/"+name)
+        os.mkdir("post/"+name.lower())
 
 #####################################################################
 # copy readme.md as the single file in each folder 
@@ -67,9 +72,22 @@ for name in clone_folder:
 #####################################################################
 for name in clone_folder:
     src = GITHUB_PATH + "/" + name + "/README.md"
-    dst = "post/" + name + "/README.md"
+    dst = "post/" + name.lower() + "/README.md"
     if os.path.isfile(src):
         print("copy from:" + src + " to " + dst)
         WriteHeader(src,dst,name)
 
+
+#####################################################################
+# copy image 
+#####################################################################
+for name in clone_folder:
+    src_dir = GITHUB_PATH + "/" + name
+    dst_dir = "post/" + name.lower()
+    dirs = os.listdir(src_dir)
+    for file_name in dirs:
+        if (file_name.endswith(".png")):
+            src_path = GITHUB_PATH + "/" + name + "/" + file_name          
+            dst_path = "post/" + name.lower() + "/" + file_name          
+            copyfile(src_path, dst_path)
 

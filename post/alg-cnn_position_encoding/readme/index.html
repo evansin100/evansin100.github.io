@@ -159,7 +159,7 @@ layui.use('element', function(){
 而位置信息是通过zero-padding透露的，显然，图像边缘的zero-padding暗示了图像的边界，<br>
 能利用zero-padding带来的位置信息，编码物体所在图像中的位置，<br>
 而这一点在显著性目标检测和语义分割等任务中是非常有用的。</p>
-<p><img src="Selection_467.png" alt="image"></p>
+<p><img src="../Selection_467.png" alt="image"></p>
 <p>上图是三组显显著性区域的heatmap可视化结果，<br>
 在每一组实验中，如果给定左边的图，显著性区域是偏中间的，<br>
 而把图片右边crop掉(每组的右边的图)，<br>
@@ -170,7 +170,7 @@ CNN学习到了哪里是输入图像的中间，所以将显著性区域的预�
 <p>位置信息是zero-padding透露的。<br>
 足够大的网络（多层或者大kernel）可以把padding透露的边界信息扩散出去，得到粗糙的全局位置信息。<br>
 在没有padding的情况下，输出只会直接响应在输入的内容上，不能预测和内容无关的位置信息：</p>
-<p><img src="Selection_470.png" alt="image"></p>
+<p><img src="../Selection_470.png" alt="image"></p>
 </div>
             </div>
         </div>

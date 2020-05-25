@@ -173,11 +173,11 @@ Nk = 10<br>
 <h3 id="所以多個channel的資料-都會被參考到-所以這也是為什麼conv會比depthwise-conv來的準一點">(所以多個channel的資料 都會被參考到, 所以這也是為什麼conv會比depthwise conv來的準一點)</h3>
 <h3 id="總共ouput點有這些-w_out--h_out--nk">總共ouput點有這些 W_out * H_out * Nk</h3>
 <h3 id="一般卷積-計算量為--w_out--h_out--nk--k--k--nch">一般卷積 計算量為 = W_out * H_out * Nk * k * k * Nch</h3>
-<p><img src="https://github.com/evansin100/Depthwise-conv/blob/master/Selection_258.png" alt="image"></p>
+<p><img src="../https://github.com/evansin100/Depthwise-conv/blob/master/Selection_258.png" alt="image"></p>
 <p>也可以由這個例子看出,input channel 和對應的 filter channel做計算再加起來的感覺</p>
 <h3 id="所以也可以看到input中的channel和filter中的channel一定是一對一的關係eg-channel-1對channel-1">所以也可以看到input中的channel和filter中的channel一定是一對一的關係,e.g. channel 1對channel 1,</h3>
 <h3 id="但output-channel不只有一所以filter才會有很多組batchdimension-3">但output channel不只有一,所以filter才會有很多組(batch=&gt;dimension 3)</h3>
-<p><img src="https://github.com/evansin100/Depthwise-conv/blob/master/Selection_263.png" alt="image"></p>
+<p><img src="../https://github.com/evansin100/Depthwise-conv/blob/master/Selection_263.png" alt="image"></p>
 <h1 id="depthwise-conv">Depthwise CONV</h1>
 <p>step 1: Depthwise convolution<br>
 針對輸入資料的每一個Channel都建立一個k*k的Kernel，然後每一個Channel針對對應的Kernel都各自(分開)做convolution。 <br>
@@ -198,11 +198,11 @@ Depthwise convolution 完後會有 W_out * H_out * Nch 個點, 每個點只要�
 <p>Pointwise convolution 完後會有 Nk * W_out * H_out, 每個點要做 Nch的相加(如下第二個圖)</p>
 <h3 id="所以-pointwise-convolution-計算量為-nch--nk--w_out--h_out">所以 Pointwise convolution 計算量為 Nch * Nk * W_out * H_out</h3>
 <p>Depthwise conv (這個產生的channel維度,和input相同)   <br>
-<img src="https://github.com/evansin100/Depthwise-conv/blob/master/Selection_262.png" alt="image"><br>
+<img src="../https://github.com/evansin100/Depthwise-conv/blob/master/Selection_262.png" alt="image"><br>
 Pointwise conv (可以透過有多組的filter,來調整output channel維度) <br>
-<img src="https://github.com/evansin100/Depthwise-conv/blob/master/Selection_136.png" alt="image"></p>
+<img src="../https://github.com/evansin100/Depthwise-conv/blob/master/Selection_136.png" alt="image"></p>
 <h3 id="運算量比較-下圖不是win是wout">運算量比較 (下圖不是Win是Wout)</h3>
-<p><img src="https://github.com/evansin100/Depthwise-conv/blob/master/Selection_261.png" alt="image"></p>
+<p><img src="../https://github.com/evansin100/Depthwise-conv/blob/master/Selection_261.png" alt="image"></p>
 <p>=&gt; 所以可以看到在pointwise conv, k的因素已經不見了,這個就是減少計算量的原因</p>
 <h3 id="-因為pointwise-conv也是傳統的conv-原本每個output點的計算量是-k--k--nch-input有幾個channel">=&gt; 因為pointwise conv也是傳統的conv, 原本每個output點的計算量是 k * k * Nch (input有幾個channel)</h3>
 <h3 id="-但pointwise-conv是k1--所以每個output點的計算量就變成-nch-input有幾個channel">=&gt; 但pointwise conv是k=1 =&gt; 所以每個output點的計算量就變成 Nch (input有幾個channel)</h3>

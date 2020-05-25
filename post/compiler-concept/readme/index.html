@@ -164,7 +164,7 @@ layui.use('element', function(){
 <p>簡言之，編譯器獲取原始碼，產生一個二進位制檔案。<br>
 因為從複雜的、人類可讀的程式碼直接轉化成0/1二進位制會很複雜，  <br>
 所以編譯器在產生可執行程式之前有多個步驟：</p>
-<p><img src="Selection_131.png" alt="image"></p>
+<p><img src="../Selection_131.png" alt="image"></p>
 <h1 id="lexer">Lexer</h1>
 <p>詞法分析<br>
 (1) 输入：一堆字符，即我们写的语法代码，一个文件，也就是一堆字符；<br>
@@ -190,7 +190,7 @@ layui.use('element', function(){
 ast 中包含了所有要進行操作。解析器不會計算這些操作，它只是以正確的順序來收集其中的標記。<br>
 我之前補充了我們的詞法分析器程式碼，以便它與我們的語法想匹配，並且可以產生像圖表一樣的 AST</li>
 </ul>
-<p><img src="Selection_132.png" alt="image"></p>
+<p><img src="../Selection_132.png" alt="image"></p>
 <h1 id="optional-ast--more-ir">Optional: AST =&gt; more IR</h1>
 <p>編譯器可能有 中間表示,或者簡稱 IR 。 <br>
 IR 主要是為了在優化或者翻譯成另一門語言的時候，無損地表示原來的指令。<br>
@@ -205,7 +205,7 @@ and 有那些表達的方式(e.g., SSA,Relay..etc.)<br>
 程式碼生成器必須以遞迴下降的順序遍歷AST or IR 中的所有內容-<br>
 就像是解析器的工作方式一樣-之後生成相應的內容，只不過這裡生成的不再是語法樹，而是程式碼了<br>
 可以看到底下這個範例,就是可以再由IR轉成machine code(assembly-機器的OP code)   <br>
-<img src="Selection_1310.png" alt="image"></p>
+<img src="../Selection_1310.png" alt="image"></p>
 <h1 id="vs-interpreter">vs interpreter</h1>
 <p>直譯器 非常像編譯器，它也是讀入程式語言的程式碼，然後處理這些程式碼。 <br>
 儘管如此, <strong>直譯器會跳過了程式碼生成(code generation)</strong>      <br>

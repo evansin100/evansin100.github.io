@@ -164,7 +164,7 @@ layui.use('element', function(){
 相當的多，所以使用 df.head() 僅讀出前 5 個資料內容。<br>
 df = pd.read_csv(&ldquo;weather_2012.csv&rdquo;)  <br>
 print(df.head())<br>
-<img src="Selection_427.png" alt="image"></p>
+<img src="../Selection_427.png" alt="image"></p>
 <h1 id="step-2-get-data-part-of-csv">Step 2: Get Data (part of CSV)</h1>
 <p>CSV中有這些欄位</p>
 <ol>
@@ -186,29 +186,29 @@ print(df[&ldquo;Temp (C)&quot;].values.mean()) <br>
 &hellip;</p>
 <p><strong>describe()很好用,會自動做常用的數值分析</strong><br>
 print(df.describe()) <br>
-<img src="Selection_430.png" alt="image"></p>
+<img src="../Selection_430.png" alt="image"></p>
 <p><strong>corr()很好用,會做這些欄位的關聯性分析</strong><br>
 print(df.corr()) <br>
 1就代表最相關,數值愈大越相關<br>
-<img src="Selection_431.png" alt="image"></p>
+<img src="../Selection_431.png" alt="image"></p>
 <h1 id="step-4-analysis-visualized">Step 4: Analysis (visualized)</h1>
 <p>把點印出來<br>
 df[&ldquo;Temp (C)&quot;].plot()  <br>
 plt.show()<br>
-<img src="Selection_428.png" alt="image"></p>
+<img src="../Selection_428.png" alt="image"></p>
 <p>透過 plot() 劃出來的圖形，無法有效知道成績分布，<br>
 藉此可以使用 pandas 提供的 hist() 方法來劃出直方圖<br>
 bins 可以控制直方圖的寬度<br>
 df[&ldquo;Temp (C)&quot;].hist(bins=20)<br>
 plt.show() <br>
-<img src="Selection_429.png" alt="image"></p>
+<img src="../Selection_429.png" alt="image"></p>
 <p>相關性也可以視覺化<br>
 import seaborn as sn<br>
 sn.heatmap(df.corr(), annot=True)
 plt.show()<br>
 熱度圖使用了顏色來做關聯性的區分;熱度圖中顏色越極端(接近全白、全黑)的格子代表關聯性越強的表徵。<br>
 熱度圖中有一條對角的全白線，此現象應該忽略，因為它是代表表徵與他自己本身的關聯性自然為1<br>
-<img src="Selection_432.png" alt="image"></p>
+<img src="../Selection_432.png" alt="image"></p>
 </div>
             </div>
         </div>

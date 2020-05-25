@@ -162,7 +162,7 @@ ML Engine 結合了 HyperTune，您不用再手動找出所需數據，HyperTune
 Google 利用支援 CPU 和 GPU 的代管型分散式訓練基礎架構，讓您能同時支援以 TB 等級的資料和上千位的使用者，您也不需擔心基礎架構問題。<br>
 整合性高<br>
 跟過往的 Google 產品相同的是：Cloud ML Engine 能與其他 Google 產品整合，您可以使用來自像是 Cloud Storage 等其他來源的資料、搭配 Cloud Dataflow 的功能處理、Cloud Datalab 的模型建立。 <br>
-<img src="https://github.com/evansin100/Cloud-Machine-Learning-/blob/master/Selection_124.png" alt="image"></p>
+<img src="../https://github.com/evansin100/Cloud-Machine-Learning-/blob/master/Selection_124.png" alt="image"></p>
 <p>Cloud Machine Learning 是 Google Cloud Platform 對於深度學習提供的管理服務。<br>
 它可以讓您建立作用於任何大小、任何資料的學習模型，並藉由 TensorFlow 框架打造您的服務。<br>
 您立即可以將訓練模型放置於全球的 prediction 平台，能支持成千上萬的使用者與 TB 等級的資料。<br>
@@ -177,7 +177,7 @@ You can easily manage your projects and resources without having to install the 
 on your system. With Cloud Shell, the Cloud SDK gcloud command-line tool and other utilities you need are always available,<br>
 up to date and fully authenticated when you need them.<br>
 再按了editor後 就可以看到底下的畫面<br>
-<img src="https://github.com/evansin100/Cloud-Machine-Learning-/blob/master/Selection_118.png" alt="image"></p>
+<img src="../https://github.com/evansin100/Cloud-Machine-Learning-/blob/master/Selection_118.png" alt="image"></p>
 <p>這邊有個Google提供的範例flower<br>
 解壓縮該檔案並移動路徑至 flowers 的目錄底下，以下的指令都需要再 flowers 的目錄底下執行：<br>
 wget <a href="https://github.com/GoogleCloudPlatform/cloudml-samples/archive/master.zip">https://github.com/GoogleCloudPlatform/cloudml-samples/archive/master.zip</a><br>
@@ -186,7 +186,7 @@ cd cloudml-samples-master/flowers<br>
 使用 pip 來下載所需要的套件<br>
 pip install &ndash;user -r requirements.txt<br>
 可以看到google提供的clould ml範例裡面有mnist,xgboost ..etc<br>
-<img src="https://github.com/evansin100/Cloud-Machine-Learning-/blob/master/Selection_119.png" alt="image"></p>
+<img src="../https://github.com/evansin100/Cloud-Machine-Learning-/blob/master/Selection_119.png" alt="image"></p>
 <h3 id="flower-model">flower model</h3>
 <p>&ldquo;&ldquo;&ldquo;Flowers classification model.&rdquo;&rdquo;&rdquo;<br>
 import enum<br>
@@ -268,14 +268,14 @@ self.inception_checkpoint_file = inception_checkpoint_file</p>
 </code></pre>
 <p>至 GCP Project 啟用 Cloud Machine Learning Engine and Compute Engine APIs
 Note:要先開啟project的計費功能, 這樣才可以enable cloud mahcin learning engine API<br>
-<img src="https://github.com/evansin100/Cloud-Machine-Learning-/blob/master/Selection_120.png" alt="image"><br>
+<img src="../https://github.com/evansin100/Cloud-Machine-Learning-/blob/master/Selection_120.png" alt="image"><br>
 要設定憑證,將憑證新增至您的專案 <br>
 如要在應用程式中使用這組金鑰，請以 key=API_KEY 參數的形式來傳送金鑰<br>
 AIzaSyC2__qNt0ihD6qF30ad52Uvqt2tRNm6kJc</p>
 <p>安裝並初始化 Cloud SDK<br>
 用Linux的版本安裝即可<br>
 注意要先用browser開啟google權限,要讓google cloud可以access<br>
-<img src="https://github.com/evansin100/Cloud-Machine-Learning-/blob/master/Selection_121.png" alt="image"></p>
+<img src="../https://github.com/evansin100/Cloud-Machine-Learning-/blob/master/Selection_121.png" alt="image"></p>
 <p>安裝完 Tensorflow 後可以照著此連結的步驟，測試 Tensorflow 是否成功安裝，結果如下：</p>
 <p>設置 Cloud Storage Bucket<br>
 設置 Project 以及 Bucket 的環境變數<br>
@@ -291,12 +291,12 @@ us-central1看起來處理器最好<br>
 英偉達發布Tesla V100 史上最強核彈售價102萬元<br>
 單精度浮點性能高達15 TFLOPS，雙精度浮點7.5 TFLOPS，顯存帶寬900GB/s是P1000的2倍多。<br>
 看起來好像也還好&hellip;<br>
-<img src="https://github.com/evansin100/Cloud-Machine-Learning-/blob/master/Selection_122.png" alt="image"></p>
+<img src="../https://github.com/evansin100/Cloud-Machine-Learning-/blob/master/Selection_122.png" alt="image"></p>
 <p>切換到/GoogleCloud/cloudml-samples-master/flowers<br>
 gsutil mb -l $REGION gs://$BUCKET_NAME<br>
 執行可能會有錯誤, 是因為你要建立bucket才行(bucket就是一個儲藏空間而已)    <br>
 <a href="https://console.cloud.google.com/storage/browser?_ga=2.250402305.-681519371.1544509115&amp;project=third-technique-225213&amp;folder&amp;organizationId">https://console.cloud.google.com/storage/browser?_ga=2.250402305.-681519371.1544509115&amp;project=third-technique-225213&amp;folder&amp;organizationId</a><br>
-<img src="https://github.com/evansin100/Cloud-Machine-Learning-/blob/master/Selection_123.png" alt="image"></p>
+<img src="../https://github.com/evansin100/Cloud-Machine-Learning-/blob/master/Selection_123.png" alt="image"></p>
 <p>好像要把權限加到使用者才行？<br>
 Click the drop-down menu associated with the bucket to which you want to grant a member a role.<br>
 The drop-down menu appears as three vertical dots to the far right of the bucket&rsquo;s row.<br>

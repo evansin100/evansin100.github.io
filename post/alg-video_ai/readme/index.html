@@ -150,7 +150,7 @@ both of them encode 2D spatial information over a 3rd dimension.<br>
 Much like diagnosing abnormalities from 3D images, <br>
 action recognition from videos would require capturing context<br>
 from entire video rather than just capturing information from each frame<br>
-<img src="Selection_497.png" alt="image"></p>
+<img src="../Selection_497.png" alt="image"></p>
 <h1 id="challenges">Challenges</h1>
 <p>Action recognition task involves the identification of different actions<br>
 from video clips (<strong>a sequence of 2D frames</strong>) where the action may or may not be<br>
@@ -191,11 +191,11 @@ progress in architectures for video classification and representation learning h
 <h1 id="approach-1-single-stream-network">Approach 1: Single Stream Network</h1>
 <p>the consecutive frames of the video are presented as input in all setups<br>
 =&gt; The learnt spatiotemporal(空間時間的來源) features didn’t capture motion features<br>
-<img src="Selection_498.png" alt="image"></p>
+<img src="../Selection_498.png" alt="image"></p>
 <h1 id="approach-2-two-stream-networks">Approach 2: Two Stream Networks</h1>
 <p>one for spatial context (pre-trained), one for motion context <br>
 =&gt; The method involved pre-computing <strong>optical flow</strong> vectors <br>
-<img src="Selection_499.png" alt="image"></p>
+<img src="../Selection_499.png" alt="image"></p>
 <h1 id="approach-3-3d-convnet">Approach 3: 3D ConvNet</h1>
 <p>Temporal 3D ConvNets: New Architecture and Transfer Learning for Video Classification<br>
 和approach1的差異是多了TTL layer(Temporal Transition Layer), 所以還是有時間概念<br>
@@ -216,7 +216,7 @@ progress in architectures for video classification and representation learning h
 <ul>
 <li>TTL层包含几个不同大小和时间域深度的卷积kernel和三维pooling层构成，</li>
 <li>所希望达到的效果是能够对短、中、长三个不同的时间长度的序列信息进行建模。<br>
-<img src="Selection_500.png" alt="image"></li>
+<img src="../Selection_500.png" alt="image"></li>
 </ul>
 </li>
 </ul>
@@ -230,7 +230,7 @@ progress in architectures for video classification and representation learning h
 训练过程中二维网络权值不更新，这样在训练过程中不需要得到视频的label，只需要知道送入两个网络的视频是不是同一个即可，<br>
 也即希望三维网络在训练过程中不断具备对序列视频的特征提取能力<br>
 =&gt; 所以是用已經訓練好的2D網路來訓練3D網路    <br>
-<img src="Selection_501.png" alt="image"></p>
+<img src="../Selection_501.png" alt="image"></p>
 <h1 id="another-comparison-for-video-understanding">Another Comparison for video understanding</h1>
 <!-- raw HTML omitted -->
 <pre><code>         dominant approach for video understanding

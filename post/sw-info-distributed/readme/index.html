@@ -168,7 +168,7 @@ print(&ldquo;Value of var in session 2:&quot;, sess2.run(var))</p>
 <h3 id="tftrainservercreate_local_server">tf.train.Server.create_local_server</h3>
 <p>在本地創建一個只有一臺機器的 TensorFlow 集羣。然後在集羣上生成一個會話，通過該對話，我們可以將創建的計算圖運行在 TensorFlow 集羣上。<br>
 雖然這只是一個單機集羣，但它基本上反映了 TensorFlow 集羣的工作流程<br>
-<img src="https://github.com/evansin100/Distributed/blob/master/Selection_040.png" alt="image"></p>
+<img src="../https://github.com/evansin100/Distributed/blob/master/Selection_040.png" alt="image"></p>
 <h3 id="taskjob">task/job</h3>
 <p>TensorFlow 集羣會通過一系列任務（task）來執行計算圖中的運算，一般來說不同的任務會在不同的機器上運行。<br>
 TensorFlow 集羣中的任務也會被聚集爲工作（job）。例如在訓練深度模型時，一臺運行反向傳播的機器是一個任務，<br>
@@ -214,11 +214,11 @@ print (&rdquo; &ldquo;,node.node_name)</p>
 到目前爲止，我們所有的例子都是在兩臺服務器上運行相同的圖。這被稱爲圖內複製（in-graph replication）。<br>
 例如，假設我們有一個包含三臺服務器的集羣。服務器 1 保存共享參數，而服務器 2 和服務器 3 是工作站節點，<br>
 每個都有本地變量。在圖內複製中，每臺服務器的圖如下所示：<br>
-<img src="https://github.com/evansin100/Distributed/blob/master/Selection_041.png" alt="image"><br>
+<img src="../https://github.com/evansin100/Distributed/blob/master/Selection_041.png" alt="image"><br>
 圖內複製的問題在於每個服務器都必須具有整個圖的副本，包括可能只與其他服務器相關的子圖。這可能會導致圖變得非常大。</p>
 <p>另一種方法是圖間複製（between-graph replication）。在這裏，每個服務器都運行一個只包含共享參數的圖，而且任何變量和操作都與單個服務器相關。<br>
 這種方法縮減了圖的大小，因此我們推薦使用圖間複製。<br>
-<img src="https://github.com/evansin100/Distributed/blob/master/Selection_042.png" alt="image"></p>
+<img src="../https://github.com/evansin100/Distributed/blob/master/Selection_042.png" alt="image"></p>
 <p>要訪問共享變量，我們必須手動添加一個同名的變量到第二個圖中。</p>
 </div>
             </div>

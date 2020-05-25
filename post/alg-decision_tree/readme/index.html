@@ -190,7 +190,7 @@ layui.use('element', function(){
 <li>对所有划分操作的结果集的“纯度”进行比较,选择“纯度”越高的特征属性作为当前需要分割的数据集进行分割操作,</li>
 <li>持续迭代,直到得到最终结果。决策树是通过“纯度”来选择分割特征属性点的。
 Example: <br>
-<img src="Selection_533.png" alt="image"></li>
+<img src="../Selection_533.png" alt="image"></li>
 </ul>
 </li>
 </ul>
@@ -217,7 +217,7 @@ Example: <br>
 =&gt; 所以子點的entropy要愈小愈好</p>
 <p>当计算出各个特征属性的量化纯度值后使用信息增益度来选择岀当前数据集的分割特征属性;<br>
 如果信息增益度的值越大,表示在该特征属性上会损失的纯度越大那么该属性就越应该在决策树的上层<br>
-<img src="Selection_535.png" alt="image"></p>
+<img src="../Selection_535.png" alt="image"></p>
 <h1 id="decision-tree-construction-stop">Decision tree construction stop</h1>
 <p>决策树构建的过程是一个<strong>递归的过程</strong>,所以必须给定停止条件,否则过程将不会迸行停止,一般情况有两种停止条件：</p>
 <ul>
@@ -232,7 +232,7 @@ Example: <br>
 <p>和分类算法一样，可以采用通用的，准确率，召回率，F1等指标进行评估。<br>
 =&gt; 可是和别的分类算法不同的是可以采用叶<strong>子节点的纯度来评估算法效果，叶子纯度值和越小</strong>，则分类的越清楚，算法越好 <br>
 =&gt; 所以就是判斷子node的準度<br>
-<img src="Selection_536.png" alt="image"></p>
+<img src="../Selection_536.png" alt="image"></p>
 </div>
             </div>
         </div>

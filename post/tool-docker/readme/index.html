@@ -186,7 +186,7 @@ python tools/converter.py convert &ndash;config=/path/to/mace-models/mobilenet-v
 還可以跑些簡單的test, 這個script就會build出一個binary ops_benchmark<br>
 python tools/bazel_adb_run.py &ndash;target=&rdquo;//mace/ops:ops_test&rdquo; \<br>
 &ndash;run_target=True<br>
-<img src="https://github.com/evansin100/Docker/blob/master/Image%201.png" alt="image"></p>
+<img src="../https://github.com/evansin100/Docker/blob/master/Image%201.png" alt="image"></p>
 <h2 id="get-test-case-binrary">Get test case binrary</h2>
 <p>在docker的環境, 不能直接調用host端的adb, 似乎要做一些設定<br>
 因此比較簡單的作法是透過docker cp將檔案copy出來, 並在host端透過adb shell放在裝置上跑<br>

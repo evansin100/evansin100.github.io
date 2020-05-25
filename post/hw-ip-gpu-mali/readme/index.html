@@ -177,11 +177,11 @@ layui.use('element', function(){
 </ul>
 </li>
 </ul>
-<p><img src="Selection_419.png" alt="image"></p>
+<p><img src="../Selection_419.png" alt="image"></p>
 <p>底下是用Winograd的(input transform的處理當作例子)<br>
 可以看到在input transform處理的時候會用多個threads<br>
 每個thread會寫出去一串數值<br>
-<img src="Selection_423.png" alt="image"></p>
+<img src="../Selection_423.png" alt="image"></p>
 <h1 id="fma">FMA</h1>
 <p><a href="https://www.khronos.org/registry/OpenCL/sdk/1.0/docs/man/xhtml/fma.html">https://www.khronos.org/registry/OpenCL/sdk/1.0/docs/man/xhtml/fma.html</a> <br>
 從khronos的定義可以看到,fma是opencl的用法<br>
@@ -211,7 +211,7 @@ c0 = fma((half8)a0.s0, b0, c0);
 </code></pre><p><strong>halfn這個代表在fma我們要計算幾個float16 element</strong><br>
 以上面的範例,先用vload8, load 8個FP16到一個register(half8),  <br>
 然後用fma(half8)..),指定要做8個element的計算(vector)<br>
-<img src="Selection_542.png" alt="image"></p>
+<img src="../Selection_542.png" alt="image"></p>
 <!-- raw HTML omitted -->
 <pre><code>         (1) 一個core有3 execution engines (3個計算單元)    
          (2) 一個execution engines是4 wide(可以同時發4個指令 e.g., 4FMA)       
@@ -252,7 +252,7 @@ c0 = fma((half8)a0.s0, b0, c0);
  &lt;/tr&gt;
 </code></pre>
 <!-- raw HTML omitted -->
-<p><img src="Selection_417.png" alt="image"></p>
+<p><img src="../Selection_417.png" alt="image"></p>
 <p>這邊專講GPU硬體(不包含OpenCL) <br>
 OpenCL的原理,還有OpenCL怎麼mapping到GPU執行(NDRange/GPU thread)   <br>
 可以看 <a href="https://github.com/evansin100/OpenCL/tree/master/Core">https://github.com/evansin100/OpenCL/tree/master/Core</a></p>

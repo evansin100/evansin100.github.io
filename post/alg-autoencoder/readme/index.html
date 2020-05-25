@@ -161,10 +161,10 @@ layui.use('element', function(){
 <p>也就是資訊會先被壓縮到比較小的範圍(<strong>代表全體</strong>),後來再做decode <br>
 所以可以用來作為super resolution(U-Net) or <br>
 Speech(先把input都encode到一個vector,當作看完全部句子) 再做decode<br>
-<img src="Selection_343.png" alt="image"></p>
+<img src="../Selection_343.png" alt="image"></p>
 <h1 id="autoencoder-summary">Autoencoder summary</h1>
 <p>總共有四種<br>
-<img src="Selection_344.png" alt="image"></p>
+<img src="../Selection_344.png" alt="image"></p>
 <h1 id="autoencoder-1-autoencoder---ae">Autoencoder (1. AutoEncoder - AE))</h1>
 <p>AutoEncoder 是多層神經網絡的一種非監督式學習算法，稱為自動編碼器， <br>
 <strong>它可以幫助(1)資料分類、(2)視覺化、(3)儲存</strong><br>
@@ -174,13 +174,13 @@ Speech(先把input都encode到一個vector,當作看完全部句子) 再做decod
 特點是編碼器會建立一個隱藏層（或多個隱藏層）包含了輸入資訊的低維向量。 <br>
 然後有一個解碼器，會通過隱藏層的低維向量重建輸入資料。 <br>
 通過神經網路的訓練最後AE會在隱藏層中得到一個代表輸入資料的低維向量<br>
-<img src="Selection_345.png" alt="image"></p>
+<img src="../Selection_345.png" alt="image"></p>
 <h1 id="autoencoder-2-variational-autoencoder---vae">Autoencoder (2. Variational Autoencoder - VAE)</h1>
 <p>Variational =&gt; 變異的<br>
 VAE 是 AutoEncoder 的進階版，結構上也是由 Encoder 和 Decoder 所構成<br>
 可以看出與 AutoEncoder 不同之處在於 <strong>VAE 在&quot;編碼(encode)&ldquo;過程增加了一些限制，迫使生成的向量遵從高斯分佈</strong>   <br>
 由於高斯分佈可以通過其mean 和 standard deviation 進行參數化，因此 VAE 理論上是可以讓你控制要生成的圖片<br>
-<img src="Selection_346.png" alt="image"></p>
+<img src="../Selection_346.png" alt="image"></p>
 <p>VAE 的內部做法：</p>
 <ol>
 <li>先輸出兩個向量：mean 和 standard deviation</li>
@@ -190,20 +190,20 @@ VAE 是 AutoEncoder 的進階版，結構上也是由 Encoder 和 Decoder 所構
 總之，VAE 可以解讀隱含向量中的每一個維度（dimension）分別代表什麼意思，也因此理想上可以調整想要生成的圖片。</li>
 </ol>
 <h2 id="ae-and-vae-comparison">AE and VAE comparison</h2>
-<p><img src="Selection_347.png" alt="image"></p>
+<p><img src="../Selection_347.png" alt="image"></p>
 <h1 id="autoencoder-3-denoising-ae---dae">Autoencoder (3. Denoising AE - DAE)</h1>
 <p>Denoising AE 是一種學習對圖片去噪（denoise）的神經網絡，它可用於從類似圖像中提取特徵到訓練集。<br>
 <strong>實際做法是在 input 加入隨機 noise</strong> =&gt; 這個是關鍵    <br>
 <strong>然後使它回復到原始無噪聲的資料，使模型學會去噪的能力</strong><br>
 =&gt; 所以可以用來做denoise<br>
-<img src="Selection_348.png" alt="image"></p>
+<img src="../Selection_348.png" alt="image"></p>
 <h1 id="autoencoder-4-sparse-ae---sae">Autoencoder (4. Sparse AE - SAE)</h1>
 <p>Sparse AE 的作法是在 AutoEncoder 基礎上<strong>加上 L1 正則化</strong>  <br>
 <strong>限制每次得到的 representation 盡量稀疏</strong>，迫使自動編碼器將每個輸入表示為少量節點的組合，<br>
 只有一小部分節點具有非零值，稱為活動節點。<br>
 為什麼要盡量稀疏呢？<strong>事實上在特徵稀疏的過程裡可以過濾掉無用的訊息</strong> =&gt; 這個是重點,這樣學到的表示法會比較有意義   <br>
 每個神經元都會訓練成辨識某些特定輸入的專家，因此 Sparse AE 可以給出比原始資料更好的特徵描述。<br>
-<img src="Selection_349.png" alt="image"></p>
+<img src="../Selection_349.png" alt="image"></p>
 </div>
             </div>
         </div>

@@ -199,14 +199,14 @@ Intel® Vision Accelerator Design with Intel® Movidius™ VPUs (這個是之前
 <h2 id="cv-and-nn">CV and NN</h2>
 <p>所以可以看到主要是分成兩類<br>
 NN (inference) and computer vision algorithm<br>
-<img src="https://github.com/evansin100/OpenVINO/blob/master/Selection_011.png" alt="image"></p>
+<img src="../https://github.com/evansin100/OpenVINO/blob/master/Selection_011.png" alt="image"></p>
 <p>透過模型優化器 （Model Optimizer）將網路模型匯入至 Intel 的平台上，且在過程中會根據目標平台的特性做進一步的優化，<br>
 接著轉換成給推理引擎 （Inference Engine）， 作為 input 中間的表示文件 （IR file），<br>
 推理引擎搭配硬體插件 （這裡目前就是 Movidius NCS）強化推理性能，再將最終的文件下載到目標平台上，驗證後進行應用部署</p>
 <p>不僅如此，OpenVINO 的工具套件 （toolkit），實際上是分層的，意思是可以根據開發者的個人能力以及需求決定自己要使用的 API 介面， <br>
 真的達到「盡可能的針對不同使用場景，進行優化再優化」的目的</p>
 <h3 id="裡面有大約20個pre-trained模型">裡面有大約20個pre-trained模型</h3>
-<p><img src="https://github.com/evansin100/OpenVINO/blob/master/Selection_012.png" alt="image"></p>
+<p><img src="../https://github.com/evansin100/OpenVINO/blob/master/Selection_012.png" alt="image"></p>
 <h2 id="opencv-30-and-opencl">OpenCV 3.0 and OpenCL</h2>
 <p>OpenCV 除了原有對 Intel CPU 加速函式庫 IPP （Integrated Performance Primitives）、<br>
 TBB （Threading Building Blocks）的支援外，發展至今已陸續整合進許多繪圖晶片（GPU）加速計算的平台，<br>
@@ -220,7 +220,7 @@ OpenVINO整合了OpenCV、 OpenVX、OpenCL 等開源軟體工具並支援自家 
 <p>所以從下圖可以看到, OpenVINO主要是兩大類(1) API and direct programing<br>
 API是openCV and OpenVX and NN相關的(model optimize, inference engine), direct programing支援C++ and OpenCL<br>
 此外有針對CPU and GPU做蠻多處理的<br>
-<img src="https://github.com/evansin100/OpenVINO/blob/master/Selection_009.png" alt="image"></p>
+<img src="../https://github.com/evansin100/OpenVINO/blob/master/Selection_009.png" alt="image"></p>
 <h2 id="inference-only-but-support-model-optimization">inference only, but support model optimization</h2>
 <p>OpenVINO 主要是用來推論用的(所以不是用來做訓連用的)，<br>
 特定模型的參數必須在其它框架（TensorFlow、Cafee、Mxnet）下訓練好才可使用。<br>
@@ -230,7 +230,7 @@ OpenVINO 除了可提供硬體加速外，更提供模型優化器（Model Optim
 <p>優化後，產出二個中間表示（Intermediate Representation、IR）檔案（*.bin, *.xml），<br>
 再交給推論引擎（Inference Engine）依指定的加速硬體（CPU、GPU、FPGA、ASIC）進行推論，如下圖所示<br>
 (所以要先用&quot;其他的framework&quot;訓練完之後,再來做轉換並優化)<br>
-<img src="https://github.com/evansin100/OpenVINO/blob/master/Selection_010.png" alt="image"></p>
+<img src="../https://github.com/evansin100/OpenVINO/blob/master/Selection_010.png" alt="image"></p>
 <h2 id="models">models</h2>
 <p>在 OpenVINO 中提供了多種預訓練及優化好的深度學習模型，<br>
 包括影像分類（AlexNet、GooLeNet、VGG、SqueezeNet、RestNet）、<br>
@@ -283,11 +283,11 @@ These dependencies are required for the Intel-optimized version of OpenCV<br>
 <h2 id="step-2">step 2</h2>
 <p>Install the OpenVINO™ core components:<br>
 Option 1: GUI Installation Wizard:<br>
-<img src="https://github.com/evansin100/OpenVINO/blob/master/Selection_013.png" alt="image"><br>
-<img src="https://github.com/evansin100/OpenVINO/blob/master/Selection_014.png" alt="image"><br>
-<img src="https://github.com/evansin100/OpenVINO/blob/master/Selection_015.png" alt="image"><br>
+<img src="../https://github.com/evansin100/OpenVINO/blob/master/Selection_013.png" alt="image"><br>
+<img src="../https://github.com/evansin100/OpenVINO/blob/master/Selection_014.png" alt="image"><br>
+<img src="../https://github.com/evansin100/OpenVINO/blob/master/Selection_015.png" alt="image"><br>
 安裝好的folder長這樣<br>
-<img src="https://github.com/evansin100/OpenVINO/blob/master/Selection_016.png" alt="image"></p>
+<img src="../https://github.com/evansin100/OpenVINO/blob/master/Selection_016.png" alt="image"></p>
 <h2 id="step-3">step 3</h2>
 <p>Set the environment variables<br>
 cd /OpenVINO/install/computer_vision_sdk_2018.5.455$ =&gt; source bin/setupvars.sh<br>
@@ -320,7 +320,7 @@ Go to the Model Optimizer prerequisites directory:<br>
 <h4 id="cv-algorithm-and-demo">CV algorithm and demo</h4>
 <h4 id="intel-model-model-downloader-model-optimizer">Intel model, model downloader, model optimizer</h4>
 <h4 id="inference-engine-extension-generator">inference engine, extension generator</h4>
-<p><img src="https://github.com/evansin100/OpenVINO/blob/master/Selection_017.png" alt="image"></p>
+<p><img src="../https://github.com/evansin100/OpenVINO/blob/master/Selection_017.png" alt="image"></p>
 <p>Configure the Model Optimizer for all supported frameworks at the same time:=&gt;所以可以針對所有framework  <br>
 /home/evansin/OpenVINO/install/computer_vision_sdk/deployment_tools/model_optimizer/install_prerequisites <br>
 Run the script to configure the Model Optimizer for</p>
@@ -331,15 +331,15 @@ Run the script to configure the Model Optimizer for</p>
 edit your sources.list at /etc/apt/sources.list<br>
 and try update and upgrade again your system</p>
 <p>安裝完後,可以看到這可以針對很多framework<br>
-<img src="https://github.com/evansin100/OpenVINO/blob/master/Selection_018.png" alt="image"></p>
+<img src="../https://github.com/evansin100/OpenVINO/blob/master/Selection_018.png" alt="image"></p>
 <h2 id="step42">step4.2</h2>
 <p>Use the Demo Scripts to Verify Your Installation<br>
 可以用demo script來驗證你是否有安裝成功 <br>
 範例是下載caffe model(FP32)來做轉換 <br>
-<img src="https://github.com/evansin100/OpenVINO/blob/master/Selection_019.png" alt="image"><br>
-<img src="https://github.com/evansin100/OpenVINO/blob/master/Selection_020.png" alt="image"><br>
-<img src="https://github.com/evansin100/OpenVINO/blob/master/Selection_022.png" alt="image"><br>
-<img src="https://github.com/evansin100/OpenVINO/blob/master/Selection_023.png" alt="image"></p>
+<img src="../https://github.com/evansin100/OpenVINO/blob/master/Selection_019.png" alt="image"><br>
+<img src="../https://github.com/evansin100/OpenVINO/blob/master/Selection_020.png" alt="image"><br>
+<img src="../https://github.com/evansin100/OpenVINO/blob/master/Selection_022.png" alt="image"><br>
+<img src="../https://github.com/evansin100/OpenVINO/blob/master/Selection_023.png" alt="image"></p>
 <h3 id="issue--pip3-not-found">issue : pip3 not found</h3>
 <p>sudo apt-get remove python3-pip<br>
 sudo apt-get install python3-pip</p>

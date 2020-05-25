@@ -170,7 +170,7 @@ layui.use('element', function(){
 推導自delta調變原理的類比至數位或是數位至類比轉換技術。ADC或是DAC可藉由低成本的CMOS製程實現此一技術，<br>
 也就是像數位IC一樣的製程。基於上述理由，即便本技術早在1960年代已經提出， <br>
 但是要到近年來由於半導體技術精進才得以普遍的使用。幾乎所有的類比IC製造商都有提供Sigma-Delta轉換器產品<br>
-<img src="Selection_479.png" alt="image"></p>
+<img src="../Selection_479.png" alt="image"></p>
 <p>ADC可被认为是一个压控震荡器，控制电压为被测量的电压，线性和比例性由负迴授决定。<br>
 振荡器输出为一个脉冲串，每个脉冲为已知，常量，幅度=V且持续时间为dt，<br>
 因此有一个已知的积分=Vdt但是变化的分离间隔。脉冲的间隔由迴授電路决定，<br>
@@ -189,13 +189,13 @@ layui.use('element', function(){
 階數越高時，noise shaping效果越好，但相對付出代價是穩定度必須妥善考量。<br>
 ΔΣ調變電路也可以用量化器的輸出位元數來分類，當使用N階的比較器時，輸出為log2N-bit；<br>
 基於線性度的考量，常見的ΔΣ電路為1-bit組態，也就是輸出僅有兩個位準：0或1。<br>
-<img src="Selection_481.png" alt="image"></p>
+<img src="../Selection_481.png" alt="image"></p>
 <h1 id="noise-shaping">Noise Shaping</h1>
 <p>由微分器、積分器構成的ΔΣ調變電路，<strong>會因其微分特性而對量化雜訊（Quantization noise）產生一種高通濾波的效果</strong>   <br>
 一般線性PCM中產生的量化雜訊平均分布在各頻率上，基於前述特性，<strong>可以將量化雜訊推往高頻，而產生noise shaping功效</strong> <br>
 將取樣頻率設高，則人耳可聽到的頻段相對低頻，此時將已經被推往高頻的量化雜訊以低通濾波器濾除，則可以得到量化雜訊較少的原訊號。<br>
 當ΔΣ調變階數越多時，noise shaping效果也會越顯著，如圖所示為1~3階ΔΣ的noise shaping效果。<br>
-<img src="Selection_480.png" alt="image"></p>
+<img src="../Selection_480.png" alt="image"></p>
 </div>
             </div>
         </div>

@@ -167,7 +167,7 @@ Replacing Mobile Camera ISP with a Single Deep Learning Model<br>
 只需单个端到端深度学习模型，就能<strong>替代手机的ISP</strong><br>
 =&gt; Benifit 1: 所以就是不用ISP硬體了,camera進直接用AI做處理<br>
 可以看到效果很好,和ISP出來的圖幾乎差不多<br>
-<img src="Selection_622.png" alt="image"></p>
+<img src="../Selection_622.png" alt="image"></p>
 <p>它调教出的相机算法可以从一个手机移植到另一个手机上，<br>
 而不必使用手机的ISP。即使两款手机芯片来自两家厂商，也完全没问题。<br>
 用华为P20和佳能单反相机5D Mark IV调教的算法，<br>
@@ -232,14 +232,14 @@ issues completely</p>
 <p>为了能够把较小尺度上训练的结果用于原尺寸图片上，PyNET采用了分级的架构。<br>
 以下就是PyNET的网络架构，该模型具有倒金字塔形状，能以五个不同的级别处理图像。<br>
 PyNET架构具有多个块，这些块与不同大小的卷积滤波器（从3×3到9×9）并行处理特征图，然后将相应的卷积层的输出进行级联。<br>
-<img src="Selection_623.png" alt="image"></p>
+<img src="../Selection_623.png" alt="image"></p>
 <p>在较低尺度下获得的输出将通过转置的卷积层进行上采样，与高级的特征图堆叠在一起，然后在随后的卷积层中进行处理。<br>
 <strong>PyNET从最低层开始，对模型进行顺序训练。先在较低尺度上获得良好的图像重建结果，用于处理分辨率非常低的图像并执行全局图像操作</strong>  <br>
 对底层进行预训练之后，再将相同的步骤应用于下一个级别，直到对原始分辨率图像进行训练为止。<br>
 由于每个较高级别都从模型的下部获得了高级的高质量特征，因此它主要学习重建缺失的低级细节并完善结果。<br>
 经过训练后，将华为P20拍摄的RAW原始图像交给PyNET处理，图片不输华为自带ISP的处理效果<br>
 在Amazon Mechanical Turk平台上的人工打分显示，用PyNet处理的图片观感优于P20直出效果。<br>
-<img src="Selection_624.png" alt="image"></p>
+<img src="../Selection_624.png" alt="image"></p>
 </div>
             </div>
         </div>

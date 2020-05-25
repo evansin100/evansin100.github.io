@@ -174,7 +174,7 @@ e.g.,1x1x300,我想把他調整為1x1x10,那就需要[1x1x300]=&gt;可以產出o
 而前层是卷积层的全连接层可以转化为卷积核为hxw的全局卷积，h和w分别为前层卷积结果的高和宽</p>
 <h1 id="full-example">Full example</h1>
 <p>conv+pooling+fully connected<br>
-<img src="https://github.com/evansin100/Fully-Connected/blob/master/Selection_072.png" alt="image"><br>
+<img src="../https://github.com/evansin100/Fully-Connected/blob/master/Selection_072.png" alt="image"><br>
 最后的两列小圆球就是两个全连接层，在最后一层卷积结束后，进行了最后一次池化，<br>
 输出了20个12 x 12的图像，然后通过了一个全连接层变成了1 x 100的向量。</p>
 <p>这是怎么做到的呢，其实就是有100 x 20 个12 x 12的卷积核卷积出来的，<br>
