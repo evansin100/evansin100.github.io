@@ -23,7 +23,7 @@
 想要快速體會深度學習如何被應用在真實世界的好奇寶寶
 想要直觀理解類神經網路（Artifical Neural Network）運作方式的人
 想從別人的深度學習應用取得一些靈感的開發者
- (1) https://playground.tensorflow.org/ (2) 由 Tensorflow 團隊推出，模擬訓練一個類神經網路的過程並了解其運作原理 (3) 可以搭配這篇 Introduction to Neural Networks: Playground Exercises 學習   (1) https://magenta.tensorflow.org/ (2) 一個利用機器學習來協助人們進行音樂以及藝術創作的開源專案 (3) 可以在網站上的 Demo 頁面嘗試各種由深度學習驅動的音樂 / 繪畫應用（如彈奏鋼琴、擊鼓）   (1) https://experiments.withgoogle.com/collection/ai (2) 這邊展示了接近 40 個利用圖片、 語言以及音樂來與使用者產生互動的機器學習 Apps，值得慢慢探索 (3) 知名例子有 Quick Draw 以及 Teachable Machine，將在下方介紹）   (1) https://quickdraw.withgoogle.com/ (2) 由 Google 推出的知名手寫塗鴉辨識， 使用的神經網路架構有常見的卷積神經網路 CNN 以及循環神經網路 RNN (3) 該深度學習模型會不斷將最新的筆觸當作輸入來預測使用者想畫的物件。 你會驚嘆於她精準且即時的判斷   (1) https://teachablemachine.</description>
+ (1) https://playground.tensorflow.org/ (2) 由 Tensorflow 團隊推出，模擬訓練一個類神經網路的過程並了解其運作原理 (3) 可以搭配這篇 Introduction to Neural Networks: Playground Exercises 學習 &amp;lt;/td&amp;gt;   (1) https://magenta.tensorflow.org/ (2) 一個利用機器學習來協助人們進行音樂以及藝術創作的開源專案 (3) 可以在網站上的 Demo 頁面嘗試各種由深度學習驅動的音樂 / 繪畫應用（如彈奏鋼琴、擊鼓）   (1) https://experiments.withgoogle.com/collection/ai (2) 這邊展示了接近 40 個利用圖片、 語言以及音樂來與使用者產生互動的機器學習 Apps，值得慢慢探索 (3) 知名例子有 Quick Draw 以及 Teachable Machine，將在下方介紹）   (1) https://quickdraw.withgoogle.com/ (2) 由 Google 推出的知名手寫塗鴉辨識， 使用的神經網路架構有常見的卷積神經網路 CNN 以及循環神經網路 RNN (3) 該深度學習模型會不斷將最新的筆觸當作輸入來預測使用者想畫的物件。 你會驚嘆於她精準且即時的判斷   (1) https://teachablemachine.</description>
     </item>
     
   </channel>

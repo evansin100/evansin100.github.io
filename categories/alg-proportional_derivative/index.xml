@@ -16,10 +16,19 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/alg-proportional_derivative/readme/</guid>
-      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 07 MINUTES 35 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 07 MINUTES 34 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 07 MINUTES 33 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
+      <description>Concept PID 控制​概述：​PID (比例​微積分) 控制​為​業界​最​常見​的​控制​演算法，​是​受到​廣泛​認可​的​一種​工業​控制​做法。 ​本文​將​詳細​講解 PID 控制​原理、​探討​閉​迴圈​系統、​如何​實現 PID 控制​的​參數​調整、​以及​調整​對​控制​系統的​影響
+PID 控制器​之所以​大受歡迎，​一方面​是​因為​強勁​的​效能​適合​各式各樣​的​作業​條件；
+​另一方面​則是​因為​其​使用​簡單，​讓​工程師​能​輕鬆​簡單​地​操作。 PID 控制​演算法​如其​名​包含​三項​基本​係數：
+  (1) ​比例 (Proportional)、
+  (2) ​積分 (Integral)、
+  (3) ​微分 (Derivative, Differential?)，
+​可​通過​進行​控制​參數​調整​以​獲得​最佳​響應
+  Working flow PID 控制器​的​基本​工作​原理​就是​要​能​讀取​感​測​器，
+​再​計算​比例、
+​積分​與​微分​響應​以​得出​所需​的​致​動​器​輸出，
+​最後​再​將​這​三大​元件​加總​來​計算​輸出。 在​開始​定義 PID 控制器​參數​之前，​我們​必先​了解​閉​迴圈​系統的​定義，​以及​與其​相關​的​一些​詞彙
+  Example 閉​迴圈​系統
+​在​典型​的​控制​系統​中，​「程序​變數」​指​的是​需要​加以​控制​的​系統​參數，​例如​溫度 (ºC)、​壓力 (psi) 或​流量 (公升/​分鐘)。 我們​使用​感​測​器​來​量​測​程序​變數，​並將​反饋​提供​給​控制​系統。 「設定​點」​指​的是​程序​變數​所需​值​或是​指令​值，​例如​溫度​控制​系統​中​顯示​的​攝氏 100 度。 在​任何​特定​時間，​控制​系統​演算法 (補償​器) 會​利用​程序​變數​與​設定​點​之間​的​差異，​來​決定​驅動​系統 (機​板) 所需​的​致​動​器​輸出。 舉例來說，​當量​測​的​溫度​程序​變數​為 100 ºC 且​所需​的​溫度​設定​點​為 120 ºC，​則​控制​演算法​指定​的​「致​動​器​輸出」​有​可能​用來​驅動​加熱器。 驅動​致​動​器​來​開啟​加熱器，​會​讓​系統​變成​一台​暖爐，​並​讓​溫度​程序​變數​增加。 這個​現象​稱為​閉​迴圈​控制​系統，​</description>
     </item>
     
   </channel>

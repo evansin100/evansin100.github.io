@@ -16,10 +16,17 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/tool-or-tool/readme/</guid>
-      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 31 MINUTES 54 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 31 MINUTES 53 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 31 MINUTES 52 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
+      <description>Google Optimization Tools(OR-Tools) 是一款专门快速而便携地解决组合优化问题的套件。它包含了：
+(1) 约束编程求解器。
+(2) 简单而统一的接口，用于多种线性规划和混合整数规划求解 CBC、CLP、GLOP、GLPK、Gurobi、CPLEX 和SCIP。
+The primary OR-Tools &amp;ldquo;linear optimization&amp;rdquo; solver is Glop, Google&amp;rsquo;s linear programming system. (3) 图算法 (最短路径、最小成本、最大流量、线性求和分配)。
+(4) 经典旅行推销员问题和车辆路径问题的算法。
+(5) 经典装箱和背包算法。
+Google使用C++开发了OR-Tools库，但支持Python，C#，或Java语言调用。
+Concept Like all optimization problems, this problem has the following elements:
+任何問題都會被分為目標&amp;amp;限制
+The objective —the quantity you want to optimize. In the example above, the objective is to minimize cost.
+To set up an optimization problem, you need to define a function that calculates the value of the objective</description>
     </item>
     
   </channel>

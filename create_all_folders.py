@@ -32,7 +32,7 @@ def WriteHeader(src, dst, category):
 
     src_file.close()
     dst_file = open(dst, 'w')
-    header = "---\ndraft: true\ncategories: [\"" + category + "\"]\n---\n"
+    header = "---\ndraft: false\ncategories: [\"" + category + "\"]\n---\n"
     print("header\n" + header)
     dst_file.write(header)
     #dst_file.write(''.join([line for line in lines]))

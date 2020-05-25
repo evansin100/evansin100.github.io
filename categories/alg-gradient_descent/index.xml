@@ -16,10 +16,27 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/alg-gradient_descent/readme/</guid>
-      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 13 MINUTES 29 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 13 MINUTES 29 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 13 MINUTES 28 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
+      <description>Concept 梯度下降法(gradient&amp;quot;梯度&amp;rdquo; descent)是最佳化理論裡面的一個一階找最佳解的一種方法 =&amp;gt; 所以他是一種求解的方式,只是被拿到deep learning使用
+主要是希望用梯度下降法找到函數(剛剛舉例的式子)的局部最小值，
+因為梯度的方向是走向局部最大的方向，所以在梯度下降法中是往梯度的反方向走。
+梯度下降法就好比『我們在山頂，但不知道要下山的路，
+於是，我們就沿路找向下坡度最大的叉路走，直到下到平地為止』。要找到向下坡度最大， 在數學上常使用**『偏微分』(Partial Differential)，求取斜率**，
+一步步的逼近，直到沒有顯著改善為止，這時我們就認為是最佳解了，過程可參考下圖說明。
+這邊我們先大概說一下梯度， 要算一個函數J(w) &amp;ldquo;loss function&amp;quot;的梯度有一個前提，就是這個函數要是任意可微分函數，
+這也是深度學習為什麼都要找可微分函數出來當激活函數(activation function)
+=&amp;gt; 因為loss function可以微分才有梯度 底下是一個類似NN找weight併讓loss可以最低的範例 gradient descent example function 1 剛有提到我們需要先設定一個初始化的「解」，此例我設定x(0)=20(故意跟最佳值有差距)
+紅色的點是每一次更新找到的解
+紅色線是法線，藍色線是切線，法線和切線這兩條線是垂直的，但因為x軸和y軸scale不一樣，所以看不出來它是垂直的。 learning rate = 0.01
+一開始loss下降很快,因為斜率很大,所以w的一點點改動就會影響到loss的值
+一開始loss下降很慢,因為斜率變很小了
+function 2
+如果使這個case, learning rate太小
+就會找到loss的local optmization解,找不到最低點
+因為不會振動到那邊
+Forward Propagation and Backpropagation 依據上圖，我們先建構好模型，決定要做幾層的隱藏層，
+接著，Neural Network 就會利用 Forward Propagation 及 Backpropagation 機制，如下圖，
+幫我們求算模型中最重要的參數 &amp;ndash; 『權重』(Weight)，這個過程就稱為『最佳化』(Optimization)， 最常用的技巧就是『梯度下降』(Gradient Descent)。
+接著，我們就來用圖說故事，這部份主要參考 DataCamp Deep Learning in Python 的投影片，</description>
     </item>
     
   </channel>

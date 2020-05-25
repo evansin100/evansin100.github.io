@@ -16,10 +16,18 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/tool-google-cloud-ml/readme/</guid>
-      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 52 MINUTES 38 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 52 MINUTES 37 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 52 MINUTES 36 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
+      <description>https://blog.gcp.expert/cloud-machine-learning-beginning/
+Cloud ML Engine 也是一個您客製化機器學習模型的一個工具，
+您可以在上面執行任何一種 TensorFlow 架構，像是 Google 相簿和和 Google Cloud Speech 都是 ML Engine 運用下的成功範例。
+Cloud ML Engine 產品特色
+HyperTune
+ML Engine 結合了 HyperTune，您不用再手動找出所需數據，HyperTune 具備自動調整高等參數的功能，讓您能更有效的建立您的模型。
+可攜式模型
+您可以透過下載 Cloud Machine Learning 訓練過的模型，提供本機執行或行動整合。
+可擴充的代管服務 =&amp;gt; 這個才是我想要用的 Google 利用支援 CPU 和 GPU 的代管型分散式訓練基礎架構，讓您能同時支援以 TB 等級的資料和上千位的使用者，您也不需擔心基礎架構問題。
+整合性高
+跟過往的 Google 產品相同的是：Cloud ML Engine 能與其他 Google 產品整合，您可以使用來自像是 Cloud Storage 等其他來源的資料、搭配 Cloud Dataflow 的功能處理、Cloud Datalab 的模型建立。 Cloud Machine Learning 是 Google Cloud Platform 對於深度學習提供的管理服務。
+它可以讓您建立作用於任何大小、任何資料的學習模型，並藉由 TensorFlow 框架打造您的服務。</description>
     </item>
     
   </channel>

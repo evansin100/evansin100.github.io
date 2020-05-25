@@ -16,10 +16,11 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/hw-ip-dsp/readme/</guid>
-      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 29 MINUTES 42 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 29 MINUTES 42 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 29 MINUTES 41 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
+      <description>Concept DSP = VLIW and SIMD
+ (1) SIMD  e.g., SIMD operation可以支援64-way(lane)(8bit), 就代表一次可以處理64筆資料 一般而言DSP都是用大量的vector能力來提高計算能力 例如, 可以一次宣告input 4x [64個signed char], coeff 4x [64個signed char] 然後只用一個指令, 就可以做到input and coeff相乘,並再把結果相加得到 result 4x [64個24bit] 只是要自己準備vector的data排序,是比較煩瑣點,但或許可以透過compiler來做auto vector   (2) VLIW  通常DSP都是VLIW processor (有多個slot) 所以一個instruction,可以有多筆的operation(slot) (一個operation放在一個slot) e.g., 4筆 vector SIMD operation可以同時發 (DSP會有定義每個slot可以發什麼operation) 因此這樣單位時間就可以處理64x4=256MACs, 所以通常DSP都會給MAC的能力(一筆VLIW最多可以算多少)
+    Note VLIW vs issue multiple insturction per cycle 有些DSP會說 不是VLIW processor
+但會說可以在同一個cycle發出多筆instruction
+這樣其實也是達到VLIW的效果</description>
     </item>
     
   </channel>

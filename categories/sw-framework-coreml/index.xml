@@ -16,10 +16,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/sw-framework-coreml/readme/</guid>
-      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 01 MINUTES 45 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 01 MINUTES 44 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 01 MINUTES 44 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
+      <description>Concept Core ML 3：支援進階神經網路 WWDC 2019 蘋果介紹了 Core ML 3，這是蘋果機器學習模型框架的最新版本。 Core ML 是能在蘋果產品使用的高效能機器學習框架， 幫助開發者快速將多種機器學習模型融合到 App。 2017 年推出，2018 年升級為 Core ML 2，處理速度提升了 30%。
+如今 Core ML 升級為 Core ML 3，Core ML 3 將首次培訓裝置的機器學習。 由於模型可使用裝置用戶資料更新，因此 Core ML 3 能幫助模型不損隱私的情況下與用戶行為保持關聯。 不僅如此，Core ML 3 還支援進階神經網路，支援超過 100 種層類別，在影像、音響辨識有更好表現。 另外，能無縫利用 CPU、GPU 和神經引擎提供最大效能和效率。
+ On-device model personalisation:  models bundled into apps can be updated with user data on-device, helping personalise the models to the user while maintaining privacy.</description>
     </item>
     
   </channel>

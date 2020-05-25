@@ -16,10 +16,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/hw-info-cim/readme/</guid>
-      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 27 MINUTES 31 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 27 MINUTES 30 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 27 MINUTES 30 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
+      <description>Concept ISSCC 2018，眾所矚目的焦點中，不可忽視的壓軸大戲——Machine Learning in Memory session
+Machine Learning為什麼要CIM？ 簡而言之，就是邏輯計算的並行度不斷擴張時，
+所需的資料傳輸頻寬（從儲存器到計算單元）的大小限制了計算速度，史稱馮諾依曼瓶頸。
+並且，隨著摩爾定律的發展，計算單元的功耗越來越低，
+而與之對應的儲存器讀寫功耗不斷上升，導致AI算力的功耗瓶頸。
+所謂CIM（儲存器內的計算）就是為了克服這一馮諾依曼瓶頸，
+即只要將資料扔到儲存器中，再讀出時的資料為計算完成時的結果
+注意，此處的CIM和CS領域的in-memory computing是兩個概念。
+（劃重點）CIM令人嚮往的潛力主要包括—— （1）資料傳輸頻寬需求下降， （2）用於資料傳輸的功耗下降 Example (DNN CIM) Architecture of binary-in ternary-weight RRAM in-memory computing macro </description>
     </item>
     
   </channel>

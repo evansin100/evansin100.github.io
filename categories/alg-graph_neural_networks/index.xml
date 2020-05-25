@@ -16,10 +16,23 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/alg-graph_neural_networks/readme/</guid>
-      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 29 MINUTES 31 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 29 MINUTES 30 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 29 MINUTES 29 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
+      <description>CNN Limitation CNN的捲積不是數學定義上的連續捲積，而是一種定義的離散捲積。
+我們用這種捲積來處理圖像(image)，從圖像中提取特徵，並且透過神經網路來學習捲積的權重(weight)
+CNN捲積有一些特性，
+(1)平移不變性(shift-invariance)
+(2)局部性(local connectivity)
+(3)多尺度(multi-scale)
+這些特性，暫且把它們稱作組合性(Compositionality)，
+讓CNN捲積只能處理在歐幾里德空間(Euclidean Structure)的數據。
+什麼數據是Euclidean Structure的數據呢？
+最經典的就是影像(image)，影片(video)和音頻(speech/voice)，
+自然語言文本(text)透過特殊處理，也可以固定維度，投影到歐幾里德空間來操作
+Motivation 有一些數據結構是Non-Euclidean的 Non-Euclidean的數據，大致上可以當作圖(Graph)來理解。也就是可以理解成，
+由頂點(vertex)和邊(edge)所構成的一種資料格式。 Euclidean數據可以當作是Non-Euclidean的一種特例。
+因此對Non-Euclidean理解和處理，可以在Euclidean數據上通用，
+這就是為什麼Non-Euclidean數據的表示法學習有其重要性
+Implemtation 一般來說GCN分為兩大類，
+ (1) 一種是譜圖卷積，是在傅立葉域進行卷積變換; (2) 另一種是非譜圖卷積(也叫做「空間域卷積」)，  是直接在Graph上進行卷積。我們分別介紹這兩類     </description>
     </item>
     
   </channel>

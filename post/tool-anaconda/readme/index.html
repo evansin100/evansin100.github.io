@@ -2,6 +2,21 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-167528382-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
     <title>Memo</title>
     
@@ -35,6 +50,14 @@ Suggestion  所以都先 update conda 自己。 conda update conda 有一個不�
 
     
 
+    
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167528382-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+          gtag('config', 'UA-167528382-1');
+        </script>
     
 
     
@@ -104,6 +127,8 @@ layui.use('element', function(){
 });
 </script>
         <div id="content" style="min-height:80%">
+<h5 id="wc" style="font-size: 1rem;text-align: center;">300 Words|Read in about 2 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
+
 <div class="layui-container" style="margin-bottom: 10px">
     
 
@@ -164,79 +189,79 @@ sh Anaconda3-5.2.0-Linux-x86_64.sh  <br>
 export PATH=/home/evan/anaconda3/bin:$PATH</p>
 <h1 id="suggestion">Suggestion</h1>
 <!-- raw HTML omitted -->
-<pre><code>    所以都先 update conda 自己。   
-    conda update conda  
-    有一個不一定非做不可, 但你開心想把 Anaconda 整個更新, 可以這樣做:   
-    conda update anaconda 
-&lt;/td&gt;    
+<pre><code>     所以都先 update conda 自己。   
+     conda update conda  
+     有一個不一定非做不可, 但你開心想把 Anaconda 整個更新, 可以這樣做:   
+     conda update anaconda 
+ &lt;/td&gt;    
 </code></pre>
 <!-- raw HTML omitted -->
-<pre><code>    更酷的是, 我們做新的環境, 你可以指定 Python 啦,   
-    某某套件的版本。比方說你一直在想要用 Python 2 還是 Python 3, 
-    現在不用管啦, 就各開一個獨立環境就好。   
-    現在我們假設要開一個叫 py3 的 Python 3 環境。    
-    conda create -n py3 python=3 anaconda    
-&lt;/td&gt;    
+<pre><code>     更酷的是, 我們做新的環境, 你可以指定 Python 啦,   
+     某某套件的版本。比方說你一直在想要用 Python 2 還是 Python 3, 
+     現在不用管啦, 就各開一個獨立環境就好。   
+     現在我們假設要開一個叫 py3 的 Python 3 環境。    
+     conda create -n py3 python=3 anaconda    
+ &lt;/td&gt;    
 </code></pre>
 <!-- raw HTML omitted -->
-<pre><code>    source activate py3 
-    如果要離開的話,只要打上 deactivate即可    
-&lt;/td&gt;    
+<pre><code>     source activate py3 
+     如果要離開的話,只要打上 deactivate即可    
+ &lt;/td&gt;    
 </code></pre>
 <!-- raw HTML omitted -->
-<pre><code>    conda install xxx   
-    若要安裝特定版本的 直接在後面打上版本號即可  
-    $ conda install python=3.5  
-&lt;/td&gt;    
+<pre><code>     conda install xxx   
+     若要安裝特定版本的 直接在後面打上版本號即可  
+     $ conda install python=3.5  
+ &lt;/td&gt;    
 </code></pre>
 <!-- raw HTML omitted -->
-<pre><code>    conda info -e     
-&lt;/td&gt;    
+<pre><code>     conda info -e     
+ &lt;/td&gt;    
 </code></pre>
 <!-- raw HTML omitted -->
-<pre><code>    conda list   
-&lt;/td&gt;    
+<pre><code>     conda list   
+ &lt;/td&gt;    
 </code></pre>
 <!-- raw HTML omitted -->
-<pre><code>    conda search xxx   
-&lt;/td&gt;    
+<pre><code>     conda search xxx   
+ &lt;/td&gt;    
 </code></pre>
 <!-- raw HTML omitted -->
-<pre><code>    sudo pip install xxx   
-    更新 xxx:  
-    sudo pip install --upgrade xxx     
-&lt;/td&gt;    
+<pre><code>     sudo pip install xxx   
+     更新 xxx:  
+     sudo pip install --upgrade xxx     
+ &lt;/td&gt;    
 </code></pre>
 <!-- raw HTML omitted -->
-<pre><code>    $ conda env remove -n &lt;environment&gt;
-&lt;/td&gt;
+<pre><code>     $ conda env remove -n &lt;environment&gt;
+ &lt;/td&gt;
 </code></pre>
 <!-- raw HTML omitted -->
-<pre><code>    # 刪除環境內的套件
-    $ conda remove -n &lt;environment&gt; &lt;package&gt;
-    # 刪除目前環境內的套件
-    $ conda remove &lt;package&gt;
-    # 刪除多個套件
-    $ conda remove &lt;package-1&gt; &lt;package-2&gt;
-&lt;/td&gt;
+<pre><code>     # 刪除環境內的套件
+     $ conda remove -n &lt;environment&gt; &lt;package&gt;
+     # 刪除目前環境內的套件
+     $ conda remove &lt;package&gt;
+     # 刪除多個套件
+     $ conda remove &lt;package-1&gt; &lt;package-2&gt;
+ &lt;/td&gt;
 </code></pre>
 <!-- raw HTML omitted -->
-<pre><code>    # 更新 conda
-    $ conda update conda
-    # 更新 Anaconda
-    $ conda update anaconda
-    # 更新 Python
-    $ conda update python
-    # 更新特定套件
-    $ conda update &lt;package&gt;
-&lt;/td&gt;
+<pre><code>     # 更新 conda
+     $ conda update conda
+     # 更新 Anaconda
+     $ conda update anaconda
+     # 更新 Python
+     $ conda update python
+     # 更新特定套件
+     $ conda update &lt;package&gt;
+ &lt;/td&gt;
 </code></pre>
 <!-- raw HTML omitted -->
-<pre><code>    # 安裝套件
-    $ pip install &lt;package&gt;
-    # 更新套件
-    $ pip install --upgrade &lt;package&gt;
-&lt;/td&gt;
+<pre><code>     # 安裝套件
+     $ pip install &lt;package&gt;
+     # 更新套件
+     $ pip install --upgrade &lt;package&gt;
+ &lt;/td&gt;
 </code></pre>
 <!-- raw HTML omitted -->
 <h1 id="conda-vs-python">Conda vs python</h1>
@@ -257,6 +282,14 @@ $ conda search –canonical | grep -v ‘py\d\d’<br>
 
         </div><footer>
     
+
+    <span id="busuanzi_container_site_pv">
+        total vistor：<span id="busuanzi_value_site_pv"></span>
+    </span>
+    &nbsp;
+    <span id="busuanzi_container_site_uv">
+        you are <span id="busuanzi_value_site_uv"></span> th visitor
+    </span>
 
     <div class="layui-container">
         <div class="layui-row">
@@ -282,5 +315,6 @@ $ conda search –canonical | grep -v ‘py\d\d’<br>
         <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
     </div>
 </footer>
+
 </body>
 </html>

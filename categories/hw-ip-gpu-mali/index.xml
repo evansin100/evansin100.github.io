@@ -16,10 +16,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/hw-ip-gpu-mali/readme/</guid>
-      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 49 MINUTES 40 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 49 MINUTES 39 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 49 MINUTES 39 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
+      <description>Concept 重點還是看單位時間可以發幾個指令
+所以可以直接看同時間可以發多少FMA即可(這個才是和AI相關的) 不用管shader core的thread這些定義
+  GPU架構像是SIMT + SIMD
+ (1) SIMT =&amp;gt; 就是同個kernel可以被很多人執行(以thread為單位) (2) SIMD =&amp;gt; 一個vector (FMA) 指令可以處理多筆data Core 至於有幾個Core,則是看Vendor決定要用幾顆e.g.,MC9, Mali G71/G72最多可支持32 Cores    Execution engine/Cluster 有自己專用的
+ (1) 數據路徑控制邏輯 (2) 調度程序 (3) 指令緩存 (4) 寄存器文件(register file),所以多個thread要共用 (5) 消息傳遞塊    Warp and GPU Thread
+ Warp是scheduling的單位 在Warp內的 每個thread執行同樣的同樣的指令 (SIMT) e.g., G77 最多可以有64個warp, 一個warp大小是16 (16個threads), 所以總共就有1024 threads    底下是用Winograd的(input transform的處理當作例子)
+可以看到在input transform處理的時候會用多個threads</description>
     </item>
     
   </channel>

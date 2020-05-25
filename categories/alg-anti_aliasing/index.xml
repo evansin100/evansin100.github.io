@@ -16,10 +16,17 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/alg-anti_aliasing/readme/</guid>
-      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 05 MINUTES 30 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 05 MINUTES 29 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 05 MINUTES 29 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
+      <description>Concept 首先必須談到「反鋸齒」（Anti-aliasing）在電腦繪圖領域的意義。反鋸齒顧名思義，
+是減少電腦輸出畫面中，圖像邊緣出現凹凸鋸齒的技術，
+而鋸齒的出現是由於 3D 圖形坐標定位時，發生不可避免的圖形混疊所導致的 反鋸齒技術從過去到現在，原理並沒有太大的改變，簡而言之就是用「模糊」換取「精確」，
+如果要用修圖的概念來比喻，就有點類似「柔邊」的效果。既然要「柔邊」，
+那一定會經歷的過程，就是對影像進行「採樣」（Sampling）
+使其模糊化的時候，與原本的鋸齒邊緣看起來相似
+  SSAA（Super-Sampling Anti-aliasing）
+ SSAA 技術非常消耗運算資源，因為其原理是將原解析度的遊戲畫面放大， 例如 4 倍的 SSAA 就是把原先 1920 X 1080 的畫面 運算出一個 3840 X 2160 的暫存影像，經過取樣後再套用回原畫面中
+    MSAA (MultiSampling Anti-Aliasing)
+ 為了改善 SSAA 過度消耗電腦資源的問題，其變體「多重採樣反鋸齒」 但因為 MSAA 會先判斷畫面的邊緣，再針對該處進行放大後才採樣，所以大幅減輕了電腦運算的負擔。    FXAA (Fast Approximate Anti-Aliasing)
+ 在 MSAA 成為玩家與遊戲開發商，實現反鋸齒方案的寵兒後， NVIDIA 在 2012 年推出了「快速近似反鋸齒」（Fast Approximate Anti-Aliasing）解決方案， 即 FXAA，在消耗更少硬體資源的前提下，達到與 MSAA 同等級的反鋸齒效果。     DLSS（Deep Learning Super-Sampling）</description>
     </item>
     
   </channel>

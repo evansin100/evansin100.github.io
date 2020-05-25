@@ -16,10 +16,16 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/hw-info-simd_simt/readme/</guid>
-      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 07 HOURS 54 MINUTES 40 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 07 HOURS 54 MINUTES 39 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 07 HOURS 54 MINUTES 38 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
+      <description>Summary  (1) CPU就是SIMD(NEON instruction) &amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td&amp;gt; SIMT and SIMD &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; GPU (1) 一個execution engine/cluster內的threads可以執行同個OpenCL kernel指令 =&amp;gt; SIMT (3) 每個thread可以發一個FMA依然可以處理多個資料指令 =&amp;gt; SIMD &amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td&amp;gt; VLIW and SIMD &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; DSP (1) 通常DSP都是VLIW processor,一個instruction,可以有多筆的operation(slot) =&amp;gt; VLIW (2) 然後處理有個slot可以處理vector指令(SIMD) =&amp;gt; SIMD &amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt;  SIMT Concept SIMT就是GPU,有multiple &amp;ldquo;thread&amp;rdquo;
+SIMD就是一般的vector運算,還是只有一個thread但可以處理多筆data
+SIMT中文译为单指令多线程，英文全称为Single Instruction Multiple Threads
+GPU中的SIMT体系结构相对于CPU的SIMD中的概念。为了有效地管理和执行多个单线程，多处理器采用了SIMT架构。
+不同于CPU中通过SIMD（单指令多数据）来处理矢量数据；
+GPU则使用SIMT，SIMT的好处是无需开发者费力把数据凑成合适的矢量长度，
+并且SIMT允许每个线程有不同的分支。 纯粹使用SIMD不能并行的执行有条件跳转的函数，
+很显然条件跳转会根据输入数据不同在不同的线程中有不同表现， 这个只有利用SIMT才能做到。
+SIMT/SIMD Comparison 不同於CPU中通過SIMD（單指令多資料）來處理向量資料；GPU則使用SIMT，
+SIMT的好處是無需開發者費力把資料湊成合適的向量長度 =&amp;gt; 這個是優點，並且SIMT允許每個執行緒有不同的分支。 純粹使用SIMD不能並行的執行有條件跳轉的函式，</description>
     </item>
     
   </channel>

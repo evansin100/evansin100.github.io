@@ -16,10 +16,14 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/hw-info-hls_high_level_synthesis/readme/</guid>
-      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 39 MINUTES 04 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 39 MINUTES 03 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 39 MINUTES 03 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
+      <description>Concept   高级综合（High-level Synthesis，縮寫 HLS），
+ 又譯高层次综合，另又稱C合成（C synthesis）、 電子系統層次合成（Electronic System Level synthesis，縮寫 ESL synthesis）， 是将电路设计规范的算法级或行为级描述在一定的约束条件下转化为电路结构描述的方法和过程。 =&amp;gt; 所以就是用C來寫硬體(高階)    高层次综合又称为行为级综合、算法级综合等。
+ 它使设计者能够在更高层次进行电子设计，更快速有效地在较高层次设计验证和仿真， 而较低层次的工作由工具来自动完成， 从而让数字电路系统设计工程师可以有更多的精力和更充分的条件去进行设计空间的搜索，寻求最佳的设计方案。    HLS 的过程通常
+ (1) 基本包括预处理、编译、转换、调度、分配、控制器、综合、RTL 、生成、和反编译等几个部分。 (2) 编译、转换部分决定了软件的兼容性和易用性， (3) 调度（schedule）和分配（binding）主要决定了产生的 RTL 的性能、资源大小等。    History 高层次综合技术的发展经历了三个阶段。
+尽管早在20世纪80年代初就开始了关于高层次综合技术的研究，并且在90年代推出了一些商业工具，
+高层次综合设计方法直到最近两三年才取得了一定的成功，得到了集成电路设计公司更多的接受和应用。
+  (phase 1) 第一阶段从80年代初到90年代初，
+ 关于 HLS 的研究主要集中在学术科研机构，他们完成了高层次综合的早期的许多研究工作， 包括许多关于 HLS 的基本的概念和技术。当时集成电路设计自动化系统开始了迅猛的发展， 但限于当时的技术水平和 IC 工业界提出的需求，多数研究努力都停留在较低的设计层次上。 因此高层次综合技术被认为是学院派的探索，主要限于在大学和一些基础性研究所中进行学术研究。    (phase 2) 第二阶段从90年代初到2000年初，</description>
     </item>
     
   </channel>

@@ -16,10 +16,26 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/sw-framework-paddlepaddle/readme/</guid>
-      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 51 MINUTES 09 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 51 MINUTES 08 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 51 MINUTES 08 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
+      <description>Concept (for training and inference) PaddlePaddle Keys (1) 同时支持动态图和静态图，兼顾灵活性和高性能
+桨同时为用户提供动态图和静态图两种计算图。动态图组网更加灵活、
+调试网络便捷，实现AI 想法更快速；静态图部署方便、运行速度快，应用落地更高效 (2) 源于实际业务淬炼，提供应用效果领先的官方模型
+飞桨提供的80+官方模型，全部经过真实应用场景的有效验证。
+不仅包含“更懂中文”的NLP 模型，同时开源多个视觉领域国际竞赛冠军算法
+(3) 源于产业实践，输出业界领先的超大规模并行深度学习平台能力 (4) 追求极致速度体验，推理引擎一体化设计实现训练到多端推理的无缝对接
+飞桨完整支持多框架、多硬件和多操作系统，为用户提供高兼容性、高性能的多端部署能力。
+依托业界领先的底层加速库，利用 Paddle Lite和 Paddle Serving 分别实现端侧和服务器上的部署
+飞桨提供高效的自动化模型压缩库 PaddleSlim，实现高精度的模型体积优化，
+并提供业界领先的轻量级模型结构自动搜索Light-NAS，
+对比MobileNet v2在ImageNet 1000类分类任务上精度无损情况下FLOPS 减少17%
+PaddlePaddle Repo (1) Paddle
+飞桨』核心框架，高性能单机、分布式训练和跨平台部署
+https://github.com/PaddlePaddle/Paddle
+(2) Paddle-Lite
+https://github.com/PaddlePaddle/Paddle-Lite Paddle Lite为Paddle-Mobile的升级版， 定位支持包括手机移动端在内更多场景的轻量化高效预测，
+支持更广泛的硬件和平台，是一个高性能、轻量级的深度学习预测引擎 (3) Paddle model
+https://github.com/PaddlePaddle/models
+官方模型库，包含多种学术前沿和工业场景验证的深度学习模型 (4) PaddleHub
+PaddleHub是基于PaddlePaddle生态下的预训练模型管理和迁移学习工具</description>
     </item>
     
   </channel>

@@ -16,10 +16,18 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/alg-gan/readme/</guid>
-      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 07 HOURS 52 MINUTES 00 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 07 HOURS 51 MINUTES 59 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 07 HOURS 51 MINUTES 59 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
+      <description>Concept GAN是2014年的一個大神 Ian Goodfellow 提出來的方法，
+我用簡單一點的話來表達什麼是GAN，在GAN組織裡面中有二個角色，
+(1) 一個是專門偽造假名畫來去賣的G先生，
+(2) 一個是專門鑑定此符畫是不是真畫的D先生，
+D先生會從G先生那邊拿到假畫來辨斷真假，G先生則是利用D先生的鑑定來改良自己製造假畫的技術，
+G先生跟D先生互相共同合作，GAN! 這跟本要大賺了。
+下面的Flow是一個最基本的GAN的Flow，可以看出GAN中有二個Neural Network需要去Train
+=&amp;gt; 所以要分兩個model來做training
+Training Overall Flow 主要是不斷做iteration 而實現的方法，是讓兩個網絡相互競爭
+ 讓第一代的Discriminator能夠真實的分辨生成的圖片和真實的圖片 輸入真實圖片（real image），標籤 1； 輸入生成圖片（fake image），標籤 0； =&amp;gt; 這個就是一般的辨別model的順練 =&amp;gt; Discriminator可以單獨訓練   (1) Generator和Discriminator合併 (2) 但只有Generator weight會變, Discriminator weight不動 (3) 順練方式: 輸入noise, Generator產生 fake image, fake image輸入進去Discriminator, 我們設定的label = 1 然後調整Generator的weight 讓他可以騙過Discriminator得到prediction =1 =&amp;gt; Generator(W會動)和Discriminator(W不動)要一起順練  Discriminator Network 鑑別器網路簡單一點說明的就是，訓練出一個Neural Network可以分辨偽造出來的圖跟真實的圖 那要怎麼訓練這個網路呢？我自己畫了用以下的圖來理解
+沒錯，就是很直觀的，我們把Generator出來的圖標記為0(fake image)，然後把真實的圖標記為1，
+這樣的training data 丟進我們的Discriminator Network做訓練，這就是每一次Discriminator訓練的步驟了，</description>
     </item>
     
   </channel>

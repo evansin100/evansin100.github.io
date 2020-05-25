@@ -16,10 +16,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/alg-speech/readme/</guid>
-      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 39 MINUTES 51 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 39 MINUTES 50 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 39 MINUTES 50 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
+      <description>Speech- Speech應用也是屬於NLP(自然語言處理)其中一部份
+https://github.com/evansin100/NLP/blob/master/README.md
+Trend Unsuper-vised =&amp;gt; fine-tune for specific task 近年 NLP 界十分流行的兩階段遷移學習會先蒐集大量文本（無需任何標注數據）， 並以無監督的方式訓練一個通用 NLP 模型，
+接著再微調（Fine-tune）該模型以符合特定任務的需求。
+常見的 NLP 任務有文章分類、自然語言推論、問答以及閱讀理解等等。
+這個包含GPT and BERT都是這樣做的
+Comparison  (1) Multilyaer perception (2) 是一種分類的網路架構(和conv不同), (3) 中間可以有很多的hidden layers (4) 可以設計for M input and N output (5) 但不像是RNN有time stamp概念(了解順序),所以比較弱   (1) LSTM and RNN cell只是單純把數值不斷帶下去, (2) shape={batchsize,timestamp} batchsize等於一個cell的input timestamp等於有幾個cell(RNN block) 就是做一個判斷會需要經過多少個RNN block (3) https://github.com/evansin100/Keras/blob/ master/Example/addition_rnn/README.md 這邊有很完整的範例 (4) LSTM 是shared weight(因為是recurrent架構) (5) LSTM 的weight計算(因為是MLP,所以weight很大) a. 假設 num_units 是128 1,2,4 sigmoid and 3 tanh, 他們就分別有128個neuros =&amp;gt; neuron total 個數 = 128 x 4 b.</description>
     </item>
     
   </channel>

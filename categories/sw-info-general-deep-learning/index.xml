@@ -16,10 +16,25 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/sw-info-general-deep-learning/readme/</guid>
-      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 45 MINUTES 37 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 45 MINUTES 36 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 08 HOURS 45 MINUTES 36 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
+      <description>Basic 1.dimention 維度
+2.layer 縱軸的總維度
+3.neurons 神經元，這裡指其中一個輸出與輸入中間的函式
+線好像才是計算,圓圈(Neurons,hidden units,神經元)代表的好像是一個一個資料
+可以看到這個例子
+線(edge)都是計算,
+所以全部的data變成一個點(neuro,activation),
+但如果要產生多個channel,那就要好幾個Neurons
+4.function set 函式集成
+5.input 輸入參數
+6.output 輸出參數
+7.Loss 輸出結果與目標結果的差距
+8.Learning rate n，取w值所踏出的步伐長度
+9.gradient descent 梯度下降法
+10.w 權重
+11.Backpropagation 一種計算斜率的方式
+12.batch_size 代表 一個batch 有幾個函式
+Feature Gategory 網路上有個分類不錯
+ Face identification (CPU and GPU) &amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td&amp;gt; Camera stills (靜止的，不動的) &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; type Object detection (CPU and GPU) Noise reduction (NPU) Super resolution (CPU and GPU) Semantic segmentation (CPU and GPU) &amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td&amp;gt; Video &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; type (這個一定是全系列NPU) Super resolution (NPU) Semantic segmentation (NPU) &amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td&amp;gt; Voice assistants &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; type Keyword spotting (CPU and GPU) Natural language processing (CPU and GPU) Text to speech (CPU and GPU) &amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td&amp;gt; Driving &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; type Autonomous driving (NPU) Driver assistance (CPU and GPU) &amp;lt;/td&amp;gt;  </description>
     </item>
     
   </channel>

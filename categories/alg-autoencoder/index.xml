@@ -16,10 +16,20 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/alg-autoencoder/readme/</guid>
-      <description>MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 07 HOURS 58 MINUTES 10 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 07 HOURS 58 MINUTES 09 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN 07 HOURS 58 MINUTES 09 SECONDSVISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE
-MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY.</description>
+      <description>Concept 在處理異常偵測時。可以像PCA一樣，可以從input擷取重要特徵，代表全體。
+當新的測試資料進來，和這樣的代表特徵比對，就可以判斷是不是異常。
+因此設計了一個非監督式學習的神經網路，
+其中中間的Internal Representation可以看做是對輸入的資料做壓縮(維度限制)或是加入雜訊到輸入資料
+Internal Representation (Bottleneck) 也就是資訊會先被壓縮到比較小的範圍(代表全體),後來再做decode 所以可以用來作為super resolution(U-Net) or Speech(先把input都encode到一個vector,當作看完全部句子) 再做decode
+Autoencoder summary 總共有四種
+Autoencoder (1. AutoEncoder - AE)) AutoEncoder 是多層神經網絡的一種非監督式學習算法，稱為自動編碼器， 它可以幫助(1)資料分類、(2)視覺化、(3)儲存
+其架構中可細分為 Encoder（編碼器）和 Decoder（解碼器）兩部分， 它們分別做壓縮與解壓縮的動作，讓輸出值和輸入值表示相同意義
+透過重建輸入的神經網路訓練過程，隱藏層的向量具有降維的作用。 特點是編碼器會建立一個隱藏層（或多個隱藏層）包含了輸入資訊的低維向量。 然後有一個解碼器，會通過隱藏層的低維向量重建輸入資料。 通過神經網路的訓練最後AE會在隱藏層中得到一個代表輸入資料的低維向量
+Autoencoder (2. Variational Autoencoder - VAE) Variational =&amp;gt; 變異的
+VAE 是 AutoEncoder 的進階版，結構上也是由 Encoder 和 Decoder 所構成
+可以看出與 AutoEncoder 不同之處在於 VAE 在&amp;quot;編碼(encode)&amp;ldquo;過程增加了一些限制，迫使生成的向量遵從高斯分佈 由於高斯分佈可以通過其mean 和 standard deviation 進行參數化，因此 VAE 理論上是可以讓你控制要生成的圖片
+VAE 的內部做法：
+ 先輸出兩個向量：mean 和 standard deviation 用normal distribution產生第三個向量</description>
     </item>
     
   </channel>
