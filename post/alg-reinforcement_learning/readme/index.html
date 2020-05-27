@@ -23,18 +23,7 @@ if (!doNotTrack) {
     
     <meta content="Memo" name="keywords">
     
-    <meta content="Memo - Key Example 建議看這個範例
-了解怎麼做到reinforcement learning的簡單訓練方式
-以及再一開始不會玩的時候,怎麼做random action
-https://github.com/evansin100/ALG-Reinforcement_Learning/tree/master/3_Gym/Cartpole-tf-keras
-如果想了解怎麼建構一個env(不靠Gym)
-則可以看這篇(Maze)
-可以看這邊 有完整的Depp reinformance learning的範例(包含training)
-https://github.com/evansin100/ALG-Reinforcement_Learning/tree/master/2_Deep-Q-Learning/Maze_Example youtube教學 https://morvanzhou.github.io/tutorials/machine-learning/reinforcement-learning/
-Summary  訓練資料必需有input跟label(答案)， 讓機器去mapping出一個最好的模型，常用的演算法為分類、回歸等演算法 &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt; Unsupervised Learning (非監督式學習): &lt;/td&gt; &lt;td&gt; note 訓練資料只有input沒有label(答案)， 讓機器從訓練資料中找出規則，常用的演算法為集群演算法 &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt; Reinforcement Learning (強化學習): &lt;/td&gt; &lt;td&gt; note 從現在的環境來決定行為，是一種互動式的學習過程 =&gt; 根據環境, 是一種互動式的學習 強化學習其實就是訓練一個AI 可以通過每一次的錯誤來學習，就跟我們小時候學騎腳踏車一樣， 一開始學的時候會一直跌倒，然後經過幾次的失敗後，我們就可以上手也不會跌倒了 強化式學習的特徵是訓練必須要有正負回報(positive/negative reward)， 在訓練過程中，模型會根據不同的狀況(state)嘗試各種決定(action)， 再根據此決定得到的結果內化吸收， 下方的AI 玩 Mario遊戲影片便是一種應用，在模型最初時， 可以看到角色就是站在原地閒置太久，拿到了負面回報， 所以它改變開始學習向前移動，走了一段路之後被棒球K到，它又得到了負面回報， 所以它開始加上跳躍來閃避傷害，最後最後，破關方式就被電腦試了出來。 &lt;/td&gt; &lt;/tr&gt;  Application (RL) 一般人聽到RL，可能只想到Alpha Go，或是使用在遊戲上面，但其實RL現在已經開始有很多的應用了。
-=&gt;對話系統：有些已經把RL用在對話系統上，利用互動式學習，隨著時間不斷的提升對話系統
-=&gt;醫療：利用RL來尋找最佳的治療方案
-=&gt;Google auto ML： 使用RL來為計算機視覺和語言建模生成神經網路架構" name="description">
+    <meta content="Memo - A website called Memo" name="description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     
@@ -118,7 +107,7 @@ layui.use('element', function(){
 });
 </script>
         <div id="content" style="min-height:80%">
-<h5 id="wc" style="font-size: 1rem;text-align: center;">100 Words|Read in about 1 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
+<h5 id="wc" style="font-size: 1rem;text-align: center;">100 Words|Read in about 0 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
 
 <div class="layui-container" style="margin-bottom: 10px">
     
@@ -148,64 +137,10 @@ layui.use('element', function(){
     
     
 </h3>
+
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <h1 id="key-example">Key Example</h1>
-<p>建議看這個範例<br>
-了解怎麼做到reinforcement learning的簡單訓練方式<br>
-以及再一開始不會玩的時候,怎麼做random action<br>
-<a href="https://github.com/evansin100/ALG-Reinforcement_Learning/tree/master/3_Gym/Cartpole-tf-keras">https://github.com/evansin100/ALG-Reinforcement_Learning/tree/master/3_Gym/Cartpole-tf-keras</a></p>
-<p>如果想了解怎麼建構一個env(不靠Gym)<br>
-則可以看這篇(Maze)<br>
-可以看這邊 有完整的Depp reinformance learning的範例(包含training)<br>
-<a href="https://github.com/evansin100/ALG-Reinforcement_Learning/tree/master/2_Deep-Q-Learning/Maze_Example">https://github.com/evansin100/ALG-Reinforcement_Learning/tree/master/2_Deep-Q-Learning/Maze_Example</a> <br>
-youtube教學 <a href="https://morvanzhou.github.io/tutorials/machine-learning/reinforcement-learning/">https://morvanzhou.github.io/tutorials/machine-learning/reinforcement-learning/</a></p>
-<h1 id="summary">Summary</h1>
-<!-- raw HTML omitted -->
-<pre><code>         訓練資料必需有input跟label(答案)，
-         讓機器去mapping出一個最好的模型，常用的演算法為分類、回歸等演算法  
-&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
-     &lt;td&gt; Unsupervised Learning (非監督式學習): 
-     &lt;/td&gt;
-     &lt;td&gt; note 
-
-         訓練資料只有input沒有label(答案)，
-         讓機器從訓練資料中找出規則，常用的演算法為集群演算法  
-&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
-     &lt;td&gt; Reinforcement Learning (強化學習): 
-     &lt;/td&gt;
-     &lt;td&gt; note 
-
-         從現在的環境來決定行為，是一種互動式的學習過程 =&gt; 根據環境, 是一種互動式的學習     
-         強化學習其實就是訓練一個AI 可以通過每一次的錯誤來學習，就跟我們小時候學騎腳踏車一樣，  
-         一開始學的時候會一直跌倒，然後經過幾次的失敗後，我們就可以上手也不會跌倒了  
-
-         強化式學習的特徵是訓練必須要有正負回報(positive/negative reward)，  
-         在訓練過程中，模型會根據不同的狀況(state)嘗試各種決定(action)，
-         再根據此決定得到的結果內化吸收，  
-         下方的AI 玩 Mario遊戲影片便是一種應用，在模型最初時，
-         可以看到角色就是站在原地閒置太久，拿到了負面回報，  
-         所以它改變開始學習向前移動，走了一段路之後被棒球K到，它又得到了負面回報，  
-         所以它開始加上跳躍來閃避傷害，最後最後，破關方式就被電腦試了出來。  
-&lt;/td&gt;
- &lt;/tr&gt;
-</code></pre>
-<!-- raw HTML omitted -->
-<h1 id="application-rl">Application (RL)</h1>
-<p>一般人聽到RL，可能只想到Alpha Go，或是使用在遊戲上面，但其實RL現在已經開始有很多的應用了。<br>
-=&gt;對話系統：有些已經把RL用在對話系統上，利用互動式學習，隨著時間不斷的提升對話系統<br>
-=&gt;醫療：利用RL來尋找最佳的治療方案<br>
-=&gt;Google auto ML： 使用RL來為計算機視覺和語言建模生成神經網路架構<br>
-=&gt;自動駕駛</p>
-<h1 id="application-rlgan">Application (RL+GAN)</h1>
-<p>一般reinformance learning都是學人的practice來得到相關的設定怎麼下<br>
-但其實也可以透過學機器的方式,也就是生成網路<br>
-生成網路有兩個部份: (1) generator(生成), (2) descriminator(辨識）</p>
-</div>
+                    </div>
             </div>
         </div>
 
@@ -234,7 +169,7 @@ youtube教學 <a href="https://morvanzhou.github.io/tutorials/machine-learning/r
         <div class="layui-row">
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
-                <a href="/"><p class="footer-url">home</p></a>
+                <a href="/"><p class="footer-url">Home</p></a>
             </div>
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">

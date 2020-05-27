@@ -16,14 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/sw-framework-xiaomi-mace/readme/</guid>
-      <description>Concept Mobile AI Compute Engine (MACE) 是一个专为移动端异构计算设备优化的深度学习前向预测框架。 =&amp;gt; 所以主要就是做inference MACE覆盖了常见的移动端计算设备（CPU、GPU、Hexagon DSP、Hexagon HTA、MTK APU）， 并且提供了完整的工具链和文档，用户借助MACE能够 很方便地在移动端部署深度学习模型。 MACE已经在小米内部广泛使用并且被充分验证具有业界领先的性能和稳定性
-下图描述了MACE的基本框架
-MACE version commit d763bc2cf1d2559798bbf7931b4bf4990ac3945f (HEAD -&amp;gt; master, origin/master, origin/HEAD) Author: elswork &amp;lt;elswork@gmail.com&amp;gt; Date: Thu Apr 30 04:00:41 2020 +0200 Update README.md (#632) Fix broken link Prepare 0 (python) conda activate mace
-還有要安裝mace要的requirement
-Prepare 1 (bazel) 要安裝bazel 0.13 (原本是0.26)
-注意把bazel用user版本安裝,這樣在build mace的時候,才可以不用root build,用root會有問題
-=&amp;gt; sudo ./bazel-0.13.1-installer-linux-x86_64.sh &amp;ndash;user &amp;ndash;bin=/home/evan/bin-user
-export BAZEL_VERSION=0.13.1 mkdir bazel-user &amp;amp;&amp;amp; \ cd bazel-user &amp;amp;&amp;amp; \ wget https://github.</description>
+      <description></description>
     </item>
     
   </channel>

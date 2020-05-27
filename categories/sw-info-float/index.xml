@@ -16,16 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/sw-info-float/readme/</guid>
-      <description>IEEE-754 曾出現過各種不同的浮點數表示法，但目前最通用的是IEEE二進制運算標準 =&amp;gt; Mantissa就是數字小數部份的表示 (IEEE Standard for Binary Floating-Point Arithmetic , 簡稱IEEE-754)
-(1) float32
-(2) float16
-IEEE 754 标准指定了一个 binary16 要有如下的格式：
-Sign bit（符号位）： 1 bit
-Exponent width（指数位宽）： 5 bits
-Significand precision(Mantissa)（尾数精度）： 11 bits （有10位被显式存储） =&amp;gt; 所以和float32相比就是exponent and mantissa可以用的個數比較少
-Example1 13.125 轉浮點數為例 : (1) 由於13.125為正，所以符號(S) = 0
-(2) 先將數值轉成二進位並正規化 13.125 = 1101.001 = 1.101001 x 2^3 =&amp;gt; 所以重點是要將數值變成1.xxxxxx x 2^x 的表示
-(3) 計算指數(Exponent) = 127 + 3 (原本的次方數加上127，因為次方數有可能是負的) = 01111111 + 11 = 10000010 (4) 計算尾數(Mantissa) = 101001，因為正規化後一定是1.</description>
+      <description></description>
     </item>
     
   </channel>

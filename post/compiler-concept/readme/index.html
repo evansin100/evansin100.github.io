@@ -23,28 +23,7 @@ if (!doNotTrack) {
     
     <meta content="Memo" name="keywords">
     
-    <meta content="Memo - Concept 簡言之，編譯器獲取原始碼，產生一個二進位制檔案。
-因為從複雜的、人類可讀的程式碼直接轉化成0/1二進位制會很複雜， 所以編譯器在產生可執行程式之前有多個步驟：
-Lexer 詞法分析
-(1) 输入：一堆字符，即我们写的语法代码，一个文件，也就是一堆字符；
-(2) 经过lexer处理；
-(3) 输出：一系列的token，相当于一堆的变量或者说符号；
-第一步是把輸入一個詞一個詞的拆分開。
-這一步被叫做 詞法分析,或者說是分詞。
-這一步的關鍵就在於 我們把字元組合成我們需要的單詞、識別符號、符號等等。 詞法分析大多都不需要處理邏輯運算像是算出 2&#43;2 –
-其實這個表示式只有三種 標記：一個數字：2,一個加號，另外一個數字：2
-Parser(output AST) 解析器確實是語法解析的核心。
-解析器提取由詞法分析器產生的標記，並嘗試判斷它們是否符合特定的模式，
-然後把這些模式與函式呼叫，變數呼叫，數學運算之類的表示式關聯起來。 解析器逐詞地定義程式語言的語法
-你可以寫好幾種不同型別的解析器。
-最常見的解析器之一是從上到下的，遞迴降解的解析器。
-遞迴降解的解析器是用起來最簡單也是最容易理解的解析器
-解析器在解析時產生的樹狀結構被稱為 抽象的語法樹，或者稱之為 AST。
- AST 的全文是 Abstract Syntax Tree，中文大多翻作抽象語法樹， 主要是將我們 人類 所寫的程式語法，轉換成 程式 比較容易閱讀的語法結構，並以樹的資料結構來儲存
-ast 中包含了所有要進行操作。解析器不會計算這些操作，它只是以正確的順序來收集其中的標記。
-我之前補充了我們的詞法分析器程式碼，以便它與我們的語法想匹配，並且可以產生像圖表一樣的 AST  Optional: AST =&gt; more IR 編譯器可能有 中間表示,或者簡稱 IR 。 IR 主要是為了在優化或者翻譯成另一門語言的時候，無損地表示原來的指令。
-IR 不再是原來的程式碼；IR 是為了尋找程式碼中潛在的優化而進行的無損簡化。
-迴圈展開 和 向量化 都是利用 IR 完成的 =&gt; IR可以做更低階的優化" name="description">
+    <meta content="Memo - A website called Memo" name="description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     
@@ -128,7 +107,7 @@ layui.use('element', function(){
 });
 </script>
         <div id="content" style="min-height:80%">
-<h5 id="wc" style="font-size: 1rem;text-align: center;">200 Words|Read in about 1 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
+<h5 id="wc" style="font-size: 1rem;text-align: center;">100 Words|Read in about 0 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
 
 <div class="layui-container" style="margin-bottom: 10px">
     
@@ -158,64 +137,10 @@ layui.use('element', function(){
     
     
 </h3>
+
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <h1 id="concept">Concept</h1>
-<p>簡言之，編譯器獲取原始碼，產生一個二進位制檔案。<br>
-因為從複雜的、人類可讀的程式碼直接轉化成0/1二進位制會很複雜，  <br>
-所以編譯器在產生可執行程式之前有多個步驟：</p>
-<p><img src="../Selection_131.png" alt="image"></p>
-<h1 id="lexer">Lexer</h1>
-<p>詞法分析<br>
-(1) 输入：一堆字符，即我们写的语法代码，一个文件，也就是一堆字符；<br>
-(2) 经过lexer处理；<br>
-(3) 输出：一系列的token，相当于一堆的变量或者说符号；</p>
-<p>第一步是把輸入一個詞一個詞的拆分開。<br>
-這一步被叫做 詞法分析,或者說是分詞。<br>
-這一步的關鍵就在於 我們把字元組合成我們需要的單詞、識別符號、符號等等。 <br>
-詞法分析大多都不需要處理邏輯運算像是算出 2+2 –<br>
-其實這個表示式只有三種 標記：一個數字：2,一個加號，另外一個數字：2</p>
-<h1 id="parseroutput-ast">Parser(output AST)</h1>
-<p>解析器確實是語法解析的核心。<br>
-解析器提取由詞法分析器產生的標記，並嘗試判斷它們是否符合特定的模式，<br>
-然後把這些模式與函式呼叫，變數呼叫，數學運算之類的表示式關聯起來。 <br>
-解析器逐詞地定義程式語言的語法</p>
-<p>你可以寫好幾種不同型別的解析器。<br>
-最常見的解析器之一是從上到下的，遞迴降解的解析器。<br>
-遞迴降解的解析器是用起來最簡單也是最容易理解的解析器</p>
-<p>解析器在解析時產生的樹狀結構被稱為 抽象的語法樹，或者稱之為 AST。</p>
-<ul>
-<li>AST 的全文是 Abstract Syntax Tree，中文大多翻作抽象語法樹，</li>
-<li>主要是將我們 人類 所寫的程式語法，轉換成 程式 比較容易閱讀的語法結構，並以樹的資料結構來儲存<br>
-ast 中包含了所有要進行操作。解析器不會計算這些操作，它只是以正確的順序來收集其中的標記。<br>
-我之前補充了我們的詞法分析器程式碼，以便它與我們的語法想匹配，並且可以產生像圖表一樣的 AST</li>
-</ul>
-<p><img src="../Selection_132.png" alt="image"></p>
-<h1 id="optional-ast--more-ir">Optional: AST =&gt; more IR</h1>
-<p>編譯器可能有 中間表示,或者簡稱 IR 。 <br>
-IR 主要是為了在優化或者翻譯成另一門語言的時候，無損地表示原來的指令。<br>
-<strong>IR 不再是原來的程式碼；IR 是為了尋找程式碼中潛在的優化而進行的無損簡化。<br>
-迴圈展開 和 向量化 都是利用 IR 完成的</strong>   <br>
-=&gt; IR可以做更低階的優化<br>
-這邊可以看到有各種的IR category(DAG..etc.) <br>
-and 有那些表達的方式(e.g., SSA,Relay..etc.)<br>
-<a href="https://github.com/evansin100/NIR">https://github.com/evansin100/NIR</a></p>
-<h1 id="code-generator">Code generator</h1>
-<p>程式碼生成器 接收一個 AST or IR ,然後生成相應的程式碼或者彙編程式碼。<br>
-程式碼生成器必須以遞迴下降的順序遍歷AST or IR 中的所有內容-<br>
-就像是解析器的工作方式一樣-之後生成相應的內容，只不過這裡生成的不再是語法樹，而是程式碼了<br>
-可以看到底下這個範例,就是可以再由IR轉成machine code(assembly-機器的OP code)   <br>
-<img src="../Selection_1310.png" alt="image"></p>
-<h1 id="vs-interpreter">vs interpreter</h1>
-<p>直譯器 非常像編譯器，它也是讀入程式語言的程式碼，然後處理這些程式碼。 <br>
-儘管如此, <strong>直譯器會跳過了程式碼生成(code generation)</strong>      <br>
-然後 即時編譯 並執行 AST or IR。   <br>
-直譯器最大的優點就在於在你 debug 期間執行程式所消耗的時間。 <br>
-編譯器編譯一個程式可能在一秒到幾分鐘不等，然而直譯器可以立即開始執行程式，  <br>
-而不必編譯。直譯器最大的缺點在於它必須安裝在使用者電腦上，程式才可以執行 <br>
-=&gt; 這個就和android nn interpreter這些都是類似的<br>
-=&gt; 在device上吃進一個file(model)然後就可以做處理(不做code generation)</p>
-</div>
+                    </div>
             </div>
         </div>
 
@@ -244,7 +169,7 @@ and 有那些表達的方式(e.g., SSA,Relay..etc.)<br>
         <div class="layui-row">
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
-                <a href="/"><p class="footer-url">home</p></a>
+                <a href="/"><p class="footer-url">Home</p></a>
             </div>
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">

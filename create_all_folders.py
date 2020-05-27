@@ -4,11 +4,24 @@ from translate import Translator
 import googletrans  
 from pprint import pprint  
 import imghdr
+import time
+
 
 def correct_image_path(line):
     if(line.startswith("![image]")):
         return line.replace("(","(../")
     return line
+
+def get_series(category):
+    series_token = category.split("-")
+    series = "" 
+    if (len(series_token) > 3):
+        series = series_token[0] + "-" + series_token[1] + "-" + series_token[2]
+    elif (len(series_token) > 2):
+        series = series_token[0] + "-" + series_token[1]
+    elif (len(series_token) > 1):
+        series = series_token[0] 
+    return series  
 
 def WriteHeader(src, dst, category):    
     lines = ""  
@@ -24,16 +37,31 @@ def WriteHeader(src, dst, category):
         #eng_line = translator.translate(line)
         #print("eng_line:" + eng_line)
 
-        # method 2           
-        #chinese_lines = ' '.join([temp_line for temp_line in temp])
+        # method 2        
+        lines = ""   
+        chinese_lines = ""        
+        chinese_char_count = 0
+        for temp_line in temp:
+            chinese_char_count = chinese_char_count + len(temp_line)
+            if chinese_char_count >= 2000:
+                # translate since it may have maximal translation limit 
+                print("chinese_char_count >= 2000")
+                lines.join(translator.translate(chinese_lines, dest='en').text)
+                chinese_char_count = 0
+
+        if chinese_char_count != 0:
+            print("chinese_char_count = " + str(chinese_char_count))
+            lines.join(translator.translate(chinese_lines, dest='en').text)
+
         #print(chinese_lines)        
         #lines = translator.translate(chinese_lines, dest='en').text   
         #print(lines)
-        lines = ' '.join([temp_line for temp_line in temp])
+        #lines = ' '.join([temp_line for temp_line in temp])
 
     src_file.close()
     dst_file = open(dst, 'w')
-    header = "---\ndraft: true\ncategories: [\"" + category + "\"]\n---\n"
+    series = get_series(category)
+    header = "---\ndraft: false\ncategories: [\"" + category + "\"]\nseries: [\"" + series + "\"]\n---\n"
     print("header\n" + header)
     dst_file.write(header)
     #dst_file.write(''.join([line for line in lines]))

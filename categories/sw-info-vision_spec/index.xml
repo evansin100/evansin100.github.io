@@ -16,12 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/sw-info-vision_spec/readme/</guid>
-      <description>Concept 視聽系統都在強調高清二個字，但什麼是高清，就是我們常常會在電視的左上角看
-到幾個英文字母HD，或HDTV還是FULL HD。
-  (1) p and i
- 先從簡單的來說，720P 1080i 和 1080P，它們的P和i到底代表什麼意思？ i 隔行掃描(interlaced scan)  i代表Interlace指的是傳統的交錯式掃瞄，也就是它是隔行掃描顯示， 我們會先看到135, 再看到246， =&amp;gt; 等於一個畫面跑出來時，它只會先跑畫面的一半頻寬， 所以很快的另一半也會馬上出現，視覺暫留的效果，1080i就會很清楚， 不過如果畫面是高速移動，就會有一 點點晃動的效果，可是不仔細看是看不出來的。   p 逐行掃描 (Progressive scan)  P是使用循序式掃瞄的畫面顯示方式， 也就是逐行掃瞄是123456 循序式掃瞄的優點是畫面穩定、不會閃爍， 如果我們長時間看電視，也不容易疲累，但是缺點是傳送畫面所需的頻寬比以前多出一倍。      (2) 1920x1080 =&amp;gt; why naming 1080 only
- 為什麼都要用高來稱解析度 「1080」表示&amp;quot;垂直&amp;quot;方向有1080條水平掃描線    (3) Comparison
- 4K: 2160 x 4096 (代表寬4K) 2K: 1152 x 2048 (代表寬2K) 1080p: 1080(高,代表水平有幾條線) x 1920(寬) 720p: 720 x 1280 DV: 480 x 720     </description>
+      <description></description>
     </item>
     
   </channel>

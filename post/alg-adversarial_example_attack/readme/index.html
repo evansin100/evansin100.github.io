@@ -23,7 +23,7 @@ if (!doNotTrack) {
     
     <meta content="Memo" name="keywords">
     
-    <meta content="Memo - Concept An attack method that uses an adversarial example to cause a deep learning model to make judgment errors. The so-called confrontation example is a deliberately created input data that allows the machine learning model to judge errors. The earliest was Szegedy et al (2013) [2] found that for image recognition models trained with ImageNet, AlexNet and other data sets, only small changes in the input end are often required , and the output results can be greatly changed." name="description">
+    <meta content="Memo - A website called Memo" name="description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     
@@ -107,7 +107,7 @@ layui.use('element', function(){
 });
 </script>
         <div id="content" style="min-height:80%">
-<h5 id="wc" style="font-size: 1rem;text-align: center;">600 Words|Read in about 3 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
+<h5 id="wc" style="font-size: 1rem;text-align: center;">100 Words|Read in about 0 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
 
 <div class="layui-container" style="margin-bottom: 10px">
     
@@ -137,64 +137,10 @@ layui.use('element', function(){
     
     
 </h3>
+
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <h1 id="concept">Concept</h1>
-<p>An attack method that uses an adversarial example to cause a deep learning model to make judgment errors. The so-called confrontation example is a deliberately created input data that allows the machine learning model to judge errors. The earliest was Szegedy et al (2013) [2] found that for image recognition models trained with ImageNet, AlexNet and other data sets, only small changes in the input end are often required , and the output results can be greatly changed. For example, taking a photo of a truck can be correctly recognized by the model, but as long as a few pixels  in the image are changed, the model can be recognized incorrectly, and the image has been changed very little before and after, and there is no difference to the naked eye =&gt; Can also greatly improve accuracy</p>
-<p>In addition to showing that the deep learning model may result in &ldquo;unstable&rdquo;, such examples may be maliciously used and have security concerns, so it has become a hot research topic in machine learning in recent years. The research results published in this area in 2017. mainly include strengthening the defense and generating confrontation cases more quickly and simply.</p>
-<h1 id="definition">Definition</h1>
-<p>Adversarial examples are inputs to a neural network that result in an incorrect output from the network. This is because neural networks are extremely susceptible to something called adversarial examples.</p>
-<h1 id="example-1">Example 1</h1>
-<p>It’s probably best to show an example.</p>
-<p>You can start with an image of a panda on the left which some network thinks with 57.7% confidence is a “panda.”  The panda category is also the category with the highest confidence out of all the categories, so the network concludes that the object in the image is a panda. But then by adding a very small amount of carefully constructed noise you can get an image that looks exactly the same to a human, but that the network thinks with 99.3% confidence is a “gibbon &ldquo;長臂猿&rdquo;.” Pretty crazy stuff! =&gt; So as long as you add some noise, the recognition result is completely different image<br>
-<img src="../Selection_279.png" alt="image"></p>
-<h1 id="example-2">Example 2</h1>
-<p>Here are two examples is mnist, do adversarial example to make digital judgment completely wrong<br>
-<a href="https://medium.com/@ml.at.berkeley/tricking-neural-networks-create-your-own-adversarial-examples-">https://medium.com/@ml.at.berkeley/tricking-neural-networks-create-your-own-adversarial-examples-</a> a61eb7620fd8<br>
-original condition<br>
-<img src="../Selection_280.png" alt="image"></p>
-<p>Modify the input, the function under the<br>
-x_target is the result we want the model to recognize<br>
-x_target is therefore a 784 dimensional vector<br>
-and then also run the loss function to minimize  <br>
-<img src="../Selection_281.png" alt="image"></p>
-<p>Have the following gradient descent<br>
-d = input_derivative (net, x, goal) =&gt; calculate slope<br>
-x-= eta * (d + lam * (x-x_target)) =&gt; update new X</p>
-<pre><code>def sneaky_adversarial(net, n, x_target, steps, eta, lam=.05):
-    &quot;&quot;&quot;
-    net : network object
-        neural network instance to use
-    n : integer
-        our goal label (just an int, the function transforms it into a one-hot vector)
-    x_target : numpy vector
-        our goal image for the adversarial example
-    steps : integer
-        number of steps for gradient descent
-    eta : integer
-        step size for gradient descent
-    lam : float
-        lambda, our regularization parameter. Default is .05
-    &quot;&quot;&quot;
-    
-    # Set the goal output
-    goal = np.zeros((10, 1))
-    goal[n] = 1
-    # Create a random image to initialize gradient descent with
-    x = np.random.normal(.5, .3, (784, 1))
-    # Gradient descent on the input
-    for i in range(steps):
-        # Calculate the derivative
-        d = input_derivative(net,x,goal)
-        
-        # The GD update on x, with an added penalty 
-        # to the cost function
-        # ONLY CHANGE IS RIGHT HERE!!!
-        x -= eta * (d + lam * (x - x_target))
-    return x
-</code></pre><p>Finally, you can see that x has become a little noise, and these noises affect the final result.    <br>
-<img src="../Selection_282.png" alt="image"></p>
-</div>
+                    </div>
             </div>
         </div>
 
@@ -223,7 +169,7 @@ x-= eta * (d + lam * (x-x_target)) =&gt; update new X</p>
         <div class="layui-row">
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
-                <a href="/"><p class="footer-url">home</p></a>
+                <a href="/"><p class="footer-url">Home</p></a>
             </div>
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">

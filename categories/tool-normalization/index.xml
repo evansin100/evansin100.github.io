@@ -16,14 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/tool-normalization/readme/</guid>
-      <description>Normalization Category  (1) 針對數值正規化 (either input(batch/只在同一個layer or weight or 算式) 來解決Internal Covariate Shift (ICS), (2) ICS的問題在於前面的layer的W會影響到後面的layer的input 因為後面layer input = 前面的data x W &amp;lt;/td&amp;gt;  Normalization vs Regularization normalization和standardization是差不多的， 都是把数据进行前处理，从而使数值都落入到统一的数值范围
-normalization一般是把数据限定在需要的范围，比如一般都是【0，1】 standardization 一般是指将数据正态化，使平均值1方差为0
-=&amp;gt; 因此normalization和standardization 是针对数据而言的
-消除一些数值差异带来的特种重要性偏见。经过归一化的数据，能加快训练速度，促进算法的收敛
-regularization是在cost function里面加惩罚项，增加建模的模糊性 从而把捕捉到的趋势从局部细微趋势，调整到整体大概趋势
-虽然一定程度上的放宽了建模要求，但是能有效防止over-fitting的问题，增加模型准确性。 =&amp;gt; regularization是针对模型而言
-=&amp;gt; 所以regularization不是normalization的方式一種
-Normalization vs Standardization  首先归一化是为了后面数据处理的方便， 其次是保正程序运行时收敛加快。一般指将数据限制在[0 1]之间。 (1)把数变为（0,1）之间的数，主要是为了数据处理方便提出来的， 把数据映射到0-1之间处理，更便携快速； (2)把有量纲表达式变为无量纲表达式，成为纯量； (3) 一般采用最大-最小规范化对原始数据进行线性变换：X*=（X-Xmin）/(Xmax-Xmin) &amp;lt;/td&amp;gt;   标准化：对原始数据进行缩放处理，限制在一定的范围内。一般指正态化， 即均值为0，方差为1。即使数据不符合正态分布， 也可以采用这种方式方法，标准化后的数据有正有负。 由于信用指标体系的各个指标度量单位是不同的， 为了能够将指标参与评价计算，需要对指标进行规范化处理， 通过函数变换将其数值映射到某个数值区间 =&amp;gt; 所以不會將數值限縮在某個區間(不一定在0-1) （1）数据同趋化处理：解决不同性质数据问题， 对不同性质指标直接加总不能正确反映不同作用力的综合结果， 须先考虑改变逆指标数据性质，使所有指标对测评方案的作用力同趋化， 再加总才能得出正确结果； （2）无量纲化处理：要解决数据的可比性； （3）一般采用Z-score规范化：即均值为0，方差为1的正态分布； &amp;lt;/td&amp;gt;  Why normalization (1) 独立同分布与白化</description>
+      <description></description>
     </item>
     
   </channel>

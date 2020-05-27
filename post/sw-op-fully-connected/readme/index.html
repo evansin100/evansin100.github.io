@@ -23,21 +23,7 @@ if (!doNotTrack) {
     
     <meta content="Memo" name="keywords">
     
-    <meta content="Memo - Concept 全連結層：全連結層（fully connected layer）用於將一層裡的各神經元連接到另一層裡的所有神經元。
-=&gt; fully connected layer就是没有weights share的!和一般的3x3 conv不同 =&gt; fully-connected and 1x1 and 3x3,conv ..是兩種類型的應用(因為沒有shared weight,1x1有) =&gt; case 1:input 10x10x1, 1x1 conv, 這樣kernel大小只有1x1
-=&gt; case 2:input 10x10x1, 1x1 conv, 這樣kernel大小暴增為10x10
-所以可以看出fully connected,每個input都會有一個kernel參數(所以就是全連接層)
-=&gt; 應用: 1x1 conv,通常用來調整維度
-e.g.,10x10x3,我想把他調整為10x10x5,那就需要[1x1x3]=&gt;可以產出ouput channel(1),有5個那就需要 [1x1x3]x5 =&gt; 應用: fully connected,通常用來針對每個input做訓練for next softmax e.g.,10x10x3,我想把他調整為10x10x5,那就需要[10x10x3]=&gt;可以產出ouput channel(1),有5個那就需要 [10x10x3]x5 e.g.,1x1x300,我想把他調整為1x1x10,那就需要[1x1x300]=&gt;可以產出ouput channel(1),有10個那就需要 [1x1x300]x10
-==
-透過fully-connected,可以做到平坦化, 基本上全連接層的部分就是將之前的結果平坦化之後接到最基本的神經網絡了 全连接层（fully connected layers，FC）在整个卷积神经网络中起到“分类器”的作用。
-如果说卷积层、池化层和激活函数层等操作是将原始数据映射到隐层特征空间的话，
-全连接层则起到将学到的“分布式特征表示”映射到样本标记空间的作用。
-在实际使用中，全连接层可由卷积操作实现：对前层是全连接的全连接层可以转化为卷积核为1x1的卷积；
-而前层是卷积层的全连接层可以转化为卷积核为hxw的全局卷积，h和w分别为前层卷积结果的高和宽
-Full example conv&#43;pooling&#43;fully connected
-最后的两列小圆球就是两个全连接层，在最后一层卷积结束后，进行了最后一次池化，
-输出了20个12 x 12的图像，然后通过了一个全连接层变成了1 x 100的向量。" name="description">
+    <meta content="Memo - A website called Memo" name="description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     
@@ -121,7 +107,7 @@ layui.use('element', function(){
 });
 </script>
         <div id="content" style="min-height:80%">
-<h5 id="wc" style="font-size: 1rem;text-align: center;">200 Words|Read in about 1 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
+<h5 id="wc" style="font-size: 1rem;text-align: center;">100 Words|Read in about 0 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
 
 <div class="layui-container" style="margin-bottom: 10px">
     
@@ -151,46 +137,10 @@ layui.use('element', function(){
     
     
 </h3>
+
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <h1 id="concept">Concept</h1>
-<p>全連結層：全連結層（fully connected layer）用於將一層裡的各神經元連接到另一層裡的所有神經元。</p>
-<p>=&gt; fully connected layer就是没有weights share的!和一般的3x3 conv不同   <br>
-=&gt; fully-connected and 1x1 and 3x3,conv ..是兩種類型的應用(因為沒有shared weight,1x1有)   <br>
-=&gt; case 1:input 10x10x1, 1x1 conv, 這樣kernel大小只有1x1<br>
-=&gt; case 2:input 10x10x1, 1x1 conv, 這樣kernel大小暴增為10x10<br>
-所以可以看出fully connected,每個input都會有一個kernel參數(所以就是全連接層)<br>
-=&gt; 應用: 1x1 conv,通常用來調整維度<br>
-e.g.,10x10x3,我想把他調整為10x10x5,那就需要[1x1x3]=&gt;可以產出ouput channel(1),有5個那就需要 [1x1x3]x5 <br>
-=&gt; 應用: fully connected,通常用來針對每個input做訓練for next softmax   <br>
-e.g.,10x10x3,我想把他調整為10x10x5,那就需要[10x10x3]=&gt;可以產出ouput channel(1),有5個那就需要 [10x10x3]x5 <br>
-e.g.,1x1x300,我想把他調整為1x1x10,那就需要[1x1x300]=&gt;可以產出ouput channel(1),有10個那就需要 [1x1x300]x10</p>
-<p>==<br>
-透過fully-connected,可以做到平坦化, 基本上全連接層的部分就是將之前的結果平坦化之後接到最基本的神經網絡了 <br>
-全连接层（fully connected layers，FC）在整个卷积神经网络中起到“分类器”的作用。<br>
-如果说卷积层、池化层和激活函数层等操作是将原始数据映射到隐层特征空间的话，<br>
-全连接层则起到将学到的“分布式特征表示”映射到样本标记空间的作用。<br>
-在实际使用中，全连接层可由卷积操作实现：对前层是全连接的全连接层可以转化为卷积核为1x1的卷积；<br>
-而前层是卷积层的全连接层可以转化为卷积核为hxw的全局卷积，h和w分别为前层卷积结果的高和宽</p>
-<h1 id="full-example">Full example</h1>
-<p>conv+pooling+fully connected<br>
-<img src="../https://github.com/evansin100/Fully-Connected/blob/master/Selection_072.png" alt="image"><br>
-最后的两列小圆球就是两个全连接层，在最后一层卷积结束后，进行了最后一次池化，<br>
-输出了20个12 x 12的图像，然后通过了一个全连接层变成了1 x 100的向量。</p>
-<p>这是怎么做到的呢，其实就是有100 x 20 个12 x 12的卷积核卷积出来的，<br>
-=&gt; 对于输入的每一张图，用了一个和图像一样大小的核卷积，这样整幅图就变成了一个数了，<br>
-如果厚度是20就是那20个核卷积完了之后相加求和。这样就能把一张图高度浓缩成一个数了。<br>
-全连接的目的是什么呢？因为传统的网络我们的输出都是分类，<br>
-也就是几个类别的概率甚至就是一个数&ndash;类别号，<br>
-=&gt; 那么全连接层就是高度提纯的特征了，方便交给最后的分类器或者回归。</p>
-<p>但是全连接的参数实在是太多了，你想这张图里就有20 x 12 x 12 x 100个参数 (for fully connected layer)，<br>
-前面随便一层卷积，假设卷积核是7<em>7的，厚度是64，那也才7</em>7*64，<br>
-所以现在的趋势是尽量避免全连接，目前主流的一个方法是全局平均值<br>
-=&gt; 所以fully-connected就是針對input所有的值都有weight(等於原圖) <br>
-=&gt; 然後做完後原圖就會變成一個直<br>
-=&gt; 所以如果有N組 1x1 filter,那就可以產生N個output<br>
-=&gt; 而這樣就會需要 (原圖) x N個weight</p>
-</div>
+                    </div>
             </div>
         </div>
 
@@ -219,7 +169,7 @@ e.g.,1x1x300,我想把他調整為1x1x10,那就需要[1x1x300]=&gt;可以產出o
         <div class="layui-row">
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
-                <a href="/"><p class="footer-url">home</p></a>
+                <a href="/"><p class="footer-url">Home</p></a>
             </div>
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">

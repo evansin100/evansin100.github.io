@@ -16,8 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/sw-lang-opengl/readme/</guid>
-      <description>Comparison 计算机图形程序接口
- Vulkan不再使用OpenGL的状态机设计，内部也不保存全局状态变量。 显示资源全然由应用层负责管理。包括内存管理、线程管理、多线程绘制命令产生、渲染队列提交等。 应用程序能够充分利用CPU的多核多线程的计算资源，降低CPU等待，降低延迟。 带来的问题是。 线程间的同步问题也由应用程序负责，从而对开发人员的要求也更高。 &amp;lt;/td&amp;gt;  </description>
+      <description></description>
     </item>
     
   </channel>

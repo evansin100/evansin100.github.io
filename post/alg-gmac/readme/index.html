@@ -23,18 +23,7 @@ if (!doNotTrack) {
     
     <meta content="Memo" name="keywords">
     
-    <meta content="Memo - calculation method flops就等於 所有的output 所需要的計算
-可以先做1個output要的計算
-= h x w (filter的計算) x c (有多少組的input channel,因為要相加) &#43; 1
-=&gt; 最後是total 就等於
-= H&rsquo; x W&rsquo; x n (output的個數) x 1個output要的計算
-= H&rsquo; x W&rsquo; x n (output的個數) x (h x w (filter的計算) x c (有多少組的input channel,因為要相加) &#43; 1)
-parameter的個數就比較簡單
-所有output layer要的參數
-因此先計算一層output layer要的參數
-= (h x w x c &#43; 1) (這樣可以產生一層output layer)
-所有的就是
-= n (output channel) x (h x w x c &#43; 1)" name="description">
+    <meta content="Memo - A website called Memo" name="description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     
@@ -118,7 +107,7 @@ layui.use('element', function(){
 });
 </script>
         <div id="content" style="min-height:80%">
-<h5 id="wc" style="font-size: 1rem;text-align: center;">200 Words|Read in about 1 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
+<h5 id="wc" style="font-size: 1rem;text-align: center;">100 Words|Read in about 0 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
 
 <div class="layui-container" style="margin-bottom: 10px">
     
@@ -148,51 +137,10 @@ layui.use('element', function(){
     
     
 </h3>
+
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <h1 id="calculation-method">calculation method</h1>
-<p>flops就等於 所有的output 所需要的計算<br>
-可以先做1個output要的計算<br>
-= h x w (filter的計算) x c (有多少組的input channel,因為要相加) + 1<br>
-=&gt; 最後是total 就等於<br>
-= H&rsquo; x W&rsquo; x n (output的個數) x 1個output要的計算<br>
-= H&rsquo; x W&rsquo; x n (output的個數) x (h x w (filter的計算) x c (有多少組的input channel,因為要相加) + 1)</p>
-<p>parameter的個數就比較簡單<br>
-所有output layer要的參數<br>
-因此先計算一層output layer要的參數<br>
-= (h x w x c + 1) (這樣可以產生一層output layer)<br>
-所有的就是<br>
-= n (output channel) x (h x w x c + 1)<br>
-<img src="../Selection_646.png" alt="image"></p>
-<h1 id="classification-model">Classification Model</h1>
-<p>裡面有像是mobilenet,resnet GMAC and accuracy info   <br>
-<a href="https://github.com/evansin100/Memo/blob/master/NN%20-%20Basic%20-%20nn%20gmac%20top1%20accuracy">https://github.com/evansin100/Memo/blob/master/NN%20-%20Basic%20-%20nn%20gmac%20top1%20accuracy</a></p>
-<p>有resneXt的資訊<br>
-並且有多個algorithm comparison (Googlent,vgg系列,inception v4)      <br>
-<a href="https://github.com/evansin100/classification/tree/master/resnetXt">https://github.com/evansin100/classification/tree/master/resnetXt</a></p>
-<p>有mobilenet floating point 多種configuration GMAC and accuracy<br>
-<a href="https://github.com/evansin100/classification/tree/master/mobilenet/FP-model-gmac">https://github.com/evansin100/classification/tree/master/mobilenet/FP-model-gmac</a></p>
-<p>有mobilenet int8 多種configuration GMAC and accuracy<br>
-<a href="https://github.com/evansin100/classification/tree/master/mobilenet/INT8-model-gmac">https://github.com/evansin100/classification/tree/master/mobilenet/INT8-model-gmac</a></p>
-<p>=&gt; GMAC有他的參考價值<br>
-=&gt; Inception V3的GMAC大概是mobilenet v1的10倍,CPU inference time也是10倍</p>
-<!-- raw HTML omitted -->
-<h1 id="object-detection-model">Object detection model</h1>
-<p><a href="http://bmvc2018.org/contents/papers/0145.pdf">http://bmvc2018.org/contents/papers/0145.pdf</a><br>
-更多yolo細節可以看這邊<br>
-<a href="https://github.com/evansin100/Object-detection/blob/master/yolo%20flops/README.md">https://github.com/evansin100/Object-detection/blob/master/yolo%20flops/README.md</a><br>
-<img src="../https://github.com/evansin100/GMAC/blob/master/Selection_015.png" alt="image"></p>
-<!-- raw HTML omitted -->
-<h1 id="segmentation">Segmentation</h1>
-<p>Deeplabv3+ 的inference time, 用CPU而言<br>
-大概是mobilenetv1的inference time的 37.6<br>
-這樣它的GMAC可能是0.5 x 37.6 = 18.8</p>
-<!-- raw HTML omitted -->
-<h1 id="face-recognition">Face recognition</h1>
-<!-- raw HTML omitted -->
-<h1 id="pose-estimation">Pose estimation</h1>
-<!-- raw HTML omitted -->
-</div>
+                    </div>
             </div>
         </div>
 
@@ -221,7 +169,7 @@ layui.use('element', function(){
         <div class="layui-row">
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
-                <a href="/"><p class="footer-url">home</p></a>
+                <a href="/"><p class="footer-url">Home</p></a>
             </div>
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">

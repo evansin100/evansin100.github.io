@@ -16,18 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/alg-gmac/readme/</guid>
-      <description>calculation method flops就等於 所有的output 所需要的計算
-可以先做1個output要的計算
-= h x w (filter的計算) x c (有多少組的input channel,因為要相加) + 1
-=&amp;gt; 最後是total 就等於
-= H&amp;rsquo; x W&amp;rsquo; x n (output的個數) x 1個output要的計算
-= H&amp;rsquo; x W&amp;rsquo; x n (output的個數) x (h x w (filter的計算) x c (有多少組的input channel,因為要相加) + 1)
-parameter的個數就比較簡單
-所有output layer要的參數
-因此先計算一層output layer要的參數
-= (h x w x c + 1) (這樣可以產生一層output layer)
-所有的就是
-= n (output channel) x (h x w x c + 1)</description>
+      <description></description>
     </item>
     
   </channel>

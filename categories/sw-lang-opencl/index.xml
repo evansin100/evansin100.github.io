@@ -16,10 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/sw-lang-opencl/readme/</guid>
-      <description>Key 建議看底下link了解GPU(OpenCL-&amp;gt;NDrange-&amp;gt;GPU thread的整個處理流程) https://github.com/evansin100/OpenCL/tree/master/Core
-可以看這邊有
-(1) GPU arch. workgroup (kernel-fiber,wave,L2 cache,L1 cache,texture unit) (2) GPU memory 優化還有架構 local memory,global memory
-(3) GPU openCL 優化技巧(一個kernel計算多個output..etc.) https://github.com/evansin100/OpenCL/tree/master/whitepaper/qcom</description>
+      <description></description>
     </item>
     
   </channel>

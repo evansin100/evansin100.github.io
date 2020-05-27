@@ -16,10 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/sw-framework-tensorflow-hub/readme/</guid>
-      <description>Concept TensorFlow Hub is a library for the publication, discovery, and consumption of reusable parts of machine learning models. A module is a self-contained piece of a TensorFlow graph, along with its weights and assets, that can be reused across different tasks in a process known as transfer learning.
- Transfer learning can:  Train a model with a smaller dataset, Improve generalization, and Speed up training.
-目前總共有468個pre-trained model
-可以做完transfer learning</description>
+      <description></description>
     </item>
     
   </channel>

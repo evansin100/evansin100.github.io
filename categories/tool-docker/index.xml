@@ -16,22 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/tool-docker/readme/</guid>
-      <description>Docker 一般的nn sdk, 都會配置一個docker image, 來方便大家使用sdk來開發
-docker裡面其實就是一個virtual image裡面已經有所有配置好的tool e.g. python 以及相關的套件
-Prepapation 要使用的話, 就先下載toolbox,安裝的同時也會自動安裝virtualbox
-https://docs.docker.com/toolbox/toolbox_install_windows/
-然後點Docker QuickStart
-接下來就會在virtualbox create一個default
-你可以把它想做是docker的一個daemon,用來和host端溝通的
-NN SDK 這邊用Xiaomin mace SDK為例子 在docker shell中
-Pull lite edition docker image 這樣就可以不用自己準備一個OS,並安裝相關的套件 docker pull registry.cn-hangzhou.aliyuncs.com/xiaomimace/mace-dev
-Execute an interactive bash shell on the container 關係圖就是host =&amp;gt; docker daemon =&amp;gt; NN SDK image
-docker exec -it mace-dev /bin/bash
-如果是重開機後
-可以打底下的command來restart docker
-docker restart mace-dev
-docker exec -it mace-dev /bin/bash
-Download SDK and model 在mace-dev的shell中 git clone https://github.</description>
+      <description></description>
     </item>
     
   </channel>

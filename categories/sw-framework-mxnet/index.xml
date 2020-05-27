@@ -16,32 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/sw-framework-mxnet/readme/</guid>
-      <description>Concept MXNet是一種高度可擴展的深度學習工具，可用於各種設備。 雖然與TensorFlow相比，它似乎沒有被廣泛使用，
-但MXNet的增長可能會因為成為一個Apache項目而得到提升。
-MXNet基本特性：
-(1) 該框架支持多種語言，如C ++，Python，R，Julia，JavaScript，Scala，Go，甚至Perl。
-(2) 可以在多個GPU和許多機器上非常有效地並行計算。
-MXNet優點： (1) 支持多個GPU（具有優化的計算和快速上下文切換）
-(2) 清晰且易於維護的代碼（Python，R，Scala和其他API）
-(3) 快速解決問題的能力（對於像我這樣的深度學習新手至關重要） (4) 雖然它不像TF那麼受歡迎，但MXNet具有詳細的文檔並且易於使用， 能夠在命令式和符號式編程風格之間進行選擇，使其成為初學者和經驗豐富的工程師的理想選擇。
-Other
-(1) 其開發者之一李沐，是中國人，在MXNet的推廣中具有語言優勢（漢語）
-(2) MXNet的高層介面是Gluon，Gluon同時支援靈活的動態圖和高效的靜態圖， 既保留動態圖的易用性，也具有靜態圖的高效能
-Note
-https://github.com/PaddlePaddle/X2Paddle
-Paddle裡面的pretrained model -&amp;gt; paddle model
-也只有支援
-TensorFlow
-Caffe
-ONNX
-Design mxnet::engine 主要包括如下实现： (1) function 并行执行过程中的参数依赖问题
-(2) 精确到 device 的多线程调度控制
-(3) 除了具体实现之外，可以借鉴的设计思想：
-每个 device 分配自己的任务队列和线程池，function 分配到具体 device 执行
-便于更可控的性能调度
-普通任务通过设置 device id 分配到具体的 device 上执行
-设立 high priority 专用线程池，不区分 device，所有 device 资源优先执行高优先任务
-CPU/GPU 间的拷贝操作单独拆开，用 IO 专用线程池专门负责，保证与计算任务间并发</description>
+      <description></description>
     </item>
     
   </channel>

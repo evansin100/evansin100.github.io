@@ -16,20 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/alg-gradient_boost/readme/</guid>
-      <description>Prelimanary - Ensemble Learning RF、GBDT和XGBoost都屬於整合學習（Ensemble Learning），
-整合學習的目的是通過結合多個基學習器的預測結果來改善單個學習器的泛化能力和魯棒性
-根據個體學習器的生成方式，目前的整合學習方法大致分為兩大類：
-即個體學習器之間存在強依賴關係、必須序列生成的序列化方法，以及個體學習器間不存在強依賴關係、可同時生成的並行化方法； 前者的代表就是Boosting，後者的代表是Bagging和“隨機森林”（Random Forest）。
-Boosting 在機器學習中，Boosting 是一種透過組合一群 Weak Learners、嘗試改進每一次的錯誤、從而獲得一個 Strong Learner 的方法
-Weak Learner 指的是「比亂猜好一點」的模型，這種模型的好性質包含：
-複雜度低、訓練的成本低、不容易 Overfitting，例如 Decision Stump（決策樹墩？），
-這個模型其實就是把 Decision Tree 的深度限制在一層，
-可想而知，只能切一刀的 Decision Tree 大概不會太好用，
-但是它卻滿足 Weak Learner 的性質，能夠快速的訓練、並且做出的預測能夠比亂猜好一些
-當使用 Weak Learner 作為 Boosting 的 Base Learner，
-我們除了能夠快速的訓練出許多模型來組合外，Weak Learner 的低複雜度也為我們帶來一個好性質：
-最終組合出的 Strong Learner 能夠對 Overfitting 有良好的抵抗性
-Gradient Boosting  (1) 這篇要介紹的 Gradient Boosting 除了 Boosting 一般擁有的性質外，還具備一些好處： (2) Gradient Boosting 可以應用在許多不同的（可微分）Loss Function 上 (3) 利用不同的 Loss Function，我們可以處理 Regression / Classification / Ranking 等不同的問題  Gradient Descent vs Gradient Boosting Gradient Boosting 這東西其實是兩個部分所組成的，</description>
+      <description></description>
     </item>
     
   </channel>

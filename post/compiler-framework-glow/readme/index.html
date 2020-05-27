@@ -23,17 +23,7 @@ if (!doNotTrack) {
     
     <meta content="Memo" name="keywords">
     
-    <meta content="Memo - Introduction Glow is a machine learning compiler and execution engine for hardware accelerators.(nji It is designed to be used as a backend for high-level machine learning frameworks.
-The compiler is designed to allow state of the art compiler optimizations
-and code generation of neural network graphs. This library is in active development.
-Glow是一個機器學習編譯器，可以用來加速不同硬體平臺上深度學習框架的效能，
-同時也能讓硬體開發人員，更專注建構可支援PyTorch等深度學習框架的硬體加速器
-所以目的也是為了推廣他們的pytorch
-Note: 在PyTorch中，图架构是动态的，这意味着图是在运行时创建的。
-而在TensorFlow中，图架构是静态的，这意味着先编译出图然后再运行
-Note: PyTorch更适合于在研究中快速进行原型设计、业余爱好者和小型项目，
-TensorFlow则更适合大规模的调度，尤其当考虑到跨平台和嵌入式调度操作时
-IR Summary 所以是兩階段的IR - High and Low (low是instruction based的,可以用來優化memory相關的操作,還有指令級的排序), 最後才是machine code Glow lowers a traditional neural network dataflow graph into a two-phase strongly-typed intermediate representation (IR)." name="description">
+    <meta content="Memo - A website called Memo" name="description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     
@@ -117,7 +107,7 @@ layui.use('element', function(){
 });
 </script>
         <div id="content" style="min-height:80%">
-<h5 id="wc" style="font-size: 1rem;text-align: center;">500 Words|Read in about 2 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
+<h5 id="wc" style="font-size: 1rem;text-align: center;">100 Words|Read in about 0 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
 
 <div class="layui-container" style="margin-bottom: 10px">
     
@@ -147,91 +137,10 @@ layui.use('element', function(){
     
     
 </h3>
+
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <h1 id="introduction">Introduction</h1>
-<p>Glow is a machine learning compiler and execution engine for hardware accelerators.(nji <br>
-It is designed to be used as a backend for high-level machine learning frameworks.<br>
-The compiler is designed to allow state of the art compiler optimizations<br>
-and code generation of neural network graphs.  <br>
-This library is in active development.</p>
-<p>Glow是一個機器學習編譯器，可以用來加速不同硬體平臺上深度學習框架的效能，<br>
-同時也能讓硬體開發人員，更專注建構可支援PyTorch等深度學習框架的硬體加速器<br>
-所以目的也是為了推廣他們的pytorch</p>
-<p>Note: 在PyTorch中，图架构是动态的，这意味着图是在运行时创建的。<br>
-而在TensorFlow中，图架构是静态的，这意味着先编译出图然后再运行<br>
-Note: PyTorch更适合于在研究中快速进行原型设计、业余爱好者和小型项目，<br>
-TensorFlow则更适合大规模的调度，尤其当考虑到跨平台和嵌入式调度操作时</p>
-<h1 id="ir-summary">IR Summary</h1>
-<p>所以是兩階段的IR - <br>
-High and Low (low是instruction based的,可以用來優化memory相關的操作,還有指令級的排序), 最後才是machine code  <br>
-Glow lowers a traditional neural network dataflow graph <br>
-into a two-phase strongly-typed intermediate representation (IR).</p>
-<p>Glow features a lowering phase which enables<br>
-the compiler to support a high number of input operators<br>
-as well as a large number of hardware targets <br>
-by eliminating the need to implement all operators on all targets.<br>
-<strong>The lowering phase is designed to reduce the input space and <br>
-allow new hardware backends to focus on a small number <br>
-of linear algebra primitives</strong><br>
-=&gt; 這邊有提到IR lowering的目的<br>
-=&gt; 減少input space<br>
-=&gt; 讓硬體的backend 可以聚焦在少個數的linear algebra primitives</p>
-<!-- raw HTML omitted -->
-<pre><code>         perform memory-related optimizations, such as  
-         (1) instruction scheduling, 
-         (2) static memory allocation and 
-         (3) copy elimination.  
-&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
-     &lt;td&gt; lowest level IR 
-     &lt;/td&gt;
-     &lt;td&gt; the optimizer performs machine-specific code generation to   
-         take advantage of specialized hardware features
-     &lt;/td&gt;
- &lt;/tr&gt;
-</code></pre>
-<!-- raw HTML omitted -->
-<p>從下圖可以看到 Low level IR就很像是C/C++ code,會做排code,and memory配置<br>
-這樣就代表是從原本的graph轉成 可以執行的program<br>
-<img src="../Selection_139.png" alt="image"><br>
-<img src="../Selection_140.png" alt="image"><br>
-<img src="../Selection_141.png" alt="image"></p>
-<h1 id="node-lowering">Node Lowering</h1>
-<p>Instead of compiling high-level operators directly, <br>
-Glow performs &ldquo;node lowering&rdquo;. <br>
-In this phase, the compiler breaks the high-level operator nodes <br>
-into low-level linear algebra operator nodes.</p>
-<h1 id="low-level-ir">Low-Level IR</h1>
-<p>細節在這邊<br>
-<a href="https://github.com/pytorch/glow/blob/master/docs/IR.md">https://github.com/pytorch/glow/blob/master/docs/IR.md</a>  <br>
-the code is further lowered into the low-level IR in a phase that is called &ldquo;IRGen&rdquo;<br>
-(which stands for IR generation)</p>
-<p>In the context of hardware acceleration, <br>
-<strong>the low-level instruction-based representation</strong> <br>
-allows the compiler to represent device-specific operations <br>
-such as asynchronous DMA operations. <br>
-Hiding the latency of memory operations is important <br>
-for utilizing the execution units of the hardware effectively, <br>
-and the instruction-based representation allows the compiler to <br>
-create a schedule that hides the latency of the memory operations</p>
-<p>The IR is not Static Single Assignment (SSA) based representation, <br>
-because the IR does not support control flow.<br>
-=&gt; GLOW IR不是SSA form,且他也不支援control flow</p>
-<p><strong>A function in IR form contains two sections</strong>   <br>
-=&gt; 所以low level IR的表示法就是把圖轉成是instruction based<br>
-=&gt; 然後會分兩個section&quot;declare變數&rdquo; and &ldquo;program要執行的程序&rdquo; <br>
-(1) &lsquo;declare&rsquo;
-In the first section of the IR we declare a number of memory regions<br>
-that live throughout the lifetime of the program. <br>
-This is similar to <strong>global variables in C</strong><br>
-=&gt; 所以範例是用model的weight當作例子,不是暫時的memory</p>
-<p>(2) &lsquo;program&rsquo;. <br>
-The second part of the IR is a list of instructions.<br>
-Each variable is annotated with the kind of initialization that the program should do<br>
-=&gt; 這邊也可以再插入DMA command,且也可以再對instruction做scheduling</p>
-</div>
+                    </div>
             </div>
         </div>
 
@@ -260,7 +169,7 @@ Each variable is annotated with the kind of initialization that the program shou
         <div class="layui-row">
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
-                <a href="/"><p class="footer-url">home</p></a>
+                <a href="/"><p class="footer-url">Home</p></a>
             </div>
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">

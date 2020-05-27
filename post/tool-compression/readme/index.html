@@ -23,10 +23,7 @@ if (!doNotTrack) {
     
     <meta content="Memo" name="keywords">
     
-    <meta content="Memo - Summary https://arxiv.org/pdf/1710.09282.pdf
-有summarize幾種model compression方法
-但其實還可以再補充
- (1) Concept: Reducing redundant parameters which are not sensitive to the performance (2) APP: Convolutional layer and fully connected layer (3) Details: Robust to various settings, can achieve good performance, can support both train from scratch and pre-trained model &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt; Pruning - Weight sparcity &lt;/td&gt; &lt;td&gt; note (1) skip 掉0的 filter,把某些filter砍掉, 這個也是 pruning &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt; Activation sparcity &lt;/td&gt; &lt;td&gt; note (1) skip 掉0的 activation (因為Relu會產生大量的0) Accelerating Convolutional Neural Networks via Activation Map Compression &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt; Low-rank factorization &lt;/td&gt; &lt;td&gt; note (1) Concept: Using matrix/tensor decomposition to estimate the informative parameters (2) APP: Convolutional layer and fully connected layer (3) Details: Standardized pipeline, easily to be implemented, can support both train from scratch and pre-trained model &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt; Transferred/compact convolutional filters &lt;/td&gt; &lt;td&gt; note (1) Concept: Designing special structural convolutional filters to save parameters (2) APP: Convolutional layer only (3) Details: Algorithms are dependent on applications usually achieve good performance, only support train from scratch &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt; Knowledge distillation &lt;/td&gt; &lt;td&gt; note (1) Concept: Training a compact neural network with distilled knowledge of a large model (2) APP: Convolutional layer and fully connected layer (3) Details: Model performances are sensitive to applications and network structure only support train from scratch &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt; Quantization &lt;/td&gt; &lt;td&gt; note (1) model的量化 或者是mix-precision &lt;/td&gt; &lt;/tr&gt;  " name="description">
+    <meta content="Memo - A website called Memo" name="description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     
@@ -110,7 +107,7 @@ layui.use('element', function(){
 });
 </script>
         <div id="content" style="min-height:80%">
-<h5 id="wc" style="font-size: 1rem;text-align: center;">300 Words|Read in about 2 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
+<h5 id="wc" style="font-size: 1rem;text-align: center;">100 Words|Read in about 0 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
 
 <div class="layui-container" style="margin-bottom: 10px">
     
@@ -140,90 +137,10 @@ layui.use('element', function(){
     
     
 </h3>
+
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <h1 id="summary">Summary</h1>
-<p><a href="https://arxiv.org/pdf/1710.09282.pdf">https://arxiv.org/pdf/1710.09282.pdf</a><br>
-有summarize幾種model compression方法<br>
-但其實還可以再補充</p>
-<!-- raw HTML omitted -->
-<pre><code>         (1) Concept: Reducing redundant parameters which
-                 are not sensitive to the performance
-         (2) APP: Convolutional layer and fully connected layer 
-         (3) Details: Robust to various settings, can achieve
-                 good performance, can support both train
-                 from scratch and pre-trained model
-&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt; 
-     &lt;td&gt; Pruning - Weight sparcity 
-     &lt;/td&gt;
-     &lt;td&gt; note
-         
-         (1) skip 掉0的 filter,把某些filter砍掉,
-             這個也是 pruning 
-&lt;/td&gt;
- &lt;/tr&gt;    
- &lt;tr&gt; 
-     &lt;td&gt; Activation sparcity 
-     &lt;/td&gt;
-     &lt;td&gt; note
-         
-         (1) skip 掉0的 activation (因為Relu會產生大量的0)  
-             Accelerating Convolutional Neural Networks 
-             via Activation Map Compression 
-&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt; 
-     &lt;td&gt; Low-rank factorization
-     &lt;/td&gt;
-     &lt;td&gt; note
-         
-         (1) Concept: Using matrix/tensor decomposition to
-                 estimate the informative parameters 
-         (2) APP: Convolutional layer and fully connected layer 
-         (3) Details: Standardized pipeline, easily to be
-                 implemented, can support both train
-                 from scratch and pre-trained model
-&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt; 
-     &lt;td&gt; Transferred/compact convolutional filters
-     &lt;/td&gt;
-     &lt;td&gt; note
-         
-         (1) Concept: Designing special structural convolutional 
-                 filters to save parameters 
-         (2) APP: Convolutional layer only
-         (3) Details: Algorithms are dependent on applications
-                 usually achieve good performance,
-                 only support train from scratch
-&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt; 
-     &lt;td&gt; Knowledge distillation
-     &lt;/td&gt;
-     &lt;td&gt; note
-         
-         (1) Concept: Training a compact neural network with  
-                 distilled knowledge of a large model
-         (2) APP: Convolutional layer and fully connected layer
-         (3) Details: Model performances are sensitive
-                 to applications and network structure
-                 only support train from scratch
-&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt; 
-     &lt;td&gt; Quantization
-     &lt;/td&gt;
-     &lt;td&gt; note
-         
-         (1) model的量化 或者是mix-precision
-&lt;/td&gt;
- &lt;/tr&gt;
-</code></pre>
-<!-- raw HTML omitted -->
-</div>
+                    </div>
             </div>
         </div>
 
@@ -252,7 +169,7 @@ layui.use('element', function(){
         <div class="layui-row">
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
-                <a href="/"><p class="footer-url">home</p></a>
+                <a href="/"><p class="footer-url">Home</p></a>
             </div>
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">

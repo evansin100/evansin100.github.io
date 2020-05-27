@@ -16,21 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/sw-framework-tensorflow/readme/</guid>
-      <description>Tensorflow build from source git clone https://github.com/tensorflow/tensorflow.git
-git branch -a
-然後選擇要的版本
-cd tensorflow # cd to the top-level directory created
-=&amp;gt; ./configure
-因為build這個會需要bazel但是tensorflow會指定　bazel的版本
-解決的方是install from script
-先去官網
-(使用舊的版本比較不會有問題）
-For TF1.12, you need to downgrade Bazel to 0.15.0. For TF1.13.1, you need to use Bazel 0.19.2. Thanks! https://github.com/bazelbuild/bazel/releases/tag/0.27.1 下載對應的版本
-chmod +x bazel--installer-linux-x86_64.sh
-./bazel--installer-linux-x86_64.sh &amp;ndash;user
-The &amp;ndash;user flag installs Bazel to the $HOME/bin directory on your system 所以會被安裝在home/bin
-然後再指定目錄即可
-export PATH=&amp;quot;$PATH:$HOME/bin&amp;rdquo;</description>
+      <description></description>
     </item>
     
   </channel>

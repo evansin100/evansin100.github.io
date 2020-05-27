@@ -23,7 +23,7 @@ if (!doNotTrack) {
     
     <meta content="Memo" name="keywords">
     
-    <meta content="Memo - IEE754 Definition IEEE有5個定義　 (0) RTE - 一般在code裡面看到的 (1) 因為direct rounding很單純　(2) 所以只要看round to nearest/ties to even的部份即可　基本上還是follow四捨五入　(3) 只是如果發現是模擬兩可的狀態下(tie e.g, xxx.5) 就看進位會不會變成偶數,是的話就進位　&lt;/td&gt;   (0) RTZ - 一般在code裡面看到的 (1) 就是直接砍掉(truncate) (2) for conversion to integers or the default rounding mode for conversion to floating-point types. &lt;/td&gt;   (0) RTP - 一般在code裡面看到的 (1) the result of the rounding is never smaller than the argument. (2) 有點像是無條件進位　&#43;6.0 will be rounded to &#43;6, while &#43;6." name="description">
+    <meta content="Memo - A website called Memo" name="description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     
@@ -107,7 +107,7 @@ layui.use('element', function(){
 });
 </script>
         <div id="content" style="min-height:80%">
-<h5 id="wc" style="font-size: 1rem;text-align: center;">200 Words|Read in about 1 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
+<h5 id="wc" style="font-size: 1rem;text-align: center;">100 Words|Read in about 0 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
 
 <div class="layui-container" style="margin-bottom: 10px">
     
@@ -137,57 +137,10 @@ layui.use('element', function(){
     
     
 </h3>
+
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <h1 id="iee754-definition">IEE754 Definition</h1>
-<p>IEEE有5個定義　　</p>
-<!-- raw HTML omitted -->
-<pre><code>     (0) RTE - 一般在code裡面看到的
-     (1) 因為direct rounding很單純　　　
-     (2) 所以只要看round to nearest/ties to even的部份即可　　　
-         基本上還是follow四捨五入　　
-     (3) 只是如果發現是模擬兩可的狀態下(tie e.g, xxx.5)
-         就看進位會不會變成偶數,是的話就進位　　
- &lt;/td&gt;    
-</code></pre>
-<!-- raw HTML omitted -->
-<pre><code>     (0) RTZ - 一般在code裡面看到的
-     (1) 就是直接砍掉(truncate)  
-     (2) for conversion to integers or the
-         default rounding mode for conversion to
-         floating-point types.
- &lt;/td&gt;    
-</code></pre>
-<!-- raw HTML omitted -->
-<pre><code>     (0) RTP - 一般在code裡面看到的
-     (1) the result of the rounding is never smaller than the argument.  
-     (2) 有點像是無條件進位　　　
-         +6.0 will be rounded to +6, 
-         while +6.1 through +6.9 will all be rounded up to +7　　
-         同理如果是負數的話,也會往數值變小的地方跑
-         (e.g.,-5.0, -5.1, -5.2, -5.3, -5.4, -5.5, -5.6, -5.7, -5.8, 
-         and -5.9 will all be rounded to -5:)
-         (這個和truncate不同)
- &lt;/td&gt;    
-</code></pre>
-<!-- raw HTML omitted -->
-<pre><code>     (0) RTN - 一般在code裡面看到的
-     (1) the result of the rounding is never larger than the argument  
-     (2) 就是towards positive infinity的反向
-     (3) 也和truncate不同   
- &lt;/td&gt;    
-</code></pre>
-<!-- raw HTML omitted -->
-<p><img src="../Selection_016.png" alt="image"><br>
-<img src="../Selection_017.png" alt="image"><br>
-<img src="../Selection_01.png" alt="image"></p>
-<h1 id="hardware-mapping">Hardware mapping</h1>
-<!-- raw HTML omitted -->
-<pre><code>     https://github.com/evansin100/ARM_Compute_Library/tree/master/armnn-reduceFp32ToFp16  
- &lt;/td&gt;        
-</code></pre>
-<!-- raw HTML omitted -->
-</div>
+                    </div>
             </div>
         </div>
 
@@ -216,7 +169,7 @@ layui.use('element', function(){
         <div class="layui-row">
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
-                <a href="/"><p class="footer-url">home</p></a>
+                <a href="/"><p class="footer-url">Home</p></a>
             </div>
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">

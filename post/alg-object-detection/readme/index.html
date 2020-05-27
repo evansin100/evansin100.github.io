@@ -23,12 +23,7 @@ if (!doNotTrack) {
     
     <meta content="Memo" name="keywords">
     
-    <meta content="Memo - One-stage Object-detection 速度快, 在feature map每個cell產生bounding box candidate的時候(同步做object分類-class) =&gt; step 1: 就同時進行&quot;分類&rdquo; and &ldquo;box回歸&rdquo;,一步完成
-代表作有SSD and Yolo
-将物体探测作为一个简单的回归问题，它将输入图像作为输入图像并学习类概率，边界框坐标 所以就是直接進行回歸,e.g.調整box and 分類
-因為正負樣本不平衡,且同時進行回歸,所以精度比two-stage差
-Two-stage Object-detection 比較準,
-=&gt; Step 1: 先產生bounding box candidate (透過selective search, RPN ..etc) 不做分類 e.g. region proposal network會產生很多bounding box,並且透過ROI align/ROI pooling,得到直,再做softmax算score RPN 在 feature map 上取 sliding window，每個 sliding window 的中心點稱之為 anchor point， 然後將事先準備好的 k 個不同尺寸比例的 box 以同一個 anchor point 去計算可能包含物體的機率(score)，取機率最高的 box。 這 k 個 box 稱之為 anchor box。所以每個 anchor point 會得到 2k 個 score， 以及 4k 個座標位置 (box 的左上座標，以及長寬，所以是 4 個數值)。 在 Faster R-CNN 論文裡，預設是取 3 種不同大小搭配 3 種不同長寬比的 anchor box，所以 k 為 3x3 = 9" name="description">
+    <meta content="Memo - A website called Memo" name="description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     
@@ -112,7 +107,7 @@ layui.use('element', function(){
 });
 </script>
         <div id="content" style="min-height:80%">
-<h5 id="wc" style="font-size: 1rem;text-align: center;">500 Words|Read in about 2 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
+<h5 id="wc" style="font-size: 1rem;text-align: center;">100 Words|Read in about 0 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
 
 <div class="layui-container" style="margin-bottom: 10px">
     
@@ -142,140 +137,10 @@ layui.use('element', function(){
     
     
 </h3>
+
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <h1 id="one-stage-object-detection">One-stage Object-detection</h1>
-<p>速度快, 在feature map每個cell產生bounding box candidate的時候(同步做object分類-class)    <br>
-=&gt; step 1: 就同時進行&quot;分類&rdquo; and &ldquo;box回歸&rdquo;,一步完成<br>
-代表作有SSD and Yolo<br>
-将物体探测作为一个简单的回归问题，它将输入图像作为输入图像并学习类概率，边界框坐标 <br>
-所以就是直接進行回歸,e.g.調整box and 分類<br>
-因為正負樣本不平衡,且同時進行回歸,所以精度比two-stage差</p>
-<h1 id="two-stage-object-detection">Two-stage Object-detection</h1>
-<p>比較準,<br>
-=&gt; Step 1: 先產生bounding box candidate (透過selective search, RPN ..etc) 不做分類       <br>
-e.g. region proposal network會產生很多bounding box,並且透過ROI align/ROI pooling,得到直,再做softmax算score  <br>
-RPN 在 feature map 上取 sliding window，每個 sliding window 的中心點稱之為 anchor point， <br>
-然後將事先準備好的 k 個不同尺寸比例的 box 以同一個 anchor point 去計算可能包含物體的機率(score)，取機率最高的 box。 <br>
-這 k 個 box 稱之為 anchor box。所以每個 anchor point 會得到 2k 個 score， <br>
-以及 4k 個座標位置 (box 的左上座標，以及長寬，所以是 4 個數值)。 <br>
-在 Faster R-CNN 論文裡，預設是取 3 種不同大小搭配 3 種不同長寬比的 anchor box，所以 k 為 3x3 = 9<br>
-所以就可以針對bounding box再做threshold,取出比較有可能是前景的bounding box</p>
-<p>=&gt; Step 2: 然後第2步再進行分類回歸<br>
-代表作有Faster RCNN, Mask RCNN  <br>
-所以重點是會有一個階段是region proposal,這些proposal沒有說明是那種類別(而是我們感興趣的region only)</p>
-<h1 id="comparison">Comparison</h1>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<pre><code>   SSD的multi-box 會產生box and class output然後再做non-maximum-suppresion   
-   然後multi-box的input就是一堆的box candididates(anchor box)    
-   產生的box output就是經過conv+reshape+concate+reshape   
-   產生的class output就是經過conv+reshape+concate+logistic(sigmoid),sigmoud是將數值壓在0-1   
-   Note:SSD中完全沒有用softmax!!       
- &lt;/td&gt;    
-</code></pre>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<pre><code>   (a) Detect方式 
-       Grid網格式，預設為7×7
-   
-   (b) Bound box最大數量 =&gt; 7 x 7 x 2 = 98
-   (c) Image seize for input =&gt; 448 x 448
-   (d) 全連結層 =&gt; 有
-   (e) Detection =&gt; 一個
-   (f) Loss function =&gt; sum-squared error loss      
-   (g) Output activation =&gt; Softmax loss(SSD沒有用到softmax)     
-   (h) Base model =&gt; GoogLeNet
-   (i) Darknet model =&gt; X
-   (j) 新增技術 =&gt; X
-   (k) 亮點 =&gt; YOLO：45 FPS, Fast YOLO：155FPS
- &lt;/td&gt;    
-</code></pre>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<pre><code>   (a) Detect方式 
-       Anchor box on feature map。
-       在CNN output的13×13 feature map進行預測(stride為32)，
-       每格搭配5個Anchor Boxes來預測Bounding Boxes。
-       （以輸入圖片尺寸為416 x 416為例）
-   
-   (b) Bound box最大數量 =&gt; 13 x 13 x 5 = 845
-       （以輸入圖片尺寸為416 x 416為例）
-   (c) Image seize for input =&gt; 416 x 416（default）
-       model可接受最高解析度 (height=608, width=608)
-       或任何大於32的2次方倍數
-   (d) 全連結層 =&gt; 無
-       輸入的圖片不再受限於固定的尺寸，任意輸入維度都可以在整個網絡上運行
-   (e) Detection =&gt; 一個
-   (f) Loss function =&gt; sum-squared error loss	
-   (g) Output activation =&gt; Softmax loss(SSD沒有用到softmax)     
-   (h) Base model =&gt; VGG	
-   (i) Darknet model =&gt; darknet-19	
-   (j) 新增技術 =&gt; 
-       Batch Normalization→ V2以BN取代V1的Dropout layer，mAP提昇。
-       High Resolution Classifier→ V1用224×244 training，V2提昇至448×448訓練。
-       Convolution with anchor boxes→V2在FC層進行regression預測bounding box，
-       V2直接去除FC層參考Faster R-CNN的作法以anchor來預測bound box。
-       Multi-Scale Training→ V2每訓練10個Batch會隨機地選擇新的圖片尺寸進行訓練。
-       →提昇模型針對不同尺寸的圖片的偵測效果。
-   (k) 亮點 =&gt; YOLO9000：可偵測9,000種物品，67FPS
- &lt;/td&gt;    
-</code></pre>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<pre><code>   執行方式只要有binary+cfg+weight+picture即可   
-   ./darknet.exe detect cfg/yolov3.cfg yolov3.weights data/dog.jpg -thresh 0 
-              
-   (a) Detect方式 
-       Anchor box on feature map。
-       在13×13, 26×26, 52×52三種feature maps上進行預測
-       (stride分別為32, 16, 8)，
-       每格搭配3個Anchor Boxes來預測Bounding Boxes。
-       （以輸入圖片尺寸為416 x 416為例）
-   
-   (b) Bound box最大數量 =&gt; 13×13+26×26+52×52）x3 = 3549
-       （以輸入圖片尺寸為416 x 416為例）
-   (c) Image seize for input =&gt; 416 x 416（default）
-       model可接受最高解析度 (height=608, width=608)
-       或任何大於32的2次方倍數
-   (d) 全連結層 =&gt; 無
-       輸入的圖片不再受限於固定的尺寸，任意輸入維度都可以在整個網絡上運行
-   (e) Detection =&gt; 三個，分別針對不同的size
-   (f) Loss function =&gt; binary cross-entropy loss	
-   (g) Output activation =&gt; Logistic lost(和SSD一樣)     
-   (h) Base model =&gt; ResNet
-   (i) Darknet model =&gt; darknet-53
-   (j) 新增技術 =&gt; 
-       多尺度預測→提昇了對小物體的偵測能力。
-       Anchor box增加 → IOU提高
-   (k) 亮點 =&gt; 針對前一版，主要亮點並非在速度，而是小物體的偵測能力以及數量。   
- &lt;/td&gt;    
-</code></pre>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<pre><code>   (1) 先转到caffe下  
-   https://blog.csdn.net/lwplwf/article/details/83011667   
-   https://github.com/lwplw/darknet2caffe  (script)  
-   python darknet2caffe.py yolov2-tiny_tarmac.cfg yolov2-tiny_tarmac_120000.weights yolov2-tiny_tarmac.prototxt yolov2-tiny_tarmac.caffemodel
-   完成之后会生成两个文件：
-   yolov2_tiny_tarmac.prototxt ---- 待生成的Caffe框架下的模型结构文件
-   yolov2_tiny_tarmac.caffemodel – 待生成的Caffe框架下的模型权重文件
-   
-   (2) 再轉到其他的e.g., NCNN
-   ./caffe2ncnn yolov2_tiny_tarmac.prototxt yolov2_tiny_tarmac.caffemodel yolov2_tiny_tarmac.param yolov2_tiny_tarmac.bin
-   转换完成即可得到ncnn下的权重和网络文件：
-   yolov2_tiny_tarmac.param
-   yolov2_tiny_tarmac.bin
- &lt;/td&gt;    
-</code></pre>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>Architecture view<br>
-<img src="../https://github.com/evansin100/Object-detection/blob/master/Selection_013.png" alt="image"></p>
-</div>
+                    </div>
             </div>
         </div>
 
@@ -304,7 +169,7 @@ RPN 在 feature map 上取 sliding window，每個 sliding window 的中心點�
         <div class="layui-row">
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
-                <a href="/"><p class="footer-url">home</p></a>
+                <a href="/"><p class="footer-url">Home</p></a>
             </div>
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">

@@ -23,21 +23,7 @@ if (!doNotTrack) {
     
     <meta content="Memo" name="keywords">
     
-    <meta content="Memo - Tensorflow build from source git clone https://github.com/tensorflow/tensorflow.git
-git branch -a
-然後選擇要的版本
-cd tensorflow # cd to the top-level directory created
-=&gt; ./configure
-因為build這個會需要bazel但是tensorflow會指定　bazel的版本
-解決的方是install from script
-先去官網
-(使用舊的版本比較不會有問題）
-For TF1.12, you need to downgrade Bazel to 0.15.0. For TF1.13.1, you need to use Bazel 0.19.2. Thanks! https://github.com/bazelbuild/bazel/releases/tag/0.27.1 下載對應的版本
-chmod &#43;x bazel--installer-linux-x86_64.sh
-./bazel--installer-linux-x86_64.sh &ndash;user
-The &ndash;user flag installs Bazel to the $HOME/bin directory on your system 所以會被安裝在home/bin
-然後再指定目錄即可
-export PATH=&quot;$PATH:$HOME/bin&rdquo;" name="description">
+    <meta content="Memo - A website called Memo" name="description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     
@@ -121,7 +107,7 @@ layui.use('element', function(){
 });
 </script>
         <div id="content" style="min-height:80%">
-<h5 id="wc" style="font-size: 1rem;text-align: center;">200 Words|Read in about 1 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
+<h5 id="wc" style="font-size: 1rem;text-align: center;">100 Words|Read in about 0 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
 
 <div class="layui-container" style="margin-bottom: 10px">
     
@@ -151,47 +137,10 @@ layui.use('element', function(){
     
     
 </h3>
+
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <h1 id="tensorflow-build-from-source">Tensorflow build from source</h1>
-<p>git clone <a href="https://github.com/tensorflow/tensorflow.git">https://github.com/tensorflow/tensorflow.git</a></p>
-<p>git branch -a<br>
-<img src="../https://github.com/evansin100/Tensorflow/blob/master/Selection_023.png" alt="image">
-然後選擇要的版本<br>
-<img src="../https://github.com/evansin100/Tensorflow/blob/master/Selection_024.png" alt="image"></p>
-<p>cd tensorflow  # cd to the top-level directory created<br>
-=&gt; ./configure<br>
-因為build這個會需要bazel但是tensorflow會指定　　
-bazel的版本<br>
-解決的方是install from script<br>
-先去官網<br>
-(使用舊的版本比較不會有問題）<br>
-For TF1.12, you need to downgrade Bazel to 0.15.0.  <br>
-For TF1.13.1, you need to use Bazel 0.19.2. Thanks!  <br>
-<a href="https://github.com/bazelbuild/bazel/releases/tag/0.27.1">https://github.com/bazelbuild/bazel/releases/tag/0.27.1</a>  <br>
-下載對應的版本<br>
-chmod +x bazel-<!-- raw HTML omitted -->-installer-linux-x86_64.sh<br>
-./bazel-<!-- raw HTML omitted -->-installer-linux-x86_64.sh &ndash;user<br>
-The &ndash;user flag installs Bazel to the $HOME/bin directory on your system <br>
-所以會被安裝在home/bin<br>
-然後再指定目錄即可<br>
-export PATH=&quot;$PATH:$HOME/bin&rdquo;<br>
-如果之前有安裝過bazel可以透過下面指令把它砍掉<br>
-sudo rm -rf /usr/bin/bazel<br>
-可以利用bazel which來找到binary的位置</p>
-<p>CPU-only support<br>
-To build a pip package for TensorFlow with CPU-only support:<br>
-=&gt; bazel build &ndash;config=opt //tensorflow/tools/pip_package:build_pip_package</p>
-<p>產生安裝檔<br>
-bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg</p>
-<p>安裝tensorflow<br>
-sudo pip uninstall tensorflow =&gt; 可以先unintall以免有些檔案干擾  <br>
-sudo pip install /tmp/tensorflow_pkg/tensorflow-1.xxxx</p>
-<p>安裝完了之後,可以再不同的路徑,不要在tensorflow的root folder<br>
-打下以下的指令,來確認安裝的版本是否正確<br>
-python -c &lsquo;import tensorflow as tf; print(tf.<strong>version</strong>)&rsquo;<br>
-<img src="../https://github.com/evansin100/Tensorflow/blob/master/Selection_025.png" alt="image"></p>
-</div>
+                    </div>
             </div>
         </div>
 
@@ -220,7 +169,7 @@ python -c &lsquo;import tensorflow as tf; print(tf.<strong>version</strong>)&rsq
         <div class="layui-row">
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
-                <a href="/"><p class="footer-url">home</p></a>
+                <a href="/"><p class="footer-url">Home</p></a>
             </div>
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">

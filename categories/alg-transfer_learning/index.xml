@@ -16,14 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/alg-transfer_learning/readme/</guid>
-      <description>https://www.jianshu.com/p/bdb87070b780
-Transfer_Learning e.g. 使用已經訓練好的model,再來新增新的分類
-&amp;lsquo;我们需要重新训练顶层top layer来识别新的分类，这个函数将向graph添加一些操作，随着一些变量保存权重，然后为所有反向传播设置梯度变化。&amp;rsquo;
-Tensorflow github https://github.com/tensorflow/hub
-TensorFlow Hub is a library to foster the publication, discovery,
-and consumption of &amp;ldquo;reusable parts&amp;rdquo; of machine learning models.
-In particular, it provides modules, which are pre-trained pieces of TensorFlow models
-that can be reused on new tasks.</description>
+      <description></description>
     </item>
     
   </channel>

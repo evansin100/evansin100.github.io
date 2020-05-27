@@ -16,28 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evansin100.github.io/post/alg-end_to_end_learning/readme/</guid>
-      <description>Concept explanation 1
-端到端指的是输入是原始数据，输出是最后的结果，
-explanation 2 end-to-end 的本质是你要解决的问题是多阶段的或多步的
-如果分阶段学习的话，第一阶段的最优解不能保证第二阶段的问题达到最优。
-end-to-end把他们堆在一起来优化，确保最后阶段的解达到最优。
-explanation 3 end to end的好处：通过缩减人工预处理和后续处理
-尽可能使模型从原始输入到最终输出
-给模型更多可以根据数据自动调节的空间，增加模型的整体契合度
-=&amp;gt; 好出是方便。坏处是越来越像一个黑箱。
-=&amp;gt; 因為只要管好input and output即可
-Case not end-to-end (不是現在的主流)： RCNN这种方法需要先在图像中提取可能含有目标的候选框（region proposal），
-=&amp;gt; 人工预处理
-=&amp;gt; 所以不是原本的圖直接input,先要預選(但後續的maskrcnn2go,也變不用預選了)
-然后将这些候选框输入到CNN模型，让CNN判断候选框中是否真的有目标，以及目标的类别是什么。
-在我们看到的结果中，往往是类似与下图这种，在整幅图中用矩形框标记目标的位置和大小，并且告诉我们框中的物体是什么。 这种标记的过程，其实是有两部分组成，一是目标所在位置及大小，二是目标的类别。
-在整个算法中，目标位置和大小其实是包含在region proposal的过程里，而类别的判定则是在CNN中来判定的
-两篇文章一作是一个人，前者不是end-end，后者是
-Case end-to-end (主流)： 圖片的處理
-現在的物件偵測(Fast RCNN就是了, not RCNN) yolo这种方法就是只通过CNN网络，就能够实现目标的定位和识别。
-也就是原始图像输入到CNN网络中，直接输出图像中所有目标的位置和目标的类别。
-这种方法就是end-to-end（端对端）的方法，
-一端输入我的原始图像，一端输出我想得到的结果。只关心输入和输出，中间的步骤全部都不管</description>
+      <description></description>
     </item>
     
   </channel>

@@ -23,21 +23,7 @@ if (!doNotTrack) {
     
     <meta content="Memo" name="keywords">
     
-    <meta content="Memo - OpenCV 如果是在VM環境想用Camera, 會需要開啟VM前先設定, attach host端的webcam如下 C:\Program Files\Oracle\VirtualBox&gt;VBoxManage.exe controlvm &ldquo;Ubuntu&rdquo; webcam attach .1
-issue : undefined reference to `cv::String::allocate(unsigned long)&rsquo; C&#43;&#43;也有OpenCV
-但是簡單的範例 確compile不過
-#include &lt;opencv2/core/core.hpp&gt;
-#include &lt;opencv2/highgui/highgui.hpp&gt;
-#include using namespace cv;
-using namespace std;
-int main( int argc, char** argv )
-{ Mat image;
-image = imread(argv[1], CV_LOAD_IMAGE_COLOR);
-透過這個方式可以安裝OpenCV for C&#43;&#43; and python
-sudo apt-get install libopencv-dev python-opencv
-若用 C&#43;&#43; 開發 OpenCV 的程式，官方是建議搭配 CMake 來編譯，而 CMake 的 CMakeLists.txt 設定檔內容如下：
-要把cpp改成你的名子
-cmake_minimum_required(VERSION 2." name="description">
+    <meta content="Memo - A website called Memo" name="description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     
@@ -121,7 +107,7 @@ layui.use('element', function(){
 });
 </script>
         <div id="content" style="min-height:80%">
-<h5 id="wc" style="font-size: 1rem;text-align: center;">100 Words|Read in about 1 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
+<h5 id="wc" style="font-size: 1rem;text-align: center;">100 Words|Read in about 0 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
 
 <div class="layui-container" style="margin-bottom: 10px">
     
@@ -151,35 +137,10 @@ layui.use('element', function(){
     
     
 </h3>
+
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <h1 id="opencv">OpenCV</h1>
-<p>如果是在VM環境想用Camera, 會需要開啟VM前先設定, attach host端的webcam如下
-C:\Program Files\Oracle\VirtualBox&gt;VBoxManage.exe controlvm &ldquo;Ubuntu&rdquo; webcam attach .1</p>
-<h1 id="issue--undefined-reference-to-cvstringallocateunsigned-long">issue : undefined reference to `cv::String::allocate(unsigned long)&rsquo;</h1>
-<p>C++也有OpenCV<br>
-但是簡單的範例 確compile不過<br>
-#include &lt;opencv2/core/core.hpp&gt;<br>
-#include &lt;opencv2/highgui/highgui.hpp&gt;<br>
-#include <!-- raw HTML omitted --></p>
-<p>using namespace cv;<br>
-using namespace std;</p>
-<p>int main( int argc, char** argv )<br>
-{
-Mat image;<br>
-image = imread(argv[1], CV_LOAD_IMAGE_COLOR);</p>
-<p>透過這個方式可以安裝OpenCV for C++ and python<br>
-sudo apt-get install libopencv-dev python-opencv<br>
-若用 C++ 開發 OpenCV 的程式，官方是建議搭配 CMake 來編譯，而 CMake 的 CMakeLists.txt 設定檔內容如下：<br>
-要把cpp改成你的名子<br>
-cmake_minimum_required(VERSION 2.8)<br>
-project( load_png )<br>
-find_package( OpenCV REQUIRED )<br>
-add_executable( load_png load_png.cpp )<br>
-target_link_libraries( load_png ${OpenCV_LIBS} )</p>
-<p>然後目錄中打 cmake . and make<br>
-<img src="../https://github.com/evansin100/OpenCV/blob/master/Selection_039.png" alt="image"></p>
-</div>
+                    </div>
             </div>
         </div>
 
@@ -208,7 +169,7 @@ target_link_libraries( load_png ${OpenCV_LIBS} )</p>
         <div class="layui-row">
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
-                <a href="/"><p class="footer-url">home</p></a>
+                <a href="/"><p class="footer-url">Home</p></a>
             </div>
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">

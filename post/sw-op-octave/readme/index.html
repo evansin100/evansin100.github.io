@@ -23,34 +23,7 @@ if (!doNotTrack) {
     
     <meta content="Memo" name="keywords">
     
-    <meta content="Memo - Paper https://blog.csdn.net/weixin_37993251/article/details/89333099
-Facebook和新加坡国立大学联手提出了新一代替代品：OctConv（Octave Convolution），
-效果惊艳，用起来还非常方便。
-OctConv就如同卷积神经网络（CNN）的“压缩器”。 用它替代传统卷积，能在提升效果的同时，节约计算资源的消耗
-OctConv即插即用 (所以可以直接替換conv)，无需修改原来的网络架构，也不用调整超参数，方便到家。 就是这个新一代的卷积，让GAN的主要创造者、AI大牛Ian Goodfellow迫不及待，
-不仅转发力荐，还表示要持续关注进展，开源时再发推告诉大家
-Abstract 在自然图像中，信息以不同的频率传递，其中较高的频率通常用精细的细节编码，较低的频率通常用全局结构编码。
-同样，卷积层的输出特征图也可以看作是不同频率下信息的混合。
-在这项工作中，我们提出将混合特征图按其频率分解，
-并设计一种新的Octave Convolution(OctConv)操作来存储和处理空间分辨率较低且空间变化较慢的特征图，
-从而降低了内存和计算成本。与现有的多尺度方法不同，OctConv被表示为一个单一的、通用的、即插即用的卷积单元，
-可以直接替换(普通的)卷积，而无需对网络架构进行任何调整。
-它也正交和互补的方法，建议更好的拓扑或减少像组或深度卷积信道冗余。
-实验表明，通过简单地用OctConv替换卷积，我们可以不断提高图像和视频识别任务的准确性，
-同时降低内存和计算成本。
-一个装备了八重卷积网络(octconvo)的ResNet-152仅用22.2 GFLOPs就能在ImageNet上实现82.9%的top-1分类精度。
-Introduction 如图1(a)所示，自然图像可以分解为描述平稳变化结构的低空间频率分量和描述快速变化精细细节的高空间频率分量[1,12]。
-同样，我们认为卷积层的输出特征映射也可以分解为不同空间频率的特征，
-并提出了一种新的多频特征表示方法，将高频和低频特征映射存储到不同的组中
-因此，通过相邻位置间的信息共享，可以安全降低低频组的空间分辨率，减少空间冗余，如图1(c)所示。适应新的特征表示，我们推广了vanilla convolution，并提出Octave Convolution(OctConv)将张量特征图包含两个频率和一个octave部分，频率和提取信息直接从低频地图不需要解码的高频如图1所示(d)。作为普通卷积的替代品，OctConv消耗的内存和计算资源大大减少。此外，OctConv对低频信息进行相应的(低频)卷积处理，有效地扩大了原始像素空间的接收域，从而提高了识别性能。
-我们以一种通用的方式设计了OctConv，使它成为即插即用的卷积的替代品。
-OctConv以来主要集中在加工特征图谱在多个空间频率和减少空间冗余、正交和补充现有的方法， 专注于构建更好的CNN拓扑[24, 38, 36, 34, 30]，
-减少channel-wise冗余卷积特征图谱[45, 10, 35, 33, 23]
-和减少冗余在浓密的模型参数[40, 16, 32]。我们还将进一步讨论OctConv在群、深度和三维卷积情况下的积分。
-此外，与利用多尺度信息的方法[4, 41, 14]不同的是，
-OctConv可以很容易地作为即插即用单元部署来替代卷积，而不需要改变网络架构或进行超参数调优
-我们的实验证明，
-只需用OctConv代替vanilla卷积， 我们始终可以提高受欢迎的2D CNN backbones的性能 包括ResNet [18, 19]， ResNeXt [45], DenseNet [24], MobileNet[20, 35]和SE-Net[21] 在2D图像识别ImageNet[13]，以及3D CNN backbones C2D[42]和I3D[42]视频行动识别动力学[26, 3, 2]。 配备OctConv的Oct-ResNet-152能够以更低的内存和计算成本匹配或超过最先进的手工设计网络[33, 21]。 我们的贡献可以总结如下：" name="description">
+    <meta content="Memo - A website called Memo" name="description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     
@@ -134,7 +107,7 @@ layui.use('element', function(){
 });
 </script>
         <div id="content" style="min-height:80%">
-<h5 id="wc" style="font-size: 1rem;text-align: center;">400 Words|Read in about 2 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
+<h5 id="wc" style="font-size: 1rem;text-align: center;">100 Words|Read in about 0 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
 
 <div class="layui-container" style="margin-bottom: 10px">
     
@@ -164,206 +137,10 @@ layui.use('element', function(){
     
     
 </h3>
+
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <h1 id="paper">Paper</h1>
-<p><a href="https://blog.csdn.net/weixin_37993251/article/details/89333099">https://blog.csdn.net/weixin_37993251/article/details/89333099</a><br>
-Facebook和新加坡国立大学联手提出了新一代替代品：OctConv（Octave Convolution），<br>
-效果惊艳，用起来还非常方便。</p>
-<h4 id="octconv就如同卷积神经网络cnn的压缩器">OctConv就如同卷积神经网络（CNN）的“压缩器”。</h4>
-<p>用它替代传统卷积，能在提升效果的同时，节约计算资源的消耗</p>
-<h4 id="octconv即插即用-所以可以直接替換conv无需修改原来的网络架构也不用调整超参数方便到家">OctConv即插即用 (所以可以直接替換conv)，无需修改原来的网络架构，也不用调整超参数，方便到家。</h4>
-<p>就是这个新一代的卷积，让GAN的主要创造者、AI大牛Ian Goodfellow迫不及待，<br>
-不仅转发力荐，还表示要持续关注进展，开源时再发推告诉大家</p>
-<h2 id="abstract">Abstract</h2>
-<p>在自然图像中，信息以不同的频率传递，其中较高的频率通常用精细的细节编码，较低的频率通常用全局结构编码。<br>
-同样，卷积层的输出特征图也可以看作是不同频率下信息的混合。<br>
-在这项工作中，我们提出将混合特征图按其频率分解，<br>
-并设计一种新的Octave Convolution(OctConv)操作来存储和处理空间分辨率较低且空间变化较慢的特征图，<br>
-从而降低了内存和计算成本。与现有的多尺度方法不同，OctConv被表示为一个单一的、通用的、即插即用的卷积单元，<br>
-可以直接替换(普通的)卷积，而无需对网络架构进行任何调整。<br>
-它也正交和互补的方法，建议更好的拓扑或减少像组或深度卷积信道冗余。<br>
-实验表明，通过简单地用OctConv替换卷积，我们可以不断提高图像和视频识别任务的准确性，<br>
-同时降低内存和计算成本。<br>
-一个装备了八重卷积网络(octconvo)的ResNet-152仅用22.2 GFLOPs就能在ImageNet上实现82.9%的top-1分类精度。</p>
-<h2 id="introduction">Introduction</h2>
-<p>如图1(a)所示，自然图像可以分解为描述平稳变化结构的低空间频率分量和描述快速变化精细细节的高空间频率分量[1,12]。<br>
-同样，我们认为卷积层的输出特征映射也可以分解为不同空间频率的特征，<br>
-并提出了一种新的多频特征表示方法，将高频和低频特征映射存储到不同的组中<br>
-<img src="../https://github.com/evansin100/octave-convolution/blob/master/Selection_053.png" alt="image"></p>
-<p>因此，通过相邻位置间的信息共享，可以安全降低低频组的空间分辨率，减少空间冗余，如图1(c)所示。适应新的特征表示，我们推广了vanilla convolution，并提出Octave Convolution(OctConv)将张量特征图包含两个频率和一个octave部分，频率和提取信息直接从低频地图不需要解码的高频如图1所示(d)。作为普通卷积的替代品，OctConv消耗的内存和计算资源大大减少。此外，OctConv对低频信息进行相应的(低频)卷积处理，有效地扩大了原始像素空间的接收域，从而提高了识别性能。</p>
-<p>我们以一种通用的方式设计了OctConv，使它成为即插即用的卷积的替代品。</p>
-<h4 id="octconv以来主要集中在加工特征图谱在多个空间频率和减少空间冗余正交和补充现有的方法">OctConv以来主要集中在加工特征图谱在多个空间频率和减少空间冗余、正交和补充现有的方法，</h4>
-<p>专注于构建更好的CNN拓扑[24, 38, 36, 34, 30]，<br>
-减少channel-wise冗余卷积特征图谱[45, 10, 35, 33, 23]<br>
-和减少冗余在浓密的模型参数[40, 16, 32]。我们还将进一步讨论OctConv在群、深度和三维卷积情况下的积分。<br>
-此外，与利用多尺度信息的方法[4, 41, 14]不同的是，<br>
-OctConv可以很容易地作为即插即用单元部署来替代卷积，而不需要改变网络架构或进行超参数调优</p>
-<p>我们的实验证明，</p>
-<h4 id="只需用octconv代替vanilla卷积">只需用OctConv代替vanilla卷积，</h4>
-<h4 id="我们始终可以提高受欢迎的2d-cnn-backbones的性能">我们始终可以提高受欢迎的2D CNN backbones的性能</h4>
-<h4 id="包括resnet-18-19-resnext-45-densenet-24-mobilenet20-35和se-net21">包括ResNet [18, 19]， ResNeXt [45], DenseNet [24], MobileNet[20, 35]和SE-Net[21]</h4>
-<p>在2D图像识别ImageNet[13]，以及3D CNN backbones C2D[42]和I3D[42]视频行动识别动力学[26, 3, 2]。   <br>
-配备OctConv的Oct-ResNet-152能够以更低的内存和计算成本匹配或超过最先进的手工设计网络[33, 21]。 <br>
-我们的贡献可以总结如下：</p>
-<p>(1) 我们提出将卷积地形图分解成两组不同空间频率的卷积地形图，并分别以一个octave的频率对其进行处理。</p>
-<h4 id="由于可以降低低频图的分辨率这节省了存储和计算">由于可以降低低频图的分辨率，这节省了存储和计算。</h4>
-<h4 id="这也有助于每一层获得更大的接受域以捕获更多的上下文信息">这也有助于每一层获得更大的接受域，以捕获更多的上下文信息。</h4>
-<p>(2) 我们设计了一种即插即用的OctConv运算来代替传统的卷积运算，直接对新的特征表示进行运算，减少了空间冗余。<br>
-重要的是，OctConv在实践中速度很快，达到了接近理论极限的加速。<br>
-(3) 我们广泛研究了所提出的用于图像和视频任务的各种骨干cnn上的OctConv的特性，<br>
-并获得了显著的性能提高，甚至可以与最好的自动网络相媲美</p>
-<h1 id="related-work">Related Work</h1>
-<h2 id="improving-the-efficiency-of-cnns">Improving the efficiency of CNNs </h2>
-<p>自从AlexNet[27]和VGG[36]的开创性工作以来，通过叠加一组卷积层获得了惊人的结果，<br>
-研究人员为提高CNNs的效率做出了大量的努力。</p>
-<p>(1) ResNet[18, 19]和DenseNet[24]通过向早期层添加快捷连接来改进网络拓扑结构，</p>
-<h4 id="增强特征重用机制缓解优化困难-所以resnet-shortcut是改善model優化">增强特征重用机制，缓解优化困难。=&gt; 所以resnet shortcut是改善model優化</h4>
-<p>(2) ResNeXt[45]和ShuffleNet[47]</p>
-<h4 id="使用稀疏连接的组卷积来减少通道间连接的冗余">使用稀疏连接的组卷积来减少通道间连接的冗余，</h4>
-<p>使得在相同的计算预算下采用更深或更广的网络是可行的。</p>
-<p>(3) Xception[10]和MobileNet[20,35]采用深度卷积，进一步降低了连接密度。</p>
-<p>(4) 除了这些人工设计的网络，研究人员还试图原子地为给定的任务找到最佳的网络拓扑。  <br>
-NAS[49]、PNAS[30]和AmoebaNet[34]成功地发现了比手工设计的网络表现更好的类型学。</p>
-<p>(5) 另一项工作重点是减少模型参数中的冗余。<br>
-DSD[16]通过修剪低权重的连接来减少模型连接中的冗余。</p>
-<p>(6) ThiNet[32]删除了基于其下一层计算的统计数据的卷积滤波器。</p>
-<p>然而，所有这些方法都忽略了特征图空间维数的冗余，这是由所提出的OctConv来解决的，<br>
-使得OctConv正交并且与之前的方法互补。</p>
-<h2 id="multi-scale-representation-learning---">Multi-scale Representation Learning    </h2>
-<p>提出的OctConv在不同的空间分辨率下对特征图进行卷积，得到了具有较大接收域的多尺度特征表示。</p>
-<h4 id="尺度空间长期以来被应用于局部特征提取如曾经流行的sift特征31">尺度空间长期以来被应用于&quot;局部特征&quot;提取，如曾经流行的SIFT特征[31]。</h4>
-<h4 id="在深度学习时代现有的方法侧重于融合多尺度特征28481422更好地捕捉远程信息4269">在深度学习时代，现有的方法侧重于融合多尺度特征[28,48,14,22]，更好地捕捉远程信息[42,6,9]。</h4>
-<p>然而，这种方法只通过插入新提出的块，在网络的少量深度(通常在中间或接近末尾)处聚合信息。<br>
-blnet[4]和ELASTICNet[41]经常上下采样整个网络的特征映射，以自动学习多尺度特征。<br>
-然而，这两种方法都被设计为对剩余块的替代，这需要额外的专业知识和超参数调优，<br>
-尤其是应用于不同的网络架构时，如MobileNetV1[20]、DenseNet[24]。<br>
-此外，这些方法只同步每个构建块末尾的多尺度信息，并同步高分辨率地图上的所有信息。<br>
-在[22]中，Huang等人在整个网络中保持多尺度特征，并且在DenseNet的每一层都有尺度间的连接。<br>
-为了降低计算成本，他们只使用粗糙的特征作为不同深度的多个分类器的输入。</p>
-<h4 id="相比之下octconv被设计成一种普通卷积的替代品">相比之下，OctConv被设计成一种普通卷积的替代品，</h4>
-<h4 id="可以直接应用于现有的cnns中无需调整网络结构-這個是新方向">可以直接应用于现有的CNNs中，无需调整网络结构。=&gt; 這個是新方向</h4>
-<p>对于OctConv，在每一组的每一层都同步了多尺度的信息，提高了学习能力和效率。<br>
-我们在实验部分对OctConv和所有密切相关的方法进行了广泛的比较，<br>
-结果表明OctConv CNNs在许多具有挑战性的基准测试中给出了最好的结果</p>
-<h1 id="method">Method</h1>
-<p>在本节中，我们首先介绍了用于减少特征图中空间冗余度的octave特征表示，<br>
-然后描述了直接作用于其上的Octave Convolution。<br>
-我们还讨论了实现细节，并展示了如何将OctConv集成到组和深度卷积架构中</p>
-<h2 id="octave-feature-representation">Octave Feature Representation</h2>
-<p>对于普通卷积，所有的输入和输出特征图具有相同的空间分辨率。<br>
-然而，spatial-frequency模型[1,12]<br>
-认为自然图像可以分解为捕捉全局布局和粗结构的低频信号和捕捉精细细节的高频信号，<br>
-如图1(a)所示。以类似的方式，我们认为有一个特征映射子集，它捕获空间低频变化并包含空间冗余信息。</p>
-<p>为了减少这种空间冗余，我们引入了octave特征表示，</p>
-<h4 id="它显式地将特征映射张量分解为对应于低频和高频的组">它显式地将特征映射张量分解为对应于低频和高频的组。</h4>
-<p>尺度空间理论[29]为我们提供了一种创建空间分辨率尺度空间的原则方法，<br>
-并将octave定义为空间维度除以2的幂(在本文中我们只探讨了21)。<br>
-我们用这种方式定义了低频和高频空间，即将低频地物图的空间分辨率降低一个octave。</p>
-<p>形式上，设表示卷积层的输入特征张量，其中h和w表示空间维数，c表示特征图或信道数。<br>
-我们沿着通道尺寸为显式因式分解，在高频特征图谱捕捉细节和lowfrequency地图变化慢的空间维度(w.r.t.图片位置)。<br>
-这里表示渠道的比例分配给低频部分和低频特征图谱定义一个octave低于高频的,<br>
-即在一半的空间分辨率,如图1所示(c)。<br>
-在下一小节中，我们将介绍一个直接作用于这种多频特征表示的卷积运算符，<br>
-并将其命名为Octave Convolution，或简称为OctConv</p>
-<h2 id="octave-convolution">Octave Convolution</h2>
-<p>第3.1节中提出的octave特征表示方法减少了空间冗余，比原表示方法更加紧凑。<br>
-然而，由于输入特征的空间分辨率不同，普通卷积不能直接对这种表示进行操作。<br>
-绕过这个问题的一种简单方法是将低频部分上采样到原始的空间分辨率，<br>
-将它与连接起来，然后进行卷积，这将导致额外的计算和内存开销，并减少压缩带来的所有节省。<br>
-为了充分利用我们紧凑的多频特征表示，我们引入了Octave Convolution，<br>
-它可以直接作用于因式张量，而不需要任何额外的计算或内存开销。</p>
-<p>Octave Convolution 我们的设计目标是有效地处理相应频率张量中的低频和高频分量，<br>
-同时使我们的octave特征表示的高频分量和低频分量之间能够有效地通信。<br>
-设X, Y为因式分解的输入和输出张量。<br>
-那么高和低频特征图的输出将由和分别在表示卷积更新从功能映射组B组。<br>
-具体来说，表示intra-frequency信息更新，而表示inter-frequency沟通。</p>
-<p>为了计算这些项，我们将卷积核W分成两个分量，分别负责与和进行卷积。<br>
-将各分量进一步划分为频率内分量和频率间分量：和，参数张量形状如图2(b)所示。<br>
-<img src="../https://github.com/evansin100/octave-convolution/blob/master/Selection_054.png" alt="image"></p>
-<p>Octave Convolution的一个有趣和有用的性质是低频特征图的更大的接受域。<br>
-将低频部分X^{L}与k x k卷积核进行卷积，与普通卷积相比，有效地将接收域扩大了2倍。<br>
-这进一步帮助每个OctConv层从遥远的位置捕获更多的上下文信息，并可能提高识别性能</p>
-<h2 id="implementation-details">Implementation Details</h2>
-<p>OctConv操作符实现的细节如图2所示。它由四条计算路径组成，分别对应于式(4)中的四项:</p>
-<h4 id="两条绿色路径对应于高频和低频特征图的信息更新">两条绿色路径对应于高频和低频特征图的信息更新，</h4>
-<h4 id="两条红色路径便于两个octave之间的信息交换">两条红色路径便于两个octave之间的信息交换</h4>
-<p><img src="../https://github.com/evansin100/octave-convolution/blob/master/Selection_055.png" alt="image"></p>
-<p>Group and Depth-wise convolutions Octave Convolution也可以用于其他常见卷积的变体，<br>
-如组[45]或深度方向的[20]卷积。<br>
-对于群卷积的情况，我们简单地将出现在OctConv设计中的所有四个卷积操作都设置为组卷积。<br>
-同样，对于深度卷积，卷积运算是深度卷积，因此信息交换路径被消除，只剩下两个深度卷积运算。<br>
-我们注意到，如果不压缩低频部分，组OctConv和深度方向的OctConv都减少到各自的普通版本</p>
-<p>我们将准确率的提高归功于OctConv对多频处理的有效设计以及相应的放大接收域，<br>
-这为网络提供了更多的上下文信息。达到精度达到0.125时,精度并不突然下降，<br>
-但是减小了慢慢的高比率α，表明减少低频部分的解决不会导致重大的信息丢失。<br>
-有趣的是，75%的feature map可以压缩到一半的分辨率，而准确率只有0.4%的下降，<br>
-这证明了对平滑变化的feature map进行分组和压缩的有效性，可以减少CNNs中的空间冗余</p>
-<p>Python的實作,也可以看到底下的code,有所謂的split and merge</p>
-<h5 id="class-octconvmodel">class OctConv(Model):</h5>
-<pre><code>    self.avgpool = AvgPool(2,2)   
-    self.Convhh = ConvLayer(size, chn_big, stride=stride, pad=pad, usebias=usebias)   
-    self.Convhl = ConvLayer(size, chn_small, stride=stride, pad=pad, usebias=usebias)   
-    self.Convlh = ConvLayer(size, chn_big, stride=stride, pad=pad, usebias=usebias)   
-    self.Convll = ConvLayer(size, chn_small, stride=stride, pad=pad, usebias=usebias)  
- 
- =&gt;所以感覺也是切資料   
- self.chn_inp_big = int(chn * self.input_ratio / (1 + self.input_ratio*3))   
-    self.chn_inp_small = chn - self.chn_inp_big   
-</code></pre>
-<h5 id="class-octmergemodel">class OctMerge(Model):</h5>
-<h5 id="class-octsplitmodel">class OctSplit(Model):</h5>
-<p>在resnet block可以看到底下的用法</p>
-<h4 id="class-resnetmmodel">class ResNet(M.Model):</h4>
-<pre><code>def initialize(self, channel_list, blocknum_list, embedding_size, oct_ratio, embedding_bn=True):   
-    self.head = HeadBlock(channel_list[0])   
-    self.pre_oct = M.OctMerge()   
-    if oct_ratio!=0.5:   
-        self.c0 = M.OctConv(1, channel_list[0], oct_ratio, 0.5)   
-    self.body = []   
-    for num, chn in zip(blocknum_list, channel_list[1:]):   
-        for i in range(num):   
-            self.body.append(ResBlock_v1(chn, 2 if i==0 else 1, oct_ratio))   
-    self.body.append(M.OctSplit(oct_ratio))   
-    self.emb_bn = M.BatchNorm()   
-    self.embedding = M.Dense(embedding_size, batch_norm=embedding_bn)   
-
-    self.oct_ratio = oct_ratio   
-</code></pre>
-<h1 id="comments">Comments</h1>
-<p>OctConv的motivation很有意思，<br>
-通过分解图像高频成分和低频成分并作一定的融合得到multi-frequency的feature representation，<br>
-既可以丰富特征表示，又可以降低特征冗余（高维度大分辨率的特征确实应该存在大量冗余，不过自己没验证过），<br>
-当然在参数量和计算量上也比较有优势，毕竟在low frequency（low resolution）的feature上，计算量会减75% (通道不变的情况下)。<br>
-其次，引入参数  是否对NAS会有帮助？</p>
-<p>Figure 4 给了一些有意思的东西：(1) 网络越大，不同  的OctConv带来的gain/gap变小了，<br>
-这点从冗余性的角度解释不清，OctConv确实能在feature representation上带来优势，<br>
-随着网络本身的表征能力变强，OctConv的优势开始减弱</p>
-<p>另外，OctConv的multi-frequency feature representation<br>
-本质上类似于multi-scale feature representation.</p>
-<h5 id="将feature分成2个scale去做4个convlow-low-high-high-low-high-high-low--然后fuse到一起">将feature分成2个scale，去做4个conv(Low-&gt;Low, High-&gt;High, Low-&gt;High, High-&gt;Low ) 然后fuse到一起，</h5>
-<p>得到multi-scale representation。类似于multi-scale feature representation，<br>
-最近出了一些比较好的工作，HRNet(Deep High Resolution Network)[1,2] <br>
-引入了多个不同resolution的branch，最高的分辨率到了原图的1/4，最低的有1/32，<br>
-这样四个branch并行得到multi-resolution feature representation. <br>
-在整个过程中会有很多次融合，即不同resolution的feature通过donwsample/upsample方式进行融合，<br>
-得到更丰富的feature representation.</p>
-<p>与OctConv不同的时，HRNet更多是在Block层面上做的multi-resolution，<br>
-一个Block中包含多个Basicblock，在一个Block内resolution相同，<br>
-Block之间resolution不同，</p>
-<h4 id="而-octconv则更直接在conv层面做的multi-resolution">而 OctConv则更直接，在conv层面做的multi-resolution.</h4>
-<p>HRNet相对OctConv来说结构更加固定，通过4个branch实现，<br>
-而OctConv则相对灵活。两者相通的地方就是这种multi-resolution的获取方式均可看作一个大的Group Convolution，<br>
-不同的group有不同的resolution，此外，OctConv更像是HRNet中间的fusion模块，<br>
-除了具体downsample/upsample的方式外，其实HRNet的fusion和OctConv已经很相似了。<br>
-且从[1]的ablation study中可以看出，中间不同resolution的fusion模块对性能影响极大，<br>
-在这种多resolution representation中，不同resolution的融合能够得到更好的特征表示，<br>
-这也是OctConv的一个motivation</p>
-<p>此外，[1][2]核心都在high resolution上面，如何得到high resolution feature representation，<br>
-除了maintain high resolution (1/4原图大小)，还依靠low resolution带来的信息，<br>
-这样的multi-resolution方式优化了high resolution的特征表示。<br>
-后面一大堆的实验确实证明了 High Resolution在视觉任务中的优势</p>
-</div>
+                    </div>
             </div>
         </div>
 
@@ -392,7 +169,7 @@ Block之间resolution不同，</p>
         <div class="layui-row">
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
-                <a href="/"><p class="footer-url">home</p></a>
+                <a href="/"><p class="footer-url">Home</p></a>
             </div>
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">

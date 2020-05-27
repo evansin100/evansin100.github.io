@@ -23,9 +23,7 @@ if (!doNotTrack) {
     
     <meta content="Memo" name="keywords">
     
-    <meta content="Memo - Optical Character Recognition Our pipeline to automatically recognize handwritten text includes: page segmentation (先分一個大塊的)[1] and line segmentation（再拆成line) [2], followed by handwriting recognition(接著再做辨識) is illustrated in Figure The pipeline of this component is presented in Figure 2. The input is an image containing a line of text and
-the output of the module is a string of the text. 另外一個例子是辨識圖中的某塊文字 method 1 : LSTM/RNN (1) Handwriting detection (CNN-biLSTM)
-The handwriting detection takes the input image containing a line of text and returns a matrix containing probability of each character appearing." name="description">
+    <meta content="Memo - A website called Memo" name="description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     
@@ -109,7 +107,7 @@ layui.use('element', function(){
 });
 </script>
         <div id="content" style="min-height:80%">
-<h5 id="wc" style="font-size: 1rem;text-align: center;">400 Words|Read in about 2 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
+<h5 id="wc" style="font-size: 1rem;text-align: center;">100 Words|Read in about 0 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
 
 <div class="layui-container" style="margin-bottom: 10px">
     
@@ -139,59 +137,10 @@ layui.use('element', function(){
     
     
 </h3>
+
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <h1 id="optical-character-recognition">Optical Character Recognition</h1>
-<p>Our pipeline to automatically recognize handwritten text includes:   <br>
-page segmentation (先分一個大塊的)[1] and line segmentation（再拆成line) [2], <br>
-followed by handwriting recognition(接著再做辨識) is illustrated in Figure <br>
-<img src="../Selection_109.png" alt="image"></p>
-<p>The pipeline of this component is presented in Figure 2. <br>
-The input is an image containing a line of text and<br>
-the output of the module is a string of the text. <br>
-<img src="../Selection_110.png" alt="image"></p>
-<p>另外一個例子是辨識圖中的某塊文字 <br>
-<img src="../Selection_113.png" alt="image"></p>
-<h1 id="method-1--lstmrnn">method 1 : LSTM/RNN</h1>
-<p>(1) Handwriting detection (CNN-biLSTM)<br>
-The handwriting detection takes the input image containing  <br>
-a line of text and returns a matrix containing probability <br>
-of each character appearing. Specifically,  <br>
-the matrix is of size (sequence_length × vocab. of characters).   <br>
-Previous works utilize multidimensional LSTMs to recognize handwriting</p>
-<p>however more recent works suggest that similar performances<br>
-can be achieved with a 1D-LSTM [4].<br>
-Briefly, [4] utilized a CNN for image feature extraction and<br>
-fed the features into a bidirectional LSTM and trained the network <br>
-to optimize the Connectionist Temporal Classification (CTC) loss (shown in Figure 3).<br>
-Intuitively, the CNN generates image features that are spatially aligned to the input image. <br>
-The image features are then sliced along the direction of the <br>
-text and sequentially fed into an LSTM. This network is denoted as CNN-biLSTM. <br>
-The main reason that the CNN-biLSTM was selected is because<br>
-multidimensional LSTMs substantially more computationally expensive compared to the CNN-biLSTM <br>
-<img src="../Selection_111.png" alt="image"></p>
-<p>(2) Language models<br>
-extract a string of words given a matrix of probabilities are explored:</p>
-<ol>
-<li>greedy search, 2) lexicon searching, and</li>
-<li>beam searching + lexicon searching with a simple language model.</li>
-</ol>
-<h1 id="method-2--transformer">method 2 : transformer</h1>
-<p>You might be aware of RNNs or LSTMs,<br>
-neural network architectures that predict output at each time step, <br>
-providing us with sequence generation as we need for language. <br>
-This breed of neural networks intended to learn patterns<br>
-in sequential data by modifying their current state based on current input<br>
-and previous states iteratively.</p>
-<p>But due to limitations on memory and issues like vanishing gradients,<br>
-we found RNNs and LSTMs not able to really capture the influence of words farther away.<br>
-(RNN和LSTM會有消失的gradient問題,以及記憶的memory大小問題,所以會影響到辨識的流暢度)<br>
-(transformer model就是要解決這個問題)</p>
-<p>Attention mechanism tries to fix this. <br>
-It is a way to get your model learn long range dependencies in a sequence  <br>
-and has found several applications in natural language processing and machine translation.<br>
-<img src="../Selection_112.png" alt="image"></p>
-</div>
+                    </div>
             </div>
         </div>
 
@@ -220,7 +169,7 @@ and has found several applications in natural language processing and machine tr
         <div class="layui-row">
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
-                <a href="/"><p class="footer-url">home</p></a>
+                <a href="/"><p class="footer-url">Home</p></a>
             </div>
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">

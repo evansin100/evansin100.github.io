@@ -23,14 +23,7 @@ if (!doNotTrack) {
     
     <meta content="Memo" name="keywords">
     
-    <meta content="Memo - Concept 深度學習的視頻幀內插技術
-利用時域運動關係的視圖擴展，俗稱為視頻內插或者視頻幀率轉換
-（frame rate up conversion，FRUC） Super_SloMo : NVIDIA 2018 CVPR
-MEMC-Net : 2018 CVPR
-IM-NET : 2019
-DAIN : 2019 CVPR
-Usage  &ldquo;视频插值&quot;主要一般会用于一下几个方面：  (1) 慢动作视频生成（slow-motion） (2) 视角合成（view synthesis） (3) 视频码率提升（frame rate up-conversion）    Chanllege  近年来的深度学习网络在应对视频插值任务时所遇到的主要问题和瓶颈，主要有两点:  (1) 无法处理大规模运动场景（large motions） (2) 只有隐式的（implicitly）或干脆没有处理遮挡区域填充问题（occlusions）    Training HOWTO 就是test frame會包裝成3個實際的frame (image triplets) 1 and 3 當作 t and t&#43;1
-2 當作中間插禎的 ground truth(用來確認演算法和ground truth的差異) The training datasets for learning-based methods typically" name="description">
+    <meta content="Memo - A website called Memo" name="description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     
@@ -114,7 +107,7 @@ layui.use('element', function(){
 });
 </script>
         <div id="content" style="min-height:80%">
-<h5 id="wc" style="font-size: 1rem;text-align: center;">200 Words|Read in about 1 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
+<h5 id="wc" style="font-size: 1rem;text-align: center;">100 Words|Read in about 0 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
 
 <div class="layui-container" style="margin-bottom: 10px">
     
@@ -144,48 +137,10 @@ layui.use('element', function(){
     
     
 </h3>
+
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <h1 id="concept">Concept</h1>
-<p>深度學習的視頻幀內插技術<br>
-利用時域運動關係的視圖擴展，俗稱為視頻內插或者視頻幀率轉換<br>
-（frame rate up conversion，FRUC）  <br>
-Super_SloMo : NVIDIA 2018 CVPR<br>
-MEMC-Net : 2018 CVPR<br>
-IM-NET : 2019<br>
-DAIN : 2019 CVPR</p>
-<h1 id="usage">Usage</h1>
-<ul>
-<li>&ldquo;视频插值&quot;主要一般会用于一下几个方面：
-<ul>
-<li>(1) 慢动作视频生成（slow-motion）</li>
-<li>(2) 视角合成（view synthesis）</li>
-<li>(3) 视频码率提升（frame rate up-conversion）</li>
-</ul>
-</li>
-</ul>
-<h1 id="chanllege">Chanllege</h1>
-<ul>
-<li>近年来的深度学习网络在应对视频插值任务时所遇到的主要问题和瓶颈，主要有两点:
-<ul>
-<li>(1) 无法处理大规模运动场景（large motions）</li>
-<li>(2) 只有隐式的（implicitly）或干脆没有处理遮挡区域填充问题（occlusions）</li>
-</ul>
-</li>
-</ul>
-<h1 id="training-howto">Training HOWTO</h1>
-<p>就是test frame會包裝成3個實際的frame (<strong>image triplets</strong>) <br>
-1 and 3 當作 t and t+1<br>
-2 當作中間插禎的 ground truth(用來確認演算法和ground truth的差異)   <br>
-The training datasets for learning-based methods typically<br>
-contain image triplets from raw video sequences, with the<br>
-first and third frame feeding into the network as inputs and<br>
-the intermediate second frame acting as ground truth [7],<br>
-[8], [9] for output</p>
-<p>By imposing loss functions such as Lpnorm on the difference between the network output and <br>
-ground truth frame pixels, the model parameters can be<br>
-iteratively updated via a gradient descent scheme</p>
-</div>
+                    </div>
             </div>
         </div>
 
@@ -214,7 +169,7 @@ iteratively updated via a gradient descent scheme</p>
         <div class="layui-row">
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
-                <a href="/"><p class="footer-url">home</p></a>
+                <a href="/"><p class="footer-url">Home</p></a>
             </div>
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">

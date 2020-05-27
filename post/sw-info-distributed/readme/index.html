@@ -23,20 +23,7 @@ if (!doNotTrack) {
     
     <meta content="Memo" name="keywords">
     
-    <meta content="Memo - Basic - Session 通過多 GPU 並行的方式可以有很好的加速效果，然而一臺機器上所支持的 GPU 是有限的
-分佈式 TensorFlow 允許我們在多臺機器上運行一個模型，所以訓練速度或加速效果能顯著地提升
-每次調用 tf.Session() 都會創建一個單獨的「執行引擎」，然後將會話句柄連接到執行引擎。執行引擎是實際存儲變量值並運行操作的東西。
-且 Python 天生是面向對象的編程，它裏面的元素都是類或對象，因此更正式地說，tf.Seesio() 是 TensorFlow 中的一個方法，它會打開一個會話並運行計算圖
-同進程中的執行引擎是不相關的。在一個會話中更改變量（在一個執行引擎上）不會影響其他會話中的變量。
-print(&ldquo;Initial value of var in session 1:&quot;, sess1.run(var))
-print(&ldquo;Initial value of var in session 2:&quot;, sess2.run(var))
-sess1.run(var.assign_add(1.0)) // 這邊更改sess1的變數,對sess2不會有影響
-print(&ldquo;Incremented var in session 1&rdquo;)
-print(&ldquo;Value of var in session 1:&quot;, sess1.run(var))
-print(&ldquo;Value of var in session 2:&quot;, sess2.run(var))
-Server tf.train.Server.create_local_server 在本地創建一個只有一臺機器的 TensorFlow 集羣。然後在集羣上生成一個會話，通過該對話，我們可以將創建的計算圖運行在 TensorFlow 集羣上。
-雖然這只是一個單機集羣，但它基本上反映了 TensorFlow 集羣的工作流程
-task/job TensorFlow 集羣會通過一系列任務（task）來執行計算圖中的運算，一般來說不同的任務會在不同的機器上運行。" name="description">
+    <meta content="Memo - A website called Memo" name="description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     
@@ -120,7 +107,7 @@ layui.use('element', function(){
 });
 </script>
         <div id="content" style="min-height:80%">
-<h5 id="wc" style="font-size: 1rem;text-align: center;">200 Words|Read in about 1 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
+<h5 id="wc" style="font-size: 1rem;text-align: center;">100 Words|Read in about 0 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
 
 <div class="layui-container" style="margin-bottom: 10px">
     
@@ -150,77 +137,10 @@ layui.use('element', function(){
     
     
 </h3>
+
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <h1 id="basic---session">Basic - Session</h1>
-<p>通過多 GPU 並行的方式可以有很好的加速效果，然而一臺機器上所支持的 GPU 是有限的<br>
-分佈式 TensorFlow 允許我們在多臺機器上運行一個模型，所以訓練速度或加速效果能顯著地提升</p>
-<p>每次調用 tf.Session() 都會創建一個單獨的「執行引擎」，然後將會話句柄連接到執行引擎。執行引擎是實際存儲變量值並運行操作的東西。<br>
-且 Python 天生是面向對象的編程，它裏面的元素都是類或對象，因此更正式地說，tf.Seesio() 是 TensorFlow 中的一個方法，它會打開一個會話並運行計算圖</p>
-<p>同進程中的執行引擎是不相關的。在一個會話中更改變量（在一個執行引擎上）不會影響其他會話中的變量。<br>
-print(&ldquo;Initial value of var in session 1:&quot;, sess1.run(var))<br>
-print(&ldquo;Initial value of var in session 2:&quot;, sess2.run(var))<br>
-sess1.run(var.assign_add(1.0))  // 這邊更改sess1的變數,對sess2不會有影響<br>
-print(&ldquo;Incremented var in session 1&rdquo;)<br>
-print(&ldquo;Value of var in session 1:&quot;, sess1.run(var))<br>
-print(&ldquo;Value of var in session 2:&quot;, sess2.run(var))</p>
-<h1 id="server">Server</h1>
-<h3 id="tftrainservercreate_local_server">tf.train.Server.create_local_server</h3>
-<p>在本地創建一個只有一臺機器的 TensorFlow 集羣。然後在集羣上生成一個會話，通過該對話，我們可以將創建的計算圖運行在 TensorFlow 集羣上。<br>
-雖然這只是一個單機集羣，但它基本上反映了 TensorFlow 集羣的工作流程<br>
-<img src="../https://github.com/evansin100/Distributed/blob/master/Selection_040.png" alt="image"></p>
-<h3 id="taskjob">task/job</h3>
-<p>TensorFlow 集羣會通過一系列任務（task）來執行計算圖中的運算，一般來說不同的任務會在不同的機器上運行。<br>
-TensorFlow 集羣中的任務也會被聚集爲工作（job）。例如在訓練深度模型時，一臺運行反向傳播的機器是一個任務，<br>
-而所有運行反向傳播的集合是一個工作。上面簡單的案例只是一個任務的集羣，若一個 TensorFlow 集羣有多個任務時，<br>
-我們需要使用 tf.train.ClusterSpec 來指定每一個任務的機器</p>
-<p>使用分佈式 TensorFlow 訓練深度學習模型一般有兩種方式，即 in-graph replication 和 between-graph replication。</p>
-<h3 id="in-graph-replication">in-graph replication</h3>
-<p>第一種計算圖內的分佈式會令所有任務都使用一個 TensorFlow 計算圖中的&quot;變量&rdquo;，而只是將計算部分分配到不同的服務器上。</p>
-<h3 id="between-graph-replication">between-graph replication</h3>
-<p>而另一種計算圖間的分佈式會在每一個計算服務器上創建一個&quot;獨立的 TensorFlow 計算圖&rdquo;，<br>
-但不同計算圖中的相同參數需要以一種固定的方式存放到&quot;同一個參數服務器中&rdquo;。</p>
-<h1 id="server---link-sessions">Server - link sessions</h1>
-<p>爲了在進程之間共享變量，我們需要將不同的執行引擎連接在一起，並輸入分佈式張量流<br>
-若使用分佈式 TensorFlow，每個進程會運行一個特殊的執行引擎：一個 TensorFlow 服務器。<br>
-服務器作爲集羣的一部分鏈接在一起。（羣集中的每個服務器也稱爲任務。</p>
-<p>&ldquo;所以重點就是task=&gt;job=&gt;clusterSpec=&gt;然後再將clusterSpece灌給不同的server&rdquo;</p>
-<p>第一步是定義集羣的規模。我們從最簡單的集羣開始：即兩臺服務器（兩個任務），<br>
-它們都在同一臺機器上，一個在 2222 端口，一個在 2223 端口。<br>
-tasks = [&ldquo;localhost:2222&rdquo;, &ldquo;localhost:2223&rdquo;]<br>
-每個任務都與「工作」（job）相關聯，該工作是相關任務的集合。我們將這兩個任務與一個稱爲「local」的工作相關聯。<br>
-jobs = {&ldquo;local&rdquo;: tasks}<br>
-所有這些即定義爲一個集羣。<br>
-cluster = tf.train.ClusterSpec(jobs)<br>
-我們現在可以啓動服務器，指定每個服務器對應爲集羣定義中的哪個服務器。立即啓動各服務器，監聽集羣設置中指定的端口。<br>
-server1 = tf.train.Server(cluster, job_name=&quot;local&rdquo;, task_index=0)<br>
-server2 = tf.train.Server(cluster, job_name=&quot;local&rdquo;, task_index=1)</p>
-<p>&ldquo;所以兩台server就可以link在一起了 through同一個clusterSpec,用到的變數也都是共享的&rdquo;</p>
-<h1 id="server---link-sessions-data-location-and-main-executor">Server - link sessions (data location and main executor)</h1>
-<p>現在我們可能會想：變量究竟存儲在哪個服務器上？又是哪個服務器在運行操作？<br>
-按經驗來說，變量和操作都默認存儲在集羣的第一個任務上。
-可以透過這個方式將server執行的狀況印出<br>
-def run_with_location_trace(sess,op):<br>
-run_options = tf.RunOptions(trace_level=tf.RunOptions.FULL_TRACE)<br>
-run_metadata = tf.RunMetadata()<br>
-sess.run(op,options=run_options,run_metadata=run_metadata)<br>
-for device in run_metadata.step_stats.dev_stats:<br>
-print(device.device)<br>
-for node in device.node_stats:<br>
-print (&rdquo; &ldquo;,node.node_name)</p>
-<h1 id="server---link-sessions-var-and-graph">Server - link sessions, var and graph</h1>
-<p>首先，儘管在整個集羣中共享變量值，但&quot;圖並不會自動共享&rdquo;!!!!</p>
-<p>所有服務器上的圖都必須一樣嗎？<br>
-到目前爲止，我們所有的例子都是在兩臺服務器上運行相同的圖。這被稱爲圖內複製（in-graph replication）。<br>
-例如，假設我們有一個包含三臺服務器的集羣。服務器 1 保存共享參數，而服務器 2 和服務器 3 是工作站節點，<br>
-每個都有本地變量。在圖內複製中，每臺服務器的圖如下所示：<br>
-<img src="../https://github.com/evansin100/Distributed/blob/master/Selection_041.png" alt="image"><br>
-圖內複製的問題在於每個服務器都必須具有整個圖的副本，包括可能只與其他服務器相關的子圖。這可能會導致圖變得非常大。</p>
-<p>另一種方法是圖間複製（between-graph replication）。在這裏，每個服務器都運行一個只包含共享參數的圖，而且任何變量和操作都與單個服務器相關。<br>
-這種方法縮減了圖的大小，因此我們推薦使用圖間複製。<br>
-<img src="../https://github.com/evansin100/Distributed/blob/master/Selection_042.png" alt="image"></p>
-<p>要訪問共享變量，我們必須手動添加一個同名的變量到第二個圖中。</p>
-</div>
+                    </div>
             </div>
         </div>
 
@@ -249,7 +169,7 @@ print (&rdquo; &ldquo;,node.node_name)</p>
         <div class="layui-row">
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
-                <a href="/"><p class="footer-url">home</p></a>
+                <a href="/"><p class="footer-url">Home</p></a>
             </div>
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">

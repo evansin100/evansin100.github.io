@@ -23,18 +23,7 @@ if (!doNotTrack) {
     
     <meta content="Memo" name="keywords">
     
-    <meta content="Memo - Download Android Framework ML git clone https://android.googlesource.com/platform/frameworks/ml
-就可以看到ml folder底下有多common/driver/runtime/tools folder
-並且ANN 是在frameworks中的ml folder
-這些folder分別的意思如下
-看起來比較重要的就是runtime folder
-./runtime: Implementation of the NN API runtime.
-Includes source code and internal header files.
-./runtime/include: The header files that an external developer would use.
-These will be packaged with the NDK. Includes a
-C&#43;&#43; wrapper around the C API to make it easier to use.
-./runtime/test: Test files.
-./sample_driver: Sample driver that uses the CPU to execute queries." name="description">
+    <meta content="Memo - A website called Memo" name="description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     
@@ -118,7 +107,7 @@ layui.use('element', function(){
 });
 </script>
         <div id="content" style="min-height:80%">
-<h5 id="wc" style="font-size: 1rem;text-align: center;">800 Words|Read in about 4 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
+<h5 id="wc" style="font-size: 1rem;text-align: center;">100 Words|Read in about 0 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
 
 <div class="layui-container" style="margin-bottom: 10px">
     
@@ -148,222 +137,10 @@ layui.use('element', function(){
     
     
 </h3>
+
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <h1 id="download-android-framework-ml">Download Android Framework ML</h1>
-<p>git clone <a href="https://android.googlesource.com/platform/frameworks/ml">https://android.googlesource.com/platform/frameworks/ml</a><br>
-就可以看到ml folder底下有多common/driver/runtime/tools folder<br>
-並且ANN 是在frameworks中的ml folder<br>
-<img src="../https://github.com/evansin100/Android-ML/blob/master/Selection_213.png" alt="image"></p>
-<p>這些folder分別的意思如下<br>
-看起來比較重要的就是runtime folder</p>
-<p>./runtime: Implementation of the NN API runtime.<br>
-Includes source code and internal header files.<br>
-./runtime/include: The header files that an external developer would use.<br>
-These will be packaged with the NDK.  Includes a<br>
-C++ wrapper around the C API to make it easier to use.<br>
-./runtime/test: Test files.</p>
-<p>./sample_driver: Sample driver that uses the CPU to execute queries.<br>
-NOT TO BE SHIPPED.  Only to be used as a testing and<br>
-learning tool.<br>
-=&gt; 這邊實作了一個簡單的NN HAL<br>
-Return<!-- raw HTML omitted --> SampleDriver::getCapabilities(getCapabilities_cb cb) {<br>
-Return<!-- raw HTML omitted --> SampleDriver::getSupportedOperations(const V1_0::Model&amp; model,<br>
-getSupportedOperations_cb cb) {<br>
-Return<!-- raw HTML omitted --> SampleDriver::prepareModel(const V1_0::Model&amp; model,<br>
-const sp&lt;V1_0::IPreparedModelCallback&gt;&amp; callback) {<br>
-void asyncExecute(const Request&amp; request, const Model&amp; model,<br>
-const std::vector<!-- raw HTML omitted -->&amp; poolInfos,<br>
-const sp&lt;T_IExecutionCallback&gt;&amp; callback) {<br>
-Return<!-- raw HTML omitted --> SamplePreparedModel::execute(const Request&amp; request,<br>
-const sp&lt;V1_0::IExecutionCallback&gt;&amp; callback) {</p>
-<pre><code>             =&gt; 這個是sample driver的AndroidBp, 可以看到他會去使用hidl..etc   
-             cc_defaults {  
-             name: &quot;NeuralNetworksSampleDriver_defaults&quot;,  
-             defaults: [&quot;neuralnetworks_defaults&quot;],  
-             // b/109953668, disable OpenMP  
-             // openmp: true,  
-             srcs: [  
-                 &quot;SampleDriver.cpp&quot;,  
-             ],  
-             header_libs: [  
-                 &quot;libneuralnetworks_headers&quot;,  
-             ],  
-             shared_libs: [  
-                 &quot;android.hardware.neuralnetworks@1.0&quot;,  
-                 &quot;android.hardware.neuralnetworks@1.1&quot;,  
-                 &quot;android.hardware.neuralnetworks@1.2&quot;,  
-                 &quot;android.hidl.allocator@1.0&quot;,  
-                 &quot;android.hidl.memory@1.0&quot;,  
-             ],  
-</code></pre>
-<p>./common: Contains files that can be useful for multiple components,<br>
-e.g. runtime, driver, or tests.  Includes source code and<br>
-internal header files.<br>
-./common/include: Header files to be used by the components using common.<br>
-./common/operations: CPU implementation of the operations.</p>
-<h1 id="libneuralnetworksso-android-framework-ml-inside">libneuralnetworks.so (Android Framework ML inside)</h1>
-<p>Android framework ml build完後,會產生一個share library<br>
-這個library裡面有 ANN API接口, nn runtime的實作, CPU falback<br>
-以及怎麼去尋找ANN NN device ..etc</p>
-<p>=&gt; libneuralnetworks.so - nn/runtime/Manager.cpp
-void DeviceManager::findAvailableDevices() {<br>
-using ::android::hidl::manager::V1_0::IServiceManager;<br>
-VLOG(MANAGER) &laquo; &ldquo;findAvailableDevices&rdquo;;</p>
-<pre><code> =&gt; 获取Service Manager远程接口的函数是defaultServiceManager   
- sp&lt;IServiceManager&gt; manager = hardware::defaultServiceManager();  
- if (manager == nullptr) {  
-     LOG(ERROR) &lt;&lt; &quot;Unable to open defaultServiceManager&quot;;  
-     return;  
- }  
-
- =&gt; listByInterface透過這個就可以找到對應的service   
- =&gt; &lt;void&gt; listByInterface(const hidl_string&amp; /* fqInstanceName */,   
-                              listByInterface_cb /* _hidl_cb */)   
- =&gt; android/hardware/neuralnetworks/1.0/IDevice.h                   
- =&gt; hidl_interface {
- =&gt;  name: &quot;android.hardware.neuralnetworks@1.0&quot;, =&gt; 所以難怪可以找到arm nn的service  
- manager-&gt;listByInterface(V1_0::IDevice::descriptor, [this](const hidl_vec&lt;hidl_string&gt;&amp; names) {  
-     for (const auto&amp; name : names) {  
-         VLOG(MANAGER) &lt;&lt; &quot;Found interface &quot; &lt;&lt; name.c_str();  
-         sp&lt;V1_0::IDevice&gt; device = V1_0::IDevice::getService(name);  
-         if (device == nullptr) {  
-             LOG(ERROR) &lt;&lt; &quot;Got a null IDEVICE for &quot; &lt;&lt; name.c_str();  
-             continue;  
-         }  
-         registerDevice(name.c_str(), device);  
-     }  
- });  
-
-=&gt; 這邊可以看到 他最後都會註冊CPU fallback&quot;CpuDevice&quot;   
- // register CPU fallback device  
- mDevices.push_back(CpuDevice::get());  
- mDevicesCpuOnly.push_back(CpuDevice::get());  
-</code></pre>
-<p>}</p>
-<h1 id="libneuralnetworksso---driversamplesampledrivercpp">libneuralnetworks.so - driver/sample/SampleDriver.cpp</h1>
-<p>template <!-- raw HTML omitted --><br>
-void asyncExecute(const Request&amp; request, const Model&amp; model,<br>
-const std::vector<!-- raw HTML omitted -->&amp; poolInfos,<br>
-const sp&lt;T_IExecutionCallback&gt;&amp; callback) {<br>
-NNTRACE_FULL(NNTRACE_LAYER_DRIVER, NNTRACE_PHASE_INPUTS_AND_OUTPUTS,<br>
-&ldquo;SampleDriver::asyncExecute&rdquo;);<br>
-std::vector<!-- raw HTML omitted --> requestPoolInfos;<br>
-if (!setRunTimePoolInfosFromHidlMemories(&amp;requestPoolInfos, request.pools)) {<br>
-notify(callback, ErrorStatus::GENERAL_FAILURE);<br>
-return;<br>
-}</p>
-<pre><code> NNTRACE_FULL_SWITCH(NNTRACE_LAYER_DRIVER, NNTRACE_PHASE_EXECUTION,  
-                     &quot;SampleDriver::asyncExecute&quot;);  
- CpuExecutor executor; =&gt; 可以看到這邊就是用ANN肚子裡的CpuExecutor來執行     
- int n = executor.run(model, request, poolInfos, requestPoolInfos);  
- VLOG(DRIVER) &lt;&lt; &quot;executor.run returned &quot; &lt;&lt; n;  
- ErrorStatus executionStatus =  
-         n == ANEURALNETWORKS_NO_ERROR ? ErrorStatus::NONE : ErrorStatus::GENERAL_FAILURE;  
- Return&lt;void&gt; returned = notify(callback, executionStatus);  
- if (!returned.isOk()) {  
-     LOG(ERROR) &lt;&lt; &quot; hidl callback failed to return properly: &quot; &lt;&lt; returned.description();  
- }  
-</code></pre>
-<p>}</p>
-<p>template <!-- raw HTML omitted --><br>
-Return<!-- raw HTML omitted --> executeBase(const Request&amp; request, const Model&amp; model,<br>
-const std::vector<!-- raw HTML omitted -->&amp; poolInfos,<br>
-const sp&lt;T_IExecutionCallback&gt;&amp; callback) {<br>
-NNTRACE_FULL(NNTRACE_LAYER_DRIVER, NNTRACE_PHASE_EXECUTION, &ldquo;SampleDriver::executeBase&rdquo;);<br>
-VLOG(DRIVER) &laquo; &ldquo;executeBase(&rdquo; &laquo; SHOW_IF_DEBUG(toString(request)) &laquo; &ldquo;)&quot;;<br>
-if (callback.get() == nullptr) {<br>
-LOG(ERROR) &laquo; &ldquo;invalid callback passed to executeBase&rdquo;;<br>
-return ErrorStatus::INVALID_ARGUMENT;<br>
-}<br>
-if (!validateRequest(request, model)) {<br>
-notify(callback, ErrorStatus::INVALID_ARGUMENT);<br>
-return ErrorStatus::INVALID_ARGUMENT;<br>
-}</p>
-<pre><code> // This thread is intentionally detached because the sample driver service  
- // is expected to live forever.  
- std::thread([&amp;model, &amp;poolInfos, request, callback] { =&gt; 是跑另外一個thread    
-     asyncExecute(request, model, poolInfos, callback);  
- })  
-         .detach();  
-
- return ErrorStatus::NONE;  
-</code></pre>
-<p>}</p>
-<h1 id="nnhal-service---androidhardwareneuralnetworks">NNHAL service - android.hardware.neuralnetworks</h1>
-<p>HAL 库（android.hardware.neuralnetworks@1.x)包含了一组硬件设备供应商要实现的功能，<br>
-现在有 1.0 (Android 8.1）和 1.1 （Android 9.0）两个版本。其中的接口又可以分为多个部分<br>
-像是ARM的部份也是將service變成這個名子 @才有帶自己的1.1-service-armnn<br>
-=&gt; 所以NN HAL service名子一定是要 android.hardware.neuralnetwork開頭,libneuralnetworks.so才可以找的到 <br>
-PRODUCT_PACKAGES += <a href="mailto:android.hardware.neuralnetworks@1.1-service-armnn">android.hardware.neuralnetworks@1.1-service-armnn</a><br>
-然後要這樣讓這個service跑起來<br>
-adb shell /system/vendor/bin/hw/android.hardware.neuralnetworks@1.0-service-armnn &amp;</p>
-<h1 id="test---mlnntoolstest_generatorreadmemd">TEST - ml/nn/tools/test_generator/README.md</h1>
-<h3 id="mlnntoolstest_generatorcts_generatorpy">ml/nn/tools/test_generator/cts_generator.py</h3>
-<p>Implements CTS test backend. Invoked by ml/nn/runtime/test/specs/generate_tests.sh;<br>
-See that script for details on how this script is used.</p>
-<p>=&gt; ml/nn/runtime/test/specs/generate_tests.sh
-Driver for generate_one_testcase. Append the output of generate_one_testcase<br>
-(which are C++ snippets that invokes the test harness) to the<br>
-all_generated_tests.cpp<br>
-Optionally, the &ldquo;LOG&rdquo; file ($2), only used by the slicing tool, would be<br>
-passed to generate_one_testcase.</p>
-<p>This function should be called to process one test spec from other scripts.<br>
-function generate_wrapper {<br>
-local LOGFILE=&rdquo;&rdquo;<br>
-if [ $1 = &ldquo;log&rdquo; ]; then<br>
-local LOGFILE=$2<br>
-shift
-shift<br>
-fi<br>
-cd $ANDROID_BUILD_TOP/$TEST_DIR/specs<br>
-FOUND=0</p>
-<p>CTSONEFILE=$ANDROID_BUILD_TOP/$TEST_DIR/for-cts/TestGeneratedOneFile.cpp<br>
-echo &ldquo;// clang-format off&rdquo; &gt; $CTSONEFILE<br>
-echo &ldquo;// DO NOT EDIT;&rdquo; &raquo; $CTSONEFILE<br>
-echo &ldquo;// Generated by ml/nn/runtime/test/specs/generate_test.sh&rdquo; &raquo; $CTSONEFILE<br>
-echo &ldquo;#include &quot;../GeneratedUtils.cpp&quot;&rdquo; &raquo; $CTSONEFILE</p>
-<p>for ver in $NNAPI_VERSION;<br>
-do<br>
-VER_DIR=$ANDROID_BUILD_TOP/$TEST_DIR/specs/$ver<br>
-[ ! -d $VER_DIR ] &amp;&amp; continue<br>
-pushd $VER_DIR &gt; /dev/null<br>
-for f in $@;<br>
-do<br>
-if [ -f $(basename $f) ]; then<br>
-generate_one_testcase $f &ldquo;$LOGFILE&rdquo; &raquo; $CTSONEFILE<br>
-if [ $? -ne 0 ]; then<br>
-echo &ldquo;Failed processing $f&rdquo;<br>
-return $?<br>
-fi<br>
-FOUND=1<br>
-fi<br>
-done<br>
-popd &gt; /dev/null<br>
-done<br>
-if [[ $FOUND -eq 0 ]]; then<br>
-echo did not find any files for $@<br>
-exit 1<br>
-fi<br>
-return $?<br>
-}</p>
-<p>function generate_one_testcase {<br>
-Generate one testcase<br>
-local LOGFILE=$2<br>
-if [ -n &ldquo;$2&rdquo; ]; then<br>
-local LOGFILE=&rdquo;-l $2&rdquo;<br>
-fi<br>
-local BASENAME=<code>basename -s .mod.py $1</code><br>
-local MODEL=&rdquo;-m $ANDROID_BUILD_TOP/$TEST_DIR/generated/models/$BASENAME.model.cpp&rdquo;<br>
-local EXAMPLE=&rdquo;-e $ANDROID_BUILD_TOP/$TEST_DIR/generated/examples/$BASENAME.example.cpp&rdquo;<br>
-local TEST=&rdquo;-t $ANDROID_BUILD_TOP/$TEST_DIR/generated/tests/$(basename $1).cpp&rdquo;</p>
-<p>=&gt; 這邊是重點會再產生檔案
-$NNAPI_BASE/tools/test_generator/cts_generator.py $FORCE ./<code>basename $1</code> \<br>
-$MODEL $EXAMPLE $TEST $LOGFILE<br>
-ret=$?<br>
-return $ret<br>
-}</p>
-</div>
+                    </div>
             </div>
         </div>
 
@@ -392,7 +169,7 @@ return $ret<br>
         <div class="layui-row">
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
-                <a href="/"><p class="footer-url">home</p></a>
+                <a href="/"><p class="footer-url">Home</p></a>
             </div>
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">

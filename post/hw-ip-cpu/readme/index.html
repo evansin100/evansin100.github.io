@@ -23,7 +23,7 @@ if (!doNotTrack) {
     
     <meta content="Memo" name="keywords">
     
-    <meta content="Memo - Comparison  (1) 一般CPU vector width=128 or 64 bit(這個是硬體能力 (2) 128bit, 所以可以分 8(8bit) x 16, 16(fp16) x 8, 32(fp32) x 4 (3) 64bit, 所以可以分 8(8bit) x 8, 16(fp16) x 4, 32(fp32) x 2 (4) 注意fp16只有ARMv8.2才有指令集support &lt;/td&gt;   (0) Summary 8bit 硬體加速 =&gt; X fp16 硬體加速 =&gt; X fp32 硬體加速 =&gt; O (FMLA instruction) (1) 支援FMLA for FP32運算, vector width=128 case =&gt; 32(fp32)x4 等於一次處理4個資料 (2) FMA and FMLA 差異 兩個都是用來算floating point 相乘, 但FMA是包裝好的API(intrinsic),所以會被展開instruction　double fma(double a, double b, double c); 而FMLA是insruction是最底層的instruction (3) 沒有針對8bit and fp16 做硬體加速 &lt;/td&gt;   (0) Summary 8bit 硬體加速 =&gt; O (UDOT/SDOT instruction) fp16 硬體加速 =&gt; O (FMLA instruction) fp32 硬體加速 =&gt; O (FMLA instruction) (1) 針對8bit做加速 引進UDOT,SDOT指令集(8bit pack在一起) (2) 新增FMLA for FP16運算, 要加compile option -march=armv8." name="description">
+    <meta content="Memo - A website called Memo" name="description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     
@@ -107,7 +107,7 @@ layui.use('element', function(){
 });
 </script>
         <div id="content" style="min-height:80%">
-<h5 id="wc" style="font-size: 1rem;text-align: center;">200 Words|Read in about 1 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
+<h5 id="wc" style="font-size: 1rem;text-align: center;">100 Words|Read in about 0 Min|total read<span id="busuanzi_value_page_pv"></span></h5>
 
 <div class="layui-container" style="margin-bottom: 10px">
     
@@ -137,51 +137,10 @@ layui.use('element', function(){
     
     
 </h3>
+
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <h1 id="comparison">Comparison</h1>
-<!-- raw HTML omitted -->
-<pre><code>     (1) 一般CPU vector width=128 or 64 bit(這個是硬體能力
-     (2) 128bit, 所以可以分 
-             8(8bit) x 16,
-             16(fp16) x 8,
-             32(fp32) x 4   
-     (3) 64bit, 所以可以分 
-             8(8bit) x 8,
-             16(fp16) x 4,
-             32(fp32) x 2
-     (4) 注意fp16只有ARMv8.2才有指令集support  
-&lt;/td&gt;    
-</code></pre>
-<!-- raw HTML omitted -->
-<pre><code>     (0) Summary 
-         8bit 硬體加速 =&gt; X  
-         fp16 硬體加速 =&gt; X
-         fp32 硬體加速 =&gt; O (FMLA instruction) 
-     (1) 支援FMLA for FP32運算,
-         vector width=128 case =&gt; 32(fp32)x4
-         等於一次處理4個資料
-     (2) FMA and FMLA 差異
-         兩個都是用來算floating point 相乘,
-         但FMA是包裝好的API(intrinsic),所以會被展開instruction　　
-         double fma(double a, double b, double c);   
-         而FMLA是insruction是最底層的instruction  
-     (3) 沒有針對8bit and fp16 做硬體加速 
-&lt;/td&gt;    
-</code></pre>
-<!-- raw HTML omitted -->
-<pre><code>     (0) Summary 
-         8bit 硬體加速 =&gt; O (UDOT/SDOT instruction)   
-         fp16 硬體加速 =&gt; O (FMLA instruction)   
-         fp32 硬體加速 =&gt; O (FMLA instruction)   
-     (1) 針對8bit做加速 引進UDOT,SDOT指令集(8bit pack在一起)
-     (2) 新增FMLA for FP16運算,
-         要加compile option -march=armv8.2-a+fp16 
-         vector width=128 case =&gt; 16(fp16)x8
-&lt;/td&gt;    
-</code></pre>
-<!-- raw HTML omitted -->
-</div>
+                    </div>
             </div>
         </div>
 
@@ -210,7 +169,7 @@ layui.use('element', function(){
         <div class="layui-row">
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
-                <a href="/"><p class="footer-url">home</p></a>
+                <a href="/"><p class="footer-url">Home</p></a>
             </div>
             
             <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
