@@ -43,15 +43,18 @@ def WriteHeader(src, dst, category):
         chinese_char_count = 0
         for temp_line in temp:
             chinese_char_count = chinese_char_count + len(temp_line)
+            chinese_lines = chinese_lines + temp_line
             if chinese_char_count >= 2000:
                 # translate since it may have maximal translation limit 
                 print("chinese_char_count >= 2000")
-                lines.join(translator.translate(chinese_lines, dest='en').text)
+                lines = lines + translator.translate(chinese_lines, dest='en').text
                 chinese_char_count = 0
+                chinese_lines = ""
 
         if chinese_char_count != 0:
             print("chinese_char_count = " + str(chinese_char_count))
-            lines.join(translator.translate(chinese_lines, dest='en').text)
+            lines = lines + translator.translate(chinese_lines, dest='en').text
+            #lines.join(translator.translate(chinese_lines, dest='en').text)
 
         #print(chinese_lines)        
         #lines = translator.translate(chinese_lines, dest='en').text   
@@ -61,7 +64,7 @@ def WriteHeader(src, dst, category):
     src_file.close()
     dst_file = open(dst, 'w')
     series = get_series(category)
-    header = "---\ndraft: false\ncategories: [\"" + category + "\"]\nseries: [\"" + series + "\"]\n---\n"
+    header = "---\ndraft: true\ncategories: [\"" + category + "\"]\nseries: [\"" + series + "\"]\n---\n"
     print("header\n" + header)
     dst_file.write(header)
     #dst_file.write(''.join([line for line in lines]))
